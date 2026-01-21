@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "QoreDB - The Linear for databases"
+  },
+  "nav": {
+    "features": "Features",
+    "roadmap": "Roadmap",
+    "docs": "Docs",
+    "download": "Download",
+    "waitlist": "Join Waitlist"
+  },
+  "hero": {
+    "badge": "Public Beta 0.1 is here",
+    "title": "The Linear for databases",
+    "subtitle": "Stop wrestling with clunky SQL clients. QoreDB is a unified, local-first database engine designed for speed, security, and developer joy.",
+    "cta_primary": "Download for macOS",
+    "cta_secondary": "Read the manifesto"
+  },
+  "pillars": {
+    "local": {
+      "title": "Local-First",
+      "desc": "Your data never leaves your machine. Airtight security by design."
+    },
+    "unified": {
+      "title": "Unified Engine",
+      "desc": "PostgreSQL, MySQL, MongoDB. One interface to rule them all."
+    },
+    "ai": {
+      "title": "AI Context",
+      "desc": "Intelligent query assistance that understands your schema, not just SQL."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 QoreDB Inc. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

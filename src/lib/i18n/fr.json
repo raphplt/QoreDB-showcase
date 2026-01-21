@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "QoreDB - Le Linear des bases de données"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "roadmap": "Roadmap",
+    "docs": "Docs",
+    "download": "Télécharger",
+    "waitlist": "Rejoindre la liste"
+  },
+  "hero": {
+    "badge": "La Beta Publique 0.1 est là",
+    "title": "Le Linear des bases de données",
+    "subtitle": "Arrêtez de vous battre avec des clients SQL lents. QoreDB est un moteur unifié et local-first conçu pour la vitesse, la sécurité et le plaisir de développer.",
+    "cta_primary": "Télécharger pour macOS",
+    "cta_secondary": "Lire le manifeste"
+  },
+  "pillars": {
+    "local": {
+      "title": "Local-First",
+      "desc": "Vos données ne quittent jamais votre machine. Sécurité absolue par design."
+    },
+    "unified": {
+      "title": "Moteur Unifié",
+      "desc": "PostgreSQL, MySQL, MongoDB. Une seule interface pour tout gérer."
+    },
+    "ai": {
+      "title": "Contexte IA",
+      "desc": "Une assistance intelligente qui comprend votre schéma, pas juste le SQL."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 QoreDB Inc. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation"
+  }
+}
