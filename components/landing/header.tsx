@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { ShimmerButton } from "@/components/shimmer-button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -90,12 +90,31 @@ export function Header() {
 						<Github className="w-5 h-5" />
 					</Link> */}
 
-					<ShimmerButton
-						borderRadius="0.75rem"
-						className="hidden md:flex bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-4 lg:px-6 py-2 border-none text-sm lg:text-base font-medium shadow-lg"
+					<button
+						className="group hidden md:flex items-center gap-2 relative overflow-hidden
+							bg-(--q-text-0)/90 backdrop-blur-sm
+							text-(--q-bg-0) px-5 lg:px-5 py-2 rounded-xl 
+							text-sm lg:text-base font-semibold 
+							border border-(--q-accent)/40
+							shadow-[0_0_20px_color-mix(in_srgb,var(--q-accent)_15%,transparent)]
+							hover:border-(--q-accent)/80
+							hover:shadow-[0_0_30px_color-mix(in_srgb,var(--q-accent)_40%,transparent)]
+							hover:scale-105 hover:-translate-y-0.5
+							transition-all duration-300 ease-out"
 					>
-						Rejoindre la beta
-					</ShimmerButton>
+						<span 
+							className="absolute inset-0 bg-linear-to-r from-transparent via-(--q-accent)/20 to-transparent animate-shimmer"
+							style={{
+								backgroundSize: '200% 100%',
+								animation: 'shimmer 3s ease-in-out infinite',
+							}}
+						/>
+						<span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-(--q-accent) to-transparent opacity-60 group-hover:opacity-100 group-hover:h-0.5 transition-all duration-300" />
+						<span className="absolute inset-0 rounded-xl bg-(--q-accent)/0 group-hover:bg-(--q-accent)/10 transition-colors duration-300" />
+						
+						<span className="relative z-10">Rejoindre la beta</span>
+						<ArrowRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+					</button>
 				</div>
 			</header>
 
