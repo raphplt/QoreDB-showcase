@@ -25,9 +25,12 @@ export function CTASection() {
 					<input
 						type="email"
 						placeholder="votre@email.com"
-						className="flex-1 px-4 py-3 rounded-lg bg-(--q-bg-0) border border-(--q-border) text-(--q-text-0) placeholder:text-(--q-text-2) focus:outline-none focus:ring-2 focus:ring-(--q-accent) focus:border-transparent"
+						className="flex-1 px-4 py-2 rounded-lg bg-(--q-bg-0) border border-(--q-border) text-(--q-text-0) placeholder:text-(--q-text-2) focus:outline-none focus:ring-2 focus:ring-(--q-accent) focus:border-transparent"
 					/>
-					<Button className="bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap">
+					<Button
+						size="lg"
+						className="bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-6 py-3 rounded-lg font-medium whitespace-nowrap"
+					>
 						S&apos;inscrire
 					</Button>
 				</form>

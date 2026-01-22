@@ -2,16 +2,31 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X, ExternalLink, Github } from "lucide-react";
 import { ShimmerButton } from "@/components/shimmer-button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const pathname = usePathname();
+
+	const handleLogoClick = (e: React.MouseEvent) => {
+		setMobileMenuOpen(false);
+		if (pathname === "/") {
+			e.preventDefault();
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	};
 
 	return (
 		<>
 			<header className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 sm:px-6 py-4 lg:px-12 backdrop-blur-md bg-transparent transition-all duration-300">
-				<div className="flex items-center space-x-2 pl-3 sm:pl-6 lg:pl-12">
+				<Link
+					href="/"
+					className="flex items-center space-x-2 pl-3 sm:pl-6 lg:pl-12"
+					onClick={handleLogoClick}
+				>
 					<Image
 						src="/icon.png"
 						alt="QoreDB Logo"
@@ -19,71 +34,110 @@ export function Header() {
 						height={48}
 						className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
 					/>
-					<span className="text-[var(--q-text-0)] font-semibold text-lg sm:text-xl">
+					<span className="text-(--q-text-0) font-semibold text-lg sm:text-xl">
 						QoreDB
 					</span>
-				</div>
+				</Link>
 
 				<nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-					<a
-						href="#features"
-						className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors text-sm lg:text-base"
+					<Link
+						href="/#features"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm lg:text-base"
 					>
 						Fonctionnalités
-					</a>
-					<a
-						href="#preview"
-						className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors text-sm lg:text-base"
+					</Link>
+					<Link
+						href="/#preview"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm lg:text-base"
 					>
 						Aperçu
-					</a>
-					<a
-						href="https://github.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors text-sm lg:text-base flex items-center gap-1"
+					</Link>
+					<Link
+						href="/blog"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm lg:text-base"
 					>
-						GitHub <ExternalLink className="w-3 h-3" />
-					</a>
+						Blog
+					</Link>
+					<Link
+						href="/roadmap"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm lg:text-base"
+					>
+						Roadmap
+					</Link>
+					<Link
+						href="/faq"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm lg:text-base flex items-center gap-1"
+					>
+						FAQ
+					</Link>
 				</nav>
 
 				{/* Mobile menu button */}
 				<button
-					className="md:hidden text-[var(--q-text-0)] p-2"
+					className="md:hidden text-(--q-text-0) p-2"
 					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 				>
 					{mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
 				</button>
 
-				<ShimmerButton className="hidden md:flex bg-[var(--q-accent)] hover:bg-[var(--q-accent-strong)] text-white px-4 lg:px-6 py-2 rounded-xl text-sm lg:text-base font-medium shadow-lg border border-[var(--q-accent)]/30">
-					Rejoindre la beta
-				</ShimmerButton>
+				<div className="flex items-center space-x-4">
+					{/* <Link
+						href="https://github.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
+					>
+						<Github className="w-5 h-5" />
+					</Link> */}
+
+					<ShimmerButton
+						borderRadius="0.75rem"
+						className="hidden md:flex bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-4 lg:px-6 py-2 border-none text-sm lg:text-base font-medium shadow-lg"
+					>
+						Rejoindre la beta
+					</ShimmerButton>
+				</div>
 			</header>
 
 			{mobileMenuOpen && (
-				<div className="md:hidden absolute top-16 left-0 right-0 bg-[var(--q-bg-0)]/95 backdrop-blur-sm border-b border-[var(--q-border)] z-20">
+				<div className="md:hidden absolute top-16 left-0 right-0 bg-(--q-bg-0)/95 backdrop-blur-sm border-b border-(--q-border) z-20">
 					<nav className="flex flex-col space-y-4 px-6 py-6">
-						<a
-							href="#features"
-							className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors"
+						<Link
+							href="/#features"
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors"
+							onClick={() => setMobileMenuOpen(false)}
 						>
 							Fonctionnalités
-						</a>
-						<a
-							href="#preview"
-							className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors"
+						</Link>
+						<Link
+							href="/#preview"
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors"
+							onClick={() => setMobileMenuOpen(false)}
 						>
 							Aperçu
-						</a>
-						<a
-							href="https://github.com"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-[var(--q-text-1)] hover:text-[var(--q-text-0)] transition-colors flex items-center gap-1"
+						</Link>
+						<Link
+							href="/blog"
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors"
+							onClick={() => setMobileMenuOpen(false)}
 						>
-							GitHub <ExternalLink className="w-3 h-3" />
-						</a>
-						<ShimmerButton className="bg-[var(--q-accent)] hover:bg-[var(--q-accent-strong)] text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-lg w-fit">
+							Blog
+						</Link>
+						<Link
+							href="/roadmap"
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							Roadmap
+						</Link>
+
+						<Link
+							href="/faq"
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
+						>
+							FAQ
+						</Link>
+						<ShimmerButton className="bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-lg w-fit">
 							Rejoindre la beta
 						</ShimmerButton>
 					</nav>
