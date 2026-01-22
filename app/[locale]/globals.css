@@ -72,7 +72,7 @@
   }
 
   /* Dark Mode */
-  :root[data-theme="dark"] {
+  .dark {
     /* Base (neutres) Dark */
     --q-bg-0: #0B0C0F;
     --q-bg-1: #1C1E24;
