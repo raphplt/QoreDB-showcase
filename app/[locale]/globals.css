@@ -7,7 +7,7 @@
 
 @theme {
   /* Fonts */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Radius */
@@ -69,6 +69,9 @@
     --q-env-staging-soft: rgba(245, 158, 11, 0.15);
     --q-env-prod: #DC2626;
     --q-env-prod-soft: rgba(220, 38, 38, 0.15);
+
+    /* Fonts */
+    --font-heading: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif;
   }
 
   /* Dark Mode */
@@ -110,6 +113,10 @@
     background-color: var(--q-bg-0);
     color: var(--q-text-0);
     font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif !important;
   }
 }
 
@@ -267,5 +274,11 @@ button {
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-space-grotesk), 'Space Grotesk', system-ui, sans-serif !important;
   }
 }

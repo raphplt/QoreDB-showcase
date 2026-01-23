@@ -58,8 +58,8 @@
         "desc": "PostgreSQL, MySQL, MongoDB dans une seule interface cohérente."
       },
       "vault": {
-        "title": "Vault sécurisé",
-        "desc": "Credentials chiffrés via keyring système + Argon2."
+        "title": "Sécurité & Privée",
+        "desc": "Credentials chiffrés (Argon2) et respect RGPD (zéro télémétrie)."
       },
       "ssh": {
         "title": "SSH Tunneling",
@@ -81,9 +81,9 @@
         "title": "Data Grid performant",
         "desc": "Grille haute performance avec virtualisation."
       },
-      "update": {
-        "title": "Auto-Update",
-        "desc": "Mise à jour automatique de l'application."
+"opensource": {
+  "title": "Open Source",
+  "desc": "Code auditable disponible sur GitHub."
       }
     },
     "compatibility": {
@@ -91,5 +91,47 @@
       "title": "Bases de données supportées",
       "coming_soon": "SQLite, Redis et d'autres à venir..."
     }
+  },
+  "cta": {
+    "badge": "Beta privée en préparation",
+    "title_pre": "Rejoignez les ",
+    "title_highlight": "premiers utilisateurs",
+    "description": "QoreDB est en développement actif. Inscrivez-vous pour être notifié du lancement de la beta fermée et façonner le produit avec nous.",
+    "success": "Merci ! Vous serez parmi les premiers informés.",
+    "placeholder": "votre@email.com",
+    "sending": "Envoi...",
+    "submit": "S'inscrire",
+    "trust": {
+      "spam": "Pas de spam",
+      "announcements": "Uniquement les annonces",
+      "priority": "Accès prioritaire"
+    }
+  },
+  "why": {
+    "items": {
+      "slow": {
+        "title": "Lent",
+        "desc": "Chargement interminable"
+      },
+      "dated": {
+        "title": "Daté",
+        "desc": "Interface d'un autre âge"
+      },
+      "tiring": {
+        "title": "Fatiguant",
+        "desc": "Workflows mal pensés"
+      }
+    },
+    "eyebrow": "Le problème",
+    "title_pre": "Les outils actuels vous ",
+    "title_highlight": "ralentissent",
+    "description": "DBeaver, phpMyAdmin, pgAdmin... Ils font le job, mais l'UX est médiocre, les workflows sont mal optimisés et ils n'ont pas évolué avec la façon moderne de travailler.",
+    "comparison": {
+      "pre": "QoreDB fait pour les bases de données ce que ",
+      "post": " ont fait pour leurs domaines."
+    }
+  },
+  "language_switcher": {
+    "toggle": "Changer de langue"
   }
 }

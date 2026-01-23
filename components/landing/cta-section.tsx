@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function CTASection() {
+	const { t } = useTranslation();
 	const [email, setEmail] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,12 +25,9 @@ export function CTASection() {
 
 	return (
 		<section className="relative z-10 py-32 px-6 overflow-hidden">
-			{/* Background gradient */}
 			<div className="absolute inset-0 bg-linear-to-b from-(--q-bg-0) via-(--q-bg-1) to-(--q-bg-0)" />
-			
-			{/* Accent glow */}
 			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-(--q-accent)/5 blur-3xl rounded-full" />
-			
+
 			<motion.div
 				className="relative max-w-2xl mx-auto text-center"
 				initial={{ opacity: 0, y: 40 }}
@@ -36,7 +35,6 @@ export function CTASection() {
 				transition={{ duration: 0.7 }}
 				viewport={{ once: true }}
 			>
-				{/* Badge */}
 				<motion.div
 					className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--q-accent)/10 border border-(--q-accent)/20 mb-8"
 					initial={{ opacity: 0, scale: 0.9 }}
@@ -45,16 +43,17 @@ export function CTASection() {
 					viewport={{ once: true }}
 				>
 					<Sparkles className="w-4 h-4 text-(--q-accent)" />
-					<span className="text-(--q-accent) text-sm font-medium">Beta privée en préparation</span>
+					<span className="text-(--q-accent) text-sm font-medium">
+						{t("cta.badge")}
+					</span>
 				</motion.div>
-				
-				<h2 className="text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
-					Rejoignez les{" "}
-					<span className="text-(--q-accent)">premiers utilisateurs</span>
+
+				<h2 className="font-heading text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+					{t("cta.title_pre")}
+					<span className="text-(--q-accent)">{t("cta.title_highlight")}</span>
 				</h2>
 				<p className="text-(--q-text-1) text-lg mb-10 leading-relaxed">
-					QoreDB est en développement actif. Inscrivez-vous pour être notifié du
-					lancement de la beta fermée et façonner le produit avec nous.
+					{t("cta.description")}
 				</p>
 
 				{/* Form avec effet glassmorphism léger */}
@@ -74,19 +73,32 @@ export function CTASection() {
 								transition={{ duration: 0.3 }}
 							>
 								<div className="w-12 h-12 rounded-full bg-(--q-success)/10 flex items-center justify-center">
-									<svg className="w-6 h-6 text-(--q-success)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+									<svg
+										className="w-6 h-6 text-(--q-success)"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M5 13l4 4L19 7"
+										/>
 									</svg>
 								</div>
-								<p className="text-(--q-text-0) font-medium">Merci ! Vous serez parmi les premiers informés.</p>
+								<p className="text-(--q-text-0) font-medium">{t("cta.success")}</p>
 							</motion.div>
 						) : (
-							<form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+							<form
+								onSubmit={handleSubmit}
+								className="flex flex-col sm:flex-row gap-4"
+							>
 								<input
 									type="email"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
-									placeholder="votre@email.com"
+									placeholder={t("cta.placeholder")}
 									required
 									className="flex-1 px-5 py-3.5 rounded-xl bg-(--q-bg-1) border border-(--q-border) text-(--q-text-0) placeholder:text-(--q-text-2) focus:outline-none focus:ring-2 focus:ring-(--q-accent)/50 focus:border-(--q-accent) transition-all duration-200 text-base"
 								/>
@@ -98,14 +110,26 @@ export function CTASection() {
 									{isSubmitting ? (
 										<>
 											<svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24">
-												<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-												<path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+												<circle
+													className="opacity-25"
+													cx="12"
+													cy="12"
+													r="10"
+													stroke="currentColor"
+													strokeWidth="4"
+													fill="none"
+												/>
+												<path
+													className="opacity-75"
+													fill="currentColor"
+													d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+												/>
 											</svg>
-											<span>Envoi...</span>
+											<span>{t("cta.sending")}</span>
 										</>
 									) : (
 										<>
-											<span>S&apos;inscrire</span>
+											<span>{t("cta.submit")}</span>
 											<ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
 										</>
 									)}
@@ -118,22 +142,52 @@ export function CTASection() {
 				{/* Trust indicators */}
 				<div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-(--q-text-2) text-sm">
 					<div className="flex items-center gap-2">
-						<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+						<svg
+							className="w-4 h-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+							/>
 						</svg>
-						<span>Pas de spam</span>
+						<span>{t("cta.trust.spam")}</span>
 					</div>
 					<div className="flex items-center gap-2">
-						<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+						<svg
+							className="w-4 h-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+							/>
 						</svg>
-						<span>Uniquement les annonces</span>
+						<span>{t("cta.trust.announcements")}</span>
 					</div>
 					<div className="flex items-center gap-2">
-						<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+						<svg
+							className="w-4 h-4"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth={2}
+								d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+							/>
 						</svg>
-						<span>Accès prioritaire</span>
+						<span>{t("cta.trust.priority")}</span>
 					</div>
 				</div>
 			</motion.div>

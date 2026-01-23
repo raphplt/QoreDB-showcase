@@ -11,14 +11,17 @@ export function Hero() {
 
 	return (
 		<main className="relative z-10 flex flex-col items-start justify-center min-h-screen px-4 sm:px-6 lg:px-12 max-w-6xl pl-6 sm:pl-12 lg:pl-20 pt-24 sm:pt-0">
-			{/* Badge amélioré */}
 			<motion.div
 				className="mb-6 sm:mb-8"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
 			>
-				<div className="group inline-flex items-center gap-2 bg-(--q-bg-0)/80 backdrop-blur-md border border-(--q-border) rounded-full px-4 py-2 hover:border-(--q-accent)/40 transition-colors duration-300">
+				<div
+					className="group inline-flex items-center gap-2 bg-(--q-bg-0)/80 
+				backdrop-blur-md border border-(--q-border) rounded-full
+				px-4 py-2 hover:border-(--q-accent)/40 transition-colors duration-300"
+				>
 					<Sparkles className="w-4 h-4 text-(--q-accent)" />
 					<span className="text-(--q-text-1) text-xs sm:text-sm font-medium">
 						{t("hero.badges.opensource")}
@@ -34,9 +37,8 @@ export function Hero() {
 				</div>
 			</motion.div>
 
-			{/* Titre principal */}
 			<motion.h1
-				className="text-(--q-text-0) text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-6 sm:mb-8 tracking-tight"
+				className="font-heading text-(--q-text-0) text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-6 sm:mb-8 tracking-tight"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 0.1 }}
@@ -45,7 +47,12 @@ export function Hero() {
 					i18nKey="hero.title"
 					components={{
 						br: <br />,
-						italic: <LineShadowText className="italic font-light" shadowColor="var(--q-accent)" />
+						italic: (
+							<LineShadowText
+								className="italic font-light"
+								shadowColor="var(--q-accent)"
+							/>
+						),
 					}}
 				/>
 			</motion.h1>
@@ -59,7 +66,7 @@ export function Hero() {
 				<Trans
 					i18nKey="hero.subtitle"
 					components={{
-						highlight: <span className="text-(--q-text-0) font-medium" />
+						highlight: <span className="text-(--q-text-0) font-medium" />,
 					}}
 				/>
 			</motion.p>
@@ -70,31 +77,29 @@ export function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 0.3 }}
 			>
-			<button
-						className="group hidden md:flex items-center gap-2 relative overflow-hidden
-							bg-(--q-text-0)/90 backdrop-blur-sm
-							text-(--q-bg-0) px-5 lg:px-5 py-2 rounded-xl 
-							text-sm lg:text-base font-semibold 
-							border border-(--q-accent)/40
-							shadow-[0_0_20px_color-mix(in_srgb,var(--q-accent)_15%,transparent)]
-							hover:border-(--q-accent)/80
-							hover:shadow-[0_0_30px_color-mix(in_srgb,var(--q-accent)_40%,transparent)]
-							hover:scale-105 hover:-translate-y-0.5
-							transition-all duration-300 ease-out"
-					>
-						<span 
-							className="absolute inset-0 bg-linear-to-r from-transparent via-(--q-accent)/20 to-transparent animate-shimmer"
-							style={{
-								backgroundSize: '200% 100%',
-								animation: 'shimmer 3s ease-in-out infinite',
-							}}
-						/>
-						<span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-linear-to-r from-transparent via-(--q-accent) to-transparent opacity-60 group-hover:opacity-100 group-hover:h-0.5 transition-all duration-300" />
-						<span className="absolute inset-0 rounded-xl bg-(--q-accent)/0 group-hover:bg-(--q-accent)/10 transition-colors duration-300" />
-						
-						<span className="relative z-10">{t("nav.join_beta")}</span>
-						<ArrowRight className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-					</button>
+				<motion.button
+					whileHover={{ scale: 1.05, y: -2 }}
+					whileTap={{ scale: 0.98 }}
+					className="group relative flex items-center justify-center gap-3 px-8 py-2 rounded-xl
+							bg-linear-to-br from-(--q-accent) to-(--q-accent-strong)
+							text-white font-bold text-lg
+							shadow-[0_20px_40px_-15px_color-mix(in_srgb,var(--q-accent)_50%,transparent)]
+							hover:shadow-[0_30px_60px_-12px_color-mix(in_srgb,var(--q-accent)_70%,transparent)]
+							border border-white/10 backdrop-blur-sm
+							overflow-hidden transition-all duration-300"
+				>
+					<div
+						className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer"
+						style={{
+							backgroundSize: "200% 100%",
+						}}
+					/>
+					<div className="absolute inset-0 bg-linear-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+					<div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
+
+					<span className="relative z-10">{t("nav.join_beta")}</span>
+					<ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+				</motion.button>
 				<Button
 					variant="outline"
 					size="lg"

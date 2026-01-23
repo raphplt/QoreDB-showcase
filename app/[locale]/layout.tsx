@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { useTranslation as initTranslations } from "@/app/[locale]/i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { ThemeProvider } from "next-themes";
-import { i18nConfig } from "@/i18nConfig";
 import { dir } from "i18next";
+import { Agentation } from "agentation";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+	variable: "--font-inter",
+	subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const spaceGrotesk = Space_Grotesk({
+	variable: "--font-space-grotesk",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -37,28 +37,27 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }>) {
   const { locale } = await params;
-  const { t, resources } = await initTranslations(locale, 'common');
+  const { resources } = await initTranslations(locale, "common");
 
   return (
-    <html lang={locale} dir={dir(locale)} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <TranslationsProvider
-          namespaces={['common']}
-          locale={locale}
-          resources={resources}
-        >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </TranslationsProvider>
-      </body>
-    </html>
-  );
+			<html lang={locale} dir={dir(locale)} suppressHydrationWarning>
+				<body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+					<TranslationsProvider
+						namespaces={["common"]}
+						locale={locale}
+						resources={resources}
+					>
+						<ThemeProvider
+							attribute="class"
+							defaultTheme="system"
+							enableSystem
+							disableTransitionOnChange
+						>
+							{children}
+						</ThemeProvider>
+					</TranslationsProvider>
+					{process.env.NODE_ENV === "development" && <Agentation />}
+				</body>
+			</html>
+		);
 }

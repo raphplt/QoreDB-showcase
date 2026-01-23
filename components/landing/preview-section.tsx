@@ -12,20 +12,19 @@ export function PreviewSection() {
 			id="preview"
 			className="relative z-10 py-32 px-6 bg-(--q-bg-1) overflow-hidden"
 		>
-			{/* Background pattern subtil */}
 			<div className="absolute inset-0 opacity-30">
-				<div 
+				<div
 					className="absolute inset-0"
 					style={{
 						backgroundImage: `radial-gradient(circle at 1px 1px, var(--q-border) 1px, transparent 0)`,
-						backgroundSize: '32px 32px',
+						backgroundSize: "32px 32px",
 					}}
 				/>
 			</div>
-			
+
 			{/* Gradient overlay pour fondu */}
 			<div className="absolute inset-0 bg-linear-to-b from-(--q-bg-1) via-transparent to-(--q-bg-1)" />
-			
+
 			<div className="max-w-6xl mx-auto relative">
 				<motion.div
 					className="text-center mb-16"
@@ -38,12 +37,12 @@ export function PreviewSection() {
 					<span className="inline-block text-(--q-accent) text-sm font-medium tracking-widest uppercase mb-4">
 						{t("preview.eyebrow")}
 					</span>
-					
-					<h2 className="text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
+
+					<h2 className="font-heading text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
 						<Trans
 							i18nKey="preview.title"
 							components={{
-								accent: <span className="text-(--q-accent)" />
+								accent: <span className="text-(--q-accent)" />,
 							}}
 						/>
 					</h2>
@@ -52,7 +51,7 @@ export function PreviewSection() {
 							i18nKey="preview.description"
 							components={{
 								subtext: <span className="text-(--q-text-2)" />,
-								br: <br />
+								br: <br />,
 							}}
 						/>
 					</p>
@@ -68,7 +67,7 @@ export function PreviewSection() {
 					{/* Glow effects multiples pour plus de profondeur */}
 					<div className="absolute -inset-8 bg-linear-to-r from-(--q-accent)/20 via-transparent to-(--q-accent)/20 blur-3xl opacity-40" />
 					<div className="absolute -inset-4 bg-(--q-accent)/10 blur-2xl opacity-30 rounded-3xl" />
-					
+
 					{/* Browser frame */}
 					<div className="relative rounded-2xl overflow-hidden border border-(--q-border) bg-(--q-bg-0) shadow-2xl">
 						{/* Browser top bar */}
@@ -85,7 +84,7 @@ export function PreviewSection() {
 							</div>
 							<div className="w-[52px]" /> {/* Spacer for symmetry */}
 						</div>
-						
+
 						{/* App screenshot */}
 						<Image
 							src="/app-preview.png"
@@ -96,7 +95,7 @@ export function PreviewSection() {
 							priority
 						/>
 					</div>
-					
+
 					{/* Floating badges */}
 					<motion.div
 						className="absolute -right-4 top-1/4 hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-(--q-bg-0) border border-(--q-border) shadow-lg"
@@ -106,9 +105,11 @@ export function PreviewSection() {
 						viewport={{ once: true }}
 					>
 						<div className="w-2 h-2 rounded-full bg-(--q-success) animate-pulse" />
-						<span className="text-(--q-text-0) text-sm font-medium">{t("preview.badges.performance")}</span>
+						<span className="text-(--q-text-0) text-sm font-medium">
+							{t("preview.badges.performance")}
+						</span>
 					</motion.div>
-					
+
 					<motion.div
 						className="absolute -left-4 bottom-1/4 hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-(--q-bg-0) border border-(--q-border) shadow-lg"
 						initial={{ opacity: 0, x: -20 }}
@@ -119,7 +120,9 @@ export function PreviewSection() {
 						<div className="w-6 h-6 rounded-md bg-(--q-accent)/10 flex items-center justify-center">
 							<span className="text-(--q-accent) text-xs font-bold">⌘</span>
 						</div>
-						<span className="text-(--q-text-0) text-sm font-medium">{t("preview.badges.keyboard")}</span>
+						<span className="text-(--q-text-0) text-sm font-medium">
+							{t("preview.badges.keyboard")}
+						</span>
 					</motion.div>
 				</motion.div>
 			</div>

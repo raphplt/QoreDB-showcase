@@ -5,55 +5,71 @@ import { usePathname, useRouter } from 'next/navigation';
 import { i18nConfig } from '@/i18nConfig';
 import { Button } from '@/components/ui/button';
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { Globe } from 'lucide-react';
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+import { FlagFR, FlagGB } from "@/components/icons/flags";
 
 export function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
 
   const handleChange = (newLocale: string) => {
-    // set cookie for next-i18n-router
-    const days = 30;
-    const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    const expires = date.toUTCString();
-    document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
+			const days = 30;
+			const date = new Date();
+			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+			const expires = date.toUTCString();
+			document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
 
-    // redirect to the new locale path
-    if (currentLocale === i18nConfig.defaultLocale && !i18nConfig.prefixDefault) {
-      router.push('/' + newLocale + currentPathname);
-    } else {
-      router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`)
-      );
-    }
+			if (
+				currentLocale === i18nConfig.defaultLocale &&
+				!i18nConfig.prefixDefault
+			) {
+				router.push("/" + newLocale + currentPathname);
+			} else {
+				router.push(currentPathname.replace(`/${currentLocale}`, `/${newLocale}`));
+			}
 
-    router.refresh();
-  };
+			router.refresh();
+		};
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="w-9 h-9">
-          <Globe className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-          <span className="sr-only">Toggle language</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => handleChange('fr')}>
-          Français
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => handleChange('en')}>
-          English
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  );
+			<DropdownMenu modal={false}>
+				<DropdownMenuTrigger asChild>
+					<Button
+						variant="ghost"
+						size="icon"
+						className="w-9 h-9 flex items-center justify-center p-0"
+					>
+						{currentLocale === "fr" ? (
+							<FlagFR className="w-6 h-4 rounded-[2px]" />
+						) : (
+							<FlagGB className="w-6 h-4 rounded-[2px]" />
+						)}
+						<span className="sr-only">{t("language_switcher.toggle")}</span>
+					</Button>
+				</DropdownMenuTrigger>
+				<DropdownMenuContent align="end" className="min-w-[140px]">
+					<DropdownMenuItem
+						onClick={() => handleChange("fr")}
+						className="flex items-center gap-3 cursor-pointer py-2"
+					>
+						<FlagFR className="w-6 h-4 rounded-[2px]" />
+						<span className="font-medium">Français</span>
+					</DropdownMenuItem>
+					<DropdownMenuItem
+						onClick={() => handleChange("en")}
+						className="flex items-center gap-3 cursor-pointer py-2"
+					>
+						<FlagGB className="w-6 h-4 rounded-[2px]" />
+						<span className="font-medium">English</span>
+					</DropdownMenuItem>
+				</DropdownMenuContent>
+			</DropdownMenu>
+		);
 }

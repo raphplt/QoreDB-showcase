@@ -58,8 +58,8 @@
                 "desc": "PostgreSQL, MySQL, MongoDB in a single coherent interface."
             },
             "vault": {
-                "title": "Secure Vault",
-                "desc": "Credentials encrypted via system keyring + Argon2."
+                "title": "Security & Privacy",
+                "desc": "Encrypted credentials (Argon2) and GDPR compliant (zero telemetry)."
             },
             "ssh": {
                 "title": "SSH Tunneling",
@@ -81,9 +81,9 @@
                 "title": "High Performance Grid",
                 "desc": "High-performance grid with virtualization."
             },
-            "update": {
-                "title": "Auto-Update",
-                "desc": "Automatic application updates."
+"opensource": {
+    "title": "Open Source",
+    "desc": "Auditable code available on GitHub."
             }
         },
         "compatibility": {
@@ -91,5 +91,47 @@
             "title": "Supported Databases",
             "coming_soon": "SQLite, Redis and more coming soon..."
         }
+    },
+    "cta": {
+        "badge": "Private beta in preparation",
+        "title_pre": "Join the ",
+        "title_highlight": "first users",
+        "description": "QoreDB is in active development. Sign up to be notified of the closed beta launch and shape the product with us.",
+        "success": "Thanks! You will be among the first to know.",
+        "placeholder": "your@email.com",
+        "sending": "Sending...",
+        "submit": "Sign up",
+        "trust": {
+            "spam": "No spam",
+            "announcements": "Announcements only",
+            "priority": "Priority access"
+        }
+    },
+    "why": {
+        "items": {
+            "slow": {
+                "title": "Slow",
+                "desc": "Endless loading"
+            },
+            "dated": {
+                "title": "Dated",
+                "desc": "Interface from another age"
+            },
+            "tiring": {
+                "title": "Tiring",
+                "desc": "Poorly thought-out workflows"
+            }
+        },
+        "eyebrow": "The problem",
+        "title_pre": "Current tools ",
+        "title_highlight": "slow you down",
+        "description": "DBeaver, phpMyAdmin, pgAdmin... They do the job, but the UX is mediocre, workflows are poorly optimized and they haven't evolved with the modern way of working.",
+        "comparison": {
+            "pre": "QoreDB does for databases what ",
+            "post": " did for their fields."
+        }
+    },
+    "language_switcher": {
+        "toggle": "Toggle language"
     }
 }

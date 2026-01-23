@@ -44,7 +44,9 @@ export function Footer() {
 					<div className="col-span-2 md:col-span-1">
 						<Link href="/" className="flex items-center gap-3 mb-4">
 							<Image src="/icon.png" alt="QoreDB" width={40} height={40} />
-							<span className="text-(--q-text-0) font-bold text-xl">QoreDB</span>
+							<span className="font-heading text-(--q-text-0) font-bold text-xl">
+								QoreDB
+							</span>
 						</Link>
 						<p className="text-(--q-text-2) text-sm leading-relaxed mb-6">
 							{t("footer.description")}
@@ -78,7 +80,9 @@ export function Footer() {
 
 					{/* Product links */}
 					<div>
-						<h3 className="text-(--q-text-0) font-semibold text-sm mb-4">{t("footer.product")}</h3>
+						<h3 className="font-heading text-(--q-text-0) font-semibold text-sm mb-4">
+							{t("footer.product")}
+						</h3>
 						<ul className="space-y-3">
 							{footerLinks.product.map((link) => (
 								<li key={link.label}>
@@ -95,7 +99,9 @@ export function Footer() {
 
 					{/* Resources links */}
 					<div>
-						<h3 className="text-(--q-text-0) font-semibold text-sm mb-4">{t("footer.resources")}</h3>
+						<h3 className="font-heading text-(--q-text-0) font-semibold text-sm mb-4">
+							{t("footer.resources")}
+						</h3>
 						<ul className="space-y-3">
 							{footerLinks.resources.map((link) => (
 								<li key={link.label}>
@@ -112,7 +118,9 @@ export function Footer() {
 
 					{/* Community links */}
 					<div>
-						<h3 className="text-(--q-text-0) font-semibold text-sm mb-4">{t("footer.community")}</h3>
+						<h3 className="font-heading text-(--q-text-0) font-semibold text-sm mb-4">
+							{t("footer.community")}
+						</h3>
 						<ul className="space-y-3">
 							{footerLinks.community.map((link) => (
 								<li key={link.label}>
@@ -132,7 +140,9 @@ export function Footer() {
 
 					{/* Legal links */}
 					<div>
-						<h3 className="text-(--q-text-0) font-semibold text-sm mb-4">{t("footer.legal")}</h3>
+						<h3 className="font-heading text-(--q-text-0) font-semibold text-sm mb-4">
+							{t("footer.legal")}
+						</h3>
 						<ul className="space-y-3">
 							{footerLinks.legal.map((link) => (
 								<li key={link.label}>
@@ -156,8 +166,9 @@ export function Footer() {
 						© {new Date().getFullYear()} QoreDB. Open Source under Apache 2.0 license.
 					</p>
 					<div className="flex items-center gap-2 text-sm text-(--q-text-2)">
-						
-						<span>Fait avec <span className="text-(--q-accent)">♥</span> par</span>
+						<span>
+							Fait avec <span className="text-(--q-accent)">♥</span> par
+						</span>
 						<a
 							href="https://github.com/raphplt"
 							target="_blank"
