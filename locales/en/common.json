@@ -176,5 +176,90 @@
         "transparency": {
             "text": "This roadmap reflects the current direction of the project. It is subject to evolve based on community feedback and real-world usage."
         }
+    },
+    "faq_page": {
+        "title": "FAQ — QoreDB",
+        "search_placeholder": "Search for an answer...",
+        "no_results": "No results found for",
+        "filters": {
+            "all": "All",
+            "general": "General",
+            "tech": "Technical",
+            "project": "Project & Business"
+        },
+        "items": {
+            "what_is_qoredb": {
+                "question": "What exactly is QoreDB?",
+                "answer": "QoreDB is a **modern, open-source, local-first database client**, designed for developers who want to work efficiently with SQL and NoSQL databases, without depending on an imposed cloud.\n\nIt focuses on:\n\n* **performance**,\n* **security**,\n* a **polished developer experience**,\n* and a long-term vision more ambitious than traditional tools."
+            },
+            "difference_dbeaver": {
+                "question": "How is QoreDB different from DBeaver or existing tools?",
+                "answer": "QoreDB does not seek to be a \"feature-by-feature\" alternative.\n\nKey differences:\n\n* **Local-first** architecture (no data sent by default)\n* Built-in security and guardrails (environments, read-only, production rules)\n* User experience designed for speed and clarity\n* Unified SQL + NoSQL vision\n* Modern, extensible, long-term oriented codebase\n\nQoreDB is designed as a **daily work tool**, not an \"aging Swiss Army knife\"."
+            },
+            "is_opensource": {
+                "question": "Is QoreDB really open-source?",
+                "answer": "Yes.\n\nThe core of QoreDB is **open-source**, readable, auditable, and modifiable.\nTransparency is part of the project's DNA.\n\nEventually, some advanced features may exist as a paid offering, **without ever removing essential capabilities from the open-source version**."
+            },
+            "is_free": {
+                "question": "Is QoreDB free?",
+                "answer": "Yes.\n\nQoreDB is **free to download and use**, on macOS, Windows, and Linux.\n\nA paid offer may exist in the future for advanced or professional uses, but the core of the product will remain free and usable without cost."
+            },
+            "data_privacy": {
+                "question": "Is my data sent anywhere?",
+                "answer": "No.\n\nBy default:\n\n* Connections, queries, and data remain **strictly local**.\n* No database is proxied or stored on a remote server.\n\nMeasurement tools (analytics) are:\n\n* **disabled by default**\n* **anonymous**\n* **explicit opt-in**\n\nQoreDB adopts a **privacy-first** philosophy."
+            },
+            "analytics": {
+                "question": "Do you use analytics tools?",
+                "answer": "Yes, but with strict rules.\n\nAnalytics serve only to:\n\n* understand feature adoption,\n* improve user experience,\n* prioritize developments.\n\nThey **never** collect:\n\n* database data,\n* complete SQL queries,\n* credentials,\n* sensitive content.\n\nActivation is always **voluntary**."
+            },
+            "production_ready": {
+                "question": "Is QoreDB suitable for production use?",
+                "answer": "Yes, with guardrails.\n\nQoreDB integrates:\n\n* environments (dev / staging / prod),\n* a read-only mode,\n* protections against dangerous queries,\n* cancellation and timeout mechanisms.\n\nThe goal is to reduce **human errors**, without slowing down developers."
+            },
+            "supported_databases": {
+                "question": "Which databases are supported?",
+                "answer": "QoreDB currently supports:\n\n* PostgreSQL\n* MySQL / MariaDB\n* MongoDB\n\nOther engines are planned as the architecture evolves."
+            },
+            "remote_ssh": {
+                "question": "Does it work with remote connections and SSH?",
+                "answer": "Yes.\n\nQoreDB supports:\n\n* classic remote connections,\n* SSH tunnels,\n* different authentication modes depending on the databases.\n\nConnection security is a priority."
+            },
+            "platforms": {
+                "question": "On which systems is QoreDB available?",
+                "answer": "QoreDB is available on:\n\n* macOS\n* Windows\n* Linux\n\nBuilds are updated regularly."
+            },
+            "maintenance": {
+                "question": "Is the project actively maintained?",
+                "answer": "Yes.\n\nQoreDB is in active development, with:\n\n* frequent releases,\n* structural refactors,\n* a public roadmap,\n* gradual opening to the community.\n\nThe project has already passed its POC stage."
+            },
+            "contribute": {
+                "question": "Can I contribute to the project?",
+                "answer": "Yes, and it is encouraged.\n\nPossible contributions:\n\n* user feedback,\n* GitHub issues and discussions,\n* improvement proposals,\n* code and documentation.\n\nA community GitHub is being structured."
+            },
+            "pro_version": {
+                "question": "Will there be a \"Pro\" version?",
+                "answer": "Probably, yes.\n\nThe goal is not to block usage, but to offer:\n\n* advanced features,\n* collaborative or professional uses,\n* options intended for teams and companies.\n\nThe open-source version will remain fully usable."
+            },
+            "funding": {
+                "question": "How will the project be funded?",
+                "answer": "The targeted model is:\n\n* sustainable open-source,\n* self-funded,\n* without dependence on a mandatory centralized cloud.\n\nDetails will evolve with product adoption."
+            },
+            "professional_use": {
+                "question": "Can I use QoreDB in a professional setting?",
+                "answer": "Yes.\n\nQoreDB is designed to be used:\n\n* by solo developers,\n* early startups,\n* technical teams.\n\nSecurity, stability, and maintenance aspects are taken seriously."
+            },
+            "follow_progress": {
+                "question": "Where can I follow the project's evolution?",
+                "answer": "* On the official website\n* Via the public roadmap\n* On LinkedIn (regular sharing of project progress)\n* On GitHub"
+            },
+            "join_beta": {
+                "question": "How to join the beta or test QoreDB?",
+                "answer": "QoreDB is already available for download.\n\nYou can:\n\n* install it directly,\n* join the beta via the site,\n* share your feedback to influence the future of the project."
+            },
+            "long_term": {
+                "question": "Can I trust QoreDB in the long term?",
+                "answer": "QoreDB is designed as a **long-term project**, not an experiment.\n\nTechnical, product, and open-source choices go in the direction of:\n\n* sustainability,\n* transparency,\n* developer trust."
+            }
+        }
     }
 }
