@@ -82,6 +82,12 @@ export function Header() {
 					>
 						{t("nav.faq")}
 					</Link>
+					<Link
+						href={`/${locale}/download`}
+						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+					>
+						{t("nav.download")}
+					</Link>
 				</nav>
 
 				<button
@@ -137,12 +143,19 @@ export function Header() {
 						>
 							{t("nav.roadmap")}
 						</Link>
-
 						<Link
 							href={`/${locale}/faq`}
 							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
+							onClick={() => setMobileMenuOpen(false)}
 						>
 							{t("nav.faq")}
+						</Link>
+						<Link
+							href={`/${locale}/download`}
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							{t("nav.download")}
 						</Link>
 
 						<div className="flex items-center gap-4 py-2">

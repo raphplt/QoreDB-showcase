@@ -5,9 +5,11 @@ import { ArrowRight, Github, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LineShadowText } from "@/components/line-shadow-text";
 import { useTranslation, Trans } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 export function Hero() {
 	const { t } = useTranslation();
+	const router = useRouter();
 
 	return (
 		<main className="relative z-10 flex flex-col items-start justify-center min-h-screen px-4 sm:px-6 lg:px-12 max-w-6xl pl-6 sm:pl-12 lg:pl-20 pt-24 sm:pt-0">
@@ -80,6 +82,7 @@ export function Hero() {
 				<motion.button
 					whileHover={{ scale: 1.05, y: -2 }}
 					whileTap={{ scale: 0.98 }}
+					onClick={() => router.push("/download")}
 					className="group relative flex items-center justify-center gap-3 px-8 py-2 rounded-xl
 							bg-linear-to-br from-(--q-accent) to-(--q-accent-strong)
 							text-white font-bold text-lg

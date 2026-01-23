@@ -5,7 +5,15 @@
         "blog": "Blog",
         "roadmap": "Roadmap",
         "faq": "FAQ",
+        "download": "Download",
         "join_beta": "Join Beta"
+    },
+    "download": {
+        "title": "Download QoreDB",
+        "subtitle": "Get the latest version of QoreDB for your operating system.",
+        "download_now": "Download Now",
+        "select_platform": "Select your platform below.",
+        "error": "Unable to load version information."
     },
     "footer": {
         "product": "Product",

@@ -5,7 +5,15 @@
     "blog": "Blog",
     "roadmap": "Roadmap",
     "faq": "FAQ",
+    "download": "Télécharger",
     "join_beta": "Rejoindre la beta"
+  },
+  "download": {
+    "title": "Télécharger QoreDB",
+    "subtitle": "Obtenez la dernière version de QoreDB pour votre système d'exploitation.",
+    "download_now": "Télécharger maintenant",
+    "select_platform": "Sélectionnez votre plateforme ci-dessous.",
+    "error": "Impossible de charger les informations de version."
   },
   "footer": {
     "product": "Produit",
