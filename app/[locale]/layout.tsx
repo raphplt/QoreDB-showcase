@@ -4,6 +4,7 @@ import "./globals.css";
 import { useTranslation as initTranslations } from "@/app/[locale]/i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { ThemeProvider } from "next-themes";
+import { DownloadProvider } from "@/contexts/DownloadProvider";
 import { dir } from "i18next";
 import { Agentation } from "agentation";
 
@@ -53,7 +54,7 @@ export default async function RootLayout({
 							enableSystem
 							disableTransitionOnChange
 						>
-							{children}
+							<DownloadProvider>{children}</DownloadProvider>
 						</ThemeProvider>
 					</TranslationsProvider>
 					{process.env.NODE_ENV === "development" && <Agentation />}
@@ -61,3 +62,4 @@ export default async function RootLayout({
 			</html>
 		);
 }
+

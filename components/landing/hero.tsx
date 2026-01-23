@@ -1,15 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Sparkles } from "lucide-react";
+import { ArrowRight, Github, Sparkles, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LineShadowText } from "@/components/line-shadow-text";
 import { useTranslation, Trans } from "react-i18next";
 import { useRouter } from "next/navigation";
+import { useDownload } from "@/contexts/DownloadProvider";
+import { AppleIcon, WindowsIcon, LinuxIcon } from "@/components/icons/os-icons";
 
 export function Hero() {
 	const { t } = useTranslation();
 	const router = useRouter();
+	const { os, getOsDisplayName, getDownloadLink, loading, release } =
+		useDownload();
+
+	const getOsIcon = () => {
+		switch (os) {
+			case "mac":
+				return <AppleIcon className="relative z-10 w-5 h-5" />;
+			case "windows":
+				return <WindowsIcon className="relative z-10 w-5 h-5" />;
+			case "linux":
+				return <LinuxIcon className="relative z-10 w-5 h-5" />;
+			default:
+				return <Download className="relative z-10 w-5 h-5" />;
+		}
+	};
+
+	const downloadLink = getDownloadLink(os);
+	const showDirectDownload =
+		!loading && release && downloadLink && os !== "unknown";
 
 	return (
 		<main className="relative z-10 flex flex-col items-start justify-center min-h-screen px-4 sm:px-6 lg:px-12 max-w-6xl pl-6 sm:pl-12 lg:pl-20 pt-24 sm:pt-0">
@@ -82,7 +103,13 @@ export function Hero() {
 				<motion.button
 					whileHover={{ scale: 1.05, y: -2 }}
 					whileTap={{ scale: 0.98 }}
-					onClick={() => router.push("/download")}
+					onClick={() => {
+						if (showDirectDownload && downloadLink) {
+							window.location.href = downloadLink;
+						} else {
+							router.push("/download");
+						}
+					}}
 					className="group relative flex items-center justify-center gap-3 px-8 py-2 rounded-xl
 							bg-linear-to-br from-(--q-accent) to-(--q-accent-strong)
 							text-white font-bold text-lg
@@ -100,8 +127,22 @@ export function Hero() {
 					<div className="absolute inset-0 bg-linear-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 					<div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
 
-					<span className="relative z-10">{t("nav.join_beta")}</span>
-					<ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+					{showDirectDownload ? (
+						<>
+							{getOsIcon()}
+							<span className="relative z-10">
+								{t("download.download_for", "Download for {{platform}}").replace(
+									"{{platform}}",
+									getOsDisplayName(os),
+								)}
+							</span>
+						</>
+					) : (
+						<>
+							<span className="relative z-10">{t("nav.join_beta")}</span>
+							<ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+						</>
+					)}
 				</motion.button>
 				<Button
 					variant="outline"
@@ -118,3 +159,4 @@ export function Hero() {
 		</main>
 	);
 }
+

@@ -1,114 +1,43 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { Apple, Monitor, Command, Download, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Download, Loader2, ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
-
-type Platform =
-	| "windows-x86_64"
-	| "windows-x86_64-msi"
-	| "windows-x86_64-nsis"
-	| "darwin-x86_64"
-	| "darwin-x86_64-app"
-	| "darwin-aarch64"
-	| "darwin-aarch64-app"
-	| "linux-x86_64"
-	| "linux-x86_64-appimage"
-	| "linux-x86_64-deb"
-	| "linux-x86_64-rpm";
-
-interface LatestRelease {
-	version: string;
-	notes: string;
-	pub_date: string;
-	platforms: Record<Platform, { signature: string; url: string }>;
-}
+import { useDownload } from "@/contexts/DownloadProvider";
+import { AppleIcon, WindowsIcon, LinuxIcon } from "@/components/icons/os-icons";
 
 export function DownloadSection() {
 	const { t, i18n } = useTranslation();
-	const [release, setRelease] = useState<LatestRelease | null>(null);
-	const [loading, setLoading] = useState(true);
-	const [os, setOs] = useState<"mac" | "windows" | "linux" | "unknown">(
-		"unknown",
-	);
-
-	useEffect(() => {
-		// Detect OS
-		const timer = setTimeout(() => {
-			const platform = navigator.userAgent.toLowerCase();
-			if (platform.includes("mac")) setOs("mac");
-			else if (platform.includes("win")) setOs("windows");
-			else if (platform.includes("linux")) setOs("linux");
-		}, 0);
-
-		// Fetch latest release
-		fetch("/api/latest-release")
-			.then((res) => {
-				if (!res.ok) throw new Error("API response not ok");
-				return res.json();
-			})
-			.then((data) => {
-				setRelease(data);
-				setLoading(false);
-			})
-			.catch((err) => {
-				console.error("Failed to fetch latest version", err);
-				setLoading(false);
-			});
-
-		return () => clearTimeout(timer);
-	}, []);
-
-	// ...
+	const { os, arch, release, loading, getDownloadLink, getOsDisplayName } =
+		useDownload();
+	const [showOtherPlatforms, setShowOtherPlatforms] = useState(false);
 
 	const formatDate = (dateString: string) => {
-		// Use i18n.language to ensure consistency if available, or fallback to fixed locale if needed.
-		// But simply checking if dateString exists is good too.
 		return new Date(dateString).toLocaleDateString(i18n.language || "en-US", {
 			year: "numeric",
 			month: "long",
 			day: "numeric",
 		});
 	};
-	// ...
-	// Note: skipping full file view for replacement content, focusing on the fix.
-	// The previous tool output showed the line numbers. I'll replace the whole useEffect block and the background class line.
 
-	const getDownloadLink = (os: string) => {
-		if (!release) return null;
-
-		if (os === "mac") {
-			// Prefer aarch64 for Apple Silicon, but we can't easily detect arch in browser without user agent hinting
-			// defaulting to universal or x64 if calling "mac".
-			// Actually, let's provide both options if possible or default to Apple Silicon if likely?
-			// Safer to check User Agent for "Intel" vs "ARM"?
-			// Latest MacBooks are ARM, but let's see what keys we have.
-			// "darwin-aarch64" vs "darwin-x86_64".
-			const isSilicon =
-				navigator.userAgent.includes("Mac") &&
-				!navigator.userAgent.includes("Intel");
-			// This is a naive check.
-			return isSilicon
-				? release.platforms["darwin-aarch64"]?.url
-				: release.platforms["darwin-x86_64"]?.url;
+	const getOsIcon = (targetOs: string, className: string = "w-8 h-8") => {
+		switch (targetOs) {
+			case "mac":
+				return <AppleIcon className={className} />;
+			case "windows":
+				return <WindowsIcon className={className} />;
+			case "linux":
+				return <LinuxIcon className={className} />;
+			default:
+				return <Download className={className} />;
 		}
-		if (os === "windows") {
-			// prefer msi or exe?
-			return (
-				release.platforms["windows-x86_64-nsis"]?.url ||
-				release.platforms["windows-x86_64"]?.url
-			);
-		}
-		if (os === "linux") {
-			// prefer AppImage as generic
-			return release.platforms["linux-x86_64-appimage"]?.url;
-		}
-		return null;
 	};
 
 	const mainLink = getDownloadLink(os);
+	const allPlatforms = ["mac", "windows", "linux"] as const;
+	const otherPlatforms = allPlatforms.filter((p) => p !== os);
 
 	const container = {
 		hidden: { opacity: 0 },
@@ -125,6 +54,60 @@ export function DownloadSection() {
 		show: { opacity: 1, y: 0 },
 	};
 
+	// Download options for each platform
+	const getPlatformOptions = (platform: string) => {
+		if (!release) return [];
+
+		switch (platform) {
+			case "mac":
+				return [
+					{
+						label: t("download.apple_silicon", "Apple Silicon (M1/M2/M3/M4)"),
+						url: release.platforms["darwin-aarch64"]?.url,
+						recommended: arch === "arm64",
+					},
+					{
+						label: t("download.intel_mac", "Intel Mac"),
+						url: release.platforms["darwin-x86_64"]?.url,
+						recommended: arch === "x86_64",
+					},
+				];
+			case "windows":
+				return [
+					{
+						label: t("download.windows_installer", "Installer (.exe)"),
+						url: release.platforms["windows-x86_64-nsis"]?.url,
+						recommended: true,
+					},
+					{
+						label: t("download.windows_msi", "MSI Installer"),
+						url: release.platforms["windows-x86_64"]?.url,
+						recommended: false,
+					},
+				];
+			case "linux":
+				return [
+					{
+						label: t("download.linux_appimage", "AppImage (Universal)"),
+						url: release.platforms["linux-x86_64-appimage"]?.url,
+						recommended: true,
+					},
+					{
+						label: t("download.linux_deb", "Debian / Ubuntu (.deb)"),
+						url: release.platforms["linux-x86_64-deb"]?.url,
+						recommended: false,
+					},
+					{
+						label: t("download.linux_rpm", "Fedora / RHEL (.rpm)"),
+						url: release.platforms["linux-x86_64-rpm"]?.url,
+						recommended: false,
+					},
+				];
+			default:
+				return [];
+		}
+	};
+
 	return (
 		<section className="relative min-h-screen pt-32 pb-20 overflow-hidden">
 			<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-blue-900/20 via-background to-background pointer-events-none" />
@@ -134,8 +117,9 @@ export function DownloadSection() {
 					initial="hidden"
 					animate="show"
 					variants={container}
-					className="max-w-4xl mx-auto text-center space-y-8"
+					className="max-w-3xl mx-auto text-center space-y-8"
 				>
+					{/* Header */}
 					<motion.div variants={item} className="space-y-4">
 						<h1 className="text-4xl md:text-6xl font-bold tracking-tight">
 							{t("download.title", "Download QoreDB")}
@@ -157,161 +141,148 @@ export function DownloadSection() {
 							variants={item}
 							initial="hidden"
 							animate="show"
-							className="space-y-12"
+							className="space-y-8"
 						>
-							<div className="p-8 rounded-2xl border bg-card/50 backdrop-blur-sm shadow-2xl max-w-xl mx-auto">
-								<div className="mb-6">
-									<div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 mb-4">
-										{os === "mac" ? (
-											<Apple className="w-8 h-8 text-primary" />
-										) : os === "windows" ? (
-											<Monitor className="w-8 h-8 text-primary" />
-										) : (
-											<Command className="w-8 h-8 text-primary" />
-										)}
-									</div>
-									<h2 className="text-2xl font-bold mb-2">
-										{os === "mac"
-											? "macOS"
-											: os === "windows"
-												? "Windows"
-												: os === "linux"
-													? "Linux"
-													: "All Platforms"}
-									</h2>
-									<p className="text-sm text-muted-foreground">
-										Version {release.version} • {formatDate(release.pub_date)}
-									</p>
-								</div>
+							{/* Detected Platform - Primary Card */}
+							<div className="relative p-8 rounded-3xl border-2 border-primary/20 bg-linear-to-br from-card/80 to-card/40 backdrop-blur-xl shadow-2xl overflow-hidden">
+								{/* Decorative background */}
+								<div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
-								{mainLink && (
-									<Button
-										size="lg"
-										className="w-full text-lg h-12 gap-2"
-										onClick={() => (window.location.href = mainLink)}
-									>
-										<Download className="w-5 h-5" />
-										{t("download.download_now", "Download Now")}
-									</Button>
-								)}
+								<div className="relative z-10">
+									{/* Badge */}
+									<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+										<span className="relative flex h-2 w-2">
+											<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+											<span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+										</span>
+										{t(
+											"download.detected_platform",
+											"We detected you're on {{platform}}",
+										).replace("{{platform}}", getOsDisplayName(os))}
+									</div>
 
-								{!mainLink && (
-									<p className="text-sm text-muted-foreground">
-										{t("download.select_platform", "Select your platform below.")}
-									</p>
-								)}
-							</div>
+									{/* OS Icon & Info */}
+									<div className="flex flex-col items-center gap-6 mb-8">
+										<div className="p-6 rounded-2xl bg-linear-to-br from-primary/20 to-primary/5 border border-primary/10">
+											{getOsIcon(os, "w-16 h-16 text-primary")}
+										</div>
+										<div className="text-center">
+											<h2 className="text-3xl font-bold mb-2">{getOsDisplayName(os)}</h2>
+											<p className="text-muted-foreground">
+												Version {release.version} • {formatDate(release.pub_date)}
+											</p>
+										</div>
+									</div>
 
-							<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-								{/* macOS */}
-								<div className="p-6 rounded-xl border bg-card/30 hover:bg-card/50 transition-colors text-left space-y-4">
-									<div className="flex items-center gap-3">
-										<Apple className="w-6 h-6" />
-										<h3 className="font-semibold">macOS</h3>
-									</div>
-									<div className="space-y-2">
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["darwin-aarch64"]?.url &&
-												(window.location.href = release.platforms["darwin-aarch64"].url)
-											}
-										>
-											Apple Silicon (M1/M2/M3)
-										</Button>
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["darwin-x86_64"]?.url &&
-												(window.location.href = release.platforms["darwin-x86_64"].url)
-											}
-										>
-											Intel Chip
-										</Button>
-									</div>
-								</div>
+									{/* Main Download Button */}
+									{mainLink && (
+										<motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+											<Button
+												size="lg"
+												className="w-full max-w-md h-14 text-lg gap-3 rounded-xl font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
+												onClick={() => (window.location.href = mainLink)}
+											>
+												<Download className="w-5 h-5" />
+												{t("download.download_now", "Download Now")}
+											</Button>
+										</motion.div>
+									)}
 
-								{/* Windows */}
-								<div className="p-6 rounded-xl border bg-card/30 hover:bg-card/50 transition-colors text-left space-y-4">
-									<div className="flex items-center gap-3">
-										<Monitor className="w-6 h-6" />
-										<h3 className="font-semibold">Windows</h3>
-									</div>
-									<div className="space-y-2">
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["windows-x86_64-nsis"]?.url &&
-												(window.location.href =
-													release.platforms["windows-x86_64-nsis"].url)
-											}
-										>
-											Installer (.exe)
-										</Button>
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["windows-x86_64"]?.url &&
-												(window.location.href = release.platforms["windows-x86_64"].url)
-											}
-										>
-											MSI Installer
-										</Button>
-									</div>
-								</div>
-
-								{/* Linux */}
-								<div className="p-6 rounded-xl border bg-card/30 hover:bg-card/50 transition-colors text-left space-y-4">
-									<div className="flex items-center gap-3">
-										<Command className="w-6 h-6" />
-										<h3 className="font-semibold">Linux</h3>
-									</div>
-									<div className="space-y-2">
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["linux-x86_64-appimage"]?.url &&
-												(window.location.href =
-													release.platforms["linux-x86_64-appimage"].url)
-											}
-										>
-											AppImage
-										</Button>
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["linux-x86_64-deb"]?.url &&
-												(window.location.href = release.platforms["linux-x86_64-deb"].url)
-											}
-										>
-											Debian / Ubuntu (.deb)
-										</Button>
-										<Button
-											variant="outline"
-											size="sm"
-											className="w-full justify-start"
-											onClick={() =>
-												release.platforms["linux-x86_64-rpm"]?.url &&
-												(window.location.href = release.platforms["linux-x86_64-rpm"].url)
-											}
-										>
-											Fedora / RHEL (.rpm)
-										</Button>
-									</div>
+									{/* Platform-specific options */}
+									{os !== "unknown" && (
+										<div className="mt-6 flex flex-wrap justify-center gap-3">
+											{getPlatformOptions(os).map((option, idx) => (
+												<Button
+													key={idx}
+													variant="outline"
+													size="sm"
+													className={`gap-2 ${option.recommended ? "border-primary/30 bg-primary/5" : ""}`}
+													onClick={() => option.url && (window.location.href = option.url)}
+													disabled={!option.url}
+												>
+													{option.label}
+													{option.recommended && (
+														<span className="text-[10px] uppercase font-bold text-primary">
+															{t("download.recommended", "Recommended")}
+														</span>
+													)}
+												</Button>
+											))}
+										</div>
+									)}
 								</div>
 							</div>
+
+							{/* Other Platforms - Collapsible */}
+							<div className="relative">
+								<button
+									onClick={() => setShowOtherPlatforms(!showOtherPlatforms)}
+									className="group flex items-center justify-center gap-2 w-full py-4 text-muted-foreground hover:text-foreground transition-colors"
+								>
+									<span className="text-sm font-medium">
+										{t("download.other_platforms", "Other platforms")}
+									</span>
+									<ChevronDown
+										className={`w-4 h-4 transition-transform duration-200 ${showOtherPlatforms ? "rotate-180" : ""}`}
+									/>
+								</button>
+
+								<AnimatePresence>
+									{showOtherPlatforms && (
+										<motion.div
+											initial={{ height: 0, opacity: 0 }}
+											animate={{ height: "auto", opacity: 1 }}
+											exit={{ height: 0, opacity: 0 }}
+											transition={{ duration: 0.2 }}
+											className="overflow-hidden"
+										>
+											<div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+												{otherPlatforms.map((platform) => (
+													<div
+														key={platform}
+														className="p-5 rounded-xl border bg-card/30 hover:bg-card/50 transition-all text-left space-y-4"
+													>
+														<div className="flex items-center gap-3">
+															{getOsIcon(platform, "w-5 h-5")}
+															<h3 className="font-semibold">{getOsDisplayName(platform)}</h3>
+														</div>
+														<div className="space-y-2">
+															{getPlatformOptions(platform).map((option, idx) => (
+																<Button
+																	key={idx}
+																	variant="ghost"
+																	size="sm"
+																	className="w-full justify-start gap-2 h-9 text-sm"
+																	onClick={() =>
+																		option.url && (window.location.href = option.url)
+																	}
+																	disabled={!option.url}
+																>
+																	<Download className="w-3.5 h-3.5" />
+																	{option.label}
+																</Button>
+															))}
+														</div>
+													</div>
+												))}
+											</div>
+										</motion.div>
+									)}
+								</AnimatePresence>
+							</div>
+
+							{/* GitHub Link */}
+							<motion.div variants={item} className="pt-4">
+								<a
+									href="https://github.com/raphplt/QoreDB/releases"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+								>
+									<ExternalLink className="w-4 h-4" />
+									{t("download.view_all_releases", "View all releases on GitHub")}
+								</a>
+							</motion.div>
 						</motion.div>
 					) : (
 						<div className="text-center text-muted-foreground">

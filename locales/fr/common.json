@@ -12,8 +12,20 @@
     "title": "Télécharger QoreDB",
     "subtitle": "Obtenez la dernière version de QoreDB pour votre système d'exploitation.",
     "download_now": "Télécharger maintenant",
+    "download_for": "Télécharger pour {{platform}}",
     "select_platform": "Sélectionnez votre plateforme ci-dessous.",
-    "error": "Impossible de charger les informations de version."
+    "error": "Impossible de charger les informations de version.",
+    "detected_platform": "Nous avons détecté que vous êtes sur {{platform}}",
+    "other_platforms": "Autres plateformes",
+    "recommended": "Recommandé",
+    "apple_silicon": "Apple Silicon (M1/M2/M3/M4)",
+    "intel_mac": "Intel Mac",
+    "windows_installer": "Installeur (.exe)",
+    "windows_msi": "Installeur MSI",
+    "linux_appimage": "AppImage (Universel)",
+    "linux_deb": "Debian / Ubuntu (.deb)",
+    "linux_rpm": "Fedora / RHEL (.rpm)",
+    "view_all_releases": "Voir toutes les versions sur GitHub"
   },
   "footer": {
     "product": "Produit",
