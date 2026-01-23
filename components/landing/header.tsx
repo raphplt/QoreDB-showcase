@@ -96,7 +96,10 @@ export function Header() {
 						<ThemeToggle />
 						<LanguageSwitcher />
 					</div>
-					<Button variant="outline">
+					<Button
+						variant="outline"
+						onClick={() => window.open("https://github.com/raphplt/QoreDB", "_blank")}
+					>
 						{t("hero.cta.participate")}
 						<ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
 					</Button>
