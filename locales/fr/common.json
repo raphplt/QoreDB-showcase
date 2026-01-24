@@ -311,18 +311,19 @@
         "title": "Contactez-nous",
         "content": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à [qoredb@gmail.com](mailto:qoredb@gmail.com)."
       }
-    },
-    "legal_page": {
+    }
+  },
+  "legal_page": {
       "title": "Mentions légales",
       "last_updated": "Dernière mise à jour : 24 janvier 2026",
       "sections": {
         "editor": {
           "title": "Éditeur du site",
-          "content": "**Nom du projet / Produit :** QoreDB\n**Responsable de la publication :** Éditeur du projet QoreDB\n**Statut :** Projet logiciel (open-core)\n\n> Les informations relatives à l’entité juridique (raison sociale, forme juridique, adresse, numéro d’immatriculation) seront précisées dès la finalisation de la structure légale."
+          "content": "**Nom du projet / Produit :** QoreDB\n**Responsable de la publication :** Raphaël Plassart\n**Statut :** Projet logiciel (open-core)\n\n> Les informations relatives à l’entité juridique (raison sociale, forme juridique, adresse, numéro d’immatriculation) seront précisées dès la finalisation de la structure légale."
         },
         "hosting": {
           "title": "Hébergement",
-          "content": "Le site web QoreDB est hébergé par un prestataire tiers assurant la disponibilité, la sécurité et la performance des services.\n\nLes données peuvent être hébergées sur des infrastructures situées dans l’Union européenne ou dans des pays offrant un niveau de protection des données conforme à la réglementation en vigueur."
+          "content": "Le site web QoreDB est hébergé par **Vercel Inc.**, situé au 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nLes données peuvent être hébergées sur des infrastructures situées dans l’Union européenne ou dans des pays offrant un niveau de protection des données conforme à la réglementation en vigueur."
         },
         "ip": {
           "title": "Propriété intellectuelle",
@@ -353,6 +354,5 @@
           "content": "Pour toute question légale, signalement ou demande d’information, vous pouvez contacter l’équipe QoreDB via les canaux officiels indiqués sur le site."
         }
       }
-  }
   }
 }

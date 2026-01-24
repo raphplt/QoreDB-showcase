@@ -319,11 +319,11 @@
         "sections": {
             "editor": {
                 "title": "Site Editor",
-                "content": "**Project Name / Product:** QoreDB\n**Publication Director:** QoreDB Project Editor\n**Status:** Software Project (open-core)\n\n> Information regarding the legal entity (company name, legal form, address, registration number) will be specified as soon as the legal structure is finalized."
+                "content": "**Project Name / Product:** QoreDB\n**Publication Director:** Raphaël Plassart\n**Status:** Software Project (open-core)\n\n> Information regarding the legal entity (company name, legal form, address, registration number) will be specified as soon as the legal structure is finalized."
             },
             "hosting": {
                 "title": "Hosting",
-                "content": "The QoreDB website is hosted by a third-party provider ensuring service availability, security, and performance.\n\nData may be hosted on infrastructures located within the European Union or in countries offering a level of data protection compliant with current regulations."
+                "content": "The QoreDB website is hosted by **Vercel Inc.**, located at 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nData may be hosted on infrastructures located within the European Union or in countries offering a level of data protection compliant with current regulations."
             },
             "ip": {
                 "title": "Intellectual Property",
