@@ -17,7 +17,7 @@ export default async function BlogIndexPage() {
 	return (
 		<div className="min-h-screen flex flex-col bg-(--q-bg-0) text-(--q-text-0)">
 			<Header />
-			<main className="flex-1 container py-24 space-y-12">
+			<main className="flex-1 container mx-auto py-24 space-y-12">
 				<div className="space-y-4 text-center max-w-2xl mx-auto pt-20">
 					<h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
 					<p className="text-muted-foreground text-lg">

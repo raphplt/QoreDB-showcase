@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Github, ExternalLink, Twitter, Mail } from "lucide-react";
+import { Github, ExternalLink, Twitter, Mail, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 
@@ -29,10 +29,19 @@ export function Footer() {
 				href: "https://github.com/raphplt/QoreDB",
 				external: true,
 			},
-			{ label: "Discord", href: "#", external: true },
-			{ label: "Twitter", href: "#", external: true },
+			{
+				label: "Discord",
+				href: "https://discord.gg/Yr6P3wuZDt",
+				external: true,
+			},
+			{
+				label: "Linkedin",
+				href: "https://www.linkedin.com/company/qoredb/?viewAsMember=true",
+				external: true,
+			},
 		],
 		legal: [
+			{ label: t("footer.mentions_legales"), href: "/legal" },
 			{ label: t("footer.privacy"), href: "/privacy" },
 			{ label: t("footer.terms"), href: "#" },
 			{ label: t("footer.license"), href: "#" },
@@ -66,11 +75,13 @@ export function Footer() {
 								<Github className="w-5 h-5" />
 							</a>
 							<a
-								href="#"
+								href="https://www.linkedin.com/company/qoredb/?viewAsMember=true"
+								target="_blank"
+								rel="noopener noreferrer"
 								className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors"
-								aria-label="Twitter"
+								aria-label="Linkedin"
 							>
-								<Twitter className="w-5 h-5" />
+								<Linkedin className="w-5 h-5" />
 							</a>
 							<a
 								href="mailto:qoredb@gmail.com"

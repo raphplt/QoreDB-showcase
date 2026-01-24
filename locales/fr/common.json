@@ -40,6 +40,7 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "license": "Licence",
+    "mentions_legales": "Mentions légales",
     "description": "Le client de bases de données moderne pour les développeurs exigeants.",
     "made_with_love": "Fait avec {{heart}} par"
   },
@@ -310,6 +311,48 @@
         "title": "Contactez-nous",
         "content": "Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter à [qoredb@gmail.com](mailto:qoredb@gmail.com)."
       }
-    }
+    },
+    "legal_page": {
+      "title": "Mentions légales",
+      "last_updated": "Dernière mise à jour : 24 janvier 2026",
+      "sections": {
+        "editor": {
+          "title": "Éditeur du site",
+          "content": "**Nom du projet / Produit :** QoreDB\n**Responsable de la publication :** Éditeur du projet QoreDB\n**Statut :** Projet logiciel (open-core)\n\n> Les informations relatives à l’entité juridique (raison sociale, forme juridique, adresse, numéro d’immatriculation) seront précisées dès la finalisation de la structure légale."
+        },
+        "hosting": {
+          "title": "Hébergement",
+          "content": "Le site web QoreDB est hébergé par un prestataire tiers assurant la disponibilité, la sécurité et la performance des services.\n\nLes données peuvent être hébergées sur des infrastructures situées dans l’Union européenne ou dans des pays offrant un niveau de protection des données conforme à la réglementation en vigueur."
+        },
+        "ip": {
+          "title": "Propriété intellectuelle",
+          "content": "L’ensemble du contenu présent sur le site QoreDB, incluant notamment :\n\n* les textes,\n* la documentation,\n* les articles de blog,\n* les éléments graphiques,\n* l’identité visuelle,\n* le nom, le logo et la marque QoreDB,\n\nest protégé par le droit d’auteur et les lois relatives à la propriété intellectuelle.\n\nSauf mention contraire, le code source de QoreDB est distribué selon un modèle **open-core** :\n\n* une partie est publiée sous licence open-source,\n* certaines fonctionnalités avancées peuvent être soumises à une licence propriétaire.\n\nToute reproduction, représentation, modification ou exploitation non autorisée du contenu ou des éléments protégés est strictement interdite."
+        },
+        "liability": {
+          "title": "Accès au site et responsabilité",
+          "content": "QoreDB met tout en œuvre pour assurer l’exactitude des informations diffusées sur le site. Toutefois, le projet ne saurait être tenu responsable :\n\n* des erreurs ou omissions,\n* d’une indisponibilité temporaire du site,\n* de dommages directs ou indirects liés à l’utilisation du site ou du logiciel.\n\nL’utilisation de QoreDB se fait sous la responsabilité exclusive de l’utilisateur."
+        },
+        "external_links": {
+          "title": "Liens externes",
+          "content": "Le site QoreDB peut contenir des liens vers des sites tiers. QoreDB n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques."
+        },
+        "privacy": {
+          "title": "Données personnelles",
+          "content": "La gestion des données personnelles est détaillée dans la page dédiée :\n\n➡️ [Politique de confidentialité](/privacy)\n\nQoreDB s’engage à respecter la réglementation applicable, notamment le Règlement Général sur la Protection des Données (RGPD)."
+        },
+        "terms": {
+          "title": "Conditions d’utilisation",
+          "content": "L’utilisation du site, de la documentation et du logiciel QoreDB implique l’acceptation pleine et entière des :\n\n➡️ [Conditions générales d’utilisation](#)"
+        },
+        "license": {
+          "title": "Licence",
+          "content": "Les conditions de licence applicables au logiciel QoreDB sont détaillées dans la page dédiée :\n\n➡️ [Licence](#)"
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "Pour toute question légale, signalement ou demande d’information, vous pouvez contacter l’équipe QoreDB via les canaux officiels indiqués sur le site."
+        }
+      }
+  }
   }
 }

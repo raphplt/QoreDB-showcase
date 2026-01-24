@@ -40,6 +40,7 @@
         "privacy": "Privacy",
         "terms": "Terms",
         "license": "License",
+        "mentions_legales": "Legal Notice",
         "description": "The modern database client for demanding developers.",
         "made_with_love": "Made with {{heart}} by"
     },
@@ -309,6 +310,48 @@
             "contact": {
                 "title": "Contact Us",
                 "content": "If you have any questions about this Privacy Policy, please contact us at [qoredb@gmail.com](mailto:qoredb@gmail.com)."
+            }
+        }
+    },
+    "legal_page": {
+        "title": "Legal Notice",
+        "last_updated": "Last updated: January 24, 2026",
+        "sections": {
+            "editor": {
+                "title": "Site Editor",
+                "content": "**Project Name / Product:** QoreDB\n**Publication Director:** QoreDB Project Editor\n**Status:** Software Project (open-core)\n\n> Information regarding the legal entity (company name, legal form, address, registration number) will be specified as soon as the legal structure is finalized."
+            },
+            "hosting": {
+                "title": "Hosting",
+                "content": "The QoreDB website is hosted by a third-party provider ensuring service availability, security, and performance.\n\nData may be hosted on infrastructures located within the European Union or in countries offering a level of data protection compliant with current regulations."
+            },
+            "ip": {
+                "title": "Intellectual Property",
+                "content": "All content present on the QoreDB site, including in particular:\n\n* texts,\n* documentation,\n* blog posts,\n* graphic elements,\n* visual identity,\n* the QoreDB name, logo, and brand,\n\nis protected by copyright and laws relating to intellectual property.\n\nUnless otherwise stated, QoreDB source code is distributed under an **open-core** model:\n\n* a part is published under an open-source license,\n* certain advanced features may be subject to a proprietary license.\n\nAny unauthorized reproduction, representation, modification, or exploitation of the protected content or elements is strictly prohibited."
+            },
+            "liability": {
+                "title": "Site Access and Liability",
+                "content": "QoreDB makes every effort to ensure the accuracy of the information disseminated on the site. However, the project cannot be held responsible for:\n\n* errors or omissions,\n* temporary unavailability of the site,\n* direct or indirect damages related to the use of the site or software.\n\nUse of QoreDB is under the sole responsibility of the user."
+            },
+            "external_links": {
+                "title": "External Links",
+                "content": "The QoreDB site may contain links to third-party sites. QoreDB exercises no control over these sites and declines all responsibility regarding their content or practices."
+            },
+            "privacy": {
+                "title": "Personal Data",
+                "content": "Personal data management is detailed in the dedicated page:\n\n➡️ [Privacy Policy](/privacy)\n\nQoreDB undertakes to comply with applicable regulations, in particular the General Data Protection Regulation (GDPR)."
+            },
+            "terms": {
+                "title": "Terms of Use",
+                "content": "Use of the QoreDB site, documentation, and software implies full acceptance of the:\n\n➡️ [Terms of Use](#)"
+            },
+            "license": {
+                "title": "License",
+                "content": "The license conditions applicable to the QoreDB software are detailed in the dedicated page:\n\n➡️ [License](#)"
+            },
+            "contact": {
+                "title": "Contact",
+                "content": "For any legal question, report, or request for information, you can contact the QoreDB team via the official channels indicated on the site."
             }
         }
     }
