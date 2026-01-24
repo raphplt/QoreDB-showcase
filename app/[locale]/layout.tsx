@@ -7,7 +7,9 @@ import { ThemeProvider } from "next-themes";
 import { DownloadProvider } from "@/contexts/DownloadProvider";
 import { dir } from "i18next";
 import { Agentation } from "agentation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+
 
 const inter = Inter({
 	variable: "--font-inter",
@@ -57,6 +59,7 @@ export default async function RootLayout({
 						>
 							<DownloadProvider>{children}</DownloadProvider>
 							<Analytics />
+							<SpeedInsights />
 						</ThemeProvider>
 					</TranslationsProvider>
 					{process.env.NODE_ENV === "development" && <Agentation />}
