@@ -274,7 +274,7 @@ export function DownloadSection() {
 							{/* GitHub Link */}
 							<motion.div variants={item} className="pt-4">
 								<a
-									href="https://github.com/raphplt/QoreDB/releases"
+									href="https://github.com/QoreDB/QoreDB/releases"
 									target="_blank"
 									rel="noopener noreferrer"
 									className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"

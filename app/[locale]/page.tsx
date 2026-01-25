@@ -34,6 +34,7 @@ export default function HomePage() {
 	}, []);
 
 	useEffect(() => {
+		requestAnimationFrame(() => handleScroll());
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [handleScroll]);

@@ -147,7 +147,7 @@ export function Hero() {
 				<Button
 					variant="outline"
 					size="lg"
-					onClick={() => window.open("https://github.com/raphplt/QoreDB", "_blank")}
+					onClick={() => window.open("https://github.com/QoreDB/QoreDB", "_blank")}
 					className="group border-2 border-(--q-border) hover:border-(--q-text-2) bg-(--q-bg-0)/50 backdrop-blur-sm
 						text-(--q-text-0) px-8 py-6 rounded-xl text-base font-medium 
 						flex items-center gap-3 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5"

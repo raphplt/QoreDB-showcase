@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ExternalLink, Menu, X } from "lucide-react";
-import { ShimmerButton } from "@/components/shimmer-button";
+
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { LanguageSwitcher } from "../language-switcher";
@@ -27,91 +27,96 @@ export function Header() {
 	};
 
 	return (
-		<>
-			<header className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 sm:px-6 py-4 lg:px-12 backdrop-blur-md bg-transparent transition-all duration-300">
+		<header className="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-4 sm:px-6 py-2 md:py-4 lg:px-12 backdrop-blur-md bg-transparent transition-all duration-300">
+			<Link
+				href={`/${locale}`}
+				className="flex items-center gap-1"
+				onClick={handleLogoClick}
+			>
+				<Image
+					src="/logo.png"
+					alt="QoreDB Logo"
+					width={48}
+					height={48}
+					className="w-6 sm:w-8 dark:hidden"
+				/>
+				<Image
+					src="/logo-white.png"
+					alt="QoreDB Logo"
+					width={48}
+					height={48}
+					className="w-6 sm:w-8 hidden dark:block"
+				/>
+				<span className="text-(--q-text-0) font-semibold text-lg">QoreDB</span>
+			</Link>
+
+			<nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
 				<Link
-					href={`/${locale}`}
-					className="flex items-center gap-1"
-					onClick={handleLogoClick}
+					href={`/${locale}/#features`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
 				>
-					<Image
-						src="/logo.png"
-						alt="QoreDB Logo"
-						width={48}
-						height={48}
-						className="w-6 sm:w-8 dark:hidden"
-					/>
-					<Image
-						src="/logo-white.png"
-						alt="QoreDB Logo"
-						width={48}
-						height={48}
-						className="w-6 sm:w-8 hidden dark:block"
-					/>
-					<span className="text-(--q-text-0) font-semibold text-lg">QoreDB</span>
+					{t("nav.features")}
 				</Link>
-
-				<nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-					<Link
-						href={`/${locale}/#features`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.features")}
-					</Link>
-					<Link
-						href={`/${locale}/#preview`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.preview")}
-					</Link>
-					<Link
-						href={`/${locale}/blog`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.blog")}
-					</Link>
-					<Link
-						href={`/${locale}/roadmap`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.roadmap")}
-					</Link>
-					<Link
-						href={`/${locale}/faq`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.faq")}
-					</Link>
-					<Link
-						href={`/${locale}/download`}
-						className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
-					>
-						{t("nav.download")}
-					</Link>
-				</nav>
-
-				<button
-					className="md:hidden text-(--q-text-0) p-2"
-					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+				<Link
+					href={`/${locale}/#preview`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
 				>
-					{mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-				</button>
+					{t("nav.preview")}
+				</Link>
+				<Link
+					href={`/${locale}/blog`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+				>
+					{t("nav.blog")}
+				</Link>
+				<Link
+					href={`/${locale}/roadmap`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+				>
+					{t("nav.roadmap")}
+				</Link>
+				<Link
+					href={`/${locale}/faq`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+				>
+					{t("nav.faq")}
+				</Link>
+				<Link
+					href={`/${locale}/changelog`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+				>
+					{t("nav.changelog")}
+				</Link>
+				<Link
+					href={`/${locale}/download`}
+					className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors text-sm"
+				>
+					{t("nav.download")}
+				</Link>
+			</nav>
 
-				<div className="flex items-center space-x-4">
-					<div className="hidden md:flex items-center gap-2 mr-2">
-						<ThemeToggle />
-						<LanguageSwitcher />
-					</div>
-					<Button
-						variant="outline"
-						onClick={() => window.open("https://github.com/raphplt/QoreDB", "_blank")}
-					>
-						{t("hero.cta.participate")}
-						<ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-					</Button>
+			<button
+				className={`md:hidden text-(--q-text-0) p-2 transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "rotate-90" : "rotate-0"}`}
+				onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+			>
+				{mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+			</button>
+
+			<div className="hidden md:flex items-center space-x-4">
+				<div className="hidden md:flex items-center gap-2 mr-2">
+					<ThemeToggle />
+					<LanguageSwitcher />
 				</div>
-			</header>
 
+				<Button
+					variant="outline"
+					className="hidden md:flex"
+					onClick={() => window.open("https://github.com/QoreDB/QoreDB", "_blank")}
+				>
+					{t("hero.cta.participate")}
+					<ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+				</Button>
+			</div>
 			{mobileMenuOpen && (
 				<div className="md:hidden absolute top-16 left-0 right-0 bg-(--q-bg-0)/95 backdrop-blur-sm border-b border-(--q-border) z-20">
 					<nav className="flex flex-col space-y-4 px-6 py-6">
@@ -151,6 +156,13 @@ export function Header() {
 							{t("nav.faq")}
 						</Link>
 						<Link
+							href={`/${locale}/changelog`}
+							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
+							onClick={() => setMobileMenuOpen(false)}
+						>
+							{t("nav.changelog")}
+						</Link>
+						<Link
 							href={`/${locale}/download`}
 							className="text-(--q-text-1) hover:text-(--q-text-0) transition-colors flex items-center gap-1"
 							onClick={() => setMobileMenuOpen(false)}
@@ -162,13 +174,9 @@ export function Header() {
 							<ThemeToggle />
 							<LanguageSwitcher />
 						</div>
-
-						<ShimmerButton className="bg-(--q-accent) hover:bg-(--q-accent-strong) text-white px-6 py-2.5 rounded-xl text-sm font-medium shadow-lg w-fit">
-							{t("nav.join_beta")}
-						</ShimmerButton>
 					</nav>
 				</div>
 			)}
-		</>
+		</header>
 	);
 }

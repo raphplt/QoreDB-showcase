@@ -5,6 +5,7 @@
         "blog": "Blog",
         "roadmap": "Roadmap",
         "faq": "FAQ",
+        "changelog": "Changelog",
         "download": "Download",
         "join_beta": "Join Beta"
     },
@@ -26,6 +27,14 @@
         "linux_deb": "Debian / Ubuntu (.deb)",
         "linux_rpm": "Fedora / RHEL (.rpm)",
         "view_all_releases": "View all releases on GitHub"
+    },
+    "changelog": {
+        "title": "Changelog",
+        "subtitle": "Stay up to date with the latest changes and improvements to QoreDB.",
+        "no_releases": "No release notes found.",
+        "read_more": "Read more",
+        "show_less": "Show less",
+        "load_more": "Load more releases"
     },
     "footer": {
         "product": "Product",
@@ -114,18 +123,35 @@
         }
     },
     "cta": {
-        "badge": "Private beta in preparation",
-        "title_pre": "Join the ",
-        "title_highlight": "first users",
-        "description": "QoreDB is in active development. Sign up to be notified of the closed beta launch and shape the product with us.",
-        "success": "Thanks! You will be among the first to know.",
-        "placeholder": "your@email.com",
-        "sending": "Sending...",
-        "submit": "Sign up",
+        "badge": "Beta is available!",
+        "title_pre": "Try QoreDB ",
+        "title_highlight": "today",
+        "description": "Download the beta version for your OS. For any questions or partnership inquiries, feel free to contact us below.",
+        "download_button": "Download Beta",
+        "contact_title": "Contact Us",
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "subject": "Subject",
+            "message": "Message",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent! We'll get back to you soon.",
+            "success_title": "Message Sent!",
+            "send_another": "Send another message",
+            "error": "Failed to send message.",
+            "reply_time": "We typically reply within 24h",
+            "placeholders": {
+                "name": "John Doe",
+                "email": "john@example.com",
+                "subject": "Partnership / Question...",
+                "message": "Tell us how we can help..."
+            }
+        },
         "trust": {
-            "spam": "No spam",
-            "announcements": "Announcements only",
-            "priority": "Priority access"
+            "spam": "Direct contact",
+            "announcements": "Support",
+            "priority": "Partnerships"
         }
     },
     "why": {
@@ -376,6 +402,135 @@
             "contact": {
                 "title": "Contact",
                 "content": "For any legal question, report, or request for information, you can contact the QoreDB team via the official channels indicated on the site."
+            }
+        }
+    },
+    "terms_page": {
+        "title": "Terms of Service",
+        "last_updated": "Last updated: January 24, 2026",
+        "intro": "These Terms of Service (hereinafter \"ToS\") govern the access to and use of the **QoreDB** website, its documentation, its online services, and the QoreDB software.\n\nBy accessing the site or using the QoreDB software, the user acknowledges having read these ToS and accepting them without reservation.",
+        "copyright": "© QoreDB – All rights reserved.",
+        "sections": {
+            "definitions": {
+                "title": "1. Definitions",
+                "content": "* **QoreDB**: refers to the software project, the website, the documentation, the associated tools and services.\n* **User**: any person accessing the site or using the QoreDB software.\n* **Software**: the QoreDB software, distributed under an open-core model.\n* **Site**: the official QoreDB website."
+            },
+            "object": {
+                "title": "2. Object",
+                "content": "The purpose of these ToS is to define the conditions under which users can access the QoreDB site, consult the documentation, use the resources made available, and operate the QoreDB software."
+            },
+            "access": {
+                "title": "3. Access to site and services",
+                "content": "Access to the QoreDB site is free of charge, unless otherwise indicated.\n\nQoreDB reserves the right to:\n\n* suspend, restrict, or interrupt access to the site or any service,\n* modify the content or features offered,\n* perform maintenance operations.\n\nNo guarantee is given regarding the continuous availability of the site or services."
+            },
+            "software_use": {
+                "title": "4. Use of QoreDB Software",
+                "content": "The QoreDB software is distributed under an **open-core** model:\n\n* a part of the code is published under an open-source license,\n* certain features, extensions, or services may be subject to a separate proprietary license.\n\nThe precise conditions for use, modification, and distribution of the software are defined in the **QoreDB License**, available on the site and in the official repositories."
+            },
+            "user_obligations": {
+                "title": "5. User Obligations",
+                "content": "The user agrees to:\n\n* use QoreDB in accordance with applicable laws and regulations,\n* not infringe on the security, integrity, or proper functioning of the site or the software,\n* not attempt unauthorized access to systems or data,\n* not use QoreDB for fraudulent, illegal, or abusive purposes.\n\nAny abusive use may result in the suspension of access to services."
+            },
+            "ip": {
+                "title": "6. Intellectual Property",
+                "content": "All elements of the QoreDB site (texts, documentation, graphics, logo, visual identity) are protected by intellectual property rights.\n\nUnless otherwise stated, any unauthorized reproduction, representation, or exploitation is prohibited.\n\nThe source code of the QoreDB software is subject to the terms of the applicable license, as defined in the **License** page."
+            },
+            "liability": {
+                "title": "7. Liability",
+                "content": "QoreDB is provided \"as is\", without warranty of any kind.\n\nQoreDB cannot be held liable for:\n\n* direct or indirect damages resulting from the use of the site or software,\n* data loss, business interruption, or commercial damages,\n* consequences related to improper configuration or use of the software.\n\nThe user is solely responsible for their use of QoreDB and the data they process."
+            },
+            "privacy": {
+                "title": "8. Personal Data",
+                "content": "Personal data processing is governed by the **Privacy Policy** accessible on the QoreDB site."
+            },
+            "external_links": {
+                "title": "9. External Links",
+                "content": "The QoreDB site may contain links to third-party sites or services. QoreDB exercises no control over these services and declines all responsibility regarding their content or functioning."
+            },
+            "updates": {
+                "title": "10. Changes to ToS",
+                "content": "QoreDB reserves the right to modify these ToS at any time.\n\nUsers are invited to regularly consult the current version. The date of the last update is indicated at the top of the page."
+            },
+            "law": {
+                "title": "11. Applicable Law",
+                "content": "These ToS are governed by French law.\n\nIn the event of a dispute, and failing amicable resolution, the competent courts will be those of the applicable jurisdiction in accordance with the legislation in force."
+            },
+            "contact": {
+                "title": "12. Contact",
+                "content": "For any question relating to these Terms of Service, the user can contact the QoreDB team via the official channels indicated on the site."
+            }
+        }
+    },
+    "quick_start_page": {
+        "title": "Quick Start",
+        "description": "Browse, query, and manage your data in a few clicks.",
+        "sections": {
+            "install": {
+                "title": "1. Install and Launch",
+                "content": "<p>Download the latest version from the project's <a href='https://github.com/QoreDB/QoreDB/releases' target='_blank' class='text-(--q-accent) hover:underline'>Releases</a> page, install the application, and open it.</p>"
+            },
+            "connect": {
+                "title": "2. Create Your First Connection",
+                "content": "<p>Click on <strong>“+”</strong> in the sidebar to add a database:</p><ul><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li></ul><p>Enter the host, port, database, user, and environment (dev/staging/prod).</p>"
+            },
+            "explore": {
+                "title": "3. Explore Your Data",
+                "content": "<p>Once connected:</p><ul><li>Navigate through schemas and tables</li><li>Open a table to visualize data</li><li>Run SQL queries in the integrated editor</li></ul>"
+            },
+            "daily": {
+                "title": "4. Save Time Every Day",
+                "content": "<ul><li>History & favorites to find your queries</li><li>Global search to move fast</li><li>Read-only mode to secure production</li><li>Light/Dark theme and multi-tab interface</li></ul>"
+            }
+        },
+        "security_tip": {
+            "title": "Security Tip",
+            "content": "QoreDB stores your credentials securely via the system's native keychain and supports SSH tunneling."
+        }
+    },
+    "license_page": {
+        "title": "Apache License 2.0",
+        "last_updated": "Version 2.0, January 2004",
+        "intro": "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION",
+        "sections": {
+            "definitions": {
+                "title": "1. Definitions",
+                "content": "\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work."
+            },
+            "grant_copyright": {
+                "title": "2. Grant of Copyright License",
+                "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."
+            },
+            "grant_patent": {
+                "title": "3. Grant of Patent License",
+                "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."
+            },
+            "redistribution": {
+                "title": "4. Redistribution",
+                "content": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:\n\n(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.\n\nYou may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."
+            },
+            "submission": {
+                "title": "5. Submission of Contributions",
+                "content": "Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."
+            },
+            "trademarks": {
+                "title": "6. Trademarks",
+                "content": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file."
+            },
+            "warranties": {
+                "title": "7. Disclaimer of Warranty",
+                "content": "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."
+            },
+            "liability": {
+                "title": "8. Limitation of Liability",
+                "content": "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."
+            },
+            "additional_liability": {
+                "title": "9. Accepting Warranty or Additional Liability",
+                "content": "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."
+            },
+            "appendix": {
+                "title": "APPENDIX: How to apply the Apache License to your work",
+                "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
             }
         }
     }

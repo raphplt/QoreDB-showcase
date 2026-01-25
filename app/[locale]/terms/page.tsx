@@ -1,0 +1,88 @@
+"use client";
+
+import { Header } from "@/components/landing/header";
+import { Footer } from "@/components/landing/footer";
+import { useTranslation } from "react-i18next";
+
+export default function TermsPage() {
+	const { t } = useTranslation();
+
+	const sections = [
+		"definitions",
+		"object",
+		"access",
+		"software_use",
+		"user_obligations",
+		"ip",
+		"liability",
+		"privacy",
+		"external_links",
+		"updates",
+		"law",
+		"contact",
+	];
+
+	return (
+		<div className="min-h-screen flex flex-col bg-(--q-bg-0) text-(--q-text-0)">
+			<Header />
+			<main className="flex-1 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
+				<div className="text-center mb-16 relative">
+					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-(--q-accent) opacity-5 blur-[100px] rounded-full pointer-events-none" />
+					<h1 className="relative text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-linear-to-br from-(--q-text-0) to-(--q-text-1)">
+						{t("terms_page.title")}
+					</h1>
+					<p className="text-(--q-text-2) relative">
+						{t("terms_page.last_updated")}
+					</p>
+					<div
+						className="mt-8 text-(--q-text-1) max-w-2xl mx-auto whitespace-pre-line"
+						dangerouslySetInnerHTML={{
+							__html: t("terms_page.intro").replace(
+								/\*\*(.*?)\*\*/g,
+								"<strong class='text-(--q-text-0)'>$1</strong>",
+							),
+						}}
+					/>
+				</div>
+
+				<div className="prose prose-lg dark:prose-invert max-w-none space-y-12">
+					{sections.map((section) => (
+						<section key={section} className="space-y-4">
+							<h2 className="text-2xl font-semibold text-(--q-text-0)">
+								{t(`terms_page.sections.${section}.title`)}
+							</h2>
+							<div
+								className="text-(--q-text-1) leading-relaxed whitespace-pre-line"
+								dangerouslySetInnerHTML={{
+									__html: t(`terms_page.sections.${section}.content`)
+										.replace(
+											/\*\*(.*?)\*\*/g,
+											"<strong class='text-(--q-text-0)'>$1</strong>",
+										)
+										.replace(
+											/\[(.*?)\]\((.*?)\)/g,
+											"<a href='$2' class='text-(--q-accent) hover:underline'>$1</a>",
+										)
+										.replace(
+											/^> (.*)/gm,
+											"<blockquote class='border-l-4 border-(--q-accent) pl-4 italic text-(--q-text-2)'>$1</blockquote>",
+										)
+										.replace(
+											/➡️/g,
+											"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='inline-block mr-1 mb-0.5 text-(--q-accent)'><path d='M5 12h14'/><path d='m12 5 7 7-7 7'/></svg>",
+										)
+										.replace(/^\* (.*)/gm, "<ul class='list-disc pl-5'><li>$1</li></ul>"),
+								}}
+							/>
+						</section>
+					))}
+
+					<div className="pt-12 border-t border-(--q-border) text-center text-(--q-text-2) text-sm">
+						{t("terms_page.copyright")}
+					</div>
+				</div>
+			</main>
+			<Footer />
+		</div>
+	);
+}

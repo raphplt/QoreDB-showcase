@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Github, ExternalLink, Twitter, Mail, Linkedin } from "lucide-react";
+import { Github, ExternalLink, Mail, Linkedin } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 
@@ -15,18 +15,18 @@ export function Footer() {
 			{ label: t("footer.features"), href: "/#features" },
 			{ label: t("footer.preview"), href: "/#preview" },
 			{ label: "Roadmap", href: "/roadmap" },
-			{ label: t("footer.changelog"), href: "/blog" },
+			{ label: t("footer.changelog"), href: "/changelog" },
 		],
 		resources: [
 			{ label: t("footer.documentation"), href: "#", external: false },
 			{ label: "Blog", href: "/blog" },
 			{ label: "FAQ", href: "/faq" },
-			{ label: t("footer.guide"), href: "#", external: false },
+			{ label: t("footer.guide"), href: "/quick-start", external: false },
 		],
 		community: [
 			{
 				label: "GitHub",
-				href: "https://github.com/raphplt/QoreDB",
+				href: "https://github.com/QoreDB/QoreDB",
 				external: true,
 			},
 			{
@@ -43,8 +43,8 @@ export function Footer() {
 		legal: [
 			{ label: t("footer.mentions_legales"), href: "/legal" },
 			{ label: t("footer.privacy"), href: "/privacy" },
-			{ label: t("footer.terms"), href: "#" },
-			{ label: t("footer.license"), href: "#" },
+			{ label: t("footer.terms"), href: "/terms" },
+			{ label: t("footer.license"), href: "/license" },
 		],
 	};
 
@@ -77,7 +77,7 @@ export function Footer() {
 						</p>
 						<div className="flex items-center gap-4">
 							<a
-								href="https://github.com/raphplt/QoreDB"
+								href="https://github.com/QoreDB/QoreDB"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors"

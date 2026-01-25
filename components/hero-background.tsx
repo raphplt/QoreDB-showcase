@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useId } from "react";
 
 const THREAD_DATA = [
 	// Groupe 1 - Threads principaux (plus visibles)
@@ -62,6 +62,7 @@ function usePrefersReducedMotion() {
 
 export function HeroBackground() {
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const uid = useId().replace(/:/g, "");
 
 	return (
 		<div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -177,35 +178,45 @@ export function HeroBackground() {
 					>
 						<defs>
 							{/* Gradients pour les orbes lumineux */}
-							<radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
+							<radialGradient id={`neonPulse1-${uid}`} cx="50%" cy="50%" r="50%">
 								<stop offset="0%" stopColor="rgba(255,255,255,1)" />
 								<stop offset="30%" stopColor="rgba(122,108,255,1)" />
 								<stop offset="70%" stopColor="rgba(88,71,255,0.8)" />
 								<stop offset="100%" stopColor="rgba(88,71,255,0)" />
 							</radialGradient>
-							<radialGradient id="neonPulse2" cx="50%" cy="50%" r="50%">
+							<radialGradient id={`neonPulse2-${uid}`} cx="50%" cy="50%" r="50%">
 								<stop offset="0%" stopColor="rgba(255,255,255,0.95)" />
 								<stop offset="25%" stopColor="rgba(122,108,255,0.9)" />
 								<stop offset="60%" stopColor="rgba(154,140,255,0.7)" />
 								<stop offset="100%" stopColor="rgba(154,140,255,0)" />
 							</radialGradient>
-							<radialGradient id="neonPulse3" cx="50%" cy="50%" r="50%">
+							<radialGradient id={`neonPulse3-${uid}`} cx="50%" cy="50%" r="50%">
 								<stop offset="0%" stopColor="rgba(255,255,255,1)" />
 								<stop offset="35%" stopColor="rgba(122,108,255,1)" />
 								<stop offset="75%" stopColor="rgba(88,71,255,0.6)" />
 								<stop offset="100%" stopColor="rgba(88,71,255,0)" />
 							</radialGradient>
 
-
-
 							{/* Thread fades avec meilleure opacité */}
-							<linearGradient id="threadFade1" x1="0%" y1="0%" x2="100%" y2="0%">
+							<linearGradient
+								id={`threadFade1-${uid}`}
+								x1="0%"
+								y1="0%"
+								x2="100%"
+								y2="0%"
+							>
 								<stop offset="0%" stopColor="var(--q-accent)" stopOpacity="0" />
 								<stop offset="10%" stopColor="var(--q-accent)" stopOpacity="0.9" />
 								<stop offset="90%" stopColor="var(--q-accent)" stopOpacity="0.9" />
 								<stop offset="100%" stopColor="var(--q-accent)" stopOpacity="0" />
 							</linearGradient>
-							<linearGradient id="threadFade2" x1="0%" y1="0%" x2="100%" y2="0%">
+							<linearGradient
+								id={`threadFade2-${uid}`}
+								x1="0%"
+								y1="0%"
+								x2="100%"
+								y2="0%"
+							>
 								<stop offset="0%" stopColor="var(--q-accent-strong)" stopOpacity="0" />
 								<stop
 									offset="8%"
@@ -223,7 +234,13 @@ export function HeroBackground() {
 									stopOpacity="0"
 								/>
 							</linearGradient>
-							<linearGradient id="threadFade3" x1="0%" y1="0%" x2="100%" y2="0%">
+							<linearGradient
+								id={`threadFade3-${uid}`}
+								x1="0%"
+								y1="0%"
+								x2="100%"
+								y2="0%"
+							>
 								<stop offset="0%" stopColor="var(--q-accent)" stopOpacity="0" />
 								<stop offset="12%" stopColor="var(--q-accent)" stopOpacity="0.9" />
 								<stop offset="88%" stopColor="var(--q-accent)" stopOpacity="0.9" />
@@ -231,7 +248,13 @@ export function HeroBackground() {
 							</linearGradient>
 
 							{/* Glow effect pour les orbes */}
-							<filter id="neonGlow" x="-100%" y="-100%" width="300%" height="300%">
+							<filter
+								id={`neonGlow-${uid}`}
+								x="-100%"
+								y="-100%"
+								width="300%"
+								height="300%"
+							>
 								<feGaussianBlur stdDeviation="3" result="coloredBlur" />
 								<feMerge>
 									<feMergeNode in="coloredBlur" />
@@ -246,9 +269,9 @@ export function HeroBackground() {
 								({ id, d, fade, pulse, strokeWidth, opacity, r, dur }) => (
 									<g key={id}>
 										<path
-											id={`thread${id}`}
+											id={`thread${id}-${uid}`}
 											d={d}
-											stroke={`url(#${fade})`}
+											stroke={`url(#${fade}-${uid})`}
 											strokeWidth={strokeWidth}
 											fill="none"
 											opacity={opacity}
@@ -256,9 +279,9 @@ export function HeroBackground() {
 										/>
 										<circle
 											r={r}
-											fill={`url(#${pulse})`}
+											fill={`url(#${pulse}-${uid})`}
 											opacity="1"
-											filter="url(#neonGlow)"
+											filter={`url(#neonGlow-${uid})`}
 										>
 											{!prefersReducedMotion && (
 												<animateMotion
@@ -266,7 +289,7 @@ export function HeroBackground() {
 													repeatCount="indefinite"
 													calcMode="linear"
 												>
-													<mpath href={`#thread${id}`} />
+													<mpath href={`#thread${id}-${uid}`} />
 												</animateMotion>
 											)}
 										</circle>

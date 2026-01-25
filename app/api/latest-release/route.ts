@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
 	try {
 		const response = await fetch(
-			"https://github.com/raphplt/QoreDB/releases/latest/download/latest.json",
+			"https://github.com/QoreDB/QoreDB/releases/latest/download/latest.json",
 			{
 				headers: {
 					"Cache-Control": "no-cache",
