@@ -12,31 +12,52 @@ import { Footer } from "@/components/landing/footer";
 
 export default function HomePage() {
 	const [showHeroBackground, setShowHeroBackground] = useState(true);
-	const [parallaxOffset, setParallaxOffset] = useState(0);
 	const [bgKey, setBgKey] = useState(0);
 	const wasHiddenRef = useRef(false);
+	const bgWrapperRef = useRef<HTMLDivElement | null>(null);
+	const rafIdRef = useRef<number | null>(null);
+	const lastScrollYRef = useRef(0);
+	const lastViewportHeightRef = useRef(0);
+	const showHeroBackgroundRef = useRef(true);
 
 	const handleScroll = useCallback(() => {
-		const scrollY = window.scrollY;
-		const viewportHeight = window.innerHeight;
+		lastScrollYRef.current = window.scrollY;
+		lastViewportHeightRef.current = window.innerHeight;
 
-		if (scrollY > viewportHeight) {
-			setShowHeroBackground(false);
-			wasHiddenRef.current = true;
-		} else {
-			if (wasHiddenRef.current) {
-				setBgKey((prev) => prev + 1);
-				wasHiddenRef.current = false;
+		if (rafIdRef.current != null) return;
+		rafIdRef.current = window.requestAnimationFrame(() => {
+			rafIdRef.current = null;
+			const scrollY = lastScrollYRef.current;
+			const viewportHeight = lastViewportHeightRef.current || window.innerHeight;
+			const shouldShow = scrollY <= viewportHeight;
+
+			if (shouldShow !== showHeroBackgroundRef.current) {
+				showHeroBackgroundRef.current = shouldShow;
+				setShowHeroBackground(shouldShow);
+				if (!shouldShow) {
+					wasHiddenRef.current = true;
+				} else if (wasHiddenRef.current) {
+					setBgKey((prev) => prev + 1);
+					wasHiddenRef.current = false;
+				}
 			}
-			setShowHeroBackground(true);
-			setParallaxOffset(scrollY * 0.3);
-		}
+
+			if (shouldShow && bgWrapperRef.current) {
+				bgWrapperRef.current.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+			}
+		});
 	}, []);
 
 	useEffect(() => {
-		requestAnimationFrame(() => handleScroll());
+		handleScroll();
 		window.addEventListener("scroll", handleScroll, { passive: true });
-		return () => window.removeEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+			if (rafIdRef.current != null) {
+				window.cancelAnimationFrame(rafIdRef.current);
+				rafIdRef.current = null;
+			}
+		};
 	}, [handleScroll]);
 
 	return (
@@ -44,8 +65,9 @@ export default function HomePage() {
 			{showHeroBackground && (
 				<div
 					key={bgKey}
+					ref={bgWrapperRef}
 					className="fixed inset-0 -z-10"
-					style={{ transform: `translateY(${parallaxOffset}px)` }}
+					style={{ transform: "translate3d(0, 0, 0)", willChange: "transform" }}
 				>
 					<HeroBackground />
 				</div>

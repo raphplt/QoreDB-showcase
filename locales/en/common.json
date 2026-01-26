@@ -23,6 +23,7 @@
         "intel_mac": "Intel Mac",
         "windows_installer": "Installer (.exe)",
         "windows_msi": "MSI Installer",
+        "microsoft_store": "Microsoft Store",
         "linux_appimage": "AppImage (Universal)",
         "linux_deb": "Debian / Ubuntu (.deb)",
         "linux_rpm": "Fedora / RHEL (.rpm)",

@@ -34,6 +34,9 @@ export interface LatestRelease {
 	platforms: Record<Platform, { signature: string; url: string }>;
 }
 
+const MICROSOFT_STORE_URL =
+	"https://apps.microsoft.com/detail/9NZLCGFWCHHG?hl=fr&gl=FR&ocid=pdpshare";
+
 interface DownloadContextType {
 	os: OS;
 	arch: Arch;
@@ -111,21 +114,20 @@ export function DownloadProvider({ children }: { children: ReactNode }) {
 
 	const getDownloadLink = useCallback(
 		(targetOs?: OS): string | null => {
-			if (!release) return null;
-
 			const effectiveOs = targetOs || os;
+
+			// Windows is distributed via Microsoft Store (independent from GitHub releases)
+			if (effectiveOs === "windows") {
+				return MICROSOFT_STORE_URL;
+			}
+
+			if (!release) return null;
 
 			if (effectiveOs === "mac") {
 				// Use detected architecture for macOS
 				return arch === "arm64"
 					? release.platforms["darwin-aarch64"]?.url
 					: release.platforms["darwin-x86_64"]?.url;
-			}
-			if (effectiveOs === "windows") {
-				return (
-					release.platforms["windows-x86_64-nsis"]?.url ||
-					release.platforms["windows-x86_64"]?.url
-				);
 			}
 			if (effectiveOs === "linux") {
 				return release.platforms["linux-x86_64-appimage"]?.url;

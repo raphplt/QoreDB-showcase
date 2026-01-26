@@ -1,54 +1,270 @@
 "use client";
 
-import { useEffect, useState, useId } from "react";
+import { useEffect, useMemo, useState, useId } from "react";
 
 const THREAD_DATA = [
 	// Groupe 1 - Threads principaux (plus visibles)
-	{ id: 1, d: "M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340", fade: "threadFade1", pulse: "neonPulse1", strokeWidth: 1.2, opacity: 0.9, r: 2.5, dur: 4 },
-	{ id: 2, d: "M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370", fade: "threadFade2", pulse: "neonPulse2", strokeWidth: 1.8, opacity: 0.85, r: 3.2, dur: 5 },
-	{ id: 3, d: "M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330", fade: "threadFade3", pulse: "neonPulse1", strokeWidth: 1.5, opacity: 0.9, r: 2.8, dur: 4.5 },
-	{ id: 4, d: "M120 740 Q280 640 450 590 Q620 540 770 570 Q920 600 1070 510 Q1220 420 1350 390", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 1.0, opacity: 0.75, r: 2, dur: 5.5 },
-	
+	{
+		id: 1,
+		d: "M50 720 Q200 590 350 540 Q500 490 650 520 Q800 550 950 460 Q1100 370 1200 340",
+		fade: "threadFade1",
+		pulse: "neonPulse1",
+		strokeWidth: 1.2,
+		opacity: 0.9,
+		r: 2.5,
+		dur: 4,
+	},
+	{
+		id: 2,
+		d: "M80 730 Q250 620 400 570 Q550 520 700 550 Q850 580 1000 490 Q1150 400 1300 370",
+		fade: "threadFade2",
+		pulse: "neonPulse2",
+		strokeWidth: 1.8,
+		opacity: 0.85,
+		r: 3.2,
+		dur: 5,
+	},
+	{
+		id: 3,
+		d: "M20 710 Q180 580 320 530 Q460 480 600 510 Q740 540 880 450 Q1020 360 1200 330",
+		fade: "threadFade3",
+		pulse: "neonPulse1",
+		strokeWidth: 1.5,
+		opacity: 0.9,
+		r: 2.8,
+		dur: 4.5,
+	},
+	{
+		id: 4,
+		d: "M120 740 Q280 640 450 590 Q620 540 770 570 Q920 600 1070 510 Q1220 420 1350 390",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 1.0,
+		opacity: 0.75,
+		r: 2,
+		dur: 5.5,
+	},
+
 	// Groupe 2 - Threads moyens
-	{ id: 5, d: "M60 725 Q220 600 380 550 Q540 500 680 530 Q820 560 960 470 Q1100 380 1280 350", fade: "threadFade2", pulse: "neonPulse2", strokeWidth: 1.3, opacity: 0.8, r: 2.5, dur: 4.2 },
-	{ id: 6, d: "M150 735 Q300 660 480 610 Q660 560 800 590 Q940 620 1080 530 Q1220 440 1400 410", fade: "threadFade3", pulse: "neonPulse1", strokeWidth: 1.6, opacity: 0.75, r: 3, dur: 5.2 },
-	{ id: 7, d: "M40 715 Q190 585 340 535 Q490 485 630 515 Q770 545 910 455 Q1050 365 1250 335", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 1.1, opacity: 0.85, r: 2.2, dur: 4.8 },
-	{ id: 8, d: "M100 728 Q260 630 420 580 Q580 530 720 560 Q860 590 1000 500 Q1140 410 1320 380", fade: "threadFade2", pulse: "neonPulse2", strokeWidth: 1.7, opacity: 0.8, r: 3.3, dur: 5.8 },
-	
+	{
+		id: 5,
+		d: "M60 725 Q220 600 380 550 Q540 500 680 530 Q820 560 960 470 Q1100 380 1280 350",
+		fade: "threadFade2",
+		pulse: "neonPulse2",
+		strokeWidth: 1.3,
+		opacity: 0.8,
+		r: 2.5,
+		dur: 4.2,
+	},
+	{
+		id: 6,
+		d: "M150 735 Q300 660 480 610 Q660 560 800 590 Q940 620 1080 530 Q1220 440 1400 410",
+		fade: "threadFade3",
+		pulse: "neonPulse1",
+		strokeWidth: 1.6,
+		opacity: 0.75,
+		r: 3,
+		dur: 5.2,
+	},
+	{
+		id: 7,
+		d: "M40 715 Q190 585 340 535 Q490 485 630 515 Q770 545 910 455 Q1050 365 1250 335",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 1.1,
+		opacity: 0.85,
+		r: 2.2,
+		dur: 4.8,
+	},
+	{
+		id: 8,
+		d: "M100 728 Q260 630 420 580 Q580 530 720 560 Q860 590 1000 500 Q1140 410 1320 380",
+		fade: "threadFade2",
+		pulse: "neonPulse2",
+		strokeWidth: 1.7,
+		opacity: 0.8,
+		r: 3.3,
+		dur: 5.8,
+	},
+
 	// Groupe 3 - Threads secondaires (ondulation plus haute)
-	{ id: 9, d: "M50 720 Q200 680 350 640 Q500 600 650 620 Q800 640 950 580 Q1100 520 1200 340", fade: "threadFade3", pulse: "neonPulse2", strokeWidth: 1.4, opacity: 0.8, r: 2.8, dur: 4.6 },
-	{ id: 10, d: "M50 720 Q190 745 340 705 Q490 665 630 685 Q770 705 910 645 Q1050 585 1200 340", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 1.3, opacity: 0.75, r: 2.6, dur: 4.8 },
-	{ id: 11, d: "M50 720 Q210 755 370 715 Q530 675 670 695 Q810 715 950 655 Q1090 595 1200 340", fade: "threadFade3", pulse: "neonPulse2", strokeWidth: 1.5, opacity: 0.85, r: 3, dur: 4.2 },
-	{ id: 12, d: "M50 720 Q195 750 350 710 Q505 670 645 690 Q785 710 925 650 Q1065 590 1200 340", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 1.8, opacity: 0.9, r: 3.2, dur: 4.3 },
-	
+	{
+		id: 9,
+		d: "M50 720 Q200 680 350 640 Q500 600 650 620 Q800 640 950 580 Q1100 520 1200 340",
+		fade: "threadFade3",
+		pulse: "neonPulse2",
+		strokeWidth: 1.4,
+		opacity: 0.8,
+		r: 2.8,
+		dur: 4.6,
+	},
+	{
+		id: 10,
+		d: "M50 720 Q190 745 340 705 Q490 665 630 685 Q770 705 910 645 Q1050 585 1200 340",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 1.3,
+		opacity: 0.75,
+		r: 2.6,
+		dur: 4.8,
+	},
+	{
+		id: 11,
+		d: "M50 720 Q210 755 370 715 Q530 675 670 695 Q810 715 950 655 Q1090 595 1200 340",
+		fade: "threadFade3",
+		pulse: "neonPulse2",
+		strokeWidth: 1.5,
+		opacity: 0.85,
+		r: 3,
+		dur: 4.2,
+	},
+	{
+		id: 12,
+		d: "M50 720 Q195 750 350 710 Q505 670 645 690 Q785 710 925 650 Q1065 590 1200 340",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 1.8,
+		opacity: 0.9,
+		r: 3.2,
+		dur: 4.3,
+	},
+
 	// Groupe 4 - Threads fins pour la densité
-	{ id: 13, d: "M30 722 Q170 595 310 545 Q450 495 590 525 Q730 555 870 465 Q1010 375 1180 345", fade: "threadFade3", pulse: "neonPulse1", strokeWidth: 0.6, opacity: 0.6, r: 1.5, dur: 6 },
-	{ id: 14, d: "M90 732 Q240 625 390 575 Q540 525 680 555 Q820 585 960 495 Q1100 405 1300 375", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 0.8, opacity: 0.65, r: 1.8, dur: 4.3 },
-	{ id: 15, d: "M70 727 Q210 605 360 555 Q510 505 650 535 Q790 565 930 475 Q1070 385 1260 355", fade: "threadFade2", pulse: "neonPulse2", strokeWidth: 0.5, opacity: 0.55, r: 1.2, dur: 5.7 },
-	{ id: 16, d: "M110 738 Q270 645 430 595 Q590 545 730 575 Q870 605 1010 515 Q1150 425 1380 395", fade: "threadFade3", pulse: "neonPulse1", strokeWidth: 0.7, opacity: 0.6, r: 1.6, dur: 4.7 },
-	
+	{
+		id: 13,
+		d: "M30 722 Q170 595 310 545 Q450 495 590 525 Q730 555 870 465 Q1010 375 1180 345",
+		fade: "threadFade3",
+		pulse: "neonPulse1",
+		strokeWidth: 0.6,
+		opacity: 0.6,
+		r: 1.5,
+		dur: 6,
+	},
+	{
+		id: 14,
+		d: "M90 732 Q240 625 390 575 Q540 525 680 555 Q820 585 960 495 Q1100 405 1300 375",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 0.8,
+		opacity: 0.65,
+		r: 1.8,
+		dur: 4.3,
+	},
+	{
+		id: 15,
+		d: "M70 727 Q210 605 360 555 Q510 505 650 535 Q790 565 930 475 Q1070 385 1260 355",
+		fade: "threadFade2",
+		pulse: "neonPulse2",
+		strokeWidth: 0.5,
+		opacity: 0.55,
+		r: 1.2,
+		dur: 5.7,
+	},
+	{
+		id: 16,
+		d: "M110 738 Q270 645 430 595 Q590 545 730 575 Q870 605 1010 515 Q1150 425 1380 395",
+		fade: "threadFade3",
+		pulse: "neonPulse1",
+		strokeWidth: 0.7,
+		opacity: 0.6,
+		r: 1.6,
+		dur: 4.7,
+	},
+
 	// Groupe 5 - Threads supplémentaires pour l'effet "wave"
-	{ id: 17, d: "M50 720 Q160 670 280 630 Q400 590 540 610 Q680 630 820 570 Q960 510 1200 340", fade: "threadFade2", pulse: "neonPulse1", strokeWidth: 0.9, opacity: 0.65, r: 1.8, dur: 5.1 },
-	{ id: 18, d: "M50 720 Q175 740 310 700 Q445 660 585 680 Q725 700 865 640 Q1005 580 1200 340", fade: "threadFade3", pulse: "neonPulse2", strokeWidth: 0.7, opacity: 0.55, r: 1.4, dur: 5.6 },
-	{ id: 19, d: "M50 720 Q230 760 390 720 Q550 680 690 700 Q830 720 970 660 Q1110 600 1200 340", fade: "threadFade2", pulse: "neonPulse1", strokeWidth: 1.2, opacity: 0.75, r: 2.4, dur: 4.7 },
-	{ id: 20, d: "M50 720 Q165 730 290 690 Q415 650 555 670 Q695 690 835 630 Q975 570 1200 340", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 0.8, opacity: 0.6, r: 1.8, dur: 5.6 },
-	
+	{
+		id: 17,
+		d: "M50 720 Q160 670 280 630 Q400 590 540 610 Q680 630 820 570 Q960 510 1200 340",
+		fade: "threadFade2",
+		pulse: "neonPulse1",
+		strokeWidth: 0.9,
+		opacity: 0.65,
+		r: 1.8,
+		dur: 5.1,
+	},
+	{
+		id: 18,
+		d: "M50 720 Q175 740 310 700 Q445 660 585 680 Q725 700 865 640 Q1005 580 1200 340",
+		fade: "threadFade3",
+		pulse: "neonPulse2",
+		strokeWidth: 0.7,
+		opacity: 0.55,
+		r: 1.4,
+		dur: 5.6,
+	},
+	{
+		id: 19,
+		d: "M50 720 Q230 760 390 720 Q550 680 690 700 Q830 720 970 660 Q1110 600 1200 340",
+		fade: "threadFade2",
+		pulse: "neonPulse1",
+		strokeWidth: 1.2,
+		opacity: 0.75,
+		r: 2.4,
+		dur: 4.7,
+	},
+	{
+		id: 20,
+		d: "M50 720 Q165 730 290 690 Q415 650 555 670 Q695 690 835 630 Q975 570 1200 340",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 0.8,
+		opacity: 0.6,
+		r: 1.8,
+		dur: 5.6,
+	},
+
 	// Groupe 6 - Threads très fins pour la texture
-	{ id: 21, d: "M25 713 Q165 583 305 533 Q445 483 585 513 Q725 543 865 453 Q1005 363 1200 333", fade: "threadFade3", pulse: "neonPulse1", strokeWidth: 0.4, opacity: 0.45, r: 1, dur: 6.2 },
-	{ id: 22, d: "M85 719 Q235 605 385 555 Q535 505 675 535 Q815 565 955 475 Q1095 385 1320 355", fade: "threadFade1", pulse: "neonPulse2", strokeWidth: 1.6, opacity: 0.9, r: 3.2, dur: 4.1 },
-	{ id: 23, d: "M45 718 Q185 588 325 538 Q465 488 605 518 Q745 548 885 458 Q1025 368 1220 338", fade: "threadFade1", pulse: "neonPulse3", strokeWidth: 0.9, opacity: 0.7, r: 2, dur: 5.3 },
-	{ id: 24, d: "M130 721 Q290 630 460 580 Q630 530 770 560 Q910 590 1050 500 Q1190 410 1350 380", fade: "threadFade2", pulse: "neonPulse2", strokeWidth: 1.2, opacity: 0.8, r: 2.5, dur: 4.9 },
+	{
+		id: 21,
+		d: "M25 713 Q165 583 305 533 Q445 483 585 513 Q725 543 865 453 Q1005 363 1200 333",
+		fade: "threadFade3",
+		pulse: "neonPulse1",
+		strokeWidth: 0.4,
+		opacity: 0.45,
+		r: 1,
+		dur: 6.2,
+	},
+	{
+		id: 22,
+		d: "M85 719 Q235 605 385 555 Q535 505 675 535 Q815 565 955 475 Q1095 385 1320 355",
+		fade: "threadFade1",
+		pulse: "neonPulse2",
+		strokeWidth: 1.6,
+		opacity: 0.9,
+		r: 3.2,
+		dur: 4.1,
+	},
+	{
+		id: 23,
+		d: "M45 718 Q185 588 325 538 Q465 488 605 518 Q745 548 885 458 Q1025 368 1220 338",
+		fade: "threadFade1",
+		pulse: "neonPulse3",
+		strokeWidth: 0.9,
+		opacity: 0.7,
+		r: 2,
+		dur: 5.3,
+	},
+	{
+		id: 24,
+		d: "M130 721 Q290 630 460 580 Q630 530 770 560 Q910 590 1050 500 Q1190 410 1350 380",
+		fade: "threadFade2",
+		pulse: "neonPulse2",
+		strokeWidth: 1.2,
+		opacity: 0.8,
+		r: 2.5,
+		dur: 4.9,
+	},
 ];
 
 function usePrefersReducedMotion() {
 	const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
-		if (typeof window === 'undefined') return false;
+		if (typeof window === "undefined") return false;
 		return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	});
 
 	useEffect(() => {
 		const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-		
+
 		const handleChange = (e: MediaQueryListEvent) => {
 			setPrefersReducedMotion(e.matches);
 		};
@@ -60,9 +276,73 @@ function usePrefersReducedMotion() {
 	return prefersReducedMotion;
 }
 
+function useDocumentVisible() {
+	const [isVisible, setIsVisible] = useState(() => {
+		if (typeof document === "undefined") return true;
+		return document.visibilityState !== "hidden";
+	});
+
+	useEffect(() => {
+		const handleVisibility = () => {
+			setIsVisible(document.visibilityState !== "hidden");
+		};
+		document.addEventListener("visibilitychange", handleVisibility);
+		return () =>
+			document.removeEventListener("visibilitychange", handleVisibility);
+	}, []);
+
+	return isVisible;
+}
+
+type BackgroundQuality = "high" | "medium" | "low";
+
+function useBackgroundQuality(): BackgroundQuality {
+	const [quality, setQuality] = useState<BackgroundQuality>("high");
+
+	useEffect(() => {
+		const compute = () => {
+			const width = window.innerWidth;
+			const height = window.innerHeight;
+			const maxDim = Math.max(width, height);
+			const dpr = window.devicePixelRatio ?? 1;
+
+			// Heuristique: très grands écrans et/ou DPR élevé => réduire la charge.
+			if (maxDim >= 2200 || dpr >= 2.5) return "low";
+			if (maxDim >= 1600 || dpr >= 2) return "medium";
+			return "high";
+		};
+
+		const update = () => setQuality(compute());
+		update();
+		window.addEventListener("resize", update);
+		return () => window.removeEventListener("resize", update);
+	}, []);
+
+	return quality;
+}
+
 export function HeroBackground() {
 	const prefersReducedMotion = usePrefersReducedMotion();
+	const isDocumentVisible = useDocumentVisible();
+	const quality = useBackgroundQuality();
 	const uid = useId().replace(/:/g, "");
+
+	const shouldAnimate = !prefersReducedMotion && isDocumentVisible;
+	const threads = useMemo(() => {
+		switch (quality) {
+			case "low":
+				// Garde l'essentiel (threads principaux) pour préserver le look.
+				return THREAD_DATA.filter(({ id }) => id <= 12);
+			case "medium":
+				// Réduit la densité (supprime surtout les plus fins/texture).
+				return THREAD_DATA.filter(({ id }) => id <= 20 || id >= 22);
+			default:
+				return THREAD_DATA;
+		}
+	}, [quality]);
+
+	const glowStdDeviation =
+		quality === "low" ? 2 : quality === "medium" ? 2.5 : 3;
 
 	return (
 		<div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -255,7 +535,7 @@ export function HeroBackground() {
 								width="300%"
 								height="300%"
 							>
-								<feGaussianBlur stdDeviation="3" result="coloredBlur" />
+								<feGaussianBlur stdDeviation={glowStdDeviation} result="coloredBlur" />
 								<feMerge>
 									<feMergeNode in="coloredBlur" />
 									<feMergeNode in="SourceGraphic" />
@@ -265,37 +545,35 @@ export function HeroBackground() {
 
 						<g>
 							{/* Threads avec animations */}
-							{THREAD_DATA.map(
-								({ id, d, fade, pulse, strokeWidth, opacity, r, dur }) => (
-									<g key={id}>
-										<path
-											id={`thread${id}-${uid}`}
-											d={d}
-											stroke={`url(#${fade}-${uid})`}
-											strokeWidth={strokeWidth}
-											fill="none"
-											opacity={opacity}
-											strokeLinecap="round"
-										/>
+							{threads.map(({ id, d, fade, pulse, strokeWidth, opacity, r, dur }) => (
+								<g key={id}>
+									<path
+										id={`thread${id}-${uid}`}
+										d={d}
+										stroke={`url(#${fade}-${uid})`}
+										strokeWidth={strokeWidth}
+										fill="none"
+										opacity={opacity}
+										strokeLinecap="round"
+									/>
+									{shouldAnimate && (
 										<circle
 											r={r}
 											fill={`url(#${pulse}-${uid})`}
 											opacity="1"
 											filter={`url(#neonGlow-${uid})`}
 										>
-											{!prefersReducedMotion && (
-												<animateMotion
-													dur={`${dur}s`}
-													repeatCount="indefinite"
-													calcMode="linear"
-												>
-													<mpath href={`#thread${id}-${uid}`} />
-												</animateMotion>
-											)}
+											<animateMotion
+												dur={`${dur}s`}
+												repeatCount="indefinite"
+												calcMode="linear"
+											>
+												<mpath href={`#thread${id}-${uid}`} />
+											</animateMotion>
 										</circle>
-									</g>
-								),
-							)}
+									)}
+								</g>
+							))}
 						</g>
 					</svg>
 				</div>

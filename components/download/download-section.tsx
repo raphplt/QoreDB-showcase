@@ -56,6 +56,16 @@ export function DownloadSection() {
 
 	// Download options for each platform
 	const getPlatformOptions = (platform: string) => {
+		if (platform === "windows") {
+			return [
+				{
+					label: t("download.microsoft_store", "Microsoft Store"),
+					url: getDownloadLink("windows") ?? undefined,
+					recommended: true,
+				},
+			];
+		}
+
 		if (!release) return [];
 
 		switch (platform) {
@@ -70,19 +80,6 @@ export function DownloadSection() {
 						label: t("download.intel_mac", "Intel Mac"),
 						url: release.platforms["darwin-x86_64"]?.url,
 						recommended: arch === "x86_64",
-					},
-				];
-			case "windows":
-				return [
-					{
-						label: t("download.windows_installer", "Installer (.exe)"),
-						url: release.platforms["windows-x86_64-nsis"]?.url,
-						recommended: true,
-					},
-					{
-						label: t("download.windows_msi", "MSI Installer"),
-						url: release.platforms["windows-x86_64"]?.url,
-						recommended: false,
 					},
 				];
 			case "linux":
