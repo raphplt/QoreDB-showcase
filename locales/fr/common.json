@@ -73,10 +73,31 @@
     "eyebrow": "Aperçu",
     "title": "Une interface pensée pour les <accent>développeurs</accent>",
     "description": "Dense mais respirable. Sérieuse mais moderne.\n<subtext>Exactement ce que vous attendez d'un outil professionnel.</subtext>",
-    "browser_bar": "QoreDB — localhost",
-    "badges": {
-      "performance": "Performance optimisée",
-      "keyboard": "Keyboard-first"
+    "tabs": {
+      "database": {
+        "title": "Vue d'ensemble",
+        "description": "Métriques globales et accès rapide aux tables."
+      },
+      "schema": {
+        "title": "Explorateur de Schéma",
+        "description": "Visualisez vos relations et la structure de votre base."
+      },
+      "home": {
+        "title": "Accueil",
+        "description": "Reprise de session et gestion des connexions."
+      },
+      "connection": {
+        "title": "Nouvelle Connexion",
+        "description": "Configuration simple et avancée de vos sources."
+      },
+      "security": {
+        "title": "Sécurité",
+        "description": "Garde-fous, audit et profiling de vos requêtes."
+      },
+      "table": {
+        "title": "Données",
+        "description": "Manipulation fluide avec une grille performante."
+      }
     }
   },
   "features": {

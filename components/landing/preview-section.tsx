@@ -1,18 +1,79 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useTranslation, Trans } from "react-i18next";
+import {
+	Activity,
+	GitGraph,
+	Home,
+	PlusCircle,
+	ShieldCheck,
+	Table,
+} from "lucide-react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}
+
+const TABS = [
+	{
+		id: "home",
+		image: "/images/screenshots/home-screen.png",
+		icon: Home,
+	},
+	{
+		id: "connection",
+		image: "/images/screenshots/new-connection-screen.png",
+		icon: PlusCircle,
+	},
+	{
+		id: "database",
+		image: "/images/screenshots/database-screen.png",
+		icon: Activity,
+	},
+	{
+		id: "table",
+		image: "/images/screenshots/table-screen.png",
+		icon: Table,
+	},
+	{
+		id: "schema",
+		image: "/images/screenshots/er-diagram-screen.png",
+		icon: GitGraph,
+	},
+	{
+		id: "security",
+		image: "/images/screenshots/settings-screen.png",
+		icon: ShieldCheck,
+	},
+];
 
 export function PreviewSection() {
 	const { t } = useTranslation();
+	const [activeTab, setActiveTab] = useState(TABS[0].id);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveTab((current) => {
+				const currentIndex = TABS.findIndex((tab) => tab.id === current);
+				const nextIndex = (currentIndex + 1) % TABS.length;
+				return TABS[nextIndex].id;
+			});
+		}, 5000);
+
+		return () => clearInterval(interval);
+	}, [activeTab]);
 
 	return (
 		<section
 			id="preview"
-			className="relative z-10 py-32 px-6 bg-(--q-bg-1) overflow-hidden"
+			className="relative z-10 py-24 sm:py-32 px-6 bg-(--q-bg-1) overflow-hidden"
 		>
-			<div className="absolute inset-0 opacity-30">
+			<div className="absolute inset-0 opacity-30 pointer-events-none">
 				<div
 					className="absolute inset-0"
 					style={{
@@ -22,10 +83,10 @@ export function PreviewSection() {
 				/>
 			</div>
 
-			{/* Gradient overlay pour fondu */}
-			<div className="absolute inset-0 bg-linear-to-b from-(--q-bg-1) via-transparent to-(--q-bg-1)" />
+			{/* Gradient overlay */}
+			<div className="absolute inset-0 bg-linear-to-b from-(--q-bg-1) via-transparent to-(--q-bg-1) pointer-events-none" />
 
-			<div className="max-w-6xl mx-auto relative">
+			<div className="max-w-7xl mx-auto relative">
 				<motion.div
 					className="text-center mb-16"
 					initial={{ opacity: 0, y: 30 }}
@@ -33,12 +94,11 @@ export function PreviewSection() {
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 				>
-					{/* Eyebrow */}
 					<span className="inline-block text-(--q-accent) text-sm font-medium tracking-widest uppercase mb-4">
 						{t("preview.eyebrow")}
 					</span>
 
-					<h2 className="font-heading text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
+					<h2 className="font-heading text-(--q-text-0) text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
 						<Trans
 							i18nKey="preview.title"
 							components={{
@@ -50,81 +110,128 @@ export function PreviewSection() {
 						<Trans
 							i18nKey="preview.description"
 							components={{
-								subtext: <span className="text-(--q-text-2)" />,
-								br: <br />,
+								subtext: <span className="text-(--q-text-2) block mt-2" />,
 							}}
 						/>
 					</p>
 				</motion.div>
 
-				<motion.div
-					className="relative"
-					initial={{ opacity: 0, y: 40, scale: 0.95 }}
-					whileInView={{ opacity: 1, y: 0, scale: 1 }}
-					transition={{ duration: 0.7 }}
-					viewport={{ once: true }}
-				>
-					{/* Glow effects multiples pour plus de profondeur */}
-					<div className="absolute -inset-8 bg-linear-to-r from-(--q-accent)/20 via-transparent to-(--q-accent)/20 blur-3xl opacity-40" />
-					<div className="absolute -inset-4 bg-(--q-accent)/10 blur-2xl opacity-30 rounded-3xl" />
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+					{/* Left Column: Tabs */}
+					<div className="lg:col-span-4 flex flex-col gap-4">
+						{TABS.map((tab) => {
+							const Icon = tab.icon;
+							const isActive = activeTab === tab.id;
 
-					{/* Browser frame */}
-					<div className="relative rounded-2xl overflow-hidden border border-(--q-border) bg-(--q-bg-0) shadow-2xl">
-						{/* Browser top bar */}
-						<div className="flex items-center gap-2 px-4 py-3 bg-(--q-bg-1) border-b border-(--q-border)">
-							<div className="flex gap-2">
-								<div className="w-3 h-3 rounded-full bg-(--q-error)/60" />
-								<div className="w-3 h-3 rounded-full bg-(--q-warning)/60" />
-								<div className="w-3 h-3 rounded-full bg-(--q-success)/60" />
-							</div>
-							<div className="flex-1 flex justify-center">
-								<div className="px-4 py-1 rounded-md bg-(--q-bg-2) text-(--q-text-2) text-xs font-mono">
-									{t("preview.browser_bar")}
-								</div>
-							</div>
-							<div className="w-[52px]" /> {/* Spacer for symmetry */}
-						</div>
+							return (
+								<button
+									key={tab.id}
+									onClick={() => setActiveTab(tab.id)}
+									className={cn(
+										"group relative flex items-start gap-4 p-4 text-left rounded-xl transition-all duration-300 overflow-hidden",
+										"border border-transparent",
+										isActive
+											? "bg-(--q-bg-0) border-(--q-border) shadow-sm"
+											: "hover:bg-(--q-bg-0)/50 hover:border-(--q-border)/50"
+									)}
+								>
+									<div
+										className={cn(
+											"p-2 rounded-lg transition-colors duration-300 shrink-0",
+											isActive
+												? "bg-(--q-accent) text-white"
+												: "bg-(--q-bg-2) text-(--q-text-2) group-hover:text-(--q-text-1)"
+										)}
+									>
+										<Icon className="w-5 h-5" />
+									</div>
+									<div>
+										<h3
+											className={cn(
+												"font-medium text-base mb-1 transition-colors",
+												isActive ? "text-(--q-text-0)" : "text-(--q-text-1)"
+											)}
+										>
+											{t(`preview.tabs.${tab.id}.title`)}
+										</h3>
+										<p className="text-sm text-(--q-text-2) leading-relaxed">
+											{t(`preview.tabs.${tab.id}.description`)}
+										</p>
+									</div>
 
-						{/* App screenshot */}
-						<Image
-							src="/app-preview.png"
-							alt="QoreDB Interface"
-							width={1920}
-							height={1080}
-							className="w-full"
-							priority
-						/>
+									{/* Progress bar for active state */}
+									{isActive && (
+										<motion.div
+											layoutId="active-tab-indicator"
+											className="absolute left-0 top-0 bottom-0 w-1 bg-(--q-accent)"
+											initial={{ opacity: 0 }}
+											animate={{ opacity: 1 }}
+											exit={{ opacity: 0 }}
+										/>
+									)}
+									
+									{/* Timer progress bar */}
+									{isActive && (
+										<motion.div 
+											className="absolute bottom-0 left-0 h-1 bg-(--q-accent)/20 w-full"
+											initial={{ scaleX: 0, originX: 0 }}
+											animate={{ scaleX: 1 }}
+											transition={{ duration: 5, ease: "linear" }}
+										/>
+									)}
+								</button>
+							);
+						})}
 					</div>
 
-					{/* Floating badges */}
-					<motion.div
-						className="absolute -right-4 top-1/4 hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-(--q-bg-0) border border-(--q-border) shadow-lg"
-						initial={{ opacity: 0, x: 20 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.5, delay: 0.3 }}
-						viewport={{ once: true }}
-					>
-						<div className="w-2 h-2 rounded-full bg-(--q-success) animate-pulse" />
-						<span className="text-(--q-text-0) text-sm font-medium">
-							{t("preview.badges.performance")}
-						</span>
-					</motion.div>
+					{/* Right Column: Preview Area */}
+					<div className="lg:col-span-8 relative">
+						{/* Glow effects */}
+						<div className="absolute -inset-4 bg-linear-to-r from-(--q-accent)/20 via-transparent to-(--q-accent)/20 blur-3xl opacity-30 pointer-events-none" />
 
-					<motion.div
-						className="absolute -left-4 bottom-1/4 hidden lg:flex items-center gap-2 px-4 py-2 rounded-xl bg-(--q-bg-0) border border-(--q-border) shadow-lg"
-						initial={{ opacity: 0, x: -20 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.5, delay: 0.4 }}
-						viewport={{ once: true }}
-					>
-						<div className="w-6 h-6 rounded-md bg-(--q-accent)/10 flex items-center justify-center">
-							<span className="text-(--q-accent) text-xs font-bold">⌘</span>
+						<div className="relative rounded-xl overflow-hidden border border-(--q-border) bg-(--q-bg-0) shadow-2xl">
+							{/* Browser Bar */}
+							{/* <div className="flex items-center gap-2 px-4 py-3 bg-(--q-bg-1) border-b border-(--q-border)">
+								<div className="flex gap-1.5">
+									<div className="w-2.5 h-2.5 rounded-full bg-(--q-error)/60" />
+									<div className="w-2.5 h-2.5 rounded-full bg-(--q-warning)/60" />
+									<div className="w-2.5 h-2.5 rounded-full bg-(--q-success)/60" />
+								</div>
+								<div className="flex-1 flex justify-center px-4">
+									<div className="px-3 py-1 rounded bg-(--q-bg-2) text-(--q-text-2)/50 text-[10px] font-mono w-full max-w-xs text-center overflow-hidden text-ellipsis whitespace-nowrap">
+										qoredb://localhost:5432/{activeTab}
+									</div>
+								</div>
+								<div className="w-10" />
+							</div> */}
+
+							{/* Image Area with Transitions */}
+							<div className="relative aspect-16/10 bg-(--q-bg-0)">
+								<AnimatePresence mode="wait">
+									<motion.div
+										key={activeTab}
+										initial={{ opacity: 0, scale: 0.98 }}
+										animate={{ opacity: 1, scale: 1 }}
+										exit={{ opacity: 0, scale: 1.02 }}
+										transition={{ duration: 0.3 }}
+										className="absolute inset-0"
+									>
+										<Image
+											src={
+												TABS.find((t) => t.id === activeTab)?.image ||
+												""
+											}
+											alt={t(`preview.tabs.${activeTab}.title`)}
+											fill
+											className="object-cover object-top"
+											priority
+										/>
+									</motion.div>
+								</AnimatePresence>
+							</div>
 						</div>
-						<span className="text-(--q-text-0) text-sm font-medium">
-							{t("preview.badges.keyboard")}
-						</span>
-					</motion.div>
-				</motion.div>
+					</div>
+				</div>
 			</div>
 		</section>
 	);
