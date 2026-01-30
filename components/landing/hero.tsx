@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Sparkles, Download } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { LineShadowText } from "@/components/line-shadow-text";
 import { useTranslation, Trans } from "react-i18next";
@@ -33,9 +34,9 @@ export function Hero() {
 		!loading && release && downloadLink && os !== "unknown";
 
 	return (
-		<main className="relative z-10 flex flex-col items-start justify-center min-h-screen px-4 sm:px-6 lg:px-12 max-w-6xl pl-6 sm:pl-12 lg:pl-20 pt-24 sm:pt-0">
+		<main className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-12 pt-32 pb-20 overflow-hidden w-full">
 			<motion.div
-				className="mb-6 sm:mb-8"
+				className="mb-8"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
@@ -61,7 +62,7 @@ export function Hero() {
 			</motion.div>
 
 			<motion.h1
-				className="font-heading text-(--q-text-0) text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-6 sm:mb-8 tracking-tight"
+				className="font-heading text-(--q-text-0) text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] mb-8 tracking-tight text-center max-w-5xl"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 0.1 }}
@@ -81,7 +82,7 @@ export function Hero() {
 			</motion.h1>
 
 			<motion.p
-				className="text-(--q-text-1) text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-xl leading-relaxed"
+				className="text-(--q-text-1) text-base sm:text-lg md:text-xl mb-12 max-w-2xl leading-relaxed text-center"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 0.2 }}
@@ -95,7 +96,7 @@ export function Hero() {
 			</motion.p>
 
 			<motion.div
-				className="flex flex-col sm:flex-row gap-4"
+				className="flex flex-col sm:flex-row gap-4 mb-24"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.6, delay: 0.3 }}
@@ -110,7 +111,7 @@ export function Hero() {
 							router.push("/download");
 						}
 					}}
-					className="group relative flex items-center justify-center gap-3 px-8 py-2 rounded-xl
+					className="group relative flex items-center justify-center gap-3 px-8 py-3 rounded-xl
 							bg-linear-to-br from-(--q-accent) to-(--q-accent-strong)
 							text-white font-bold text-lg
 							shadow-[0_20px_40px_-15px_color-mix(in_srgb,var(--q-accent)_50%,transparent)]
@@ -155,6 +156,78 @@ export function Hero() {
 					<Github className="w-5 h-5" />
 					{t("hero.cta.view_project")}
 				</Button>
+			</motion.div>
+
+			<motion.div
+				className="relative w-full max-w-7xl perspective-[2000px] flex justify-center perspective-origin-top"
+				initial={{ opacity: 0, rotateX: 20, y: 100 }}
+				animate={{ opacity: 1, rotateX: 0, y: 0 }}
+				transition={{ duration: 1, delay: 0.4, type: "spring", stiffness: 40 }}
+			>
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[50%] bg-(--q-accent)/30 blur-[120px] rounded-full pointer-events-none" />
+
+				<div
+					className="relative w-full flex justify-center items-center select-none"
+					style={{
+						transform: "rotateX(20deg)",
+						transformStyle: "preserve-3d",
+					}}
+				>
+					<motion.div
+						className="absolute top-1/2 -translate-y-1/2 -left-12 sm:left-0 md:left-[5%] w-[60%] sm:w-[45%] aspect-16/10 rounded-xl bg-(--q-bg-0) shadow-2xl overflow-hidden z-10 opacity-60 grayscale-30 blur-[1px] transform transition-transform duration-500 hover:z-30 hover:opacity-100 hover:grayscale-0 hover:blur-0 hover:scale-105 hover:-translate-y-1/2 hover:-translate-x-2"
+						initial={{ x: -100, opacity: 0 }}
+						animate={{ x: 0, opacity: 0.6 }}
+						transition={{ duration: 1, delay: 0.6 }}
+						style={{ transform: "translateZ(-50px)" }}
+					>
+						<Image
+							src="/images/screenshots/er-diagram-screen.png"
+							alt="Schema Explorer"
+							fill
+							className="object-cover object-top"
+							sizes="(max-width: 768px) 100vw, 50vw"
+						/>
+					</motion.div>
+
+					<motion.div
+						className="absolute top-1/2 -translate-y-1/2 -right-12 sm:right-0 md:right-[5%] w-[60%] sm:w-[45%] aspect-16/10 rounded-xl bg-(--q-bg-0) shadow-2xl overflow-hidden z-10 opacity-60 grayscale-30 blur-[1px] transform transition-transform duration-500 hover:z-30 hover:opacity-100 hover:grayscale-0 hover:blur-0 hover:scale-105 hover:-translate-y-1/2 hover:translate-x-2"
+						initial={{ x: 100, opacity: 0 }}
+						animate={{ x: 0, opacity: 0.6 }}
+						transition={{ duration: 1, delay: 0.6 }}
+						style={{ transform: "translateZ(-50px)" }}
+					>
+						<Image
+							src="/images/screenshots/table-screen.png"
+							alt="Table Data View"
+							fill
+							className="object-cover object-top"
+							sizes="(max-width: 768px) 100vw, 50vw"
+						/>
+					</motion.div>
+
+					<motion.div
+						className="relative z-20 w-[90%] sm:w-[70%] aspect-16/10 rounded-xl bg-(--q-bg-0) shadow-[0_0_50px_-10px_rgba(0,0,0,0.5)] overflow-hidden"
+						initial={{ y: 50, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{ duration: 1, delay: 0.5 }}
+						style={{ transform: "translateZ(0px)" }}
+					>
+						<div className="absolute inset-0 bg-(--q-bg-0)">
+							<Image
+								src="/images/screenshots/database-screen.png"
+								alt="QoreDB Dashboard"
+								fill
+								className="object-cover object-top"
+								sizes="100vw"
+								priority
+							/>
+						</div>
+						
+						<div className="absolute inset-0 bg-linear-to-tr from-white/5 to-transparent pointer-events-none z-30" />
+					</motion.div>
+				</div>
+				
+				<div className="absolute -bottom-48 left-1/2 -translate-x-1/2 w-screen h-96 bg-linear-to-t from-(--q-bg-1) via-(--q-bg-1)/50 to-transparent z-30 pointer-events-none" />
 			</motion.div>
 		</main>
 	);

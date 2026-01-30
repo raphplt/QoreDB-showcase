@@ -22,6 +22,27 @@ const painPoints = [
 	},
 ];
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	visible: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
+};
+
+const itemVariants = {
+	hidden: { opacity: 0, y: 20 },
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.5,
+		},
+	},
+};
+
 export function WhySection() {
 	const { t } = useTranslation();
 
@@ -54,15 +75,18 @@ export function WhySection() {
 					{t("why.description")}
 				</p>
 
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-					{painPoints.map((point, index) => (
+				<motion.div
+					className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16"
+					variants={containerVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: "-100px" }}
+				>
+					{painPoints.map((point) => (
 						<motion.div
 							key={point.key}
-							className="group flex flex-col items-center p-8 rounded-2xl bg-(--q-bg-0) border border-(--q-border) hover:border-(--q-accent)/30 transition-all duration-500 hover:shadow-lg hover:shadow-(--q-accent)/5"
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.5, delay: 0.1 * index }}
-							viewport={{ once: true }}
+							className="group flex flex-col items-center p-8 rounded-2xl bg-(--q-bg-0) border border-(--q-border) hover:border-(--q-accent)/30 transition-[border-color,box-shadow] duration-500 hover:shadow-lg hover:shadow-(--q-accent)/5"
+							variants={itemVariants}
 						>
 							<div className="relative w-24 h-24 mb-6 transition-transform duration-500 group-hover:scale-110">
 								<Image
@@ -80,7 +104,7 @@ export function WhySection() {
 							</span>
 						</motion.div>
 					))}
-				</div>
+				</motion.div>
 
 				<motion.div
 					className="relative inline-block"

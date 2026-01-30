@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import Image from "next/image";
 import { useTranslation, Trans } from "react-i18next";
 import {
@@ -55,8 +55,12 @@ const TABS = [
 export function PreviewSection() {
 	const { t } = useTranslation();
 	const [activeTab, setActiveTab] = useState(TABS[0].id);
+	const containerRef = useRef(null);
+	const isInView = useInView(containerRef, { amount: 0.1 });
 
 	useEffect(() => {
+		if (!isInView) return;
+
 		const interval = setInterval(() => {
 			setActiveTab((current) => {
 				const currentIndex = TABS.findIndex((tab) => tab.id === current);
@@ -66,10 +70,11 @@ export function PreviewSection() {
 		}, 5000);
 
 		return () => clearInterval(interval);
-	}, [activeTab]);
+	}, [isInView]);
 
 	return (
 		<section
+			ref={containerRef}
 			id="preview"
 			className="relative z-10 py-24 sm:py-32 px-6 bg-(--q-bg-1) overflow-hidden"
 		>
@@ -171,7 +176,7 @@ export function PreviewSection() {
 									)}
 									
 									{/* Timer progress bar */}
-									{isActive && (
+									{isActive && isInView && (
 										<motion.div 
 											className="absolute bottom-0 left-0 h-1 bg-(--q-accent)/20 w-full"
 											initial={{ scaleX: 0, originX: 0 }}
@@ -190,20 +195,6 @@ export function PreviewSection() {
 						<div className="absolute -inset-4 bg-linear-to-r from-(--q-accent)/20 via-transparent to-(--q-accent)/20 blur-3xl opacity-30 pointer-events-none" />
 
 						<div className="relative rounded-xl overflow-hidden border border-(--q-border) bg-(--q-bg-0) shadow-2xl">
-							{/* Browser Bar */}
-							{/* <div className="flex items-center gap-2 px-4 py-3 bg-(--q-bg-1) border-b border-(--q-border)">
-								<div className="flex gap-1.5">
-									<div className="w-2.5 h-2.5 rounded-full bg-(--q-error)/60" />
-									<div className="w-2.5 h-2.5 rounded-full bg-(--q-warning)/60" />
-									<div className="w-2.5 h-2.5 rounded-full bg-(--q-success)/60" />
-								</div>
-								<div className="flex-1 flex justify-center px-4">
-									<div className="px-3 py-1 rounded bg-(--q-bg-2) text-(--q-text-2)/50 text-[10px] font-mono w-full max-w-xs text-center overflow-hidden text-ellipsis whitespace-nowrap">
-										qoredb://localhost:5432/{activeTab}
-									</div>
-								</div>
-								<div className="w-10" />
-							</div> */}
 
 							{/* Image Area with Transitions */}
 							<div className="relative aspect-16/10 bg-(--q-bg-0)">
