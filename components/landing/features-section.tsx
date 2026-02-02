@@ -29,6 +29,7 @@ const databases = [
 	{ name: "MySQL", image: "/images/databases/mysql.png", color: "#00758F" },
 	{ name: "PostgreSQL", image: "/images/databases/postgresql.png", color: "#336791" },
 	{ name: "MongoDB", image: "/images/databases/mongodb.png", color: "#47A248" },
+	{ name: "SQLite", image: "/images/databases/sqlite.png", color: "#00758F" },
 ];
 
 export function FeaturesSection() {
@@ -85,7 +86,6 @@ export function FeaturesSection() {
 					</p>
 				</motion.div>
 
-				{/* Features grid - 2 colonnes sur mobile, 4 sur desktop */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 					{features.map((feature, index) => (
 						<motion.div
@@ -96,7 +96,6 @@ export function FeaturesSection() {
 							transition={{ duration: 0.4, delay: index * 0.05 }}
 							viewport={{ once: true }}
 						>
-							{/* Subtle glow on hover */}
 							<div className="absolute inset-0 rounded-2xl bg-(--q-accent)/0 group-hover:bg-(--q-accent)/5 transition-colors duration-300" />
 
 							<div className="relative">
@@ -114,7 +113,6 @@ export function FeaturesSection() {
 					))}
 				</div>
 
-				{/* Databases section */}
 				<motion.div
 					className="mt-32"
 					initial={{ opacity: 0, scale: 0.95 }}
@@ -164,7 +162,6 @@ export function FeaturesSection() {
 						))}
 					</div>
 
-					{/* Coming soon hint */}
 					<p className="text-center mt-8 text-(--q-text-2) text-sm">
 						{t("features.compatibility.coming_soon")}
 					</p>
