@@ -56,7 +56,7 @@ export async function sendLicenseEmail({
 	const html = buildLicenseEmailHtml(email, licenseKey);
 
 	const { error } = await resend.emails.send({
-		from: process.env.LICENSE_FROM_EMAIL ?? "QoreDB <onboarding@resend.dev>",
+		from: process.env.LICENSE_FROM_EMAIL ?? "QoreDB <license@mail.qoredb.com>",
 		to: [email],
 		subject: "Votre licence QoreDB Pro",
 		html,
