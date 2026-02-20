@@ -13,6 +13,7 @@ function PlanCard({
 	title,
 	description,
 	price,
+	originalPrice,
 	badge,
 	features,
 	ctaLabel,
@@ -25,6 +26,7 @@ function PlanCard({
 	title: string;
 	description: string;
 	price: string;
+	originalPrice?: string;
 	badge?: string;
 	features: string[];
 	ctaLabel: string;
@@ -50,7 +52,19 @@ function PlanCard({
 				) : null}
 				<h2 className="text-2xl font-bold text-(--q-text-0)">{title}</h2>
 				<p className="text-sm text-(--q-text-2) mt-2">{description}</p>
-				<p className="mt-4 text-3xl font-bold text-(--q-text-0)">{price}</p>
+				<div className="mt-4 flex items-baseline gap-2 flex-wrap">
+					{originalPrice ? (
+						<>
+							<span className="text-lg text-(--q-text-2) line-through">{originalPrice}</span>
+							<span className="text-3xl font-bold text-(--q-text-0)">{price}</span>
+							<span className="inline-flex rounded-full bg-green-500/10 text-green-500 text-xs font-semibold px-2 py-0.5">
+								-50%
+							</span>
+						</>
+					) : (
+						<span className="text-3xl font-bold text-(--q-text-0)">{price}</span>
+					)}
+				</div>
 			</div>
 
 			<ul className="space-y-3 mb-8 flex-1">
@@ -104,11 +118,13 @@ function PlanCard({
 type PricingPageClientProps = {
 	locale: string;
 	initialProStripePrice: string | null;
+	initialProOriginalPrice: string | null;
 };
 
 export default function PricingPageClient({
 	locale,
 	initialProStripePrice,
+	initialProOriginalPrice,
 }: PricingPageClientProps) {
 	const { t } = useTranslation();
 	const [loadingCheckout, setLoadingCheckout] = useState(false);
@@ -223,6 +239,7 @@ export default function PricingPageClient({
 								title={t("pricing_page.pro.title")}
 								description={t("pricing_page.pro.description")}
 								price={initialProStripePrice ?? t("pricing_page.pro.price")}
+								originalPrice={initialProOriginalPrice ?? undefined}
 								badge={t("pricing_page.pro.badge")}
 								features={proFeatures}
 								ctaLabel={t("pricing_page.pro.cta")}
