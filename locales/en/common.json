@@ -118,8 +118,8 @@
         "subtitle": "Designed for developers who want a tool that just works.",
         "items": {
             "unified": {
-                "title": "7 Native Drivers",
-                "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB and Redis in one interface."
+                "title": "8 Native Drivers",
+                "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis and CockroachDB in one interface."
             },
             "vault": {
                 "title": "Security & Privacy",
@@ -145,9 +145,25 @@
                 "title": "High Performance Grid",
                 "desc": "Virtualization, server-side filtering, inline editing, pagination and infinite scroll."
             },
-"opensource": {
-    "title": "Open Source",
-    "desc": "Auditable code available on GitHub."
+            "ai": {
+                "title": "AI Assistant",
+                "desc": "Query generation, explanation and error correction with your own API keys (BYOK)."
+            },
+            "federation": {
+                "title": "Cross-DB Federation",
+                "desc": "Run SQL queries across multiple databases with joins between active connections."
+            },
+            "ddl": {
+                "title": "DDL Management",
+                "desc": "Create/drop databases, tables, routines, triggers and run maintenance operations."
+            },
+            "export": {
+                "title": "Multi-Format Export",
+                "desc": "Export results as CSV, JSON, SQL, HTML, XLSX, Parquet or self-contained HTML."
+            },
+            "opensource": {
+                "title": "Open Source",
+                "desc": "Auditable code available on GitHub."
             }
         },
         "killer": {
@@ -179,6 +195,16 @@
                     "detect": "Auto-detection of dangerous queries",
                     "env": "Environment-aware alerts",
                     "audit": "Local audit log for sensitive operations"
+                }
+            },
+            "data_diff": {
+                "title": "Visual Data Diff",
+                "desc": "Compare two query results or tables side by side, like a Git diff for your data. Perfect for comparing Prod vs Staging.",
+                "badge": "Compare",
+                "list": {
+                    "compare": "Side-by-side comparison of any two result sets",
+                    "highlight": "Cell-level highlighting of additions, deletions and changes",
+                    "snapshot": "Save result snapshots for later comparison"
                 }
             }
         },
@@ -392,7 +418,7 @@
             "badge": "Main choice",
             "cta": "Download for free",
             "features": {
-                "drivers": "All drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis)",
+                "drivers": "All drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis, CockroachDB)",
                 "crud": "Full CRUD + SQL/Mongo editor",
                 "grid": "High-performance data grid (virtual scrolling)",
                 "er_diagram": "Interactive ER diagram",

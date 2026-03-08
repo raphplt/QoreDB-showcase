@@ -140,7 +140,7 @@ export function Hero() {
 						style={{ transform: "translateZ(-50px)" }}
 					>
 						<Image
-							src="/images/screenshots/er-diagram-screen.webp"
+							src="/images/screenshots/er-diagram-screen.png"
 							alt="Schema Explorer"
 							fill
 							className="object-cover object-top"
@@ -156,7 +156,7 @@ export function Hero() {
 						style={{ transform: "translateZ(-50px)" }}
 					>
 						<Image
-							src="/images/screenshots/table-screen.webp"
+							src="/images/screenshots/table-screen.png"
 							alt="Table Data View"
 							fill
 							className="object-cover object-top"
@@ -173,7 +173,7 @@ export function Hero() {
 					>
 						<div className="absolute inset-0 bg-(--q-bg-0)">
 							<Image
-								src="/images/screenshots/database-screen.webp"
+								src="/images/screenshots/database-screen.png"
 								alt="QoreDB Dashboard"
 								fill
 								className="object-cover object-top"

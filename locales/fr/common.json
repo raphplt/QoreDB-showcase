@@ -118,8 +118,8 @@
     "subtitle": "Conçu pour les développeurs qui veulent un outil qui fonctionne, tout simplement.",
     "items": {
       "unified": {
-        "title": "7 drivers natifs",
-        "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB et Redis dans une seule interface."
+        "title": "8 drivers natifs",
+        "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis et CockroachDB dans une seule interface."
       },
       "vault": {
         "title": "Sécurité & Privée",
@@ -144,6 +144,22 @@
       "grid": {
         "title": "Data Grid performant",
         "desc": "Virtualisation, filtres serveur, édition inline, pagination et scroll infini."
+      },
+      "ai": {
+        "title": "Assistant IA",
+        "desc": "Génération, explication et correction de requêtes avec vos propres clés API (BYOK)."
+      },
+      "federation": {
+        "title": "Fédération inter-bases",
+        "desc": "Exécutez des requêtes SQL cross-database avec jointures entre connexions actives."
+      },
+      "ddl": {
+        "title": "Gestion DDL",
+        "desc": "Créez/supprimez bases, tables, routines, triggers et lancez des opérations de maintenance."
+      },
+      "export": {
+        "title": "Export multi-formats",
+        "desc": "Exportez vos résultats en CSV, JSON, SQL, HTML, XLSX, Parquet ou HTML autonome."
       },
       "opensource": {
         "title": "Open Source",
@@ -179,6 +195,16 @@
           "detect": "Détection automatique des requêtes dangereuses",
           "env": "Alertes intelligentes selon l'environnement",
           "audit": "Journal d'audit local des opérations sensibles"
+        }
+      },
+      "data_diff": {
+        "title": "Visual Data Diff",
+        "desc": "Comparez deux résultats de requêtes ou tables côte à côte, comme un diff Git pour vos données. Idéal pour comparer Prod vs Staging.",
+        "badge": "Comparer",
+        "list": {
+          "compare": "Comparaison côte à côte de deux jeux de résultats",
+          "highlight": "Mise en évidence cellule par cellule des ajouts, suppressions et modifications",
+          "snapshot": "Sauvegardez des snapshots de résultats pour comparaison ultérieure"
         }
       }
     },
@@ -392,7 +418,7 @@
       "badge": "Plan principal",
       "cta": "Télécharger gratuitement",
       "features": {
-        "drivers": "Tous les drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis)",
+        "drivers": "Tous les drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis, CockroachDB)",
         "crud": "CRUD complet + éditeur SQL/Mongo",
         "grid": "Grille de données haute performance (scroll virtuel)",
         "er_diagram": "Diagramme ER interactif",

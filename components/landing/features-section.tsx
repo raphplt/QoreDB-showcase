@@ -10,12 +10,16 @@ import {
 	Layers,
 	Zap,
 	Lock,
-
 	Github,
 	GitBranch,
 	Network,
 	LifeBuoy,
 	Check,
+	Brain,
+	Combine,
+	TableProperties,
+	FileDown,
+	ArrowLeftRight,
 } from "lucide-react";
 import { useTranslation, Trans } from "react-i18next";
 
@@ -27,6 +31,10 @@ const featureIcons = {
 	library: FolderOpen,
 	envs: Layers,
 	grid: Zap,
+	ai: Brain,
+	federation: Combine,
+	ddl: TableProperties,
+	export: FileDown,
 	opensource: Github,
 };
 
@@ -38,6 +46,7 @@ const databases = [
 	{ name: "DuckDB", image: "/images/databases/duckdb.png", color: "#FFF100" },
 	{ name: "MongoDB", image: "/images/databases/mongodb.webp", color: "#47A248" },
 	{ name: "Redis", image: "/images/databases/redis.png", color: "#DC382D" },
+	{ name: "CockroachDB", image: "/images/databases/cockroachdb.png", color: "#6933FF" },
 ];
 
 export function FeaturesSection() {
@@ -267,6 +276,57 @@ export function FeaturesSection() {
 									</li>
 								))}
 							</ul>
+						</div>
+					</motion.div>
+
+					{/* Feature 4: Visual Data Diff */}
+					<motion.div
+						initial={{ opacity: 0, y: 40 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.7 }}
+						viewport={{ once: true }}
+						className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center"
+					>
+						<div className="order-1">
+							<div className="flex flex-wrap items-center gap-2 mb-6">
+								<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-500 text-xs font-medium tracking-wide uppercase">
+									<ArrowLeftRight className="w-3 h-3" />
+									{t("features.killer.data_diff.badge")}
+								</div>
+								<span className="inline-flex rounded-full bg-[#6B5CFF]/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-[#6B5CFF]">
+									{t("features.pro_badge")}
+								</span>
+							</div>
+							<h3 className="font-heading text-3xl sm:text-4xl font-bold text-(--q-text-0) mb-6">
+								{t("features.killer.data_diff.title")}
+							</h3>
+							<p className="text-(--q-text-1) text-lg leading-relaxed mb-8">
+								{t("features.killer.data_diff.desc")}
+							</p>
+							<ul className="space-y-4">
+								{[
+									"features.killer.data_diff.list.compare",
+									"features.killer.data_diff.list.highlight",
+									"features.killer.data_diff.list.snapshot",
+								].map(key => (
+									<li key={key} className="flex items-start gap-3">
+										<div className="mt-1 w-5 h-5 rounded-full bg-amber-500/10 flex items-center justify-center shrink-0">
+											<Check className="w-3 h-3 text-amber-500" />
+										</div>
+										<span className="text-(--q-text-1)">{t(key)}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+						<div className="order-2 relative group">
+							<div className="absolute -inset-4 bg-linear-to-l from-amber-500/20 to-orange-500/20 rounded-xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<Image
+								src="/images/features/data-diff.png"
+								alt="Visual Data Diff feature"
+								width={1200}
+								height={800}
+								className="relative w-full h-auto"
+							/>
 						</div>
 					</motion.div>
 				</div>

@@ -22,32 +22,37 @@ function cn(...inputs: ClassValue[]) {
 const TABS = [
 	{
 		id: "home",
-		image: "/images/screenshots/home-screen.webp",
+		image: "/images/screenshots/home-screen.png",
 		icon: Home,
 	},
 	{
 		id: "connection",
-		image: "/images/screenshots/new-connection-screen.webp",
+		image: "/images/screenshots/new-connection-screen.png",
 		icon: PlusCircle,
 	},
 	{
 		id: "database",
-		image: "/images/screenshots/database-screen.webp",
+		image: "/images/screenshots/database-screen.png",
 		icon: Activity,
 	},
 	{
 		id: "table",
-		image: "/images/screenshots/table-screen.webp",
+		image: "/images/screenshots/table-screen.png",
+		icon: Table,
+	},
+	{
+		id: "query",
+		image: "/images/screenshots/query-screen.png",
 		icon: Table,
 	},
 	{
 		id: "schema",
-		image: "/images/screenshots/er-diagram-screen.webp",
+		image: "/images/screenshots/er-diagram-screen.png",
 		icon: GitGraph,
 	},
 	{
 		id: "security",
-		image: "/images/screenshots/settings-screen.webp",
+		image: "/images/screenshots/settings-screen.png",
 		icon: ShieldCheck,
 	},
 ];
@@ -121,9 +126,9 @@ export function PreviewSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 					{/* Left Column: Tabs */}
-					<div className="lg:col-span-4 flex flex-col gap-4">
+					<div className="lg:col-span-3 flex flex-col gap-2">
 						{TABS.map((tab) => {
 							const Icon = tab.icon;
 							const isActive = activeTab === tab.id;
@@ -133,7 +138,7 @@ export function PreviewSection() {
 									key={tab.id}
 									onClick={() => setActiveTab(tab.id)}
 									className={cn(
-										"group relative flex items-start gap-4 p-4 text-left rounded-xl transition-all duration-300 overflow-hidden",
+										"group relative flex items-start gap-3 p-3 text-left rounded-xl transition-all duration-300 overflow-hidden",
 										"border border-transparent",
 										isActive
 											? "bg-(--q-bg-0) border-(--q-border) shadow-sm"
@@ -190,7 +195,7 @@ export function PreviewSection() {
 					</div>
 
 					{/* Right Column: Preview Area */}
-					<div className="lg:col-span-8 relative">
+					<div className="lg:col-span-9 relative">
 						{/* Glow effects */}
 						<div className="absolute -inset-4 bg-linear-to-r from-(--q-accent)/20 via-transparent to-(--q-accent)/20 blur-3xl opacity-30 pointer-events-none" />
 
