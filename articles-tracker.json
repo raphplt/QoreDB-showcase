@@ -1,0 +1,393 @@
+{
+  "sanity": {
+    "projectId": "jnq6wixe",
+    "dataset": "production",
+    "authorId": "a5dbd959-f129-457c-a706-4cd289cef15e",
+    "authorName": "Raphaël – Creator of QoreDB"
+  },
+  "categories": {
+    "Architecture": "9e3434fa-cc37-439a-b812-a85a857c7bdd",
+    "Security": "30e9bc1f-e363-44b1-a3dd-cf787160b341",
+    "Open Source": "8931e0a7-152d-4d83-a382-d312621b127a",
+    "Produit": "0025a431-45e4-4c47-b0a1-d755239c5f1f",
+    "Updates": "de088ce8-b9af-4143-8a44-31125b883493",
+    "Vision": "e9b4b851-a40c-4f78-9c7e-3f68eea98689"
+  },
+  "published": [
+    {
+      "slug": "pourquoi-qoredb-est-100-local-first-par-construction",
+      "title": "Pourquoi QoreDB est 100 % local-first par construction",
+      "category": "Architecture",
+      "publishedAt": "2026-02-03"
+    },
+    {
+      "slug": "federation-inter-bases-joindre-postgresql-et-mongodb-dans-une-seule-requete",
+      "title": "Fédération Inter-bases : joindre PostgreSQL et MongoDB dans une seule requête",
+      "category": "Architecture",
+      "publishedAt": "2026-03-09"
+    },
+    {
+      "slug": "why-qoredb-exists",
+      "title": "Pourquoi QoreDB existe ?",
+      "category": "Vision",
+      "publishedAt": "2026-01-24"
+    },
+    {
+      "slug": "le-modele-de-drivers-dans-qoredb-choix-contraintes-limites",
+      "title": "Le modèle de drivers dans QoreDB : choix, contraintes, limites",
+      "category": "Architecture",
+      "publishedAt": "2026-02-03"
+    },
+    {
+      "slug": "la-philosophie-produit-de-qoredb",
+      "title": "La philosophie produit de QoreDB",
+      "category": "Produit",
+      "publishedAt": "2026-01-24"
+    },
+    {
+      "slug": "architecture-vue-d-ensemble-de-l-architecture-de-qoredb",
+      "title": "Architecture : Vue d'ensemble de l'architecture de QoreDB",
+      "category": "Architecture",
+      "publishedAt": "2026-01-24"
+    },
+    {
+      "slug": "unifier-sql-et-nosql-sans-les-abstraire-artificiellement",
+      "title": "Unifier SQL et NoSQL sans les abstraire artificiellement",
+      "category": "Architecture",
+      "publishedAt": "2026-02-03"
+    },
+    {
+      "slug": "vault-chiffre-argon2-stockage-local-credentials",
+      "title": "Le vault chiffré de QoreDB : Argon2 et stockage local des credentials",
+      "category": "Security",
+      "publishedAt": "2026-03-22"
+    }
+  ],
+  "queue": [
+    {
+      "title": "Pourquoi QoreDB bloque les mutations en production par défaut",
+      "category": "Security",
+      "topic_notes": "Safety policy, regex backend, classification environnements, read-only mode"
+    },
+    {
+      "title": "Le modèle open-core de QoreDB : ce qui est libre, ce qui ne l'est pas",
+      "category": "Open Source",
+      "topic_notes": "Apache 2.0 vs BUSL-1.1, périmètre core/premium, transparence licensing"
+    },
+    {
+      "title": "Comment QoreDB gère les tunnels SSH sans agent tiers",
+      "category": "Architecture",
+      "topic_notes": "OpenSSH système, pas de libssh embarquée, bastion/jump host, reconnexion"
+    },
+    {
+      "title": "Le streaming de résultats dans QoreDB : curseurs et mémoire bornée",
+      "category": "Architecture",
+      "topic_notes": "Curseurs côté driver, backpressure, mémoire bornée, pas de chargement total"
+    },
+    {
+      "title": "L'éditeur SQL de QoreDB : CodeMirror, autocomplétion et limites volontaires",
+      "category": "Produit",
+      "topic_notes": "CodeMirror, schema-aware completion, pas de magic, transparence sur ce qui est supporté"
+    },
+    {
+      "title": "Le Data Grid : virtualisation, tri server-side et inline edit",
+      "category": "Produit",
+      "topic_notes": "Virtualisation DOM, tri délégué au moteur, édition directe, contraintes UX"
+    },
+    {
+      "title": "Pourquoi QoreDB ne traduit pas les requêtes entre moteurs",
+      "category": "Vision",
+      "topic_notes": "Pas d'abstraction SQL universelle, chaque moteur a sa grammaire, transparence"
+    },
+    {
+      "title": "Le driver SQLite dans QoreDB : WAL, extensions et fichiers locaux",
+      "category": "Architecture",
+      "topic_notes": "WAL mode, extensions, cas d'usage dev local, limitations concurrence"
+    },
+    {
+      "title": "DuckDB comme moteur de fédération : pourquoi et comment",
+      "category": "Architecture",
+      "topic_notes": "DuckDB embarqué, source mapping, OLAP local, jointures cross-database"
+    },
+    {
+      "title": "Le système d'environnements : Dev, Staging, Prod et leurs garde-fous",
+      "category": "Security",
+      "topic_notes": "Classification couleur, regex destructrices, confirmation backend, pas juste UI"
+    },
+    {
+      "title": "Exporter ses données en CSV, JSON, SQL, HTML, XLSX et Parquet",
+      "category": "Produit",
+      "topic_notes": "Formats multiples, export self-contained HTML, limites par format, XLSX/Parquet pro"
+    },
+    {
+      "title": "Le Visual Data Diff : comparer Prod et Staging côte à côte",
+      "category": "Produit",
+      "topic_notes": "Diff type Git, comparaison résultats, snapshots, cas d'usage réels"
+    },
+    {
+      "title": "Tauri 2 comme runtime desktop : choix, contraintes, bénéfices",
+      "category": "Architecture",
+      "topic_notes": "Pas Electron, webview native, binaire léger, IPC Rust/JS, limitations"
+    },
+    {
+      "title": "Le Universal Query Interceptor : hooks, profiling et prévention",
+      "category": "Architecture",
+      "topic_notes": "Intercepteur universel, logging, audit, blocage requêtes destructrices"
+    },
+    {
+      "title": "Pourquoi QoreDB n'émule pas les features absentes d'un moteur",
+      "category": "Vision",
+      "topic_notes": "Pas de polyfill SQL, transactions MongoDB, honnêteté sur les capacités"
+    },
+    {
+      "title": "Le système de connexion résiliente : reconnexion et keep-alive",
+      "category": "Architecture",
+      "topic_notes": "Health checks, reconnexion auto, recovery SSH, monitoring proactif"
+    },
+    {
+      "title": "La recherche globale full-text : scanner toutes les tables d'une base",
+      "category": "Produit",
+      "topic_notes": "Scan multi-tables, LIKE/regex par driver, coût réel, limitations"
+    },
+    {
+      "title": "Le diagramme ER interactif : visualiser un schéma relationnel",
+      "category": "Produit",
+      "topic_notes": "Rendu SVG, isolation tables, FK visibles, pas de reverse engineering magique"
+    },
+    {
+      "title": "Le Sandbox Mode : tester des modifications sans toucher la base",
+      "category": "Produit",
+      "topic_notes": "Bac à sable local, génération migrations, indicateur visuel, rollback"
+    },
+    {
+      "title": "Redaction automatique : pourquoi aucun secret ne sort dans les logs",
+      "category": "Security",
+      "topic_notes": "Patterns regex, masquage passwords, export propre, history nettoyé"
+    },
+    {
+      "title": "Le Background Job Manager : exports longs et tâches asynchrones",
+      "category": "Architecture",
+      "topic_notes": "Tokio tasks, reprise sur erreur, feedback UI, pas de blocking"
+    },
+    {
+      "title": "Le driver CockroachDB : compatibilité PostgreSQL et ses limites",
+      "category": "Architecture",
+      "topic_notes": "Wire-compatible PG, ce qui marche, ce qui diverge, tests spécifiques"
+    },
+    {
+      "title": "Le driver SQL Server : Tiberius, connection pooling et pagination",
+      "category": "Architecture",
+      "topic_notes": "Tiberius en Rust, bb8 pool, OFFSET/FETCH, différences avec PG/MySQL"
+    },
+    {
+      "title": "La Query Library : organiser ses requêtes avec dossiers et tags",
+      "category": "Produit",
+      "topic_notes": "Bibliothèque locale, export/import JSON, pas de cloud, partage manuel"
+    },
+    {
+      "title": "Comment QoreDB gère l'annulation des requêtes selon le moteur",
+      "category": "Architecture",
+      "topic_notes": "pg_cancel_backend, KILL QUERY MySQL, best effort MongoDB, timeouts"
+    },
+    {
+      "title": "Les Virtual Relations : définir des FK là où la base n'en a pas",
+      "category": "Produit",
+      "topic_notes": "FK virtuelles côté client, collections MongoDB, tables mal conçues"
+    },
+    {
+      "title": "Le modèle de sécurité de QoreDB : menaces et contre-mesures",
+      "category": "Security",
+      "topic_notes": "Threat model, surface d'attaque locale, IPC, vault, SQL injection prevention"
+    },
+    {
+      "title": "Pourquoi QoreDB est desktop-only et le restera",
+      "category": "Vision",
+      "topic_notes": "Pas de SaaS, pas de données en transit, latence locale, contrôle total"
+    },
+    {
+      "title": "L'auto-update dans une app Tauri : mécanisme et contraintes",
+      "category": "Architecture",
+      "topic_notes": "tauri-updater, signatures, rollback, canaux de distribution"
+    },
+    {
+      "title": "Le crash recovery : restaurer l'état de session après un plantage",
+      "category": "Architecture",
+      "topic_notes": "Persistance onglets, reconnexion auto, state recovery, limitations"
+    },
+    {
+      "title": "Les snapshots de résultats : figer un état pour le comparer plus tard",
+      "category": "Produit",
+      "topic_notes": "Sauvegarde locale, métadonnées, restauration, comparaison temporelle"
+    },
+    {
+      "title": "Inline Edit dans le Data Grid : modifier une cellule directement",
+      "category": "Produit",
+      "topic_notes": "UPDATE/NoSQL généré, validation types, contraintes FK, UX de l'édition"
+    },
+    {
+      "title": "Le système i18n de QoreDB : internationalisation sans framework lourd",
+      "category": "Produit",
+      "topic_notes": "i18n maison, FR/EN, clés typées, pas de runtime lourd"
+    },
+    {
+      "title": "Comment QoreDB détecte et prévient les requêtes destructrices",
+      "category": "Security",
+      "topic_notes": "Regex DROP/DELETE sans WHERE, validation backend, pas juste un warning UI"
+    },
+    {
+      "title": "Le Foreign Key Peek : voir les relations au survol d'une cellule",
+      "category": "Produit",
+      "topic_notes": "Tooltip FK, requête à la demande, pas de preload, UX légère"
+    },
+    {
+      "title": "Routines et procédures stockées : lister, créer, éditer",
+      "category": "Produit",
+      "topic_notes": "Interface dédiée, multi-driver, context menu, limitations par moteur"
+    },
+    {
+      "title": "Le Global Search (Cmd+K) : navigation universelle dans QoreDB",
+      "category": "Produit",
+      "topic_notes": "Spotlight-like, connexions, historique, commandes, bibliothèque"
+    },
+    {
+      "title": "Triggers et événements : gestion multi-driver dans QoreDB",
+      "category": "Produit",
+      "topic_notes": "Vue liste, édition, support variable par moteur, MySQL Events"
+    },
+    {
+      "title": "Les opérations de maintenance : VACUUM, ANALYZE, OPTIMIZE, REPAIR",
+      "category": "Produit",
+      "topic_notes": "Dialog dédié, feedback, différences par driver, quand les utiliser"
+    },
+    {
+      "title": "L'estimation du nombre de lignes : pourquoi COUNT(*) n'est pas la réponse",
+      "category": "Architecture",
+      "topic_notes": "pg_class, information_schema, estimation vs exact, coût réel"
+    },
+    {
+      "title": "Le modèle de données universel : Namespace, Collection, Record",
+      "category": "Architecture",
+      "topic_notes": "Abstraction minimale, mapping SQL/NoSQL, ce qui est unifié et ce qui ne l'est pas"
+    },
+    {
+      "title": "Pourquoi choisir Rust pour le backend d'un client de base de données",
+      "category": "Architecture",
+      "topic_notes": "Sécurité mémoire, async tokio, FFI, performance, courbe d'apprentissage"
+    },
+    {
+      "title": "SQLx dans QoreDB : requêtes compilées et pool de connexions",
+      "category": "Architecture",
+      "topic_notes": "Compile-time checking, pool async, migrations, limites avec drivers custom"
+    },
+    {
+      "title": "Le driver MongoDB dans QoreDB : BSON, collections et ce qui manque",
+      "category": "Architecture",
+      "topic_notes": "Driver natif, pas d'ORM, aggregation pipeline, limitations transactions"
+    },
+    {
+      "title": "Le driver Redis : navigation par type de clé et SCAN",
+      "category": "Architecture",
+      "topic_notes": "Key-value natif, SCAN vs KEYS, inspection par type, pas de requêtes SQL"
+    },
+    {
+      "title": "Comment QoreDB gère les connexions SSL/TLS selon le moteur",
+      "category": "Security",
+      "topic_notes": "CA certs, client certs, verify mode, différences PG/MySQL/Mongo"
+    },
+    {
+      "title": "L'export HTML self-contained : partager des données sans outil",
+      "category": "Produit",
+      "topic_notes": "HTML unique, CSS/JS embarqués, tri/filtrage intégré, zéro dépendance"
+    },
+    {
+      "title": "Pourquoi QoreDB ne sera jamais un SaaS",
+      "category": "Vision",
+      "topic_notes": "Données locales, pas de compte obligatoire, collaboration optionnelle"
+    },
+    {
+      "title": "Le multi-statement execution : exécuter un script SQL complet",
+      "category": "Produit",
+      "topic_notes": "Séparation statements, comptage, notices, seul le dernier résultat affiché"
+    },
+    {
+      "title": "Comment fonctionne le test de connexion dans QoreDB",
+      "category": "Architecture",
+      "topic_notes": "Dry-run, feedback utilisateur, timeout, pas de connexion persistée"
+    },
+    {
+      "title": "La pagination dans QoreDB : OFFSET/LIMIT et ses limites réelles",
+      "category": "Architecture",
+      "topic_notes": "Pagination server-side, infinite scroll, coût OFFSET élevé, pas de keyset"
+    },
+    {
+      "title": "Le système de thèmes : dark mode natif et cohérence Tailwind",
+      "category": "Produit",
+      "topic_notes": "Tailwind CSS, variables CSS, dark/light, high contrast, pas de theming runtime"
+    },
+    {
+      "title": "L'onboarding de QoreDB : première connexion en moins de 30 secondes",
+      "category": "Produit",
+      "topic_notes": "Flow guidé, configuration minimale, pas de compte, pas de setup serveur"
+    },
+    {
+      "title": "Le système de favoris et la sidebar de connexions",
+      "category": "Produit",
+      "topic_notes": "Arbre multi-serveurs, favoris persistés, recherche, organisation"
+    },
+    {
+      "title": "Les index dans QoreDB : afficher ce que le moteur expose réellement",
+      "category": "Architecture",
+      "topic_notes": "Métadonnées index, pas d'inférence, ce que chaque driver remonte"
+    },
+    {
+      "title": "Import/Export de configuration : portabilité complète de son setup",
+      "category": "Produit",
+      "topic_notes": "JSON complet, backup auto, transfert entre machines, pas de cloud sync"
+    },
+    {
+      "title": "La télémétrie dans QoreDB : ce qui est collecté, ce qui ne l'est pas",
+      "category": "Security",
+      "topic_notes": "Tracking anonyme, opt-in, pas de données utilisateur, debugging only"
+    },
+    {
+      "title": "Construire un client de BDD en 2026 : les outils qui n'ont pas évolué",
+      "category": "Vision",
+      "topic_notes": "DBeaver, pgAdmin, phpMyAdmin, pourquoi l'UX stagne, ce qui manque"
+    },
+    {
+      "title": "Le trait DataEngine : une interface Rust pour unifier tous les drivers",
+      "category": "Architecture",
+      "topic_notes": "Trait system Rust, dispatch dynamique, méthodes communes, extension"
+    },
+    {
+      "title": "Ce que QoreDB ne fait pas et ne fera pas",
+      "category": "Vision",
+      "topic_notes": "Pas de BI, pas de ETL, pas de migration automatique, périmètre volontaire"
+    },
+    {
+      "title": "Le App Lock : verrouiller QoreDB au démarrage",
+      "category": "Security",
+      "topic_notes": "Protection physique, PIN/OS keychain, threat model accès local"
+    },
+    {
+      "title": "Le Infinite Scroll dans le Data Grid : charger sans paginer",
+      "category": "Produit",
+      "topic_notes": "Chargement progressif, virtualisation, seuil de déclenchement, limites mémoire"
+    },
+    {
+      "title": "Comment QoreDB gère les erreurs : types custom et propagation Rust",
+      "category": "Architecture",
+      "topic_notes": "error.rs, types custom, opérateur ?, messages utilisateur vs dev"
+    },
+    {
+      "title": "Le DriverRegistry : instanciation dynamique des drivers",
+      "category": "Architecture",
+      "topic_notes": "Registry pattern, lazy init, pool partagé, cleanup"
+    },
+    {
+      "title": "Créer et supprimer des bases de données depuis l'interface",
+      "category": "Produit",
+      "topic_notes": "DDL graphique, double confirmation, support sélectif par driver"
+    }
+  ]
+}
