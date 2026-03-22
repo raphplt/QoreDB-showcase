@@ -1,799 +1,912 @@
 {
-    "nav": {
-        "features": "Features",
-        "preview": "Preview",
-        "pricing": "Pricing",
-        "blog": "Blog",
-        "roadmap": "Roadmap",
-        "faq": "FAQ",
-        "changelog": "Changelog",
-        "download": "Download",
-        "join_beta": "Join Beta"
+  "nav": {
+    "features": "Features",
+    "preview": "Preview",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "roadmap": "Roadmap",
+    "faq": "FAQ",
+    "changelog": "Changelog",
+    "download": "Download",
+    "join_beta": "Join Beta"
+  },
+  "download": {
+    "title": "Download QoreDB",
+    "subtitle": "Get the latest version of QoreDB for your operating system.",
+    "download_now": "Download Now",
+    "download_for": "Download for {{platform}}",
+    "select_platform": "Select your platform below.",
+    "error": "Unable to load version information.",
+    "detected_platform": "We detected you're on {{platform}}",
+    "other_platforms": "Other platforms",
+    "recommended": "Recommended",
+    "apple_silicon": "Apple Silicon (M1/M2/M3/M4)",
+    "intel_mac": "Intel Mac",
+    "windows_installer": "Installer (.exe)",
+    "windows_msi": "MSI Installer",
+    "microsoft_store": "Microsoft Store",
+    "linux_appimage": "AppImage (Universal)",
+    "linux_deb": "Debian / Ubuntu (.deb)",
+    "linux_rpm": "Fedora / RHEL (.rpm)",
+    "view_all_releases": "View all releases on GitHub"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "subtitle": "Stay up to date with the latest changes and improvements to QoreDB.",
+    "no_releases": "No release notes found.",
+    "read_more": "Read more",
+    "show_less": "Show less",
+    "load_more": "Load more releases"
+  },
+  "footer": {
+    "product": "Product",
+    "features": "Features",
+    "preview": "Preview",
+    "pricing": "Pricing",
+    "changelog": "Changelog",
+    "resources": "Resources",
+    "documentation": "Documentation",
+    "guide": "Getting Started",
+    "community": "Community",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "license": "License",
+    "mentions_legales": "Legal Notice",
+    "description": "The modern database client for demanding developers.",
+    "made_with_love": "Made with {{heart}} by"
+  },
+  "hero": {
+    "badges": {
+      "opensource": "Open Source",
+      "localfirst": "Local-first",
+      "hybrid": "SQL + NoSQL"
     },
-    "download": {
-        "title": "Download QoreDB",
-        "subtitle": "Get the latest version of QoreDB for your operating system.",
-        "download_now": "Download Now",
-        "download_for": "Download for {{platform}}",
-        "select_platform": "Select your platform below.",
-        "error": "Unable to load version information.",
-        "detected_platform": "We detected you're on {{platform}}",
-        "other_platforms": "Other platforms",
-        "recommended": "Recommended",
-        "apple_silicon": "Apple Silicon (M1/M2/M3/M4)",
-        "intel_mac": "Intel Mac",
-        "windows_installer": "Installer (.exe)",
-        "windows_msi": "MSI Installer",
-        "microsoft_store": "Microsoft Store",
-        "linux_appimage": "AppImage (Universal)",
-        "linux_deb": "Debian / Ubuntu (.deb)",
-        "linux_rpm": "Fedora / RHEL (.rpm)",
-        "view_all_releases": "View all releases on GitHub"
-    },
-    "changelog": {
-        "title": "Changelog",
-        "subtitle": "Stay up to date with the latest changes and improvements to QoreDB.",
-        "no_releases": "No release notes found.",
-        "read_more": "Read more",
-        "show_less": "Show less",
-        "load_more": "Load more releases"
-    },
-    "footer": {
-        "product": "Product",
-        "features": "Features",
-        "preview": "Preview",
-        "pricing": "Pricing",
-        "changelog": "Changelog",
-        "resources": "Resources",
-        "documentation": "Documentation",
-        "guide": "Getting Started",
-        "community": "Community",
-        "legal": "Legal",
-        "privacy": "Privacy",
-        "terms": "Terms",
-        "license": "License",
-        "mentions_legales": "Legal Notice",
-        "description": "The modern database client for demanding developers.",
-        "made_with_love": "Made with {{heart}} by"
-    },
-    "hero": {
-        "badges": {
-            "opensource": "Open Source",
-            "localfirst": "Local-first",
-            "hybrid": "SQL + NoSQL"
-        },
-        "title": "The Database.\n<italic>Simplified.</italic>",
-        "subtitle": "A <highlight>modern</highlight>, <highlight>fast</highlight>, and <highlight>secure</highlight> database client for developers tired of slow and poorly designed tools.",
-        "cta": {
-            "join_beta": "Join Beta",
-            "download_core": "Download Core (Free)",
-            "discover_pro": "Discover Pro",
-            "view_project": "View Project",
-            "participate": "Participate"
-        },
-        "social_proof": "Join <highlight>100+</highlight> developers waiting for the beta"
-    },
-    "preview": {
-        "eyebrow": "Preview",
-        "title": "An interface built for <accent>developers</accent>",
-        "description": "Dense yet breathable. Serious yet modern.\n<subtext>Exactly what you expect from a professional tool.</subtext>",
-        "tabs": {
-            "database": {
-                "title": "Overview",
-                "description": "Global metrics and quick access to tables."
-            },
-            "schema": {
-                "title": "Schema Explorer",
-                "description": "Visualize your relationships and database structure."
-            },
-            "home": {
-                "title": "Home",
-                "description": "Session recovery and connection management."
-            },
-            "connection": {
-                "title": "New Connection",
-                "description": "Simple and advanced source configuration."
-            },
-            "security": {
-                "title": "Security",
-                "description": "Guardrails, audit, and request profiling."
-            },
-            "table": {
-                "title": "Data View",
-                "description": "Smooth manipulation with a high-performance grid."
-            },
-            "query": {
-                "title": "SQL Editor",
-                "description": "Write and run queries with autocompletion and syntax highlighting."
-            }
-        }
-    },
-    "blog_section": {
-        "eyebrow": "Blog",
-        "title": "Latest articles",
-        "subtitle": "Insights, tutorials, and news about QoreDB and modern development.",
-        "cta": "View all articles",
-        "loading": "Loading the latest articles...",
-        "empty": "No articles yet."
-    },
-    "features": {
-        "eyebrow": "Features",
-        "title": "What QoreDB does <accent>well</accent>",
-        "subtitle": "Designed for developers who want a tool that just works.",
-        "items": {
-            "unified": {
-                "title": "8 Native Drivers",
-                "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis and CockroachDB in one interface."
-            },
-            "vault": {
-                "title": "Security & Privacy",
-                "desc": "Encrypted credentials (Argon2) and GDPR compliant (zero telemetry)."
-            },
-            "ssh": {
-                "title": "SSH Tunneling",
-                "desc": "Native support for SSH tunnels for remote databases."
-            },
-            "editor": {
-                "title": "Smart Editor",
-                "desc": "Syntax highlighting, snippets, formatting and multi-statement execution."
-            },
-            "library": {
-                "title": "Query Library",
-                "desc": "Folders, tags, JSON import/export and reusable queries."
-            },
-            "envs": {
-                "title": "Environment Protection",
-                "desc": "Distinct Dev/Staging/Prod, mutation blocking in prod."
-            },
-            "grid": {
-                "title": "High Performance Grid",
-                "desc": "Virtualization, server-side filtering, inline editing, pagination and infinite scroll."
-            },
-            "ai": {
-                "title": "AI Assistant",
-                "desc": "Query generation, explanation and error correction with your own API keys (BYOK)."
-            },
-            "federation": {
-                "title": "Cross-DB Federation",
-                "desc": "Run SQL queries across multiple databases with joins between active connections."
-            },
-            "ddl": {
-                "title": "DDL Management",
-                "desc": "Create/drop databases, tables, routines, triggers and run maintenance operations."
-            },
-            "export": {
-                "title": "Multi-Format Export",
-                "desc": "Export results as CSV, JSON, SQL, HTML, XLSX, Parquet or self-contained HTML."
-            },
-            "opensource": {
-                "title": "Open Source",
-                "desc": "Auditable code available on GitHub."
-            }
-        },
-        "killer": {
-            "sandbox": {
-                "title": "Sandbox Editing + Diff + Migrations",
-                "desc": "Safely edit data locally, visualize changes with cellular diff, and generate reproducible SQL scripts.",
-                "badge": "Git for Data",
-                "list": {
-                    "local": "Local modifications (no direct commit)",
-                    "diff": "Clear list of changes (Insert/Update/Delete)",
-                    "script": "Generate SQL script with pre-conditions"
-                }
-            },
-            "er_diagram": {
-                "title": "Interactive ER Diagram",
-                "desc": "A living schema explorer. Navigate tables and relations visually, zoom, pan, and jump directly to data.",
-                "badge": "Visual",
-                "list": {
-                    "canvas": "Interactive canvas with table clustering",
-                    "nav": "Zoom, pan, and search tables",
-                    "peek": "Hover relations to see details"
-                }
-            },
-            "safety_net": {
-                "title": "Universal Query Safety Net",
-                "desc": "Active error prevention. Detects dangerous queries (DELETE without WHERE) and provides smart alerts.",
-                "badge": "Safety",
-                "list": {
-                    "detect": "Auto-detection of dangerous queries",
-                    "env": "Environment-aware alerts",
-                    "audit": "Local audit log for sensitive operations"
-                }
-            },
-            "data_diff": {
-                "title": "Visual Data Diff",
-                "desc": "Compare two query results or tables side by side, like a Git diff for your data. Perfect for comparing Prod vs Staging.",
-                "badge": "Compare",
-                "list": {
-                    "compare": "Side-by-side comparison of any two result sets",
-                    "highlight": "Cell-level highlighting of additions, deletions and changes",
-                    "snapshot": "Save result snapshots for later comparison"
-                }
-            }
-        },
-        "compatibility": {
-            "eyebrow": "Compatibility",
-            "title": "Supported Databases",
-            "coming_soon": "And more coming soon..."
-        },
-        "pro_badge": "Pro",
-        "visual_diff_badge": "Visual Diff"
-    },
+    "ph_badge": "Launching on Product Hunt",
+    "title": "One app for <italic>all your databases</italic>",
+    "subtitle": "The fast, open-source database client built with Rust. Connect to <highlight>8 databases</highlight> from a single, beautiful interface. Local-first — your data stays yours.",
     "cta": {
-        "badge": "Core is free forever",
-        "title_pre": "Start using QoreDB ",
-        "title_highlight": "for free",
-        "description": "Download QoreDB Core for free. Upgrade to Pro when you need advanced workflows.",
-        "download_button": "Download Core",
-        "pricing_button": "See Pro plans",
-        "contact_title": "Contact Us",
-        "form": {
-            "name": "Name",
-            "email": "Email",
-            "subject": "Subject",
-            "message": "Message",
-            "submit": "Send Message",
-            "sending": "Sending...",
-            "success": "Message sent! We'll get back to you soon.",
-            "success_title": "Message Sent!",
-            "send_another": "Send another message",
-            "error": "Failed to send message.",
-            "reply_time": "We typically reply within 24h",
-            "placeholders": {
-                "name": "John Doe",
-                "email": "john@example.com",
-                "subject": "Partnership / Question...",
-                "message": "Tell us how we can help..."
-            }
-        },
-        "trust": {
-            "spam": "Direct contact",
-            "announcements": "Support",
-            "priority": "Partnerships"
-        }
+      "join_beta": "Join Beta",
+      "download_core": "Download Free",
+      "discover_pro": "View on GitHub",
+      "view_project": "View Project",
+      "participate": "Participate"
     },
-    "why": {
-        "items": {
-            "slow": {
-                "title": "Slow",
-                "desc": "Endless loading"
-            },
-            "dated": {
-                "title": "Dated",
-                "desc": "Interface from another age"
-            },
-            "tiring": {
-                "title": "Tiring",
-                "desc": "Poorly thought-out workflows"
-            }
-        },
-        "eyebrow": "The problem",
-        "title_pre": "Current tools ",
-        "title_highlight": "slow you down",
-        "description": "DBeaver, phpMyAdmin, pgAdmin... They do the job, but the UX is mediocre, workflows are poorly optimized and they haven't evolved with the modern way of working.",
-        "comparison": {
-            "pre": "QoreDB does for databases what ",
-            "post": " did for their fields."
-        }
+    "social_proof": "Join <highlight>100+</highlight> developers waiting for the beta",
+    "meta": {
+      "rust": "Built with Rust & Tauri",
+      "license": "Apache 2.0 License",
+      "platforms": "macOS · Windows · Linux"
     },
-    "language_switcher": {
-        "toggle": "Toggle language"
-    },
-    "roadmap_page": {
-        "title": "QoreDB Roadmap",
-        "subtitle": "Discover the next steps in QoreDB development.",
-        "now": {
-            "title": "Now — Solid Foundations",
-            "quote": "Make QoreDB reliable, fast, and pleasant for daily use.",
-            "items": {
-                "1": "Continuous improvement of performance and stability",
-                "2": "Reinforced local-first security and privacy",
-                "3": "Smoother user experience on existing workflows",
-                "4": "Clearer error handling and diagnostics",
-                "5": "Documentation and progressive opening to the community"
-            },
-            "goal": "Goal: a tool that developers can use and recommend with confidence."
-        },
-        "soon": {
-            "title": "Soon — Productivity and Clarity",
-            "quote": "Go beyond traditional database clients.",
-            "items": {
-                "1": "More efficient data navigation and exploration",
-                "2": "Better understanding of structures and relationships",
-                "3": "Safer and more intuitive data editing",
-                "4": "Easier data comparison and manipulation",
-                "5": "First bricks of local collaboration"
-            },
-            "goal": "Goal: save developers real time, every day."
-        },
-        "later": {
-            "title": "Later — The QoreDB Vision",
-            "quote": "Rethink how developers interact with their data.",
-            "items": {
-                "1": "Unified SQL & NoSQL experience",
-                "2": "Cross-database relationships and virtual views",
-                "3": "Intelligent assistance and automation",
-                "4": "Extensibility and open-source ecosystem",
-                "5": "Collaboration without imposed cloud dependency"
-            },
-            "goal": "Goal: become the reference tool for modern developers."
-        },
-        "transparency": {
-            "text": "This roadmap reflects the current direction of the project. It is subject to evolve based on community feedback and real-world usage."
-        }
-    },
-    "faq_page": {
-        "title": "FAQ — QoreDB",
-        "search_placeholder": "Search for an answer...",
-        "no_results": "No results found for",
-        "filters": {
-            "all": "All",
-            "general": "General",
-            "tech": "Technical",
-            "project": "Project & Business"
-        },
-        "items": {
-            "what_is_qoredb": {
-                "question": "What exactly is QoreDB?",
-                "answer": "QoreDB is a **modern, open-source, local-first database client**, designed for developers who want to work efficiently with SQL and NoSQL databases, without depending on an imposed cloud.\n\nIt focuses on:\n\n* **performance**,\n* **security**,\n* a **polished developer experience**,\n* and a long-term vision more ambitious than traditional tools."
-            },
-            "difference_dbeaver": {
-                "question": "How is QoreDB different from DBeaver or existing tools?",
-                "answer": "QoreDB does not seek to be a \"feature-by-feature\" alternative.\n\nKey differences:\n\n* **Local-first** architecture (no data sent by default)\n* Built-in security and guardrails (environments, read-only, production rules)\n* User experience designed for speed and clarity\n* Unified SQL + NoSQL vision\n* Modern, extensible, long-term oriented codebase\n\nQoreDB is designed as a **daily work tool**, not an \"aging Swiss Army knife\"."
-            },
-            "is_opensource": {
-                "question": "Is QoreDB really open-source?",
-                "answer": "Yes.\n\nThe core of QoreDB is **open-source**, readable, auditable, and modifiable.\nTransparency is part of the project's DNA.\n\nEventually, some advanced features may exist as a paid offering, **without ever removing essential capabilities from the open-source version**."
-            },
-            "is_free": {
-                "question": "Is QoreDB free?",
-                "answer": "Yes.\n\nQoreDB is **free to download and use**, on macOS, Windows, and Linux.\n\nA paid offer may exist in the future for advanced or professional uses, but the core of the product will remain free and usable without cost."
-            },
-            "data_privacy": {
-                "question": "Is my data sent anywhere?",
-                "answer": "No.\n\nBy default:\n\n* Connections, queries, and data remain **strictly local**.\n* No database is proxied or stored on a remote server.\n\nMeasurement tools (analytics) are:\n\n* **disabled by default**\n* **anonymous**\n* **explicit opt-in**\n\nQoreDB adopts a **privacy-first** philosophy."
-            },
-            "analytics": {
-                "question": "Do you use analytics tools?",
-                "answer": "Yes, but with strict rules.\n\nAnalytics serve only to:\n\n* understand feature adoption,\n* improve user experience,\n* prioritize developments.\n\nThey **never** collect:\n\n* database data,\n* complete SQL queries,\n* credentials,\n* sensitive content.\n\nActivation is always **voluntary**."
-            },
-            "production_ready": {
-                "question": "Is QoreDB suitable for production use?",
-                "answer": "Yes, with guardrails.\n\nQoreDB integrates:\n\n* environments (dev / staging / prod),\n* a read-only mode,\n* protections against dangerous queries,\n* cancellation and timeout mechanisms.\n\nThe goal is to reduce **human errors**, without slowing down developers."
-            },
-            "supported_databases": {
-                "question": "Which databases are supported?",
-                "answer": "QoreDB currently supports:\n\n* PostgreSQL\n* MySQL / MariaDB\n* SQL Server\n* SQLite\n* DuckDB\n* MongoDB\n* Redis\n\nMore engines are planned as the architecture evolves."
-            },
-            "remote_ssh": {
-                "question": "Does it work with remote connections and SSH?",
-                "answer": "Yes.\n\nQoreDB supports:\n\n* classic remote connections,\n* SSH tunnels,\n* different authentication modes depending on the databases.\n\nConnection security is a priority."
-            },
-            "platforms": {
-                "question": "On which systems is QoreDB available?",
-                "answer": "QoreDB is available on:\n\n* macOS\n* Windows\n* Linux\n\nBuilds are updated regularly."
-            },
-            "maintenance": {
-                "question": "Is the project actively maintained?",
-                "answer": "Yes.\n\nQoreDB is in active development, with:\n\n* frequent releases,\n* structural refactors,\n* a public roadmap,\n* gradual opening to the community.\n\nThe project has already passed its POC stage."
-            },
-            "contribute": {
-                "question": "Can I contribute to the project?",
-                "answer": "Yes, and it is encouraged.\n\nPossible contributions:\n\n* user feedback,\n* GitHub issues and discussions,\n* improvement proposals,\n* code and documentation.\n\nA community GitHub is being structured."
-            },
-            "pro_version": {
-                "question": "Will there be a \"Pro\" version?",
-                "answer": "Probably, yes.\n\nThe goal is not to block usage, but to offer:\n\n* advanced features,\n* collaborative or professional uses,\n* options intended for teams and companies.\n\nThe open-source version will remain fully usable."
-            },
-            "funding": {
-                "question": "How will the project be funded?",
-                "answer": "The targeted model is:\n\n* sustainable open-source,\n* self-funded,\n* without dependence on a mandatory centralized cloud.\n\nDetails will evolve with product adoption."
-            },
-            "professional_use": {
-                "question": "Can I use QoreDB in a professional setting?",
-                "answer": "Yes.\n\nQoreDB is designed to be used:\n\n* by solo developers,\n* early startups,\n* technical teams.\n\nSecurity, stability, and maintenance aspects are taken seriously."
-            },
-            "follow_progress": {
-                "question": "Where can I follow the project's evolution?",
-                "answer": "* On the official website\n* Via the public roadmap\n* On LinkedIn (regular sharing of project progress)\n* On GitHub"
-            },
-            "join_beta": {
-                "question": "How to join the beta or test QoreDB?",
-                "answer": "QoreDB is already available for download.\n\nYou can:\n\n* install it directly,\n* join the beta via the site,\n* share your feedback to influence the future of the project."
-            },
-            "long_term": {
-                "question": "Can I trust QoreDB in the long term?",
-                "answer": "QoreDB is designed as a **long-term project**, not an experiment.\n\nTechnical, product, and open-source choices go in the direction of:\n\n* sustainability,\n* transparency,\n* developer trust."
-            }
-        }
-    },
-    "pricing_page": {
-        "badge": "Open Core",
-        "title": "Choose the plan that fits your workflow",
-        "subtitle": "Core remains complete and free. Pro adds advanced capabilities when you need them.",
-        "billing_note": "Perpetual license, one-time payment for Pro",
-        "checkout_error": "Unable to start Stripe Checkout right now.",
-        "faq_title": "Frequently asked questions",
-        "core": {
-            "title": "Core",
-            "description": "The complete open-source foundation of QoreDB.",
-            "price": "Free",
-            "badge": "Main choice",
-            "cta": "Download for free",
-            "features": {
-                "drivers": "All drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis, CockroachDB)",
-                "crud": "Full CRUD + SQL/Mongo editor",
-                "grid": "High-performance data grid (virtual scrolling)",
-                "er_diagram": "Interactive ER diagram",
-                "history": "Query history and favorites",
-                "vault": "Encrypted credential vault (Argon2)",
-                "ssh": "Native SSH tunneling",
-                "safety": "Production safety rules (env labels, read-only mode)",
-                "audit_basic": "Basic audit log (50 entries)",
-                "export_basic": "CSV / JSON / SQL export",
-                "shortcuts": "Keyboard shortcuts"
-            }
-        },
-        "pro": {
-            "title": "Pro",
-            "description": "The natural upgrade for demanding developers.",
-            "price": "XX€",
-            "badge": "One-time payment",
-            "cta": "Buy QoreDB Pro",
-            "student_note": "Student? Get in touch.",
-            "features": {
-                "everything_core": "Everything in Core",
-                "sandbox": "Sandbox mode with migration generation",
-                "visual_diff": "Visual Data Diff (table comparison)",
-                "audit_advanced": "Advanced audit log (unlimited, filterable, exportable)",
-                "profiling": "Query profiling and performance analysis",
-                "ai": "AI assistant (BYOK — OpenAI / Anthropic / Ollama)",
-                "export_advanced": "Advanced exports (XLSX, Parquet)",
-                "security_rules": "Custom safety rules",
-                "library_advanced": "Advanced query library",
-                "virtual_relations": "Auto-suggest virtual relations"
-            }
-        },
-        "team": {
-            "title": "Team",
-            "description": "Advanced collaboration for teams.",
-            "price": "Coming soon",
-            "badge": "Coming Soon",
-            "cta": "Contact us",
-            "features": {
-                "everything_pro": "Everything in Pro",
-                "sync": "Multi-device sync",
-                "shared_queries": "Shared query libraries",
-                "permissions": "Granular permissions",
-                "managed_ai": "Managed AI"
-            }
-        },
-        "faq": {
-            "open_core_why": {
-                "question": "Why an Open Core model?",
-                "answer": "To make the solo project sustainable long term. Core stays free forever. Pro funds continuous development."
-            },
-            "data_sent": {
-                "question": "Is any of my data sent somewhere?",
-                "answer": "No. QoreDB is 100% local-first. Your data never leaves your machine. Even AI runs with your own API keys."
-            },
-            "stop_paying": {
-                "question": "What happens if I stop paying?",
-                "answer": "Pro is a perpetual license (one-time payment). You keep unlocked features. Only future major upgrades may require a paid upgrade."
-            },
-            "try_pro": {
-                "question": "Can I try Pro features first?",
-                "answer": "Core includes a limited preview of selected Pro features (for example: 3 free Sandbox changes) so you can evaluate before buying."
-            },
-            "pro_source_code": {
-                "question": "Is Pro source code available?",
-                "answer": "Pro features are under BSL 1.1 and automatically convert to Apache 2.0 after 4 years. Code is readable but redistribution is restricted during that period."
-            }
-        }
-    },
-    "license_management": {
-        "title": "License Management",
-        "subtitle": "Check your QoreDB Pro license status and resend your key by email.",
-        "fields": {
-            "email": "Email",
-            "payment_id": "Stripe payment ID"
-        },
-        "actions": {
-            "loading": "Loading..."
-        },
-        "status": {
-            "title": "Check license status",
-            "description": "Enter your purchase email and payment ID to verify if the license is active.",
-            "cta": "Check my license",
-            "result": "Status",
-            "not_found": "No purchase found",
-            "license_found": "A license key is attached to this payment."
-        },
-        "resend": {
-            "title": "Resend key by email",
-            "description": "Enter your purchase email to receive your license key again.",
-            "cta": "Resend key",
-            "success": "Email sent. Please check your inbox."
-        },
-        "errors": {
-            "status": "Unable to verify license status.",
-            "resend": "Unable to resend the key right now.",
-            "not_found": "No purchase found for this email."
-        }
-    },
-    "purchase_success": {
-        "title": "Payment confirmed",
-        "subtitle": "Your QoreDB Pro license is ready. We also sent your key by email.",
-        "license_label": "License key",
-        "pending_license": "Your key is not available yet. Please wait a few seconds and refresh this page.",
-        "session_error": "Unable to retrieve this Stripe session.",
-        "activation_title": "Activation",
-        "steps": {
-            "1": "Open QoreDB",
-            "2": "Go to Settings",
-            "3": "Open License",
-            "4": "Paste the key",
-            "5": "Activate"
-        },
-        "download_cta": "Download QoreDB",
-        "home_cta": "Back to homepage",
-        "copy": "Copy key",
-        "copied": "Copied"
-    },
-    "privacy_page": {
-        "title": "Privacy Policy",
-        "last_updated": "Last updated: January 24, 2026",
-        "sections": {
-            "intro": {
-                "title": "1. Data Controller",
-                "content": "<p>The data controller is the editor of the <strong>QoreDB</strong> project.</p><p>Complete information regarding the legal entity will be specified as soon as the legal structure is finalized.</p>"
-            },
-            "data_collection": {
-                "title": "2. Data Collection",
-                "content": "<p>QoreDB strictly limits the collection of personal data.</p><h3>2.1 Navigation Data (Website)</h3><p>When consulting the site, anonymized technical data may be collected for statistical purposes, including:</p><ul><li>pages visited,</li><li>device type and browser,</li><li>operating system,</li><li>approximate country or geographic area,</li><li>load times and performance.</li></ul><p>This data <strong>does not allow for the personal identification of a user</strong>.</p><p>QoreDB uses <strong>Vercel Analytics</strong>, a privacy-respecting analytics solution:</p><ul><li>no cookies,</li><li>no cross-site tracking,</li><li>no advertising profiling.</li></ul><h3>2.2 Voluntarily Provided Data</h3><p>Certain data may be voluntarily provided by the user, for example:</p><ul><li>during contact,</li><li>during registration for a newsletter,</li><li>during the use of future services requiring authentication.</li></ul><p>Collected data may include:</p><ul><li>email address,</li><li>name or pseudonym,</li><li>message content.</li></ul>"
-            },
-            "purposes": {
-                "title": "3. Purposes of Processing",
-                "content": "<p>Collected data is used solely to:</p><ul><li>ensure the proper functioning of the site and services,</li><li>improve performance and user experience,</li><li>respond to contact requests,</li><li>communicate information related to the QoreDB project.</li></ul><p>No personal data is sold, rented, or ceded to third parties for commercial purposes.</p>"
-            },
-            "legal_basis": {
-                "title": "4. Legal Basis for Processing",
-                "content": "<p>Personal data processing is based on:</p><ul><li>QoreDB's legitimate interest (anonymous statistics, security),</li><li>the user's explicit consent when required,</li><li>the execution of a request initiated by the user.</li></ul>"
-            },
-            "cookies": {
-                "title": "5. Cookies and Trackers",
-                "content": "<p>QoreDB <strong>does not use advertising or behavioral tracking cookies</strong>.</p><p>The analytical tools used do not require prior consent in accordance with applicable regulations.</p><p>Should cookies be used in the future, this policy would be updated and a consent mechanism would be implemented.</p>"
-            },
-            "hosting": {
-                "title": "6. Hosting and Sub-processors",
-                "content": "<p>The QoreDB site and services are hosted by providers respecting high standards of security and compliance.</p><p>Data may be processed on servers located in the European Union or in countries offering an adequate level of protection in accordance with the GDPR.</p>"
-            },
-            "security": {
-                "title": "7. Data Security",
-                "content": "<p>QoreDB implements appropriate technical and organizational measures to guarantee the security, integrity, and confidentiality of data, including:</p><ul><li>encryption of communications,</li><li>access control,</li><li>monitoring and limitation of unauthorized access.</li></ul>"
-            },
-            "retention": {
-                "title": "8. Retention Period",
-                "content": "<p>Personal data is retained only for the duration necessary for the purposes for which it was collected.</p><p>Anonymized statistical data may be kept without time limitation.</p>"
-            },
-            "rights": {
-                "title": "9. User Rights",
-                "content": "<p>In accordance with the General Data Protection Regulation (GDPR), users have the following rights:</p><ul><li>right of access,</li><li>right of rectification,</li><li>right to erasure,</li><li>right to restriction of processing,</li><li>right to object,</li><li>right to data portability.</li></ul><p>Any request can be made via the contact means indicated on the site.</p>"
-            },
-            "third_party": {
-                "title": "10. Links to Third-Party Services",
-                "content": "<p>The QoreDB site may contain links to third-party services (e.g., GitHub). QoreDB is not responsible for the privacy policies applied by these services.</p>"
-            },
-            "changes": {
-                "title": "11. Policy Changes",
-                "content": "<p>QoreDB reserves the right to modify this Privacy Policy at any time.</p><p>Users are invited to consult it regularly. The date of the last update is indicated at the top of the page.</p>"
-            },
-            "contact": {
-                "title": "12. Contact",
-                "content": "<p>For any questions regarding personal data protection, you can contact the QoreDB team via the official channels indicated on the site.</p>"
-            }
-        }
-    },
-    "legal_page": {
-        "title": "Legal Notice",
-        "last_updated": "Last updated: January 24, 2026",
-        "sections": {
-            "editor": {
-                "title": "Site Editor",
-                "content": "**Project Name / Product:** QoreDB\n**Publication Director:** Raphaël Plassart\n**Status:** Software Project (open-core)\n\n> Information regarding the legal entity (company name, legal form, address, registration number) will be specified as soon as the legal structure is finalized."
-            },
-            "hosting": {
-                "title": "Hosting",
-                "content": "The QoreDB website is hosted by **Vercel Inc.**, located at 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nData may be hosted on infrastructures located within the European Union or in countries offering a level of data protection compliant with current regulations."
-            },
-            "ip": {
-                "title": "Intellectual Property",
-                "content": "All content present on the QoreDB site, including in particular:\n\n* texts,\n* documentation,\n* blog posts,\n* graphic elements,\n* visual identity,\n* the QoreDB name, logo, and brand,\n\nis protected by copyright and laws relating to intellectual property.\n\nUnless otherwise stated, QoreDB source code is distributed under an **open-core** model:\n\n* a part is published under an open-source license,\n* certain advanced features may be subject to a proprietary license.\n\nAny unauthorized reproduction, representation, modification, or exploitation of the protected content or elements is strictly prohibited."
-            },
-            "liability": {
-                "title": "Site Access and Liability",
-                "content": "QoreDB makes every effort to ensure the accuracy of the information disseminated on the site. However, the project cannot be held responsible for:\n\n* errors or omissions,\n* temporary unavailability of the site,\n* direct or indirect damages related to the use of the site or software.\n\nUse of QoreDB is under the sole responsibility of the user."
-            },
-            "external_links": {
-                "title": "External Links",
-                "content": "The QoreDB site may contain links to third-party sites. QoreDB exercises no control over these sites and declines all responsibility regarding their content or practices."
-            },
-            "privacy": {
-                "title": "Personal Data",
-                "content": "Personal data management is detailed in the dedicated page:\n\n➡️ [Privacy Policy](/privacy)\n\nQoreDB undertakes to comply with applicable regulations, in particular the General Data Protection Regulation (GDPR)."
-            },
-            "terms": {
-                "title": "Terms of Use",
-                "content": "Use of the QoreDB site, documentation, and software implies full acceptance of the:\n\n➡️ [Terms of Use](#)"
-            },
-            "license": {
-                "title": "License",
-                "content": "The license conditions applicable to the QoreDB software are detailed in the dedicated page:\n\n➡️ [License](#)"
-            },
-            "contact": {
-                "title": "Contact",
-                "content": "For any legal question, report, or request for information, you can contact the QoreDB team via the official channels indicated on the site."
-            }
-        }
-    },
-    "terms_page": {
-        "title": "Terms of Service",
-        "last_updated": "Last updated: January 24, 2026",
-        "intro": "These Terms of Service (hereinafter \"ToS\") govern the access to and use of the **QoreDB** website, its documentation, its online services, and the QoreDB software.\n\nBy accessing the site or using the QoreDB software, the user acknowledges having read these ToS and accepting them without reservation.",
-        "copyright": "© QoreDB – All rights reserved.",
-        "sections": {
-            "definitions": {
-                "title": "1. Definitions",
-                "content": "* **QoreDB**: refers to the software project, the website, the documentation, the associated tools and services.\n* **User**: any person accessing the site or using the QoreDB software.\n* **Software**: the QoreDB software, distributed under an open-core model.\n* **Site**: the official QoreDB website."
-            },
-            "object": {
-                "title": "2. Object",
-                "content": "The purpose of these ToS is to define the conditions under which users can access the QoreDB site, consult the documentation, use the resources made available, and operate the QoreDB software."
-            },
-            "access": {
-                "title": "3. Access to site and services",
-                "content": "Access to the QoreDB site is free of charge, unless otherwise indicated.\n\nQoreDB reserves the right to:\n\n* suspend, restrict, or interrupt access to the site or any service,\n* modify the content or features offered,\n* perform maintenance operations.\n\nNo guarantee is given regarding the continuous availability of the site or services."
-            },
-            "software_use": {
-                "title": "4. Use of QoreDB Software",
-                "content": "The QoreDB software is distributed under an **open-core** model:\n\n* a part of the code is published under an open-source license,\n* certain features, extensions, or services may be subject to a separate proprietary license.\n\nThe precise conditions for use, modification, and distribution of the software are defined in the **QoreDB License**, available on the site and in the official repositories."
-            },
-            "user_obligations": {
-                "title": "5. User Obligations",
-                "content": "The user agrees to:\n\n* use QoreDB in accordance with applicable laws and regulations,\n* not infringe on the security, integrity, or proper functioning of the site or the software,\n* not attempt unauthorized access to systems or data,\n* not use QoreDB for fraudulent, illegal, or abusive purposes.\n\nAny abusive use may result in the suspension of access to services."
-            },
-            "ip": {
-                "title": "6. Intellectual Property",
-                "content": "All elements of the QoreDB site (texts, documentation, graphics, logo, visual identity) are protected by intellectual property rights.\n\nUnless otherwise stated, any unauthorized reproduction, representation, or exploitation is prohibited.\n\nThe source code of the QoreDB software is subject to the terms of the applicable license, as defined in the **License** page."
-            },
-            "liability": {
-                "title": "7. Liability",
-                "content": "QoreDB is provided \"as is\", without warranty of any kind.\n\nQoreDB cannot be held liable for:\n\n* direct or indirect damages resulting from the use of the site or software,\n* data loss, business interruption, or commercial damages,\n* consequences related to improper configuration or use of the software.\n\nThe user is solely responsible for their use of QoreDB and the data they process."
-            },
-            "privacy": {
-                "title": "8. Personal Data",
-                "content": "Personal data processing is governed by the **Privacy Policy** accessible on the QoreDB site."
-            },
-            "external_links": {
-                "title": "9. External Links",
-                "content": "The QoreDB site may contain links to third-party sites or services. QoreDB exercises no control over these services and declines all responsibility regarding their content or functioning."
-            },
-            "updates": {
-                "title": "10. Changes to ToS",
-                "content": "QoreDB reserves the right to modify these ToS at any time.\n\nUsers are invited to regularly consult the current version. The date of the last update is indicated at the top of the page."
-            },
-            "law": {
-                "title": "11. Applicable Law",
-                "content": "These ToS are governed by French law.\n\nIn the event of a dispute, and failing amicable resolution, the competent courts will be those of the applicable jurisdiction in accordance with the legislation in force."
-            },
-            "contact": {
-                "title": "12. Contact",
-                "content": "For any question relating to these Terms of Service, the user can contact the QoreDB team via the official channels indicated on the site."
-            }
-        }
-    },
-    "quick_start_page": {
-        "title": "Quick Start",
-        "description": "Browse, query, and manage your data in a few clicks.",
-        "sections": {
-            "install": {
-                "title": "1. Install and Launch",
-                "content": "<p>Download the latest version from the project's <a href='https://github.com/QoreDB/QoreDB/releases' target='_blank' class='text-(--q-accent) hover:underline'>Releases</a> page, install the application, and open it.</p>"
-            },
-            "connect": {
-                "title": "2. Create Your First Connection",
-                "content": "<p>Click on <strong>+</strong> in the sidebar to add a database:</p><ul><li>PostgreSQL</li><li>MySQL / MariaDB</li><li>SQL Server</li><li>SQLite</li><li>DuckDB</li><li>MongoDB</li><li>Redis</li></ul><p>Enter the host, port, database, user, and environment (dev/staging/prod).</p>"
-            },
-            "explore": {
-                "title": "3. Explore Your Data",
-                "content": "<p>Once connected:</p><ul><li>Navigate through schemas and tables</li><li>Open a table to visualize data</li><li>Run SQL queries in the integrated editor</li></ul>"
-            },
-            "daily": {
-                "title": "4. Save Time Every Day",
-                "content": "<ul><li>History & favorites to find your queries</li><li>Global search to move fast</li><li>Read-only mode to secure production</li><li>Light/Dark theme and multi-tab interface</li></ul>"
-            }
-        },
-        "security_tip": {
-            "title": "Security Tip",
-            "content": "QoreDB stores your credentials securely via the system's native keychain and supports SSH tunneling."
-        }
-    },
-    "links_page": {
-        "title": "All QoreDB links",
-        "subtitle": "Find every official link in one place.",
-        "contact": "Contact",
-        "credits": "Credits",
-        "featured": {
-            "title": "Featured links",
-            "site": {
-                "title": "Website",
-                "description": "The product story in one place."
-            },
-            "github": {
-                "title": "GitHub",
-                "description": "Browse the code, issues, and updates."
-            },
-            "discord": {
-                "title": "Discord",
-                "description": "Join the community and share feedback."
-            },
-            "linkedin": {
-                "title": "LinkedIn",
-                "description": "News, updates, and the team."
-            }
-        },
-        "all_links": "All links",
-        "cta": {
-            "explore": "Explore",
-            "write": "Write us"
-        }
-    },
-    "license_page": {
-        "title": "Apache License 2.0",
-        "last_updated": "Version 2.0, January 2004",
-        "intro": "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION",
-        "sections": {
-            "definitions": {
-                "title": "1. Definitions",
-                "content": "\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work."
-            },
-            "grant_copyright": {
-                "title": "2. Grant of Copyright License",
-                "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."
-            },
-            "grant_patent": {
-                "title": "3. Grant of Patent License",
-                "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."
-            },
-            "redistribution": {
-                "title": "4. Redistribution",
-                "content": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:\n\n(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.\n\nYou may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."
-            },
-            "submission": {
-                "title": "5. Submission of Contributions",
-                "content": "Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."
-            },
-            "trademarks": {
-                "title": "6. Trademarks",
-                "content": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file."
-            },
-            "warranties": {
-                "title": "7. Disclaimer of Warranty",
-                "content": "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."
-            },
-            "liability": {
-                "title": "8. Limitation of Liability",
-                "content": "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."
-            },
-            "additional_liability": {
-                "title": "9. Accepting Warranty or Additional Liability",
-                "content": "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."
-            },
-            "appendix": {
-                "title": "APPENDIX: How to apply the Apache License to your work",
-                "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
-            }
-        }
+    "slides": {
+      "database": "Database Overview",
+      "table": "Data View",
+      "query": "SQL Editor",
+      "schema": "Schema Explorer",
+      "home": "Home",
+      "connection": "New Connection",
+      "settings": "Settings"
     }
+  },
+  "preview": {
+    "eyebrow": "Preview",
+    "title": "An interface built for <accent>developers</accent>",
+    "description": "Dense yet breathable. Serious yet modern.\n<subtext>Exactly what you expect from a professional tool.</subtext>",
+    "tabs": {
+      "database": {
+        "title": "Overview",
+        "description": "Global metrics and quick access to tables."
+      },
+      "schema": {
+        "title": "Schema Explorer",
+        "description": "Visualize your relationships and database structure."
+      },
+      "home": {
+        "title": "Home",
+        "description": "Session recovery and connection management."
+      },
+      "connection": {
+        "title": "New Connection",
+        "description": "Simple and advanced source configuration."
+      },
+      "security": {
+        "title": "Security",
+        "description": "Guardrails, audit, and request profiling."
+      },
+      "table": {
+        "title": "Data View",
+        "description": "Smooth manipulation with a high-performance grid."
+      },
+      "query": {
+        "title": "SQL Editor",
+        "description": "Write and run queries with autocompletion and syntax highlighting."
+      }
+    }
+  },
+  "blog_section": {
+    "eyebrow": "Blog",
+    "title": "Latest articles",
+    "subtitle": "Insights, tutorials, and news about QoreDB and modern development.",
+    "cta": "View all articles",
+    "loading": "Loading the latest articles...",
+    "empty": "No articles yet."
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "Everything you need, <accent>nothing you don't</accent>",
+    "subtitle": "8 drivers, one interface. No Electron, no cloud dependency, no bloat.",
+    "items": {
+      "unified": {
+        "title": "8 Native Drivers",
+        "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis and CockroachDB in one interface."
+      },
+      "vault": {
+        "title": "Security & Privacy",
+        "desc": "Encrypted credentials (Argon2) and GDPR compliant (zero telemetry)."
+      },
+      "ssh": {
+        "title": "SSH Tunneling",
+        "desc": "Native support for SSH tunnels for remote databases."
+      },
+      "editor": {
+        "title": "Smart Editor",
+        "desc": "Syntax highlighting, snippets, formatting and multi-statement execution."
+      },
+      "library": {
+        "title": "Query Library",
+        "desc": "Folders, tags, JSON import/export and reusable queries."
+      },
+      "envs": {
+        "title": "Environment Protection",
+        "desc": "Distinct Dev/Staging/Prod, mutation blocking in prod."
+      },
+      "grid": {
+        "title": "High Performance Grid",
+        "desc": "Virtualization, server-side filtering, inline editing, pagination and infinite scroll."
+      },
+      "ai": {
+        "title": "AI Assistant",
+        "desc": "Query generation, explanation and error correction with your own API keys (BYOK)."
+      },
+      "federation": {
+        "title": "Cross-DB Federation",
+        "desc": "Run SQL queries across multiple databases with joins between active connections."
+      },
+      "ddl": {
+        "title": "DDL Management",
+        "desc": "Create/drop databases, tables, routines, triggers and run maintenance operations."
+      },
+      "export": {
+        "title": "Multi-Format Export",
+        "desc": "Export results as CSV, JSON, SQL, HTML, XLSX, Parquet or self-contained HTML."
+      },
+      "opensource": {
+        "title": "Open Source",
+        "desc": "Auditable code available on GitHub."
+      }
+    },
+    "killer": {
+      "sandbox": {
+        "title": "Sandbox Editing + Diff + Migrations",
+        "desc": "Safely edit data locally, visualize changes with cellular diff, and generate reproducible SQL scripts.",
+        "badge": "Git for Data",
+        "list": {
+          "local": "Local modifications (no direct commit)",
+          "diff": "Clear list of changes (Insert/Update/Delete)",
+          "script": "Generate SQL script with pre-conditions"
+        }
+      },
+      "er_diagram": {
+        "title": "Interactive ER Diagram",
+        "desc": "A living schema explorer. Navigate tables and relations visually, zoom, pan, and jump directly to data.",
+        "badge": "Visual",
+        "list": {
+          "canvas": "Interactive canvas with table clustering",
+          "nav": "Zoom, pan, and search tables",
+          "peek": "Hover relations to see details"
+        }
+      },
+      "safety_net": {
+        "title": "Universal Query Safety Net",
+        "desc": "Active error prevention. Detects dangerous queries (DELETE without WHERE) and provides smart alerts.",
+        "badge": "Safety",
+        "list": {
+          "detect": "Auto-detection of dangerous queries",
+          "env": "Environment-aware alerts",
+          "audit": "Local audit log for sensitive operations"
+        }
+      },
+      "data_diff": {
+        "title": "Visual Data Diff",
+        "desc": "Compare two query results or tables side by side, like a Git diff for your data. Perfect for comparing Prod vs Staging.",
+        "badge": "Compare",
+        "list": {
+          "compare": "Side-by-side comparison of any two result sets",
+          "highlight": "Cell-level highlighting of additions, deletions and changes",
+          "snapshot": "Save result snapshots for later comparison"
+        }
+      }
+    },
+    "compatibility": {
+      "eyebrow": "Compatibility",
+      "title": "Supported Databases",
+      "coming_soon": "And more coming soon..."
+    },
+    "pro_badge": "Pro",
+    "visual_diff_badge": "Visual Diff"
+  },
+  "cta": {
+    "title": "Stop fighting your database tool",
+    "description": "Download QoreDB and see the difference in 30 seconds.",
+    "download_button": "Download for free",
+    "github_button": "Star on GitHub"
+  },
+  "database_strip": {
+    "label": "One interface, every database"
+  },
+  "social_proof": {
+    "databases": "8 databases",
+    "binary_size": "~15 MB binary",
+    "startup": "<1s startup",
+    "license": "Apache 2.0"
+  },
+  "comparison": {
+    "title": "How QoreDB compares",
+    "subtitle": "We're not trying to replace everything. We're building the tool we wish existed.",
+    "rows": {
+      "opensource": "Open source core",
+      "multidb": "Multi-database (SQL + NoSQL)",
+      "native": "Native performance (no Electron)",
+      "local": "Local-first / no cloud",
+      "vault": "Encrypted credential vault",
+      "safety": "Production safety guards",
+      "sandbox": "Sandbox mode + migrations",
+      "fulltext": "Full-text search (all tables)",
+      "er_diagram": "Interactive ER diagram",
+      "federation": "Cross-database federation",
+      "ai": "AI query assistant",
+      "ui": "Modern, fast UI",
+      "maturity": "Maturity / ecosystem",
+      "price": "Price (personal use)"
+    },
+    "values": {
+      "qoredb": {
+        "opensource": "Apache 2.0",
+        "multidb": "8 engines",
+        "native": "Rust/Tauri",
+        "local": "Yes",
+        "vault": "Argon2",
+        "safety": "Yes",
+        "sandbox": "Pro",
+        "fulltext": "Yes",
+        "er_diagram": "Yes",
+        "federation": "Pro",
+        "ai": "BYOK",
+        "ui": "Yes",
+        "maturity": "New",
+        "price": "Free / Pro"
+      },
+      "dbeaver": {
+        "opensource": "Community",
+        "multidb": "Yes",
+        "native": "Java/Swing",
+        "local": "Yes",
+        "vault": "Basic",
+        "safety": "No",
+        "sandbox": "No",
+        "fulltext": "No",
+        "er_diagram": "Yes",
+        "federation": "No",
+        "ai": "No",
+        "ui": "Dated",
+        "maturity": "15+ years",
+        "price": "Free / $199"
+      },
+      "tableplus": {
+        "opensource": "No",
+        "multidb": "Limited",
+        "native": "Native",
+        "local": "Yes",
+        "vault": "Keychain",
+        "safety": "Partial",
+        "sandbox": "No",
+        "fulltext": "No",
+        "er_diagram": "No",
+        "federation": "No",
+        "ai": "No",
+        "ui": "Yes",
+        "maturity": "Established",
+        "price": "$89"
+      },
+      "pgadmin": {
+        "opensource": "Yes",
+        "multidb": "PG only",
+        "native": "Web-based",
+        "local": "Yes",
+        "vault": "No",
+        "safety": "No",
+        "sandbox": "No",
+        "fulltext": "No",
+        "er_diagram": "Partial",
+        "federation": "No",
+        "ai": "No",
+        "ui": "No",
+        "maturity": "20+ years",
+        "price": "Free"
+      }
+    },
+    "note": "We're young but moving fast. Check our roadmap →"
+  },
+  "feature_showcase": {
+    "eyebrow": "In depth",
+    "title": "Built for Real Workflows"
+  },
+  "code_demo": {
+    "title_bar": "QoreDB — prod-api @ PostgreSQL",
+    "comment": "-- Find our most active users this month",
+    "result": "10 rows returned in 23ms — Streaming complete"
+  },
+  "why": {
+    "items": {
+      "slow": {
+        "title": "Slow",
+        "desc": "Endless loading"
+      },
+      "dated": {
+        "title": "Dated",
+        "desc": "Interface from another age"
+      },
+      "tiring": {
+        "title": "Tiring",
+        "desc": "Poorly thought-out workflows"
+      }
+    },
+    "eyebrow": "The problem",
+    "title_pre": "Current tools ",
+    "title_highlight": "slow you down",
+    "description": "DBeaver, phpMyAdmin, pgAdmin... They do the job, but the UX is mediocre, workflows are poorly optimized and they haven't evolved with the modern way of working.",
+    "comparison": {
+      "pre": "QoreDB does for databases what ",
+      "post": " did for their fields."
+    }
+  },
+  "language_switcher": {
+    "toggle": "Toggle language"
+  },
+  "roadmap_page": {
+    "title": "QoreDB Roadmap",
+    "subtitle": "Discover the next steps in QoreDB development.",
+    "now": {
+      "title": "Now — Solid Foundations",
+      "quote": "Make QoreDB reliable, fast, and pleasant for daily use.",
+      "items": {
+        "1": "Continuous improvement of performance and stability",
+        "2": "Reinforced local-first security and privacy",
+        "3": "Smoother user experience on existing workflows",
+        "4": "Clearer error handling and diagnostics",
+        "5": "Documentation and progressive opening to the community"
+      },
+      "goal": "Goal: a tool that developers can use and recommend with confidence."
+    },
+    "soon": {
+      "title": "Soon — Productivity and Clarity",
+      "quote": "Go beyond traditional database clients.",
+      "items": {
+        "1": "More efficient data navigation and exploration",
+        "2": "Better understanding of structures and relationships",
+        "3": "Safer and more intuitive data editing",
+        "4": "Easier data comparison and manipulation",
+        "5": "First bricks of local collaboration"
+      },
+      "goal": "Goal: save developers real time, every day."
+    },
+    "later": {
+      "title": "Later — The QoreDB Vision",
+      "quote": "Rethink how developers interact with their data.",
+      "items": {
+        "1": "Unified SQL & NoSQL experience",
+        "2": "Cross-database relationships and virtual views",
+        "3": "Intelligent assistance and automation",
+        "4": "Extensibility and open-source ecosystem",
+        "5": "Collaboration without imposed cloud dependency"
+      },
+      "goal": "Goal: become the reference tool for modern developers."
+    },
+    "transparency": {
+      "text": "This roadmap reflects the current direction of the project. It is subject to evolve based on community feedback and real-world usage."
+    }
+  },
+  "faq_page": {
+    "title": "FAQ — QoreDB",
+    "search_placeholder": "Search for an answer...",
+    "no_results": "No results found for",
+    "filters": {
+      "all": "All",
+      "general": "General",
+      "tech": "Technical",
+      "project": "Project & Business"
+    },
+    "items": {
+      "what_is_qoredb": {
+        "question": "What exactly is QoreDB?",
+        "answer": "QoreDB is a **modern, open-source, local-first database client**, designed for developers who want to work efficiently with SQL and NoSQL databases, without depending on an imposed cloud.\n\nIt focuses on:\n\n* **performance**,\n* **security**,\n* a **polished developer experience**,\n* and a long-term vision more ambitious than traditional tools."
+      },
+      "difference_dbeaver": {
+        "question": "How is QoreDB different from DBeaver or existing tools?",
+        "answer": "QoreDB does not seek to be a \"feature-by-feature\" alternative.\n\nKey differences:\n\n* **Local-first** architecture (no data sent by default)\n* Built-in security and guardrails (environments, read-only, production rules)\n* User experience designed for speed and clarity\n* Unified SQL + NoSQL vision\n* Modern, extensible, long-term oriented codebase\n\nQoreDB is designed as a **daily work tool**, not an \"aging Swiss Army knife\"."
+      },
+      "is_opensource": {
+        "question": "Is QoreDB really open-source?",
+        "answer": "Yes.\n\nThe core of QoreDB is **open-source**, readable, auditable, and modifiable.\nTransparency is part of the project's DNA.\n\nEventually, some advanced features may exist as a paid offering, **without ever removing essential capabilities from the open-source version**."
+      },
+      "is_free": {
+        "question": "Is QoreDB free?",
+        "answer": "Yes.\n\nQoreDB is **free to download and use**, on macOS, Windows, and Linux.\n\nA paid offer may exist in the future for advanced or professional uses, but the core of the product will remain free and usable without cost."
+      },
+      "data_privacy": {
+        "question": "Is my data sent anywhere?",
+        "answer": "No.\n\nBy default:\n\n* Connections, queries, and data remain **strictly local**.\n* No database is proxied or stored on a remote server.\n\nMeasurement tools (analytics) are:\n\n* **disabled by default**\n* **anonymous**\n* **explicit opt-in**\n\nQoreDB adopts a **privacy-first** philosophy."
+      },
+      "analytics": {
+        "question": "Do you use analytics tools?",
+        "answer": "Yes, but with strict rules.\n\nAnalytics serve only to:\n\n* understand feature adoption,\n* improve user experience,\n* prioritize developments.\n\nThey **never** collect:\n\n* database data,\n* complete SQL queries,\n* credentials,\n* sensitive content.\n\nActivation is always **voluntary**."
+      },
+      "production_ready": {
+        "question": "Is QoreDB suitable for production use?",
+        "answer": "Yes, with guardrails.\n\nQoreDB integrates:\n\n* environments (dev / staging / prod),\n* a read-only mode,\n* protections against dangerous queries,\n* cancellation and timeout mechanisms.\n\nThe goal is to reduce **human errors**, without slowing down developers."
+      },
+      "supported_databases": {
+        "question": "Which databases are supported?",
+        "answer": "QoreDB currently supports:\n\n* PostgreSQL\n* MySQL / MariaDB\n* SQL Server\n* SQLite\n* DuckDB\n* MongoDB\n* Redis\n\nMore engines are planned as the architecture evolves."
+      },
+      "remote_ssh": {
+        "question": "Does it work with remote connections and SSH?",
+        "answer": "Yes.\n\nQoreDB supports:\n\n* classic remote connections,\n* SSH tunnels,\n* different authentication modes depending on the databases.\n\nConnection security is a priority."
+      },
+      "platforms": {
+        "question": "On which systems is QoreDB available?",
+        "answer": "QoreDB is available on:\n\n* macOS\n* Windows\n* Linux\n\nBuilds are updated regularly."
+      },
+      "maintenance": {
+        "question": "Is the project actively maintained?",
+        "answer": "Yes.\n\nQoreDB is in active development, with:\n\n* frequent releases,\n* structural refactors,\n* a public roadmap,\n* gradual opening to the community.\n\nThe project has already passed its POC stage."
+      },
+      "contribute": {
+        "question": "Can I contribute to the project?",
+        "answer": "Yes, and it is encouraged.\n\nPossible contributions:\n\n* user feedback,\n* GitHub issues and discussions,\n* improvement proposals,\n* code and documentation.\n\nA community GitHub is being structured."
+      },
+      "pro_version": {
+        "question": "Will there be a \"Pro\" version?",
+        "answer": "Probably, yes.\n\nThe goal is not to block usage, but to offer:\n\n* advanced features,\n* collaborative or professional uses,\n* options intended for teams and companies.\n\nThe open-source version will remain fully usable."
+      },
+      "funding": {
+        "question": "How will the project be funded?",
+        "answer": "The targeted model is:\n\n* sustainable open-source,\n* self-funded,\n* without dependence on a mandatory centralized cloud.\n\nDetails will evolve with product adoption."
+      },
+      "professional_use": {
+        "question": "Can I use QoreDB in a professional setting?",
+        "answer": "Yes.\n\nQoreDB is designed to be used:\n\n* by solo developers,\n* early startups,\n* technical teams.\n\nSecurity, stability, and maintenance aspects are taken seriously."
+      },
+      "follow_progress": {
+        "question": "Where can I follow the project's evolution?",
+        "answer": "* On the official website\n* Via the public roadmap\n* On LinkedIn (regular sharing of project progress)\n* On GitHub"
+      },
+      "join_beta": {
+        "question": "How to join the beta or test QoreDB?",
+        "answer": "QoreDB is already available for download.\n\nYou can:\n\n* install it directly,\n* join the beta via the site,\n* share your feedback to influence the future of the project."
+      },
+      "long_term": {
+        "question": "Can I trust QoreDB in the long term?",
+        "answer": "QoreDB is designed as a **long-term project**, not an experiment.\n\nTechnical, product, and open-source choices go in the direction of:\n\n* sustainability,\n* transparency,\n* developer trust."
+      }
+    }
+  },
+  "pricing_page": {
+    "badge": "Open Core",
+    "title": "Choose the plan that fits your workflow",
+    "subtitle": "Core remains complete and free. Pro adds advanced capabilities when you need them.",
+    "billing_note": "Perpetual license, one-time payment for Pro",
+    "checkout_error": "Unable to start Stripe Checkout right now.",
+    "faq_title": "Frequently asked questions",
+    "core": {
+      "title": "Core",
+      "description": "The complete open-source foundation of QoreDB.",
+      "price": "Free",
+      "badge": "Main choice",
+      "cta": "Download for free",
+      "features": {
+        "drivers": "All drivers (PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis, CockroachDB)",
+        "crud": "Full CRUD + SQL/Mongo editor",
+        "grid": "High-performance data grid (virtual scrolling)",
+        "er_diagram": "Interactive ER diagram",
+        "history": "Query history and favorites",
+        "vault": "Encrypted credential vault (Argon2)",
+        "ssh": "Native SSH tunneling",
+        "safety": "Production safety rules (env labels, read-only mode)",
+        "audit_basic": "Basic audit log (50 entries)",
+        "export_basic": "CSV / JSON / SQL export",
+        "shortcuts": "Keyboard shortcuts"
+      }
+    },
+    "pro": {
+      "title": "Pro",
+      "description": "The natural upgrade for demanding developers.",
+      "price": "XX€",
+      "badge": "One-time payment",
+      "cta": "Buy QoreDB Pro",
+      "student_note": "Student? Get in touch.",
+      "features": {
+        "everything_core": "Everything in Core",
+        "sandbox": "Sandbox mode with migration generation",
+        "visual_diff": "Visual Data Diff (table comparison)",
+        "audit_advanced": "Advanced audit log (unlimited, filterable, exportable)",
+        "profiling": "Query profiling and performance analysis",
+        "ai": "AI assistant (BYOK — OpenAI / Anthropic / Ollama)",
+        "export_advanced": "Advanced exports (XLSX, Parquet)",
+        "security_rules": "Custom safety rules",
+        "library_advanced": "Advanced query library",
+        "virtual_relations": "Auto-suggest virtual relations"
+      }
+    },
+    "team": {
+      "title": "Team",
+      "description": "Advanced collaboration for teams.",
+      "price": "Coming soon",
+      "badge": "Coming Soon",
+      "cta": "Contact us",
+      "features": {
+        "everything_pro": "Everything in Pro",
+        "sync": "Multi-device sync",
+        "shared_queries": "Shared query libraries",
+        "permissions": "Granular permissions",
+        "managed_ai": "Managed AI"
+      }
+    },
+    "faq": {
+      "open_core_why": {
+        "question": "Why an Open Core model?",
+        "answer": "To make the solo project sustainable long term. Core stays free forever. Pro funds continuous development."
+      },
+      "data_sent": {
+        "question": "Is any of my data sent somewhere?",
+        "answer": "No. QoreDB is 100% local-first. Your data never leaves your machine. Even AI runs with your own API keys."
+      },
+      "stop_paying": {
+        "question": "What happens if I stop paying?",
+        "answer": "Pro is a perpetual license (one-time payment). You keep unlocked features. Only future major upgrades may require a paid upgrade."
+      },
+      "try_pro": {
+        "question": "Can I try Pro features first?",
+        "answer": "Core includes a limited preview of selected Pro features (for example: 3 free Sandbox changes) so you can evaluate before buying."
+      },
+      "pro_source_code": {
+        "question": "Is Pro source code available?",
+        "answer": "Pro features are under BSL 1.1 and automatically convert to Apache 2.0 after 4 years. Code is readable but redistribution is restricted during that period."
+      }
+    }
+  },
+  "license_management": {
+    "title": "License Management",
+    "subtitle": "Check your QoreDB Pro license status and resend your key by email.",
+    "fields": {
+      "email": "Email",
+      "payment_id": "Stripe payment ID"
+    },
+    "actions": {
+      "loading": "Loading..."
+    },
+    "status": {
+      "title": "Check license status",
+      "description": "Enter your purchase email and payment ID to verify if the license is active.",
+      "cta": "Check my license",
+      "result": "Status",
+      "not_found": "No purchase found",
+      "license_found": "A license key is attached to this payment."
+    },
+    "resend": {
+      "title": "Resend key by email",
+      "description": "Enter your purchase email to receive your license key again.",
+      "cta": "Resend key",
+      "success": "Email sent. Please check your inbox."
+    },
+    "errors": {
+      "status": "Unable to verify license status.",
+      "resend": "Unable to resend the key right now.",
+      "not_found": "No purchase found for this email."
+    }
+  },
+  "purchase_success": {
+    "title": "Payment confirmed",
+    "subtitle": "Your QoreDB Pro license is ready. We also sent your key by email.",
+    "license_label": "License key",
+    "pending_license": "Your key is not available yet. Please wait a few seconds and refresh this page.",
+    "session_error": "Unable to retrieve this Stripe session.",
+    "activation_title": "Activation",
+    "steps": {
+      "1": "Open QoreDB",
+      "2": "Go to Settings",
+      "3": "Open License",
+      "4": "Paste the key",
+      "5": "Activate"
+    },
+    "download_cta": "Download QoreDB",
+    "home_cta": "Back to homepage",
+    "copy": "Copy key",
+    "copied": "Copied"
+  },
+  "privacy_page": {
+    "title": "Privacy Policy",
+    "last_updated": "Last updated: January 24, 2026",
+    "sections": {
+      "intro": {
+        "title": "1. Data Controller",
+        "content": "<p>The data controller is the editor of the <strong>QoreDB</strong> project.</p><p>Complete information regarding the legal entity will be specified as soon as the legal structure is finalized.</p>"
+      },
+      "data_collection": {
+        "title": "2. Data Collection",
+        "content": "<p>QoreDB strictly limits the collection of personal data.</p><h3>2.1 Navigation Data (Website)</h3><p>When consulting the site, anonymized technical data may be collected for statistical purposes, including:</p><ul><li>pages visited,</li><li>device type and browser,</li><li>operating system,</li><li>approximate country or geographic area,</li><li>load times and performance.</li></ul><p>This data <strong>does not allow for the personal identification of a user</strong>.</p><p>QoreDB uses <strong>Vercel Analytics</strong>, a privacy-respecting analytics solution:</p><ul><li>no cookies,</li><li>no cross-site tracking,</li><li>no advertising profiling.</li></ul><h3>2.2 Voluntarily Provided Data</h3><p>Certain data may be voluntarily provided by the user, for example:</p><ul><li>during contact,</li><li>during registration for a newsletter,</li><li>during the use of future services requiring authentication.</li></ul><p>Collected data may include:</p><ul><li>email address,</li><li>name or pseudonym,</li><li>message content.</li></ul>"
+      },
+      "purposes": {
+        "title": "3. Purposes of Processing",
+        "content": "<p>Collected data is used solely to:</p><ul><li>ensure the proper functioning of the site and services,</li><li>improve performance and user experience,</li><li>respond to contact requests,</li><li>communicate information related to the QoreDB project.</li></ul><p>No personal data is sold, rented, or ceded to third parties for commercial purposes.</p>"
+      },
+      "legal_basis": {
+        "title": "4. Legal Basis for Processing",
+        "content": "<p>Personal data processing is based on:</p><ul><li>QoreDB's legitimate interest (anonymous statistics, security),</li><li>the user's explicit consent when required,</li><li>the execution of a request initiated by the user.</li></ul>"
+      },
+      "cookies": {
+        "title": "5. Cookies and Trackers",
+        "content": "<p>QoreDB <strong>does not use advertising or behavioral tracking cookies</strong>.</p><p>The analytical tools used do not require prior consent in accordance with applicable regulations.</p><p>Should cookies be used in the future, this policy would be updated and a consent mechanism would be implemented.</p>"
+      },
+      "hosting": {
+        "title": "6. Hosting and Sub-processors",
+        "content": "<p>The QoreDB site and services are hosted by providers respecting high standards of security and compliance.</p><p>Data may be processed on servers located in the European Union or in countries offering an adequate level of protection in accordance with the GDPR.</p>"
+      },
+      "security": {
+        "title": "7. Data Security",
+        "content": "<p>QoreDB implements appropriate technical and organizational measures to guarantee the security, integrity, and confidentiality of data, including:</p><ul><li>encryption of communications,</li><li>access control,</li><li>monitoring and limitation of unauthorized access.</li></ul>"
+      },
+      "retention": {
+        "title": "8. Retention Period",
+        "content": "<p>Personal data is retained only for the duration necessary for the purposes for which it was collected.</p><p>Anonymized statistical data may be kept without time limitation.</p>"
+      },
+      "rights": {
+        "title": "9. User Rights",
+        "content": "<p>In accordance with the General Data Protection Regulation (GDPR), users have the following rights:</p><ul><li>right of access,</li><li>right of rectification,</li><li>right to erasure,</li><li>right to restriction of processing,</li><li>right to object,</li><li>right to data portability.</li></ul><p>Any request can be made via the contact means indicated on the site.</p>"
+      },
+      "third_party": {
+        "title": "10. Links to Third-Party Services",
+        "content": "<p>The QoreDB site may contain links to third-party services (e.g., GitHub). QoreDB is not responsible for the privacy policies applied by these services.</p>"
+      },
+      "changes": {
+        "title": "11. Policy Changes",
+        "content": "<p>QoreDB reserves the right to modify this Privacy Policy at any time.</p><p>Users are invited to consult it regularly. The date of the last update is indicated at the top of the page.</p>"
+      },
+      "contact": {
+        "title": "12. Contact",
+        "content": "<p>For any questions regarding personal data protection, you can contact the QoreDB team via the official channels indicated on the site.</p>"
+      }
+    }
+  },
+  "legal_page": {
+    "title": "Legal Notice",
+    "last_updated": "Last updated: January 24, 2026",
+    "sections": {
+      "editor": {
+        "title": "Site Editor",
+        "content": "**Project Name / Product:** QoreDB\n**Publication Director:** Raphaël Plassart\n**Status:** Software Project (open-core)\n\n> Information regarding the legal entity (company name, legal form, address, registration number) will be specified as soon as the legal structure is finalized."
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "The QoreDB website is hosted by **Vercel Inc.**, located at 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nData may be hosted on infrastructures located within the European Union or in countries offering a level of data protection compliant with current regulations."
+      },
+      "ip": {
+        "title": "Intellectual Property",
+        "content": "All content present on the QoreDB site, including in particular:\n\n* texts,\n* documentation,\n* blog posts,\n* graphic elements,\n* visual identity,\n* the QoreDB name, logo, and brand,\n\nis protected by copyright and laws relating to intellectual property.\n\nUnless otherwise stated, QoreDB source code is distributed under an **open-core** model:\n\n* a part is published under an open-source license,\n* certain advanced features may be subject to a proprietary license.\n\nAny unauthorized reproduction, representation, modification, or exploitation of the protected content or elements is strictly prohibited."
+      },
+      "liability": {
+        "title": "Site Access and Liability",
+        "content": "QoreDB makes every effort to ensure the accuracy of the information disseminated on the site. However, the project cannot be held responsible for:\n\n* errors or omissions,\n* temporary unavailability of the site,\n* direct or indirect damages related to the use of the site or software.\n\nUse of QoreDB is under the sole responsibility of the user."
+      },
+      "external_links": {
+        "title": "External Links",
+        "content": "The QoreDB site may contain links to third-party sites. QoreDB exercises no control over these sites and declines all responsibility regarding their content or practices."
+      },
+      "privacy": {
+        "title": "Personal Data",
+        "content": "Personal data management is detailed in the dedicated page:\n\n➡️ [Privacy Policy](/privacy)\n\nQoreDB undertakes to comply with applicable regulations, in particular the General Data Protection Regulation (GDPR)."
+      },
+      "terms": {
+        "title": "Terms of Use",
+        "content": "Use of the QoreDB site, documentation, and software implies full acceptance of the:\n\n➡️ [Terms of Use](#)"
+      },
+      "license": {
+        "title": "License",
+        "content": "The license conditions applicable to the QoreDB software are detailed in the dedicated page:\n\n➡️ [License](#)"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any legal question, report, or request for information, you can contact the QoreDB team via the official channels indicated on the site."
+      }
+    }
+  },
+  "terms_page": {
+    "title": "Terms of Service",
+    "last_updated": "Last updated: January 24, 2026",
+    "intro": "These Terms of Service (hereinafter \"ToS\") govern the access to and use of the **QoreDB** website, its documentation, its online services, and the QoreDB software.\n\nBy accessing the site or using the QoreDB software, the user acknowledges having read these ToS and accepting them without reservation.",
+    "copyright": "© QoreDB – All rights reserved.",
+    "sections": {
+      "definitions": {
+        "title": "1. Definitions",
+        "content": "* **QoreDB**: refers to the software project, the website, the documentation, the associated tools and services.\n* **User**: any person accessing the site or using the QoreDB software.\n* **Software**: the QoreDB software, distributed under an open-core model.\n* **Site**: the official QoreDB website."
+      },
+      "object": {
+        "title": "2. Object",
+        "content": "The purpose of these ToS is to define the conditions under which users can access the QoreDB site, consult the documentation, use the resources made available, and operate the QoreDB software."
+      },
+      "access": {
+        "title": "3. Access to site and services",
+        "content": "Access to the QoreDB site is free of charge, unless otherwise indicated.\n\nQoreDB reserves the right to:\n\n* suspend, restrict, or interrupt access to the site or any service,\n* modify the content or features offered,\n* perform maintenance operations.\n\nNo guarantee is given regarding the continuous availability of the site or services."
+      },
+      "software_use": {
+        "title": "4. Use of QoreDB Software",
+        "content": "The QoreDB software is distributed under an **open-core** model:\n\n* a part of the code is published under an open-source license,\n* certain features, extensions, or services may be subject to a separate proprietary license.\n\nThe precise conditions for use, modification, and distribution of the software are defined in the **QoreDB License**, available on the site and in the official repositories."
+      },
+      "user_obligations": {
+        "title": "5. User Obligations",
+        "content": "The user agrees to:\n\n* use QoreDB in accordance with applicable laws and regulations,\n* not infringe on the security, integrity, or proper functioning of the site or the software,\n* not attempt unauthorized access to systems or data,\n* not use QoreDB for fraudulent, illegal, or abusive purposes.\n\nAny abusive use may result in the suspension of access to services."
+      },
+      "ip": {
+        "title": "6. Intellectual Property",
+        "content": "All elements of the QoreDB site (texts, documentation, graphics, logo, visual identity) are protected by intellectual property rights.\n\nUnless otherwise stated, any unauthorized reproduction, representation, or exploitation is prohibited.\n\nThe source code of the QoreDB software is subject to the terms of the applicable license, as defined in the **License** page."
+      },
+      "liability": {
+        "title": "7. Liability",
+        "content": "QoreDB is provided \"as is\", without warranty of any kind.\n\nQoreDB cannot be held liable for:\n\n* direct or indirect damages resulting from the use of the site or software,\n* data loss, business interruption, or commercial damages,\n* consequences related to improper configuration or use of the software.\n\nThe user is solely responsible for their use of QoreDB and the data they process."
+      },
+      "privacy": {
+        "title": "8. Personal Data",
+        "content": "Personal data processing is governed by the **Privacy Policy** accessible on the QoreDB site."
+      },
+      "external_links": {
+        "title": "9. External Links",
+        "content": "The QoreDB site may contain links to third-party sites or services. QoreDB exercises no control over these services and declines all responsibility regarding their content or functioning."
+      },
+      "updates": {
+        "title": "10. Changes to ToS",
+        "content": "QoreDB reserves the right to modify these ToS at any time.\n\nUsers are invited to regularly consult the current version. The date of the last update is indicated at the top of the page."
+      },
+      "law": {
+        "title": "11. Applicable Law",
+        "content": "These ToS are governed by French law.\n\nIn the event of a dispute, and failing amicable resolution, the competent courts will be those of the applicable jurisdiction in accordance with the legislation in force."
+      },
+      "contact": {
+        "title": "12. Contact",
+        "content": "For any question relating to these Terms of Service, the user can contact the QoreDB team via the official channels indicated on the site."
+      }
+    }
+  },
+  "quick_start_page": {
+    "title": "Quick Start",
+    "description": "Browse, query, and manage your data in a few clicks.",
+    "sections": {
+      "install": {
+        "title": "1. Install and Launch",
+        "content": "<p>Download the latest version from the project's <a href='https://github.com/QoreDB/QoreDB/releases' target='_blank' class='text-(--q-accent) hover:underline'>Releases</a> page, install the application, and open it.</p>"
+      },
+      "connect": {
+        "title": "2. Create Your First Connection",
+        "content": "<p>Click on <strong>+</strong> in the sidebar to add a database:</p><ul><li>PostgreSQL</li><li>MySQL / MariaDB</li><li>SQL Server</li><li>SQLite</li><li>DuckDB</li><li>MongoDB</li><li>Redis</li></ul><p>Enter the host, port, database, user, and environment (dev/staging/prod).</p>"
+      },
+      "explore": {
+        "title": "3. Explore Your Data",
+        "content": "<p>Once connected:</p><ul><li>Navigate through schemas and tables</li><li>Open a table to visualize data</li><li>Run SQL queries in the integrated editor</li></ul>"
+      },
+      "daily": {
+        "title": "4. Save Time Every Day",
+        "content": "<ul><li>History & favorites to find your queries</li><li>Global search to move fast</li><li>Read-only mode to secure production</li><li>Light/Dark theme and multi-tab interface</li></ul>"
+      }
+    },
+    "security_tip": {
+      "title": "Security Tip",
+      "content": "QoreDB stores your credentials securely via the system's native keychain and supports SSH tunneling."
+    }
+  },
+  "links_page": {
+    "title": "All QoreDB links",
+    "subtitle": "Find every official link in one place.",
+    "contact": "Contact",
+    "credits": "Credits",
+    "featured": {
+      "title": "Featured links",
+      "site": {
+        "title": "Website",
+        "description": "The product story in one place."
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Browse the code, issues, and updates."
+      },
+      "discord": {
+        "title": "Discord",
+        "description": "Join the community and share feedback."
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "News, updates, and the team."
+      }
+    },
+    "all_links": "All links",
+    "cta": {
+      "explore": "Explore",
+      "write": "Write us"
+    }
+  },
+  "license_page": {
+    "title": "Apache License 2.0",
+    "last_updated": "Version 2.0, January 2004",
+    "intro": "TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION",
+    "sections": {
+      "definitions": {
+        "title": "1. Definitions",
+        "content": "\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work."
+      },
+      "grant_copyright": {
+        "title": "2. Grant of Copyright License",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."
+      },
+      "grant_patent": {
+        "title": "3. Grant of Patent License",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."
+      },
+      "redistribution": {
+        "title": "4. Redistribution",
+        "content": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:\n\n(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.\n\nYou may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."
+      },
+      "submission": {
+        "title": "5. Submission of Contributions",
+        "content": "Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."
+      },
+      "trademarks": {
+        "title": "6. Trademarks",
+        "content": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file."
+      },
+      "warranties": {
+        "title": "7. Disclaimer of Warranty",
+        "content": "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."
+      },
+      "liability": {
+        "title": "8. Limitation of Liability",
+        "content": "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."
+      },
+      "additional_liability": {
+        "title": "9. Accepting Warranty or Additional Liability",
+        "content": "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."
+      },
+      "appendix": {
+        "title": "APPENDIX: How to apply the Apache License to your work",
+        "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+      }
+    }
+  },
+  "inline_cta": {
+    "text": "Ready to try? Download QoreDB for free.",
+    "button": "Download now"
+  },
+  "pricing_preview": {
+    "title": "Simple, transparent pricing",
+    "subtitle": "Core is free forever. Pro unlocks power-user features.",
+    "core_price": "Free",
+    "core_1": "8 native database drivers",
+    "core_2": "SQL editor with autocomplete",
+    "core_3": "Encrypted vault & SSH tunneling",
+    "core_4": "Production safety guards",
+    "pro_badge": "One-time purchase",
+    "pro_price_note": "Everything in Core, plus advanced workflows.",
+    "pro_1": "AI assistant (BYOK)",
+    "pro_2": "Sandbox mode + migration scripts",
+    "pro_3": "Visual data diff",
+    "pro_4": "Cross-database federation",
+    "cta": "See full pricing details"
+  }
 }

@@ -62,16 +62,31 @@
       "localfirst": "Local-first",
       "hybrid": "SQL + NoSQL"
     },
-    "title": "La base de données.\n<italic>Simplifiée.</italic>",
-    "subtitle": "Un client de bases de données <highlight>moderne</highlight>, <highlight>rapide</highlight> et <highlight>sécurisé</highlight> pour les développeurs qui en ont marre des outils lents et mal conçus.",
+    "ph_badge": "Lancement sur Product Hunt",
+    "title": "Une app pour <italic>toutes vos bases</italic>",
+    "subtitle": "Le client de bases de données open-source, rapide, propulsé par Rust. Connectez <highlight>8 bases de données</highlight> depuis une seule interface. Local-first — vos données restent chez vous.",
     "cta": {
       "join_beta": "Rejoindre la beta",
-      "download_core": "Télécharger Core (gratuit)",
-      "discover_pro": "Découvrir Pro",
+      "download_core": "Télécharger gratuitement",
+      "discover_pro": "Voir sur GitHub",
       "view_project": "Voir le projet",
       "participate": "Participer"
     },
-    "social_proof": "Rejoignez <highlight>100+</highlight> développeurs en attente de la beta"
+    "social_proof": "Rejoignez <highlight>100+</highlight> développeurs en attente de la beta",
+    "meta": {
+      "rust": "Propulsé par Rust & Tauri",
+      "license": "Licence Apache 2.0",
+      "platforms": "macOS · Windows · Linux"
+    },
+    "slides": {
+      "database": "Vue d'ensemble",
+      "table": "Données",
+      "query": "Éditeur SQL",
+      "schema": "Explorateur de schéma",
+      "home": "Accueil",
+      "connection": "Nouvelle connexion",
+      "settings": "Paramètres"
+    }
   },
   "preview": {
     "eyebrow": "Aperçu",
@@ -118,8 +133,8 @@
   },
   "features": {
     "eyebrow": "Fonctionnalités",
-    "title": "Ce que QoreDB fait <accent>bien</accent>",
-    "subtitle": "Conçu pour les développeurs qui veulent un outil qui fonctionne, tout simplement.",
+    "title": "Tout ce qu'il faut, <accent>rien de superflu</accent>",
+    "subtitle": "8 drivers, une interface. Pas d'Electron, pas de cloud, pas de bloat.",
     "items": {
       "unified": {
         "title": "8 drivers natifs",
@@ -221,37 +236,115 @@
     "visual_diff_badge": "Visual Diff"
   },
   "cta": {
-    "badge": "Core est gratuit, pour toujours",
-    "title_pre": "Commencez avec QoreDB ",
-    "title_highlight": "gratuitement",
-    "description": "Téléchargez QoreDB Core gratuitement. Passez à Pro quand vous avez besoin des fonctionnalités avancées.",
-    "download_button": "Télécharger Core",
-    "pricing_button": "Voir les plans Pro",
-    "contact_title": "Nous contacter",
-    "form": {
-      "name": "Nom",
-      "email": "Email",
-      "subject": "Sujet",
-      "message": "Message",
-      "submit": "Envoyer le message",
-      "sending": "Envoi...",
-      "success": "Message envoyé ! Nous vous répondrons bientôt.",
-      "success_title": "Message envoyé !",
-      "send_another": "Envoyer un autre message",
-      "error": "Échec de l'envoi.",
-      "reply_time": "Nous répondons généralement sous 24h",
-      "placeholders": {
-        "name": "Jean Dupont",
-        "email": "jean@exemple.com",
-        "subject": "Partenariat / Question...",
-        "message": "Dites-nous comment nous pouvons vous aider..."
+    "title": "Arrêtez de vous battre avec votre outil de BDD",
+    "description": "Téléchargez QoreDB et voyez la différence en 30 secondes.",
+    "download_button": "Télécharger gratuitement",
+    "github_button": "Star sur GitHub"
+  },
+  "database_strip": {
+    "label": "Une interface, toutes les bases"
+  },
+  "social_proof": {
+    "databases": "8 bases de données",
+    "binary_size": "~15 Mo le binaire",
+    "startup": "<1s au démarrage",
+    "license": "Apache 2.0"
+  },
+  "comparison": {
+    "title": "QoreDB face à la concurrence",
+    "subtitle": "On ne cherche pas à tout remplacer. On construit l'outil qu'on aurait voulu avoir.",
+    "rows": {
+      "opensource": "Open source",
+      "multidb": "Multi-base (SQL + NoSQL)",
+      "native": "Performance native (pas d'Electron)",
+      "local": "Local-first / pas de cloud",
+      "vault": "Coffre-fort chiffré",
+      "safety": "Protection production",
+      "sandbox": "Sandbox + migrations",
+      "fulltext": "Recherche full-text (toutes tables)",
+      "er_diagram": "Diagramme ER interactif",
+      "federation": "Fédération inter-bases",
+      "ai": "Assistant IA",
+      "ui": "UI moderne et rapide",
+      "maturity": "Maturité / écosystème",
+      "price": "Prix (usage personnel)"
+    },
+    "values": {
+      "qoredb": {
+        "opensource": "Apache 2.0",
+        "multidb": "8 moteurs",
+        "native": "Rust/Tauri",
+        "local": "Oui",
+        "vault": "Argon2",
+        "safety": "Oui",
+        "sandbox": "Pro",
+        "fulltext": "Oui",
+        "er_diagram": "Oui",
+        "federation": "Pro",
+        "ai": "BYOK",
+        "ui": "Oui",
+        "maturity": "Nouveau",
+        "price": "Gratuit / Pro"
+      },
+      "dbeaver": {
+        "opensource": "Community",
+        "multidb": "Oui",
+        "native": "Java/Swing",
+        "local": "Oui",
+        "vault": "Basique",
+        "safety": "Non",
+        "sandbox": "Non",
+        "fulltext": "Non",
+        "er_diagram": "Oui",
+        "federation": "Non",
+        "ai": "Non",
+        "ui": "Daté",
+        "maturity": "15+ ans",
+        "price": "Gratuit / 199$"
+      },
+      "tableplus": {
+        "opensource": "Non",
+        "multidb": "Limité",
+        "native": "Natif",
+        "local": "Oui",
+        "vault": "Keychain",
+        "safety": "Partiel",
+        "sandbox": "Non",
+        "fulltext": "Non",
+        "er_diagram": "Non",
+        "federation": "Non",
+        "ai": "Non",
+        "ui": "Oui",
+        "maturity": "Établi",
+        "price": "89$"
+      },
+      "pgadmin": {
+        "opensource": "Oui",
+        "multidb": "PG seul",
+        "native": "Web",
+        "local": "Oui",
+        "vault": "Non",
+        "safety": "Non",
+        "sandbox": "Non",
+        "fulltext": "Non",
+        "er_diagram": "Partiel",
+        "federation": "Non",
+        "ai": "Non",
+        "ui": "Non",
+        "maturity": "20+ ans",
+        "price": "Gratuit"
       }
     },
-    "trust": {
-      "spam": "Contact direct",
-      "announcements": "Support",
-      "priority": "Partenariats"
-    }
+    "note": "Nous sommes jeunes mais avançons vite. Voir notre roadmap →"
+  },
+  "feature_showcase": {
+    "eyebrow": "En profondeur",
+    "title": "Concu pour de vrais workflows"
+  },
+  "code_demo": {
+    "title_bar": "QoreDB — prod-api @ PostgreSQL",
+    "comment": "-- Trouver nos utilisateurs les plus actifs ce mois-ci",
+    "result": "10 lignes retournées en 23ms — Streaming terminé"
   },
   "why": {
     "items": {
@@ -596,46 +689,46 @@
     }
   },
   "legal_page": {
-      "title": "Mentions légales",
-      "last_updated": "Dernière mise à jour : 24 janvier 2026",
-      "sections": {
-        "editor": {
-          "title": "Éditeur du site",
-          "content": "**Nom du projet / Produit :** QoreDB\n**Responsable de la publication :** Raphaël Plassart\n**Statut :** Projet logiciel (open-core)\n\n> Les informations relatives à l’entité juridique (raison sociale, forme juridique, adresse, numéro d’immatriculation) seront précisées dès la finalisation de la structure légale."
-        },
-        "hosting": {
-          "title": "Hébergement",
-          "content": "Le site web QoreDB est hébergé par **Vercel Inc.**, situé au 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nLes données peuvent être hébergées sur des infrastructures situées dans l’Union européenne ou dans des pays offrant un niveau de protection des données conforme à la réglementation en vigueur."
-        },
-        "ip": {
-          "title": "Propriété intellectuelle",
-          "content": "L’ensemble du contenu présent sur le site QoreDB, incluant notamment :\n\n* les textes,\n* la documentation,\n* les articles de blog,\n* les éléments graphiques,\n* l’identité visuelle,\n* le nom, le logo et la marque QoreDB,\n\nest protégé par le droit d’auteur et les lois relatives à la propriété intellectuelle.\n\nSauf mention contraire, le code source de QoreDB est distribué selon un modèle **open-core** :\n\n* une partie est publiée sous licence open-source,\n* certaines fonctionnalités avancées peuvent être soumises à une licence propriétaire.\n\nToute reproduction, représentation, modification ou exploitation non autorisée du contenu ou des éléments protégés est strictement interdite."
-        },
-        "liability": {
-          "title": "Accès au site et responsabilité",
-          "content": "QoreDB met tout en œuvre pour assurer l’exactitude des informations diffusées sur le site. Toutefois, le projet ne saurait être tenu responsable :\n\n* des erreurs ou omissions,\n* d’une indisponibilité temporaire du site,\n* de dommages directs ou indirects liés à l’utilisation du site ou du logiciel.\n\nL’utilisation de QoreDB se fait sous la responsabilité exclusive de l’utilisateur."
-        },
-        "external_links": {
-          "title": "Liens externes",
-          "content": "Le site QoreDB peut contenir des liens vers des sites tiers. QoreDB n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques."
-        },
-        "privacy": {
-          "title": "Données personnelles",
-          "content": "La gestion des données personnelles est détaillée dans la page dédiée :\n\n➡️ [Politique de confidentialité](/privacy)\n\nQoreDB s’engage à respecter la réglementation applicable, notamment le Règlement Général sur la Protection des Données (RGPD)."
-        },
-        "terms": {
-          "title": "Conditions d’utilisation",
-          "content": "L’utilisation du site, de la documentation et du logiciel QoreDB implique l’acceptation pleine et entière des :\n\n➡️ [Conditions générales d’utilisation](#)"
-        },
-        "license": {
-          "title": "Licence",
-          "content": "Les conditions de licence applicables au logiciel QoreDB sont détaillées dans la page dédiée :\n\n➡️ [Licence](#)"
-        },
-        "contact": {
-          "title": "Contact",
-          "content": "Pour toute question légale, signalement ou demande d’information, vous pouvez contacter l’équipe QoreDB via les canaux officiels indiqués sur le site."
-        }
+    "title": "Mentions légales",
+    "last_updated": "Dernière mise à jour : 24 janvier 2026",
+    "sections": {
+      "editor": {
+        "title": "Éditeur du site",
+        "content": "**Nom du projet / Produit :** QoreDB\n**Responsable de la publication :** Raphaël Plassart\n**Statut :** Projet logiciel (open-core)\n\n> Les informations relatives à l’entité juridique (raison sociale, forme juridique, adresse, numéro d’immatriculation) seront précisées dès la finalisation de la structure légale."
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "content": "Le site web QoreDB est hébergé par **Vercel Inc.**, situé au 340 S Lemon Ave #4133 Walnut, CA 91789, USA.\n\nLes données peuvent être hébergées sur des infrastructures situées dans l’Union européenne ou dans des pays offrant un niveau de protection des données conforme à la réglementation en vigueur."
+      },
+      "ip": {
+        "title": "Propriété intellectuelle",
+        "content": "L’ensemble du contenu présent sur le site QoreDB, incluant notamment :\n\n* les textes,\n* la documentation,\n* les articles de blog,\n* les éléments graphiques,\n* l’identité visuelle,\n* le nom, le logo et la marque QoreDB,\n\nest protégé par le droit d’auteur et les lois relatives à la propriété intellectuelle.\n\nSauf mention contraire, le code source de QoreDB est distribué selon un modèle **open-core** :\n\n* une partie est publiée sous licence open-source,\n* certaines fonctionnalités avancées peuvent être soumises à une licence propriétaire.\n\nToute reproduction, représentation, modification ou exploitation non autorisée du contenu ou des éléments protégés est strictement interdite."
+      },
+      "liability": {
+        "title": "Accès au site et responsabilité",
+        "content": "QoreDB met tout en œuvre pour assurer l’exactitude des informations diffusées sur le site. Toutefois, le projet ne saurait être tenu responsable :\n\n* des erreurs ou omissions,\n* d’une indisponibilité temporaire du site,\n* de dommages directs ou indirects liés à l’utilisation du site ou du logiciel.\n\nL’utilisation de QoreDB se fait sous la responsabilité exclusive de l’utilisateur."
+      },
+      "external_links": {
+        "title": "Liens externes",
+        "content": "Le site QoreDB peut contenir des liens vers des sites tiers. QoreDB n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques."
+      },
+      "privacy": {
+        "title": "Données personnelles",
+        "content": "La gestion des données personnelles est détaillée dans la page dédiée :\n\n➡️ [Politique de confidentialité](/privacy)\n\nQoreDB s’engage à respecter la réglementation applicable, notamment le Règlement Général sur la Protection des Données (RGPD)."
+      },
+      "terms": {
+        "title": "Conditions d’utilisation",
+        "content": "L’utilisation du site, de la documentation et du logiciel QoreDB implique l’acceptation pleine et entière des :\n\n➡️ [Conditions générales d’utilisation](#)"
+      },
+      "license": {
+        "title": "Licence",
+        "content": "Les conditions de licence applicables au logiciel QoreDB sont détaillées dans la page dédiée :\n\n➡️ [Licence](#)"
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Pour toute question légale, signalement ou demande d’information, vous pouvez contacter l’équipe QoreDB via les canaux officiels indiqués sur le site."
       }
+    }
   },
   "terms_page": {
     "title": "Conditions Générales d’Utilisation (CGU)",
@@ -795,5 +888,25 @@
         "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
       }
     }
-    }
+  },
+  "inline_cta": {
+    "text": "Prêt à essayer ? Téléchargez QoreDB gratuitement.",
+    "button": "Télécharger"
+  },
+  "pricing_preview": {
+    "title": "Tarification simple et transparente",
+    "subtitle": "Core est gratuit pour toujours. Pro débloque les fonctionnalités avancées.",
+    "core_price": "Gratuit",
+    "core_1": "8 drivers de bases de données natifs",
+    "core_2": "Éditeur SQL avec autocomplétion",
+    "core_3": "Coffre-fort chiffré & tunnels SSH",
+    "core_4": "Protection des environnements de production",
+    "pro_badge": "Achat unique",
+    "pro_price_note": "Tout ce qui est dans Core, plus les workflows avancés.",
+    "pro_1": "Assistant IA (BYOK)",
+    "pro_2": "Sandbox + scripts de migration",
+    "pro_3": "Visual data diff",
+    "pro_4": "Fédération inter-bases",
+    "cta": "Voir tous les détails tarifaires"
+  }
 }

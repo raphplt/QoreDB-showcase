@@ -3,17 +3,17 @@
 import { Resend } from "resend";
 
 type SendLicenseEmailInput = {
-	email: string;
-	licenseKey: string;
+  email: string;
+  licenseKey: string;
 };
 
 const escapeHtml = (value: string) =>
-	value
-		.replaceAll("&", "&amp;")
-		.replaceAll("<", "&lt;")
-		.replaceAll(">", "&gt;")
-		.replaceAll('"', "&quot;")
-		.replaceAll("'", "&#039;");
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 
 const buildLicenseEmailHtml = (email: string, licenseKey: string) => `
 <!doctype html>
@@ -44,25 +44,25 @@ const buildLicenseEmailHtml = (email: string, licenseKey: string) => `
 `;
 
 export async function sendLicenseEmail({
-	email,
-	licenseKey,
+  email,
+  licenseKey,
 }: SendLicenseEmailInput) {
-	const apiKey = process.env.RESEND_API_KEY;
-	if (!apiKey) {
-		throw new Error("RESEND_API_KEY is missing");
-	}
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is missing");
+  }
 
-	const resend = new Resend(apiKey);
-	const html = buildLicenseEmailHtml(email, licenseKey);
+  const resend = new Resend(apiKey);
+  const html = buildLicenseEmailHtml(email, licenseKey);
 
-	const { error } = await resend.emails.send({
-		from: process.env.LICENSE_FROM_EMAIL ?? "QoreDB <license@mail.qoredb.com>",
-		to: [email],
-		subject: "Votre licence QoreDB Pro",
-		html,
-	});
+  const { error } = await resend.emails.send({
+    from: process.env.LICENSE_FROM_EMAIL ?? "QoreDB <license@mail.qoredb.com>",
+    to: [email],
+    subject: "Votre licence QoreDB Pro",
+    html,
+  });
 
-	if (error) {
-		throw new Error(`Failed to send license email: ${error.message}`);
-	}
+  if (error) {
+    throw new Error(`Failed to send license email: ${error.message}`);
+  }
 }

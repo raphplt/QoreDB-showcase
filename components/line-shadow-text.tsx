@@ -1,10 +1,12 @@
-import React from "react"
-import { cn } from "@/lib/utils"
-import { motion, type MotionProps } from "framer-motion"
+import { type MotionProps, motion } from "framer-motion";
+import React from "react";
+import { cn } from "@/lib/utils";
 
-interface LineShadowTextProps extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>, MotionProps {
-  shadowColor?: string
-  as?: React.ElementType
+interface LineShadowTextProps
+  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps>,
+    MotionProps {
+  shadowColor?: string;
+  as?: React.ElementType;
 }
 
 export function LineShadowText({
@@ -14,16 +16,30 @@ export function LineShadowText({
   as: Component = "span",
   ...props
 }: LineShadowTextProps) {
-   
-  const MotionComponent = React.useMemo(() => motion.create(Component), [Component])
-  
-  const content = typeof children === "string" ? children 
-    : typeof children === "number" ? String(children)
-    : Array.isArray(children) ? children.map(c => typeof c === 'string' || typeof c === 'number' ? c : '').join('')
-    : null
+  const MotionComponent = React.useMemo(
+    () => motion.create(Component),
+    [Component],
+  );
+
+  const content =
+    typeof children === "string"
+      ? children
+      : typeof children === "number"
+        ? String(children)
+        : Array.isArray(children)
+          ? children
+              .map((c) =>
+                typeof c === "string" || typeof c === "number" ? c : "",
+              )
+              .join("")
+          : null;
 
   if (!content) {
-    return <Component className={className} {...props}>{children}</Component>
+    return (
+      <Component className={className} {...props}>
+        {children}
+      </Component>
+    );
   }
 
   return (
@@ -42,5 +58,5 @@ export function LineShadowText({
     >
       {content}
     </MotionComponent>
-  )
+  );
 }

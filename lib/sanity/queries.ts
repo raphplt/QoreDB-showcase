@@ -1,6 +1,7 @@
-import { defineQuery } from 'next-sanity'
+import { defineQuery } from "next-sanity";
 
-export const POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+export const POSTS_QUERY =
+  defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
   _id,
   title,
   slug,
@@ -8,9 +9,10 @@ export const POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.curren
   mainImage,
   "author": author->{name, image},
   "categories": categories[]->{title}
-}`)
+}`);
 
-export const LATEST_POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...3] {
+export const LATEST_POSTS_QUERY =
+  defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...3] {
   _id,
   title,
   slug,
@@ -18,9 +20,10 @@ export const LATEST_POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug
   mainImage,
   "author": author->{name, image},
   "categories": categories[]->{title}
-}`)
+}`);
 
-export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slug][0] {
+export const POST_QUERY =
+  defineQuery(`*[_type == "post" && slug.current == $slug][0] {
   _id,
   title,
   slug,
@@ -37,4 +40,4 @@ export const POST_QUERY = defineQuery(`*[_type == "post" && slug.current == $slu
     mainImage,
     "author": author->{name}
   }
-}`)
+}`);

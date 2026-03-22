@@ -1,18 +1,24 @@
-import React, { type CSSProperties, type ComponentPropsWithoutRef } from "react"
+import React, {
+  type ComponentPropsWithoutRef,
+  type CSSProperties,
+} from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 export interface ShimmerButtonProps extends ComponentPropsWithoutRef<"button"> {
-  shimmerColor?: string
-  shimmerSize?: string
-  borderRadius?: string
-  shimmerDuration?: string
-  background?: string
-  className?: string
-  children?: React.ReactNode
+  shimmerColor?: string;
+  shimmerSize?: string;
+  borderRadius?: string;
+  shimmerDuration?: string;
+  background?: string;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-export const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonProps>(
+export const ShimmerButton = React.forwardRef<
+  HTMLButtonElement,
+  ShimmerButtonProps
+>(
   (
     {
       shimmerColor = "#ffffff",
@@ -47,7 +53,12 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonPr
         {...props}
       >
         {/* spark container */}
-        <div className={cn("-z-30 blur-[2px]", "absolute inset-0 overflow-visible [container-type:size]")}>
+        <div
+          className={cn(
+            "-z-30 blur-[2px]",
+            "absolute inset-0 overflow-visible [container-type:size]",
+          )}
+        >
           {/* spark */}
           <div className="absolute inset-0 h-[100cqh] animate-shimmer-slide [aspect-ratio:1] [border-radius:0] [mask:none]">
             {/* spark before */}
@@ -75,10 +86,14 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, ShimmerButtonPr
         />
 
         {/* backdrop */}
-        <div className={cn("absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]")} />
+        <div
+          className={cn(
+            "absolute -z-20 [background:var(--bg)] [border-radius:var(--radius)] [inset:var(--cut)]",
+          )}
+        />
       </button>
-    )
+    );
   },
-)
+);
 
-ShimmerButton.displayName = "ShimmerButton"
+ShimmerButton.displayName = "ShimmerButton";

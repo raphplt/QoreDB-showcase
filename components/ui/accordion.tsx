@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import * as React from "react";
 import { cn } from "@/lib/utils";
 
 const AccordionContext = React.createContext<{
@@ -56,7 +56,7 @@ export function Accordion({
         return next;
       });
     },
-    [type, onValueChange]
+    [type, onValueChange],
   );
 
   return (
@@ -86,13 +86,16 @@ export function AccordionItem({
       className={cn(
         "border border-(--q-border) rounded-lg bg-(--q-bg-1)/50 overflow-hidden transition-colors",
         isOpen && "border-(--q-accent)/30 bg-(--q-bg-1)",
-        className
+        className,
       )}
       {...props}
     >
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child as React.ReactElement<any>, { value, isOpen }); // eslint-disable-line @typescript-eslint/no-explicit-any
+          return React.cloneElement(child as React.ReactElement<any>, {
+            value,
+            isOpen,
+          }); // eslint-disable-line @typescript-eslint/no-explicit-any
         }
         return child;
       })}
@@ -100,7 +103,8 @@ export function AccordionItem({
   );
 }
 
-interface AccordionTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface AccordionTriggerProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isOpen?: boolean;
   value?: string;
   onToggle?: () => void;
@@ -121,7 +125,7 @@ export function AccordionTrigger({
       onClick={() => value && toggleItem(value)}
       className={cn(
         "flex w-full items-start justify-between p-6 text-left transition-all hover:bg-(--q-bg-2)/50",
-        className
+        className,
       )}
       {...props}
     >
@@ -162,7 +166,7 @@ export function AccordionContent({
           <div
             className={cn(
               "p-6 pt-0 text-(--q-text-1) leading-relaxed text-base border-t border-(--q-border)/50 mt-2",
-              className
+              className,
             )}
             {...props}
           >

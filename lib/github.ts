@@ -68,7 +68,7 @@ export async function getReleases(): Promise<GithubRelease[]> {
           Accept: "application/vnd.github.v3+json",
           "User-Agent": "QoreDB-Website",
         },
-      }
+      },
     );
 
     if (!response.ok) {
