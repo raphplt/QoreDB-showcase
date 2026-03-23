@@ -64,7 +64,7 @@
     },
     "ph_badge": "Launching on Product Hunt",
     "title": "One app for <italic>all your databases</italic>",
-    "subtitle": "The fast, open-source database client built with Rust. Connect to <highlight>8 databases</highlight> from a single, beautiful interface. Local-first — your data stays yours.",
+    "subtitle": "The fast, open-source database client built with Rust. Connect to <highlight>9 databases</highlight> from a single, beautiful interface. Local-first — your data stays yours.",
     "cta": {
       "join_beta": "Join Beta",
       "download_core": "Download Free",
@@ -137,7 +137,7 @@
     "subtitle": "9 drivers, one interface. No Electron, no cloud dependency, no bloat.",
     "items": {
       "unified": {
-        "title": "8 Native Drivers",
+        "title": "9 Native Drivers",
         "desc": "PostgreSQL, MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis and CockroachDB in one interface."
       },
       "vault": {
@@ -245,7 +245,7 @@
     "label": "One interface, every database"
   },
   "social_proof": {
-    "databases": "8 databases",
+    "databases": "9 databases",
     "binary_size": "~15 MB binary",
     "startup": "<1s startup",
     "license": "Apache 2.0"
@@ -272,7 +272,7 @@
     "values": {
       "qoredb": {
         "opensource": "Apache 2.0",
-        "multidb": "8 engines",
+        "multidb": "9 engines",
         "native": "Rust/Tauri",
         "local": "Yes",
         "vault": "Argon2",

@@ -61,14 +61,15 @@
       "title": "Le vault chiffré de QoreDB : Argon2 et stockage local des credentials",
       "category": "Security",
       "publishedAt": "2026-03-22"
+    },
+    {
+      "slug": "pourquoi-qoredb-bloque-mutations-production",
+      "title": "Pourquoi QoreDB bloque les mutations en production par défaut",
+      "category": "Security",
+      "publishedAt": "2026-03-23"
     }
   ],
   "queue": [
-    {
-      "title": "Pourquoi QoreDB bloque les mutations en production par défaut",
-      "category": "Security",
-      "topic_notes": "Safety policy, regex backend, classification environnements, read-only mode"
-    },
     {
       "title": "Le modèle open-core de QoreDB : ce qui est libre, ce qui ne l'est pas",
       "category": "Open Source",

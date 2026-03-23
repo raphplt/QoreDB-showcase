@@ -64,7 +64,7 @@
     },
     "ph_badge": "Lancement sur Product Hunt",
     "title": "Une app pour <italic>toutes vos bases</italic>",
-    "subtitle": "Le client de bases de données open-source, rapide, propulsé par Rust. Connectez <highlight>8 bases de données</highlight> depuis une seule interface. Local-first — vos données restent chez vous.",
+    "subtitle": "Le client de bases de données open-source, rapide, propulsé par Rust. Connectez <highlight>9 bases de données</highlight> depuis une seule interface. Local-first — vos données restent chez vous.",
     "cta": {
       "join_beta": "Rejoindre la beta",
       "download_core": "Télécharger gratuitement",
@@ -245,7 +245,7 @@
     "label": "Une interface, toutes les bases"
   },
   "social_proof": {
-    "databases": "8 bases de données",
+    "databases": "9 bases de données",
     "binary_size": "~15 Mo le binaire",
     "startup": "<1s au démarrage",
     "license": "Apache 2.0"
@@ -272,7 +272,7 @@
     "values": {
       "qoredb": {
         "opensource": "Apache 2.0",
-        "multidb": "8 moteurs",
+        "multidb": "9 moteurs",
         "native": "Rust/Tauri",
         "local": "Oui",
         "vault": "Argon2",
