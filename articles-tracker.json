@@ -73,34 +73,39 @@
       "title": "Le modèle open-core de QoreDB : ce qui est libre, ce qui ne l'est pas",
       "category": "Open Source",
       "publishedAt": "2026-03-24"
+    },
+    {
+      "slug": "tunnels-ssh-openssh-natif-sans-agent-tiers",
+      "title": "Comment QoreDB gère les tunnels SSH sans agent tiers",
+      "category": "Architecture",
+      "publishedAt": "2026-03-25"
+    },
+    {
+      "slug": "streaming-resultats-curseurs-memoire-bornee",
+      "title": "Le streaming de résultats dans QoreDB : curseurs et mémoire bornée",
+      "category": "Architecture",
+      "publishedAt": "2026-03-26"
+    },
+    {
+      "slug": "editeur-sql-codemirror-autocompletion-choix-volontaires",
+      "title": "L'éditeur SQL de QoreDB : CodeMirror, autocomplétion et choix volontaires",
+      "category": "Produit",
+      "publishedAt": "2026-03-30"
+    },
+    {
+      "slug": "data-grid-virtualisation-tri-server-side-inline-edit",
+      "title": "Le Data Grid : virtualisation, tri server-side et inline edit",
+      "category": "Produit",
+      "publishedAt": "2026-03-30"
+    },
+    {
+      "slug": "pourquoi-qoredb-ne-traduit-pas-les-requetes-entre-moteurs",
+      "title": "Pourquoi QoreDB ne traduit pas les requêtes entre moteurs",
+      "category": "Vision",
+      "publishedAt": "2026-03-31"
     }
   ],
   "queue": [
-    {
-      "title": "Comment QoreDB gère les tunnels SSH sans agent tiers",
-      "category": "Architecture",
-      "topic_notes": "OpenSSH système, pas de libssh embarquée, bastion/jump host, reconnexion"
-    },
-    {
-      "title": "Le streaming de résultats dans QoreDB : curseurs et mémoire bornée",
-      "category": "Architecture",
-      "topic_notes": "Curseurs côté driver, backpressure, mémoire bornée, pas de chargement total"
-    },
-    {
-      "title": "L'éditeur SQL de QoreDB : CodeMirror, autocomplétion et limites volontaires",
-      "category": "Produit",
-      "topic_notes": "CodeMirror, schema-aware completion, pas de magic, transparence sur ce qui est supporté"
-    },
-    {
-      "title": "Le Data Grid : virtualisation, tri server-side et inline edit",
-      "category": "Produit",
-      "topic_notes": "Virtualisation DOM, tri délégué au moteur, édition directe, contraintes UX"
-    },
-    {
-      "title": "Pourquoi QoreDB ne traduit pas les requêtes entre moteurs",
-      "category": "Vision",
-      "topic_notes": "Pas d'abstraction SQL universelle, chaque moteur a sa grammaire, transparence"
-    },
     {
       "title": "Le driver SQLite dans QoreDB : WAL, extensions et fichiers locaux",
       "category": "Architecture",
