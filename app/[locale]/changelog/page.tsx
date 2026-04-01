@@ -1,22 +1,31 @@
-import { useTranslation } from "@/app/[locale]/i18n";
+import type { Metadata } from "next";
+import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { ReleaseList } from "@/components/changelog/release-list";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { getReleases } from "@/lib/github";
 
-export const metadata = {
-  title: "Changelog - QoreDB",
-  description:
-    "Stay up to date with the latest changes and improvements to QoreDB.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await getTranslation(locale, "common");
+
+  return {
+    title: t("metadata.changelog_title"),
+    description: t("metadata.changelog_description"),
+  };
+}
 
 export default async function ChangelogPage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { t } = await useTranslation(locale, "common");
+  const { locale } = await params;
+  const { t } = await getTranslation(locale, "common");
   const releases = await getReleases();
 
   return (

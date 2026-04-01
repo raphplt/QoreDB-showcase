@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AppleIcon, LinuxIcon, WindowsIcon } from "@/components/icons/os-icons";
 import { useDownload } from "@/contexts/DownloadProvider";
+import { getIntlLocale } from "@/lib/locale";
 import { Button } from "../ui/button";
 
 export function DownloadSection() {
@@ -14,12 +15,21 @@ export function DownloadSection() {
     useDownload();
   const [showOtherPlatforms, setShowOtherPlatforms] = useState(false);
 
+  const openDownloadLink = (url?: string) => {
+    if (url) {
+      window.location.href = url;
+    }
+  };
+
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString(i18n.language || "en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+    return new Date(dateString).toLocaleDateString(
+      getIntlLocale(i18n.language),
+      {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      },
+    );
   };
 
   const getOsIcon = (targetOs: string, className: string = "w-8 h-8") => {
@@ -183,7 +193,7 @@ export function DownloadSection() {
                       <Button
                         size="lg"
                         className="w-full max-w-md h-14 text-lg gap-3 rounded-xl font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
-                        onClick={() => (window.location.href = mainLink)}
+                        onClick={() => openDownloadLink(mainLink)}
                       >
                         <Download className="w-5 h-5" />
                         {t("download.download_now", "Download Now")}
@@ -194,15 +204,13 @@ export function DownloadSection() {
                   {/* Platform-specific options */}
                   {os !== "unknown" && (
                     <div className="mt-6 flex flex-wrap justify-center gap-3">
-                      {getPlatformOptions(os).map((option, idx) => (
+                      {getPlatformOptions(os).map((option) => (
                         <Button
-                          key={idx}
+                          key={`${os}-${option.label}`}
                           variant="outline"
                           size="sm"
                           className={`gap-2 ${option.recommended ? "border-primary/30 bg-primary/5" : ""}`}
-                          onClick={() =>
-                            option.url && (window.location.href = option.url)
-                          }
+                          onClick={() => openDownloadLink(option.url)}
                           disabled={!option.url}
                         >
                           {option.label}
@@ -221,6 +229,7 @@ export function DownloadSection() {
               {/* Other Platforms - Collapsible */}
               <div className="relative">
                 <button
+                  type="button"
                   onClick={() => setShowOtherPlatforms(!showOtherPlatforms)}
                   className="group flex items-center justify-center gap-2 w-full py-4 text-(--q-text-2) hover:text-(--q-text-0) transition-colors"
                 >
@@ -254,24 +263,19 @@ export function DownloadSection() {
                               </h3>
                             </div>
                             <div className="space-y-2">
-                              {getPlatformOptions(platform).map(
-                                (option, idx) => (
-                                  <Button
-                                    key={idx}
-                                    variant="ghost"
-                                    size="sm"
-                                    className="w-full justify-start gap-2 h-9 text-sm"
-                                    onClick={() =>
-                                      option.url &&
-                                      (window.location.href = option.url)
-                                    }
-                                    disabled={!option.url}
-                                  >
-                                    <Download className="w-3.5 h-3.5" />
-                                    {option.label}
-                                  </Button>
-                                ),
-                              )}
+                              {getPlatformOptions(platform).map((option) => (
+                                <Button
+                                  key={`${platform}-${option.label}`}
+                                  variant="ghost"
+                                  size="sm"
+                                  className="w-full justify-start gap-2 h-9 text-sm"
+                                  onClick={() => openDownloadLink(option.url)}
+                                  disabled={!option.url}
+                                >
+                                  <Download className="w-3.5 h-3.5" />
+                                  {option.label}
+                                </Button>
+                              ))}
                             </div>
                           </div>
                         ))}

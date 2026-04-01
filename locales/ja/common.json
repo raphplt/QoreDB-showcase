@@ -1,0 +1,934 @@
+{
+  "nav": {
+    "features": "特長",
+    "preview": "プレビュー",
+    "pricing": "価格設定",
+    "blog": "ブログ",
+    "roadmap": "ロードマップ",
+    "faq": "よくある質問",
+    "changelog": "変更履歴",
+    "download": "ダウンロード",
+    "join_beta": "ベータ版に参加する"
+  },
+  "download": {
+    "title": "QoreDB をダウンロード",
+    "subtitle": "ご使用のオペレーティング システム用の最新バージョンの QoreDB を入手してください。",
+    "download_now": "今すぐダウンロード",
+    "download_for": "{{platform}} 用にダウンロード",
+    "select_platform": "以下からプラットフォームを選択してください。",
+    "error": "バージョン情報を読み込めません。",
+    "detected_platform": "あなたが{{platform}}にいることを検出しました",
+    "other_platforms": "他のプラットフォーム",
+    "recommended": "おすすめ",
+    "apple_silicon": "Appleシリコン(M1/M2/M3/M4)",
+    "intel_mac": "インテル Mac",
+    "windows_installer": "インストーラー(.exe)",
+    "windows_msi": "MSI インストーラー",
+    "microsoft_store": "マイクロソフトストア",
+    "linux_appimage": "AppImage (ユニバーサル)",
+    "linux_deb": "Debian / Ubuntu (.deb)",
+    "linux_rpm": "Fedora / RHEL (.rpm)",
+    "view_all_releases": "GitHub ですべてのリリースを表示する"
+  },
+  "changelog": {
+    "title": "変更履歴",
+    "subtitle": "QoreDB に対する最新の変更点と改善点を常に最新の状態に保ってください。",
+    "no_releases": "リリースノートは見つかりませんでした。",
+    "read_more": "続きを読む",
+    "show_less": "表示を少なくする",
+    "load_more": "さらにリリースをロードする"
+  },
+  "footer": {
+    "product": "製品",
+    "features": "特長",
+    "preview": "プレビュー",
+    "pricing": "価格設定",
+    "changelog": "変更履歴",
+    "resources": "リソース",
+    "documentation": "ドキュメント",
+    "guide": "はじめに",
+    "community": "コミュニティ",
+    "legal": "法的",
+    "privacy": "プライバシー",
+    "terms": "規約",
+    "license": "ライセンス",
+    "mentions_legales": "法的通知",
+    "description": "要求の厳しい開発者向けの最新のデータベース クライアント。",
+    "made_with_love": "{{heart}} によって作成されました"
+  },
+  "hero": {
+    "badges": {
+      "opensource": "オープンソース",
+      "localfirst": "地元第一主義",
+      "hybrid": "SQL + NoSQL"
+    },
+    "ph_badge": "Product Hunt での発売",
+    "title": "<italic>すべてのデータベース</italic> に 1 つのアプリで対応",
+    "subtitle": "Rust で構築された高速なオープンソース データベース クライアント。単一の美しいインターフェイスから <highlight>9 個のデータベース</highlight> に接続します。ローカルファースト — データは自分のもののままです。",
+    "cta": {
+      "join_beta": "ベータ版に参加する",
+      "download_core": "無料ダウンロード",
+      "discover_pro": "GitHub で見る",
+      "view_project": "プロジェクトを見る",
+      "participate": "参加する"
+    },
+    "social_proof": "ベータ版を待っている <highlight>100+</highlight> 人の開発者に参加しましょう",
+    "meta": {
+      "rust": "Rust と Tauri で構築",
+      "license": "Apache 2.0 ライセンス",
+      "platforms": "macOS・Windows・Linux"
+    },
+    "slides": {
+      "database": "データベースの概要",
+      "table": "データビュー",
+      "query": "SQLエディタ",
+      "schema": "スキーマエクスプローラー",
+      "home": "ホーム",
+      "connection": "新しい接続",
+      "settings": "設定"
+    }
+  },
+  "preview": {
+    "eyebrow": "プレビュー",
+    "title": "<accent>開発者</accent>向けに構築されたインターフェース",
+    "description": "高密度でありながら通気性があります。真剣でありながらモダン。\n<subtext>まさにプロフェッショナル ツールに期待されるものです。</subtext>",
+    "tabs": {
+      "database": {
+        "title": "概要",
+        "description": "グローバルメトリクスとテーブルへの素早いアクセス。"
+      },
+      "schema": {
+        "title": "スキーマエクスプローラー",
+        "description": "関係とデータベース構造を視覚化します。"
+      },
+      "home": {
+        "title": "ホーム",
+        "description": "セッションの回復と接続管理。"
+      },
+      "connection": {
+        "title": "新しい接続",
+        "description": "シンプルかつ高度なソース構成。"
+      },
+      "security": {
+        "title": "セキュリティ",
+        "description": "ガードレール、監査、リクエストのプロファイリング。"
+      },
+      "table": {
+        "title": "データビュー",
+        "description": "高性能グリッドによるスムーズな操作。"
+      },
+      "query": {
+        "title": "SQLエディタ",
+        "description": "オートコンプリートと構文の強調表示を使用してクエリを作成して実行します。"
+      }
+    }
+  },
+  "blog_section": {
+    "eyebrow": "ブログ",
+    "title": "最新記事",
+    "subtitle": "QoreDB と最新の開発に関する洞察、チュートリアル、ニュース。",
+    "cta": "すべての記事を見る",
+    "loading": "最新の記事を読み込んでいます...",
+    "empty": "まだ記事はありません。"
+  },
+  "features": {
+    "eyebrow": "特長",
+    "title": "必要なものはすべて揃っており、<accent>必要なものは何もありません</accent>",
+    "subtitle": "9 つのドライバー、1 つのインターフェイス。 Electron もクラウドへの依存も膨張もありません。",
+    "items": {
+      "unified": {
+        "title": "9 ネイティブドライバー",
+        "desc": "PostgreSQL、MySQL/MariaDB、SQL Server、SQLite、DuckDB、MongoDB、Redis、CockroachDB を 1 つのインターフェイスで。"
+      },
+      "vault": {
+        "title": "セキュリティとプライバシー",
+        "desc": "暗号化された認証情報 (Argon2) および GDPR 準拠 (ゼロ テレメトリ)。"
+      },
+      "ssh": {
+        "title": "SSHトンネリング",
+        "desc": "リモート データベースの SSH トンネルのネイティブ サポート。"
+      },
+      "editor": {
+        "title": "スマートエディター",
+        "desc": "構文の強調表示、スニペット、書式設定、および複数ステートメントの実行。"
+      },
+      "library": {
+        "title": "クエリライブラリ",
+        "desc": "フォルダー、タグ、JSON インポート/エクスポート、および再利用可能なクエリ。"
+      },
+      "envs": {
+        "title": "環境保護",
+        "desc": "個別の開発/ステージング/本番、本番での突然変異のブロック。"
+      },
+      "grid": {
+        "title": "高性能グリッド",
+        "desc": "仮想化、サーバー側フィルタリング、インライン編集、ページネーション、無限スクロール。"
+      },
+      "ai": {
+        "title": "AIアシスタント",
+        "desc": "独自の API キー (BYOK) を使用したクエリの生成、説明、エラー修正。"
+      },
+      "federation": {
+        "title": "クロス DB フェデレーション",
+        "desc": "アクティブな接続間の結合を使用して、複数のデータベースにわたって SQL クエリを実行します。"
+      },
+      "ddl": {
+        "title": "DDL 管理",
+        "desc": "データベース、テーブル、ルーチン、トリガーを作成/削除し、メンテナンス操作を実行します。"
+      },
+      "export": {
+        "title": "マルチフォーマットエクスポート",
+        "desc": "結果を CSV、JSON、SQL、HTML、XLSX、Parquet、または自己完結型 HTML としてエクスポートします。"
+      },
+      "opensource": {
+        "title": "オープンソース",
+        "desc": "監査可能なコードは GitHub で入手できます。"
+      }
+    },
+    "killer": {
+      "sandbox": {
+        "title": "サンドボックス編集 + 差分 + 移行",
+        "desc": "データをローカルで安全に編集し、セルラー diff で変更を視覚化し、再現可能な SQL スクリプトを生成します。",
+        "badge": "データ用の Git",
+        "list": {
+          "local": "ローカル変更 (直接コミットなし)",
+          "diff": "変更リストのクリア (挿入/更新/削除)",
+          "script": "前提条件を使用して SQL スクリプトを生成する"
+        }
+      },
+      "er_diagram": {
+        "title": "インタラクティブなER図",
+        "desc": "生きたスキーマエクスプローラー。テーブルとリレーションを視覚的にナビゲートし、ズーム、パン、データに直接ジャンプします。",
+        "badge": "ビジュアル",
+        "list": {
+          "canvas": "テーブルクラスタリングを備えたインタラクティブなキャンバス",
+          "nav": "テーブルのズーム、パン、検索",
+          "peek": "関係にカーソルを合わせると詳細が表示されます"
+        }
+      },
+      "safety_net": {
+        "title": "ユニバーサルクエリセーフティネット",
+        "desc": "アクティブなエラー防止。危険なクエリ (WHERE を指定しない DELETE) を検出し、スマート アラートを提供します。",
+        "badge": "安全性",
+        "list": {
+          "detect": "危険なクエリの自動検出",
+          "env": "環境を意識したアラート",
+          "audit": "機密性の高い操作のローカル監査ログ"
+        }
+      },
+      "data_diff": {
+        "title": "ビジュアルデータの差分",
+        "desc": "データの Git diff のように、2 つのクエリ結果またはテーブルを並べて比較します。本番環境とステージング環境を比較するのに最適です。",
+        "badge": "比較する",
+        "list": {
+          "compare": "任意の 2 つの結果セットを並べて比較",
+          "highlight": "追加、削除、変更のセルレベルの強調表示",
+          "snapshot": "後で比較できるように結果のスナップショットを保存する"
+        }
+      }
+    },
+    "compatibility": {
+      "eyebrow": "互換性",
+      "title": "サポートされているデータベース",
+      "coming_soon": "さらに近日中にさらに追加予定です..."
+    },
+    "pro_badge": "プロ",
+    "visual_diff_badge": "視覚的な差分"
+  },
+  "cta": {
+    "title": "データベースツールとの戦いをやめる",
+    "description": "QoreDB をダウンロードして、30 秒で違いを確認してください。",
+    "download_button": "無料でダウンロード",
+    "github_button": "GitHub でスターを付ける"
+  },
+  "database_strip": {
+    "label": "1 つのインターフェイス、すべてのデータベース"
+  },
+  "social_proof": {
+    "databases": "9 つのデータベース",
+    "binary_size": "~15 MB バイナリ",
+    "startup": "1秒未満の起動",
+    "license": "アパッチ2.0"
+  },
+  "comparison": {
+    "title": "QoreDB との比較",
+    "subtitle": "すべてを置き換えようとしているわけではありません。私たちは、あったらいいなと思うツールを構築しています。",
+    "rows": {
+      "opensource": "オープンソースコア",
+      "multidb": "マルチデータベース (SQL + NoSQL)",
+      "native": "ネイティブパフォーマンス (電子なし)",
+      "local": "ローカルファースト / クラウドなし",
+      "vault": "暗号化された資格情報ボールト",
+      "safety": "生産安全装置",
+      "sandbox": "サンドボックス モード + 移行",
+      "fulltext": "全文検索（全テーブル）",
+      "er_diagram": "インタラクティブなER図",
+      "federation": "クロスデータベースフェデレーション",
+      "ai": "AIクエリアシスタント",
+      "ui": "モダンで高速な UI",
+      "maturity": "成熟度/エコシステム",
+      "price": "価格（個人利用）"
+    },
+    "values": {
+      "qoredb": {
+        "opensource": "アパッチ2.0",
+        "multidb": "9 エンジン",
+        "native": "ラスト/タウリ",
+        "local": "はい",
+        "vault": "アルゴン2",
+        "safety": "はい",
+        "sandbox": "プロ",
+        "fulltext": "はい",
+        "er_diagram": "はい",
+        "federation": "プロ",
+        "ai": "ビヨク",
+        "ui": "はい",
+        "maturity": "新しい",
+        "price": "無料/プロ"
+      },
+      "dbeaver": {
+        "opensource": "コミュニティ",
+        "multidb": "はい",
+        "native": "Java/スイング",
+        "local": "はい",
+        "vault": "基本",
+        "safety": "いいえ",
+        "sandbox": "いいえ",
+        "fulltext": "いいえ",
+        "er_diagram": "はい",
+        "federation": "いいえ",
+        "ai": "いいえ",
+        "ui": "日付付き",
+        "maturity": "15年以上",
+        "price": "無料 / 199ドル"
+      },
+      "tableplus": {
+        "opensource": "いいえ",
+        "multidb": "限定",
+        "native": "ネイティブ",
+        "local": "はい",
+        "vault": "キーホルダー",
+        "safety": "部分的",
+        "sandbox": "いいえ",
+        "fulltext": "いいえ",
+        "er_diagram": "いいえ",
+        "federation": "いいえ",
+        "ai": "いいえ",
+        "ui": "はい",
+        "maturity": "設立",
+        "price": "$89"
+      },
+      "pgadmin": {
+        "opensource": "はい",
+        "multidb": "PGのみ",
+        "native": "ウェブベース",
+        "local": "はい",
+        "vault": "いいえ",
+        "safety": "いいえ",
+        "sandbox": "いいえ",
+        "fulltext": "いいえ",
+        "er_diagram": "部分的",
+        "federation": "いいえ",
+        "ai": "いいえ",
+        "ui": "いいえ",
+        "maturity": "20年以上",
+        "price": "無料"
+      }
+    },
+    "note": "私たちは若いですが、速く進んでいます。ロードマップを確認してください→"
+  },
+  "feature_showcase": {
+    "eyebrow": "徹底的に",
+    "title": "実際のワークフロー向けに構築"
+  },
+  "code_demo": {
+    "title_bar": "QoreDB — prod-api @ PostgreSQL",
+    "comment": "-- 今月最もアクティブなユーザーを見つける",
+    "result": "23 ミリ秒で 10 行が返されました — ストリーミングが完了しました"
+  },
+  "why": {
+    "items": {
+      "slow": {
+        "title": "遅い",
+        "desc": "無限ロード"
+      },
+      "dated": {
+        "title": "日付付き",
+        "desc": "別の時代のインターフェース"
+      },
+      "tiring": {
+        "title": "疲れる",
+        "desc": "十分に考えられていないワークフロー"
+      }
+    },
+    "eyebrow": "問題",
+    "title_pre": "現在のツール ",
+    "title_highlight": "あなたの速度を遅くします",
+    "description": "DBeaver、phpMyAdmin、pgAdmin... 彼らは仕事をしますが、UX は平凡で、ワークフローは十分に最適化されておらず、現代の働き方に合わせて進化していません。",
+    "comparison": {
+      "pre": "QoreDB はデータベースに対して何をしますか ",
+      "post": " 自分たちの分野のためにやったのです。"
+    }
+  },
+  "language_switcher": {
+    "toggle": "言語を切り替えます"
+  },
+  "roadmap_page": {
+    "title": "QoreDB ロードマップ",
+    "subtitle": "QoreDB 開発の次のステップをご覧ください。",
+    "now": {
+      "title": "今 - 強固な基盤",
+      "quote": "QoreDB を信頼性が高く、高速で、毎日快適に使用できるようにします。",
+      "items": {
+        "1": "パフォーマンスと安定性の継続的な改善",
+        "2": "ローカルファーストのセキュリティとプライバシーの強化",
+        "3": "既存のワークフローでのよりスムーズなユーザー エクスペリエンス",
+        "4": "より明確なエラー処理と診断",
+        "5": "ドキュメント化とコミュニティへの漸進的な開放"
+      },
+      "goal": "目標: 開発者が自信を持って使用し、推奨できるツール。"
+    },
+    "soon": {
+      "title": "まもなく — 生産性と明快さ",
+      "quote": "従来のデータベース クライアントを超えてください。",
+      "items": {
+        "1": "より効率的なデータのナビゲーションと探索",
+        "2": "構造と関係をより深く理解する",
+        "3": "より安全で直感的なデータ編集",
+        "4": "データの比較と操作が容易になる",
+        "5": "地域連携の最初のブロック"
+      },
+      "goal": "目標: 開発者を毎日リアルタイムで節約します。"
+    },
+    "later": {
+      "title": "その後 — QoreDB ビジョン",
+      "quote": "開発者がデータをどのように操作するかを再考してください。",
+      "items": {
+        "1": "統合された SQL と NoSQL のエクスペリエンス",
+        "2": "データベース間の関係と仮想ビュー",
+        "3": "インテリジェントな支援と自動化",
+        "4": "拡張性とオープンソースのエコシステム",
+        "5": "クラウドへの依存を強いることのないコラボレーション"
+      },
+      "goal": "目標: 最新の開発者にとってのリファレンス ツールとなること。"
+    },
+    "transparency": {
+      "text": "このロードマップはプロジェクトの現在の方向性を反映しています。コミュニティからのフィードバックや実際の使用状況に基づいて進化する可能性があります。"
+    }
+  },
+  "faq_page": {
+    "title": "よくある質問 — QoreDB",
+    "search_placeholder": "答えを探してください...",
+    "no_results": "結果が見つかりませんでした",
+    "filters": {
+      "all": "すべて",
+      "general": "一般",
+      "tech": "技術的な",
+      "project": "プロジェクトとビジネス"
+    },
+    "items": {
+      "what_is_qoredb": {
+        "question": "QoreDB とは正確には何ですか?",
+        "answer": "QoreDB は **最新のオープンソース、ローカルファーストのデータベース クライアント**であり、強制的なクラウドに依存せずに SQL および NoSQL データベースを効率的に操作したい開発者向けに設計されています。\n\n以下に焦点を当てています。\n\n* **パフォーマンス**、\n* **セキュリティ**、\n* **洗練された開発者エクスペリエンス**、\n* そして、従来のツールよりも野心的な長期ビジョン。"
+      },
+      "difference_dbeaver": {
+        "question": "QoreDB は DBeaver や既存のツールとどう違うのですか?",
+        "answer": "QoreDB は、「機能ごと」の代替手段となることを目指しているわけではありません。\n\n主な違い:\n\n* **ローカルファースト** アーキテクチャ (デフォルトではデータは送信されません)\n* 組み込みのセキュリティとガードレール (環境、読み取り専用、運用ルール)\n* スピードと明瞭さを追求したユーザーエクスペリエンス\n* 統合 SQL + NoSQL ビジョン\n* 最新の拡張可能な長期指向のコードベース\n\nQoreDB は、「老朽化したスイス アーミー ナイフ」ではなく、**日常の作業ツール**として設計されています。"
+      },
+      "is_opensource": {
+        "question": "QoreDB は本当にオープンソースですか?",
+        "answer": "はい。\n\nQoreDB のコアは **オープンソース**で、読み取り可能、監査可能、および変更可能です。\n透明性はプロジェクトの DNA の一部です。\n\n最終的には、**オープンソース バージョンから重要な機能を削除することなく**、一部の高度な機能が有料サービスとして存在する可能性があります。"
+      },
+      "is_free": {
+        "question": "QoreDB は無料ですか?",
+        "answer": "はい。\n\nQoreDB は、macOS、Windows、Linux で **無料でダウンロードして使用できます**。\n\n将来的には、高度な用途やプロフェッショナルな用途向けに有料のオファーが存在する可能性がありますが、製品のコアは引き続き無料で、コストなしで使用できます。"
+      },
+      "data_privacy": {
+        "question": "私のデータはどこかに送信されますか?",
+        "answer": "いいえ。\n\nデフォルトでは:\n\n* 接続、クエリ、データは **厳密にローカル** のままです。\n* データベースはリモート サーバーにプロキシされたり、保存されません。\n\n測定ツール (分析) は次のとおりです。\n\n* **デフォルトでは無効になっています**\n* **匿名**\n* **明示的なオプトイン**\n\nQoreDB は **プライバシー第一** の哲学を採用しています。"
+      },
+      "analytics": {
+        "question": "分析ツールを使用していますか?",
+        "answer": "はい、ただし厳格なルールがあります。\n\n分析は次の目的にのみ役立ちます。\n\n* 機能の採用を理解する、\n* ユーザーエクスペリエンスを向上させ、\n* 開発を優先します。\n\n彼らは**決して**収集しません:\n\n* データベースデータ、\n* 完全な SQL クエリ、\n* 資格情報、\n* センシティブな内容。\n\nアクティベーションは常に**自発的**です。"
+      },
+      "production_ready": {
+        "question": "QoreDB は実稼働環境での使用に適していますか?",
+        "answer": "はい、ガードレール付きです。\n\nQoreDB は以下を統合します:\n\n* 環境 (開発/ステージング/本番)、\n* 読み取り専用モード、\n* 危険なクエリに対する保護、\n* キャンセルとタイムアウトのメカニズム。\n\n目標は、開発者の速度を低下させることなく、**人的エラー**を減らすことです。"
+      },
+      "supported_databases": {
+        "question": "どのデータベースがサポートされていますか?",
+        "answer": "QoreDB は現在以下をサポートしています:\n\n* ポストグレSQL\n* MySQL / マリアDB\n* SQLサーバー\n*SQLite\n*ダックDB\n* モンゴDB\n* レディス\n\nアーキテクチャの進化に応じて、さらに多くのエンジンが計画されています。"
+      },
+      "remote_ssh": {
+        "question": "リモート接続と SSH は機能しますか?",
+        "answer": "はい。\n\nQoreDB は以下をサポートします:\n\n* 従来のリモート接続、\n* SSH トンネル、\n* データベースに応じて異なる認証モード。\n\n接続のセキュリティが優先されます。"
+      },
+      "platforms": {
+        "question": "QoreDB はどのシステムで利用できますか?",
+        "answer": "QoreDB は以下で入手可能です:\n\n* macOS\n* Windows\n* リナックス\n\nビルドは定期的に更新されます。"
+      },
+      "maintenance": {
+        "question": "プロジェクトは積極的に維持されていますか?",
+        "answer": "はい。\n\nQoreDB は現在開発中であり、以下の機能が含まれています。\n\n* 頻繁なリリース、\n* 構造リファクタリング、\n* 公開ロードマップ、\n*段階的にコミュニティに開放します。\n\nプロジェクトはすでに POC 段階を過ぎています。"
+      },
+      "contribute": {
+        "question": "プロジェクトに貢献できますか?",
+        "answer": "はい、それは奨励されています。\n\n考えられる貢献:\n\n* ユーザーからのフィードバック、\n* GitHub の問題とディスカッション、\n* 改善提案、\n* コードとドキュメント。\n\nコミュニティ GitHub が構築されています。"
+      },
+      "pro_version": {
+        "question": "「プロ」バージョンはありますか?",
+        "answer": "おそらくそうです。\n\n目標は、使用をブロックすることではなく、次のことを提供することです。\n\n* 高度な機能、\n* 共同使用または専門的な使用、\n* チームや企業向けのオプション。\n\nオープンソース バージョンは引き続き完全に使用可能です。"
+      },
+      "funding": {
+        "question": "プロジェクトの資金はどのように調達されますか?",
+        "answer": "対象となるモデルは次のとおりです。\n\n* 持続可能なオープンソース、\n* 自己資金で、\n* 必須の集中型クラウドに依存しません。\n\n詳細は製品の採用に応じて進化します。"
+      },
+      "professional_use": {
+        "question": "QoreDB を専門的な環境で使用できますか?",
+        "answer": "はい。\n\nQoreDB は次の目的で使用されるように設計されています。\n\n* 個人開発者による、\n* 初期のスタートアップ、\n*技術チーム。\n\nセキュリティ、安定性、メンテナンスの側面が重視されています。"
+      },
+      "follow_progress": {
+        "question": "プロジェクトの進化はどこで追跡できますか?",
+        "answer": "※公式サイトにて\n* 公開ロードマップ経由\n* LinkedIn 上 (プロジェクトの進捗状況を定期的に共有)\n* GitHub 上"
+      },
+      "join_beta": {
+        "question": "ベータ版に参加するか、QoreDB をテストするにはどうすればよいですか?",
+        "answer": "QoreDB はすでにダウンロード可能です。\n\n次のことができます。\n\n* 直接インストールします。\n* サイトからベータ版に参加し、\n* プロジェクトの将来に影響を与えるためにフィードバックを共有してください。"
+      },
+      "long_term": {
+        "question": "QoreDB を長期的に信頼できますか?",
+        "answer": "QoreDB は実験ではなく、**長期プロジェクト**として設計されています。\n\n技術、製品、およびオープンソースの選択は、次の方向に進みます。\n\n*持続可能性、\n*透明度、\n* 開発者の信頼。"
+      }
+    }
+  },
+  "pricing_page": {
+    "badge": "オープンコア",
+    "title": "ワークフローに合ったプランをお選びください",
+    "subtitle": "コアは完全かつ無料のままです。 Pro は、必要なときに高度な機能を追加します。",
+    "billing_note": "Pro の永久ライセンス、1 回限りの支払い",
+    "checkout_error": "現在、Stripe Checkout を開始できません。",
+    "faq_title": "よくある質問",
+    "core": {
+      "title": "コア",
+      "description": "QoreDB の完全なオープンソース基盤。",
+      "price": "無料",
+      "badge": "主な選択肢",
+      "cta": "無料でダウンロード",
+      "features": {
+        "drivers": "すべてのドライバー (PostgreSQL、MySQL/MariaDB、SQL Server、SQLite、DuckDB、MongoDB、Redis、CockroachDB)",
+        "crud": "完全な CRUD + SQL/Mongo エディター",
+        "grid": "高性能データグリッド（仮想スクロール）",
+        "er_diagram": "インタラクティブなER図",
+        "history": "クエリ履歴とお気に入り",
+        "vault": "暗号化された資格情報ボールト (Argon2)",
+        "ssh": "ネイティブ SSH トンネリング",
+        "safety": "実稼働安全ルール (環境ラベル、読み取り専用モード)",
+        "audit_basic": "基本監査ログ (50 エントリ)",
+        "export_basic": "CSV / JSON / SQL エクスポート",
+        "shortcuts": "キーボードショートカット"
+      }
+    },
+    "pro": {
+      "title": "プロ",
+      "description": "要求の厳しい開発者にとって自然なアップグレード。",
+      "price": "XXユーロ",
+      "badge": "1回払い",
+      "cta": "QoreDB プロを購入する",
+      "student_note": "学生？連絡してください。",
+      "features": {
+        "everything_core": "コアのすべて",
+        "sandbox": "移行世代を含むサンドボックス モード",
+        "visual_diff": "Visual Data Diff (テーブル比較)",
+        "audit_advanced": "高度な監査ログ (無制限、フィルター可能、エクスポート可能)",
+        "profiling": "クエリプロファイリングとパフォーマンス分析",
+        "ai": "AI アシスタント (BYOK — OpenAI / Anthropic / Ollama)",
+        "export_advanced": "高度なエクスポート (XLSX、Parquet)",
+        "security_rules": "カスタム安全ルール",
+        "library_advanced": "高度なクエリ ライブラリ",
+        "virtual_relations": "仮想関係の自動提案"
+      }
+    },
+    "team": {
+      "title": "チーム",
+      "description": "チーム向けの高度なコラボレーション。",
+      "price": "近日公開予定",
+      "badge": "近日公開予定",
+      "cta": "お問い合わせ",
+      "features": {
+        "everything_pro": "プロのすべて",
+        "sync": "マルチデバイス同期",
+        "shared_queries": "共有クエリライブラリ",
+        "permissions": "きめ細かな権限",
+        "managed_ai": "マネージドAI"
+      }
+    },
+    "faq": {
+      "open_core_why": {
+        "question": "なぜオープンコアモデルなのか?",
+        "answer": "ソロプロジェクトを長期的に持続可能なものにするため。コアは永久に無料のままです。プロは継続的な開発に資金を提供します。"
+      },
+      "data_sent": {
+        "question": "私のデータはどこかに送信されていますか?",
+        "answer": "いいえ、QoreDB は 100% ローカルファーストです。データがマシンから離れることはありません。 AI も独自の API キーを使用して実行されます。"
+      },
+      "stop_paying": {
+        "question": "支払いをやめたらどうなりますか?",
+        "answer": "Pro は永久ライセンス (1 回限りの支払い) です。ロック解除された機能を維持できます。将来のメジャー アップグレードのみ、有料アップグレードが必要となる場合があります。"
+      },
+      "try_pro": {
+        "question": "最初に Pro 機能を試してもいいですか?",
+        "answer": "Core には、選択された Pro 機能 (例: 3 つの無料サンドボックス変更) の限定プレビューが含まれているため、購入前に評価できます。"
+      },
+      "pro_source_code": {
+        "question": "Pro のソースコードは利用可能ですか?",
+        "answer": "Pro の機能は BSL 1.1 の下にあり、4 年後に自動的に Apache 2.0 に変換されます。コードは読み取り可能ですが、その期間中の再配布は制限されます。"
+      }
+    }
+  },
+  "license_management": {
+    "title": "ライセンス管理",
+    "subtitle": "QoreDB Pro ライセンスのステータスを確認し、キーを電子メールで再送信してください。",
+    "fields": {
+      "email": "電子メール",
+      "payment_id": "Stripe 支払い ID"
+    },
+    "actions": {
+      "loading": "読み込み中..."
+    },
+    "status": {
+      "title": "ライセンスステータスを確認する",
+      "description": "購入メールアドレスと支払い ID を入力して、ライセンスが有効かどうかを確認します。",
+      "cta": "ライセンスを確認してください",
+      "result": "ステータス",
+      "not_found": "購入品が見つかりませんでした",
+      "license_found": "この支払いにはライセンス キーが添付されます。"
+    },
+    "resend": {
+      "title": "キーを電子メールで再送信する",
+      "description": "購入メールアドレスを入力して、ライセンス キーを再度受け取ります。",
+      "cta": "キーを再送信します",
+      "success": "メールが送信されました。受信箱をご確認ください。"
+    },
+    "errors": {
+      "status": "ライセンスのステータスを確認できません。",
+      "resend": "現在キーを再送信できません。",
+      "not_found": "このメールでは購入が見つかりませんでした。"
+    }
+  },
+  "purchase_success": {
+    "title": "支払いが確認されました",
+    "subtitle": "QoreDB Pro ライセンスの準備ができました。キーも電子メールで送信しました。",
+    "license_label": "ライセンスキー",
+    "pending_license": "あなたのキーはまだ利用できません。数秒待ってからこのページを更新してください。",
+    "session_error": "この Stripe セッションを取得できません。",
+    "activation_title": "アクティベーション",
+    "steps": {
+      "1": "QoreDB を開く",
+      "2": "設定に移動",
+      "3": "オープンライセンス",
+      "4": "キーを貼り付けます",
+      "5": "アクティブ化する"
+    },
+    "download_cta": "QoreDB をダウンロード",
+    "home_cta": "ホームページに戻る",
+    "copy": "キーをコピーする",
+    "copied": "コピーされました"
+  },
+  "privacy_page": {
+    "title": "プライバシーポリシー",
+    "last_updated": "最終更新日: 2026 年 1 月 24 日",
+    "sections": {
+      "intro": {
+        "title": "1. データ管理者",
+        "content": "<p>データ管理者は、<strong>QoreDB</strong> プロジェクトの編集者です。</p><p>法人に関する完全な情報は、法的構造が完成するとすぐに指定されます。</p>"
+      },
+      "data_collection": {
+        "title": "2. データ収集",
+        "content": "<p>QoreDB は個人データの収集を厳しく制限します。</p><h3>2.1 ナビゲーション データ (ウェブサイト)</h3><p>サイトにアクセスすると、次のような匿名化された技術データが統計目的で収集されることがあります。</p><ul><li>訪問したページ、</li><li>デバイスの種類、およびブラウザ、</li><li>オペレーティング システム、</li><li>おおよその国または地理的地域、</li><li>読み込み時間とパフォーマンス。</li></ul><p>このデータ <strong><strong>__はユーザーの個人識別を許可しません</strong>.</p><p>QoreDB <strong>Vercel Analytics</strong>、プライバシーを尊重した分析ソリューション:</p><ul><li>Cookie なし、</li><li>クロスサイト追跡なし、</li><li>広告プロファイリングなし。</li></ul><h3>2.2 任意で提供データ</h3><p>特定のデータは、ユーザーが自発的に提供する場合があります。例:</p><ul><li>連絡中、</li><li>ニュースレター登録中、</li><li>認証が必要な将来のサービスの使用中。</li></ul><p>収集されたデータは、 </p><ul><li>電子メール アドレス、</li><li>名前またはペンネーム、</li><li>メッセージの内容。</li></ul>"
+      },
+      "purposes": {
+        "title": "3. 処理の目的",
+        "content": "<p>収集されたデータは、</p><ul><li>サイトとサービスの適切な機能の確保、</li><li>パフォーマンスとユーザーエクスペリエンスの向上、</li><li>連絡要求への応答、</li><li>QoreDBに関する情報の伝達のみに使用されます。プロジェクト。</li></ul><p>個人データは、商業目的で第三者に販売、貸与、譲渡されることはありません。</p>"
+      },
+      "legal_basis": {
+        "title": "4. 処理の法的根拠",
+        "content": "<p>個人データの処理は、</p><ul><li>QoreDBの正当な利益（匿名統計、セキュリティ）、</li><li>必要な場合のユーザーの明示的な同意、</li><li>ユーザーによって開始されたリクエストの実行に基づいています。</li></ul>"
+      },
+      "cookies": {
+        "title": "5. Cookie とトラッカー",
+        "content": "<p>QoreDB <strong>広告または行動追跡 Cookie は使用しません</strong>.</p><p>使用される分析ツールには、適用される規制に従って事前の同意は必要ありません。</p><p>将来 Cookie が使用される場合は、このポリシーが更新され、同意メカニズムが実装されます。</p>"
+      },
+      "hosting": {
+        "title": "6. ホスティングとサブプロセッサー",
+        "content": "<p>QoreDB サイトとサービスは、高水準のセキュリティとコンプライアンスを尊重するプロバイダーによってホストされています。</p><p>データは、EU または GDPR に従って適切なレベルの保護を提供している国のサーバーで処理される場合があります。</p>"
+      },
+      "security": {
+        "title": "7. データセキュリティ",
+        "content": "<p>QoreDB は、データのセキュリティ、完全性、機密性を保証するために、</p><ul><li>通信の暗号化、</li><li>アクセス制御、</li><li>不正アクセスの監視と制限など、適切な技術的および組織的対策を実装します。</li></ul>"
+      },
+      "retention": {
+        "title": "8. 保存期間",
+        "content": "<p>個人データは、収集された目的に必要な期間のみ保持されます。</p><p>匿名化された統計データは、期間制限なく保持される場合があります。</p>"
+      },
+      "rights": {
+        "title": "9. ユーザーの権利",
+        "content": "<p>一般データ保護規則 (GDPR) に従って、ユーザーは次の権利を有します:</p><ul><li>アクセスする権利、</li><li>修正する権利、</li><li>消去する権利、</li><li>処理を制限する権利、</li><li>権利オブジェクト、</li><li>データ ポータビリティの権利。</li></ul><p>あらゆるリクエストは、サイトに示されている連絡手段を通じて行うことができます。</p>"
+      },
+      "third_party": {
+        "title": "10. サードパーティサービスへのリンク",
+        "content": "<p>QoreDB サイトには、サードパーティ サービス (GitHub など) へのリンクが含まれている場合があります。 QoreDB は、これらのサービスによって適用されるプライバシー ポリシーに対して責任を負いません。</p>"
+      },
+      "changes": {
+        "title": "11. ポリシーの変更",
+        "content": "<p>QoreDB は、いつでもこのプライバシー ポリシーを変更する権利を留保します。</p><p>ユーザーは定期的に本プライバシー ポリシーを参照するよう勧められます。最終更新日はページの上部に表示されます。</p>"
+      },
+      "contact": {
+        "title": "12. 連絡先",
+        "content": "<p>個人データ保護に関するご質問については、サイトに示されている公式チャネルを通じて QoreDB チームにお問い合わせください。</p>"
+      }
+    }
+  },
+  "legal_page": {
+    "title": "法的通知",
+    "last_updated": "最終更新日: 2026 年 1 月 24 日",
+    "sections": {
+      "editor": {
+        "title": "サイト編集者",
+        "content": "**プロジェクト名 / 製品:** QoreDB\n**出版ディレクター:** Raphaël Plassart\n**ステータス:** ソフトウェア プロジェクト (オープンコア)\n\n> 法人に関する情報 (会社名、法的形態、住所、登録番号) は、法的構造が完成し次第、指定されます。"
+      },
+      "hosting": {
+        "title": "ホスティング",
+        "content": "QoreDB Web サイトは、340 S Lemon Ave #4133 Walnut, CA 91789, USA にある **Vercel Inc.** によってホストされています。\n\nデータは、欧州連合内のインフラストラクチャ、または現在の規制に準拠したレベルのデータ保護を提供する国のインフラストラクチャでホストされる場合があります。"
+      },
+      "ip": {
+        "title": "知的財産",
+        "content": "QoreDB サイトに存在するすべてのコンテンツ。特に次のものが含まれます。\n\n* テキスト、\n* ドキュメント、\n* ブログ投稿、\n* グラフィック要素、\n* ビジュアルアイデンティティ、\n* QoreDB の名前、ロゴ、ブランド、\n\nは著作権および知的財産に関する法律によって保護されています。\n\n特に明記されていない限り、QoreDB ソース コードは **オープンコア** モデルで配布されています。\n\n* 一部はオープンソース ライセンスに基づいて公開されており、\n* 特定の高度な機能には独自のライセンスが適用される場合があります。\n\n保護されたコンテンツまたは要素の無許可の複製、表現、変更、または悪用は固く禁じられています。"
+      },
+      "liability": {
+        "title": "サイトへのアクセスと責任",
+        "content": "QoreDB は、サイト上で発信される情報の正確性を確保するためにあらゆる努力を払っています。ただし、プロジェクトは以下の責任を負いません。\n\n* 誤りまたは欠落、\n* サイトが一時的に利用できない場合、\n* サイトまたはソフトウェアの使用に関連する直接的または間接的な損害。\n\nQoreDB の使用はユーザーの単独の責任の下で行われます。"
+      },
+      "external_links": {
+        "title": "外部リンク",
+        "content": "QoreDB サイトには、サードパーティのサイトへのリンクが含まれている場合があります。 QoreDB はこれらのサイトを管理することはなく、そのコンテンツや慣行に関して一切の責任を負いません。"
+      },
+      "privacy": {
+        "title": "個人データ",
+        "content": "個人データの管理については、次の専用ページで詳しく説明されています。\n\n➡️【プライバシーポリシー】(/privacy)\n\nQoreDB は、適用される規制、特に一般データ保護規則 (GDPR) を遵守することを約束します。"
+      },
+      "terms": {
+        "title": "利用規約",
+        "content": "QoreDB サイト、ドキュメント、およびソフトウェアの使用は、次の事項を完全に受け入れることを意味します。\n\n➡️ [利用規約](#)"
+      },
+      "license": {
+        "title": "ライセンス",
+        "content": "QoreDB ソフトウェアに適用されるライセンス条件の詳細は、次の専用ページに記載されています。\n\n➡️ [ライセンス](#)"
+      },
+      "contact": {
+        "title": "お問い合わせ",
+        "content": "法的な質問、報告、または情報のリクエストについては、サイトに示されている公式チャネルを通じて QoreDB チームにお問い合わせください。"
+      }
+    }
+  },
+  "terms_page": {
+    "title": "利用規約",
+    "last_updated": "最終更新日: 2026 年 1 月 24 日",
+    "intro": "これらの利用規約 (以下「ToS」) は、**QoreDB** Web サイト、そのドキュメント、オンライン サービス、および QoreDB ソフトウェアへのアクセスと使用を規定します。\n\nサイトにアクセスするか、QoreDB ソフトウェアを使用することにより、ユーザーはこれらの ToS を読み、無条件で同意したことを認めます。",
+    "copyright": "© QoreDB – 著作権はすべて留保されます。",
+    "sections": {
+      "definitions": {
+        "title": "1. 定義",
+        "content": "* **QoreDB**: ソフトウェア プロジェクト、Web サイト、ドキュメント、関連ツールおよびサービスを指します。\n* **ユーザー**: サイトにアクセスする人、または QoreDB ソフトウェアを使用する人。\n* **ソフトウェア**: QoreDB ソフトウェア。オープンコア モデルで配布されます。\n* **サイト**: 公式 QoreDB Web サイト。"
+      },
+      "object": {
+        "title": "2. オブジェクト",
+        "content": "これらの ToS の目的は、ユーザーが QoreDB サイトにアクセスし、ドキュメントを参照し、利用可能なリソースを使用し、QoreDB ソフトウェアを操作できる条件を定義することです。"
+      },
+      "access": {
+        "title": "3. サイトおよびサービスへのアクセス",
+        "content": "QoreDB サイトへのアクセスは、特に明記されていない限り無料です。\n\nQoreDB は以下の権利を留保します。\n\n* サイトまたはサービスへのアクセスを一時停止、制限、または中断する。\n* 提供されるコンテンツまたは機能を変更する\n* メンテナンス作業を実行します。\n\nサイトまたはサービスの継続的な可用性については保証されません。"
+      },
+      "software_use": {
+        "title": "4. QoreDB ソフトウェアの使用",
+        "content": "QoreDB ソフトウェアは **オープンコア** モデルで配布されています。\n\n※コードの一部はオープンソースライセンスに基づいて公開されており、\n* 特定の機能、拡張機能、またはサービスには、別の独自ライセンスが適用される場合があります。\n\nソフトウェアの使用、変更、配布に関する正確な条件は、**QoreDB ライセンス** で定義されており、サイトおよび公式リポジトリで入手できます。"
+      },
+      "user_obligations": {
+        "title": "5. ユーザーの義務",
+        "content": "ユーザーは以下に同意します:\n\n* 適用される法律および規制に従って QoreDB を使用します。\n* サイトまたはソフトウェアのセキュリティ、完全性、または適切な機能を侵害しないこと。\n* システムまたはデータへの不正アクセスを試みないでください。\n* QoreDB を詐欺、違法、または悪用の目的で使用しないでください。\n\n不正使用があった場合、サービスへのアクセスが停止される場合があります。"
+      },
+      "ip": {
+        "title": "6. 知的財産",
+        "content": "QoreDB サイトのすべての要素 (テキスト、ドキュメント、グラフィック、ロゴ、ビジュアル アイデンティティ) は知的財産権によって保護されています。\n\n特に明記されていない限り、許可なく複製、表現、または悪用することは禁止されています。\n\nQoreDB ソフトウェアのソース コードには、**ライセンス** ページで定義されている、該当するライセンスの条件が適用されます。"
+      },
+      "liability": {
+        "title": "7. 責任",
+        "content": "QoreDB は「現状のまま」提供され、いかなる種類の保証もありません。\n\nQoreDB は以下について責任を負うことはできません。\n\n* サイトまたはソフトウェアの使用に起因する直接的または間接的な損害、\n* データの損失、事業の中断、商業上の損害、\n* 不適切な構成またはソフトウェアの使用に関連する結果。\n\nユーザーは、QoreDB の使用および処理するデータに対して単独で責任を負います。"
+      },
+      "privacy": {
+        "title": "8. 個人データ",
+        "content": "個人データの処理は、QoreDB サイトからアクセスできる **プライバシー ポリシー** によって管理されます。"
+      },
+      "external_links": {
+        "title": "9. 外部リンク",
+        "content": "QoreDB サイトには、サードパーティのサイトまたはサービスへのリンクが含まれている場合があります。 QoreDB は、これらのサービスを管理することはなく、そのコンテンツや機能に関する一切の責任を負いません。"
+      },
+      "updates": {
+        "title": "10.利用規約の変更",
+        "content": "QoreDB は、これらの ToS をいつでも変更する権利を留保します。\n\nユーザーは定期的に現在のバージョンを参照するよう勧められます。最終更新日はページ上部に表示されます。"
+      },
+      "law": {
+        "title": "11. 準拠法",
+        "content": "これらの利用規約はフランスの法律に準拠します。\n\n紛争が発生し、友好的に解決できなかった場合、管轄裁判所は、現行の法律に従って該当する管轄裁判所となります。"
+      },
+      "contact": {
+        "title": "12. 連絡先",
+        "content": "これらの利用規約に関する質問がある場合、ユーザーはサイトに示されている公式チャネルを通じて QoreDB チームに問い合わせることができます。"
+      }
+    }
+  },
+  "quick_start_page": {
+    "title": "クイックスタート",
+    "description": "数回クリックするだけでデータを参照、クエリ、管理できます。",
+    "sections": {
+      "install": {
+        "title": "1. インストールと起動",
+        "content": "<p>プロジェクトの<a href='https://github.com/QoreDB/QoreDB/releases' target='_blank' class='text-(--q-accent) hover:underline'>Releases</a>ページから最新バージョンをダウンロードし、アプリケーションをインストールして開きます。</p>"
+      },
+      "connect": {
+        "title": "2. 最初の接続を作成する",
+        "content": "<p>サイドバーの <strong>+</strong> をクリックしてデータベースを追加します:</p><ul><li>PostgreSQL</li><li>MySQL / MariaDB</li><li>SQL Server</li><li>SQLite</li><li>DuckDB</li><li>MongoDB</li><li>Redis</li></ul><p>ホスト、ポート、データベース、ユーザー、環境 (dev/staging/prod) を入力します。</p>"
+      },
+      "explore": {
+        "title": "3. データを探索する",
+        "content": "<p>接続後:</p><ul><li>スキーマとテーブルを移動</li><li>テーブルを開いてデータを視覚化</li><li>統合エディターで SQL クエリを実行</li></ul>"
+      },
+      "daily": {
+        "title": "4. 毎日の時間を節約する",
+        "content": "<ul><li>履歴とお気に入りでクエリを見つけます</li><li>グローバル検索で迅速に移動</li><li>読み取り専用モードで安全な運用</li><li>ライト/ダーク テーマとマルチタブ インターフェイス</li></ul>"
+      }
+    },
+    "security_tip": {
+      "title": "セキュリティに関するヒント",
+      "content": "QoreDB は、システムのネイティブ キーチェーンを介して資格情報を安全に保存し、SSH トンネリングをサポートします。"
+    }
+  },
+  "links_page": {
+    "title": "すべてのQoreDBリンク",
+    "subtitle": "すべての公式リンクを 1 か所で見つけます。",
+    "contact": "お問い合わせ",
+    "credits": "クレジット",
+    "featured": {
+      "title": "注目のリンク",
+      "site": {
+        "title": "ウェブサイト",
+        "description": "製品ストーリーを 1 か所にまとめました。"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "コード、問題、更新を参照します。"
+      },
+      "discord": {
+        "title": "不和",
+        "description": "コミュニティに参加してフィードバックを共有してください。"
+      },
+      "linkedin": {
+        "title": "リンクトイン",
+        "description": "ニュース、最新情報、チームについて。"
+      }
+    },
+    "all_links": "すべてのリンク",
+    "cta": {
+      "explore": "探検する",
+      "write": "お問い合わせください"
+    }
+  },
+  "license_page": {
+    "title": "Apache ライセンス 2.0",
+    "last_updated": "バージョン 2.0、2004 年 1 月",
+    "intro": "使用、複製、配布に関する条件",
+    "sections": {
+      "definitions": {
+        "title": "1. 定義",
+        "content": "\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work."
+      },
+      "grant_copyright": {
+        "title": "2. 著作権ライセンスの付与",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."
+      },
+      "grant_patent": {
+        "title": "3. 特許ライセンスの付与",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."
+      },
+      "redistribution": {
+        "title": "4. 再配布",
+        "content": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:\n\n(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.\n\nYou may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."
+      },
+      "submission": {
+        "title": "5. 投稿の提出",
+        "content": "Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."
+      },
+      "trademarks": {
+        "title": "6. 商標",
+        "content": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file."
+      },
+      "warranties": {
+        "title": "7. 保証の免責事項",
+        "content": "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."
+      },
+      "liability": {
+        "title": "8. 責任の制限",
+        "content": "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."
+      },
+      "additional_liability": {
+        "title": "9. 保証または追加責任の受け入れ",
+        "content": "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."
+      },
+      "appendix": {
+        "title": "付録: Apache ライセンスを作品に適用する方法",
+        "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+      }
+    }
+  },
+  "inline_cta": {
+    "text": "試す準備はできていますか? QoreDB を無料でダウンロードしてください。",
+    "button": "今すぐダウンロード"
+  },
+  "pricing_preview": {
+    "title": "シンプルで透明性のある価格設定",
+    "subtitle": "コアは永久に無料です。 Pro ではパワーユーザー向けの機能が利用可能になります。",
+    "core_price": "無料",
+    "core_1": "8 つのネイティブ データベース ドライバー",
+    "core_2": "オートコンプリート機能を備えた SQL エディター",
+    "core_3": "暗号化されたボールトと SSH トンネリング",
+    "core_4": "生産安全装置",
+    "pro_badge": "1回限りの購入",
+    "pro_price_note": "Core のすべてに加えて、高度なワークフロー。",
+    "pro_1": "AIアシスタント（BYOK）",
+    "pro_2": "サンドボックス モード + 移行スクリプト",
+    "pro_3": "ビジュアルデータの差分",
+    "pro_4": "クロスデータベースフェデレーション",
+    "cta": "料金の詳細を確認する"
+  },
+  "metadata": {
+    "site_title": "QoreDB — 最新のデータベース クライアント",
+    "site_description": "開発者向けの高速で安全な最新のデータベース クライアント。統合 SQL + NoSQL、安全なボールト、ローカルファースト。",
+    "blog_title": "ブログ - QoreDB",
+    "blog_description": "QoreDB チームによる記事、最新情報、技術的な詳細。",
+    "changelog_title": "変更履歴 - QoreDB",
+    "changelog_description": "QoreDB に対する最新の変更点と改善点を常に最新の状態に保ってください。",
+    "not_found_title": "見つかりません"
+  },
+  "blog_page": {
+    "title": "ブログ",
+    "subtitle": "QoreDB と最新の開発に関する最新の記事、チュートリアル、更新情報をご覧ください。",
+    "empty": "まだ記事はありません。すぐにまたチェックしてください!"
+  },
+  "blog_post": {
+    "back_to_blog": "ブログに戻る",
+    "reading_time": "{{minutes}}分で読めます",
+    "related_articles": "関連記事",
+    "share": "シェアする",
+    "copied": "コピーしました！",
+    "copy_link": "リンクをコピー"
+  }
+}

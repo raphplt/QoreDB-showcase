@@ -34,8 +34,7 @@ export interface LatestRelease {
   platforms: Record<Platform, { signature: string; url: string }>;
 }
 
-const MICROSOFT_STORE_URL =
-  "https://apps.microsoft.com/detail/9NZLCGFWCHHG?hl=fr&gl=FR&ocid=pdpshare";
+const MICROSOFT_STORE_URL = "https://apps.microsoft.com/detail/9NZLCGFWCHHG";
 
 interface DownloadContextType {
   os: OS;

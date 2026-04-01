@@ -1,8 +1,8 @@
 "use client";
 
+import { Languages } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { FlagFR, FlagGB } from "@/components/icons/flags";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,31 +10,27 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { i18nConfig } from "@/i18nConfig";
+import {
+  type AppLocale,
+  LOCALE_LABELS,
+  localizePathname,
+  normalizeLocale,
+  SUPPORTED_LOCALES,
+} from "@/lib/locale";
 
 export function LanguageSwitcher() {
   const { t, i18n } = useTranslation();
-  const currentLocale = i18n.language;
+  const currentLocale = normalizeLocale(i18n.language);
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleChange = (newLocale: string) => {
+  const handleChange = (newLocale: AppLocale) => {
     const days = 30;
     const date = new Date();
     date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
     const expires = date.toUTCString();
     document.cookie = `NEXT_LOCALE=${newLocale};expires=${expires};path=/`;
-
-    if (
-      currentLocale === i18nConfig.defaultLocale &&
-      !i18nConfig.prefixDefault
-    ) {
-      router.push("/" + newLocale + currentPathname);
-    } else {
-      router.push(
-        currentPathname.replace(`/${currentLocale}`, `/${newLocale}`),
-      );
-    }
+    router.push(localizePathname(currentPathname, currentLocale, newLocale));
 
     router.refresh();
   };
@@ -42,34 +38,27 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-9 h-9 flex items-center justify-center p-0"
-        >
-          {currentLocale === "fr" ? (
-            <FlagFR className="w-6 h-4 rounded-[2px]" />
-          ) : (
-            <FlagGB className="w-6 h-4 rounded-[2px]" />
-          )}
+        <Button variant="ghost" className="h-9 gap-2 px-2.5">
+          <Languages className="h-4 w-4" />
+          <span className="text-xs font-semibold uppercase">
+            {currentLocale}
+          </span>
           <span className="sr-only">{t("language_switcher.toggle")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="min-w-[140px]">
-        <DropdownMenuItem
-          onClick={() => handleChange("fr")}
-          className="flex items-center gap-3 cursor-pointer py-2"
-        >
-          <FlagFR className="w-6 h-4 rounded-[2px]" />
-          <span className="font-medium">Français</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => handleChange("en")}
-          className="flex items-center gap-3 cursor-pointer py-2"
-        >
-          <FlagGB className="w-6 h-4 rounded-[2px]" />
-          <span className="font-medium">English</span>
-        </DropdownMenuItem>
+        {SUPPORTED_LOCALES.map((locale) => (
+          <DropdownMenuItem
+            key={locale}
+            onClick={() => handleChange(locale)}
+            className="flex items-center justify-between gap-3 cursor-pointer py-2"
+          >
+            <span className="font-medium">{LOCALE_LABELS[locale]}</span>
+            <span className="text-xs uppercase text-(--q-text-2)">
+              {locale}
+            </span>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

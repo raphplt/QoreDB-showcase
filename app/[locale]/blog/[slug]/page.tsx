@@ -2,10 +2,12 @@ import { ArrowLeft, CalendarIcon, Clock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
-import type { PostDocument } from "@/types/posts";
+import { getIntlLocale } from "@/lib/locale";
 import { estimateReadingTime } from "@/lib/reading-time";
+import type { PostDocument } from "@/types/posts";
 import { ArticleCard } from "../../../../components/blog/ArticleCard";
 import { RichTextRenderer } from "../../../../components/blog/RichTextRenderer";
 import { client } from "../../../../lib/sanity/client";
@@ -18,12 +20,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string; locale: string }>;
 }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const { t } = await getTranslation(locale, "common");
   const post = await client.fetch<PostDocument | null>(POST_QUERY, { slug });
-  if (!post) return { title: "Not Found" };
+  if (!post) return { title: t("metadata.not_found_title") };
 
   return {
-    title: `${post.title} - QoreDB Blog`,
+    title: `${post.title} - ${t("metadata.blog_title")}`,
     description: post.title,
     openGraph: post.mainImage
       ? {
@@ -39,6 +42,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string; locale: string }>;
 }) {
   const { slug, locale } = await params;
+  const { t } = await getTranslation(locale, "common");
   const post = await client.fetch<PostDocument | null>(
     POST_QUERY,
     { slug },
@@ -62,7 +66,7 @@ export default async function BlogPostPage({
               className="inline-flex items-center text-sm text-(--q-text-2) hover:text-(--q-text-0) transition-colors mb-4"
             >
               <ArrowLeft className="w-4 h-4 mr-1" />
-              {locale === "en" ? "Back to blog" : "Retour au blog"}
+              {t("blog_post.back_to_blog")}
             </Link>
             <div className="flex items-center justify-center gap-4 text-sm text-(--q-text-2)">
               {post.publishedAt && (
@@ -70,7 +74,7 @@ export default async function BlogPostPage({
                   <CalendarIcon className="w-4 h-4" />
                   <time dateTime={post.publishedAt}>
                     {new Date(post.publishedAt).toLocaleDateString(
-                      locale === "en" ? "en-US" : "fr-FR",
+                      getIntlLocale(locale),
                       {
                         day: "numeric",
                         month: "long",
@@ -83,7 +87,7 @@ export default async function BlogPostPage({
               <span className="w-1 h-1 rounded-full bg-(--q-text-2)/50" />
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4" />
-                {readingTime} min {locale === "en" ? "read" : "de lecture"}
+                {t("blog_post.reading_time", { minutes: readingTime })}
               </span>
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl leading-tight">
@@ -126,19 +130,17 @@ export default async function BlogPostPage({
 
           {/* Share buttons */}
           <div className="border-t border-(--q-border) pt-8">
-            <ShareButtons title={post.title ?? "QoreDB"} locale={locale} />
+            <ShareButtons title={post.title ?? "QoreDB"} />
           </div>
 
           {post.related && post.related.length > 0 && (
             <div className="space-y-8">
               <h3 className="text-3xl font-bold">
-                {locale === "en" ? "Related articles" : "Articles similaires"}
+                {t("blog_post.related_articles")}
               </h3>
               <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {post.related
-                  .filter(
-                    (relatedPost) => relatedPost && "slug" in relatedPost,
-                  )
+                  .filter((relatedPost) => relatedPost && "slug" in relatedPost)
                   .map((relatedPost) => (
                     <ArticleCard
                       key={relatedPost._id}

@@ -20,28 +20,37 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "QoreDB — Le client de bases de données moderne",
-  description:
-    "Un client de bases de données moderne, rapide et sécurisé pour les développeurs. SQL + NoSQL unifié, vault sécurisé, local-first.",
-  keywords: [
-    "database",
-    "client",
-    "SQL",
-    "NoSQL",
-    "PostgreSQL",
-    "MySQL",
-    "MongoDB",
-    "developer tools",
-  ],
-  authors: [{ name: "Raphaël Plassart" }],
-  openGraph: {
-    title: "QoreDB — Le client de bases de données moderne",
-    description:
-      "Un client de bases de données moderne, rapide et sécurisé pour les développeurs.",
-    type: "website",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await initTranslations(locale, "common");
+  const title = t("metadata.site_title");
+  const description = t("metadata.site_description");
+
+  return {
+    title,
+    description,
+    keywords: [
+      "database",
+      "client",
+      "SQL",
+      "NoSQL",
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "developer tools",
+    ],
+    authors: [{ name: "Raphaël Plassart" }],
+    openGraph: {
+      title,
+      description,
+      type: "website",
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

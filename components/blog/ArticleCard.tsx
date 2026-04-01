@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { getIntlLocale } from "@/lib/locale";
 import type { PostDocument } from "@/types/posts";
 import { urlForImage } from "../../lib/sanity/image";
 
@@ -46,12 +47,12 @@ export function ArticleCard({ post, locale }: ArticleCardProps) {
           {post.publishedAt && (
             <time dateTime={post.publishedAt}>
               {new Date(post.publishedAt).toLocaleDateString(
-                locale === "en" ? "en-US" : "fr-FR",
+                getIntlLocale(locale),
                 {
                   day: "numeric",
                   month: "long",
                   year: "numeric",
-                }
+                },
               )}
             </time>
           )}

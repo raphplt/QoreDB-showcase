@@ -1,0 +1,934 @@
+{
+  "nav": {
+    "features": "特点",
+    "preview": "预览",
+    "pricing": "定价",
+    "blog": "博客",
+    "roadmap": "路线图",
+    "faq": "常见问题解答",
+    "changelog": "变更日志",
+    "download": "下载",
+    "join_beta": "加入测试版"
+  },
+  "download": {
+    "title": "下载QoreDB",
+    "subtitle": "获取适合您的操作系统的最新版本 QoreDB。",
+    "download_now": "立即下载",
+    "download_for": "下载 {{platform}}",
+    "select_platform": "在下面选择您的平台。",
+    "error": "无法加载版本信息。",
+    "detected_platform": "我们检测到您正在使用 {{platform}}",
+    "other_platforms": "其他平台",
+    "recommended": "推荐",
+    "apple_silicon": "苹果芯片 (M1/M2/M3/M4)",
+    "intel_mac": "英特尔Mac",
+    "windows_installer": "安装程序（.exe）",
+    "windows_msi": "MSI 安装程序",
+    "microsoft_store": "微软商店",
+    "linux_appimage": "应用程序图像（通用）",
+    "linux_deb": "Debian / Ubuntu (.deb)",
+    "linux_rpm": "Fedora / RHEL (.rpm)",
+    "view_all_releases": "查看 GitHub 上的所有版本"
+  },
+  "changelog": {
+    "title": "变更日志",
+    "subtitle": "及时了解 QoreDB 的最新更改和改进。",
+    "no_releases": "未找到发行说明。",
+    "read_more": "了解更多",
+    "show_less": "显示较少",
+    "load_more": "加载更多版本"
+  },
+  "footer": {
+    "product": "产品展示",
+    "features": "特点",
+    "preview": "预览",
+    "pricing": "定价",
+    "changelog": "变更日志",
+    "resources": "资源",
+    "documentation": "文档",
+    "guide": "开始使用",
+    "community": "社区",
+    "legal": "法律",
+    "privacy": "隐私",
+    "terms": "条款",
+    "license": "许可证",
+    "mentions_legales": "法律声明",
+    "description": "适合要求严格的开发人员的现代数据库客户端。",
+    "made_with_love": "由 {{heart}} 制作"
+  },
+  "hero": {
+    "badges": {
+      "opensource": "开源",
+      "localfirst": "本地优先",
+      "hybrid": "SQL + NoSQL"
+    },
+    "ph_badge": "启动产品搜寻",
+    "title": "一款适用于<italic>所有数据库</italic>的应用程序",
+    "subtitle": "使用 Rust 构建的快速开源数据库客户端。从一个漂亮的界面连接到 <highlight>9 数据库</highlight>。本地优先——您的数据归您所有。",
+    "cta": {
+      "join_beta": "加入测试版",
+      "download_core": "免费下载",
+      "discover_pro": "在 GitHub 上查看",
+      "view_project": "查看项目",
+      "participate": "参与"
+    },
+    "social_proof": "与 <highlight>100+</highlight> 开发者一起等待 Beta 版",
+    "meta": {
+      "rust": "用 Rust 和 Tauri 构建",
+      "license": "阿帕奇 2.0 许可证",
+      "platforms": "macOS · Windows · Linux"
+    },
+    "slides": {
+      "database": "数据库概述",
+      "table": "数据视图",
+      "query": "SQL编辑器",
+      "schema": "模式浏览器",
+      "home": "首页",
+      "connection": "新连接",
+      "settings": "设置"
+    }
+  },
+  "preview": {
+    "eyebrow": "预览",
+    "title": "为<accent>开发者</accent>构建的界面",
+    "description": "浓密但透气。严肃而又现代。\n<subtext>正是您对专业工具的期望。</subtext>",
+    "tabs": {
+      "database": {
+        "title": "概述",
+        "description": "全局指标和快速访问表格。"
+      },
+      "schema": {
+        "title": "模式浏览器",
+        "description": "可视化您的关系和数据库结构。"
+      },
+      "home": {
+        "title": "首页",
+        "description": "会话恢复和连接管理。"
+      },
+      "connection": {
+        "title": "新连接",
+        "description": "简单和高级的源配置。"
+      },
+      "security": {
+        "title": "安全性",
+        "description": "护栏、审计和请求分析。"
+      },
+      "table": {
+        "title": "数据视图",
+        "description": "通过高性能网格实现平稳操控。"
+      },
+      "query": {
+        "title": "SQL编辑器",
+        "description": "使用自动完成和语法突出显示编写和运行查询。"
+      }
+    }
+  },
+  "blog_section": {
+    "eyebrow": "博客",
+    "title": "最新文章",
+    "subtitle": "有关 QoreDB 和现代开发的见解、教程和新闻。",
+    "cta": "查看所有文章",
+    "loading": "正在加载最新文章...",
+    "empty": "还没有文章。"
+  },
+  "features": {
+    "eyebrow": "特点",
+    "title": "您需要的一切，<accent>您不需要的一切</accent>",
+    "subtitle": "9 个驱动程序，1 个接口。没有 Electron，没有云依赖，没有膨胀。",
+    "items": {
+      "unified": {
+        "title": "9 本机驱动程序",
+        "desc": "PostgreSQL、MySQL/MariaDB、SQL Server、SQLite、DuckDB、MongoDB、Redis 和 CockroachDB 在一个界面中。"
+      },
+      "vault": {
+        "title": "安全与隐私",
+        "desc": "加密凭证 (Argon2) 且符合 GDPR（零遥测）。"
+      },
+      "ssh": {
+        "title": "SSH 隧道",
+        "desc": "对远程数据库的 SSH 隧道的本机支持。"
+      },
+      "editor": {
+        "title": "智能编辑器",
+        "desc": "语法突出显示、片段、格式化和多语句执行。"
+      },
+      "library": {
+        "title": "查询库",
+        "desc": "文件夹、标签、JSON 导入/导出和可重用查询。"
+      },
+      "envs": {
+        "title": "环境保护",
+        "desc": "独特的开发/分阶段/产品，产品中的突变阻止。"
+      },
+      "grid": {
+        "title": "高性能网格",
+        "desc": "虚拟化、服务器端过滤、内联编辑、分页和无限滚动。"
+      },
+      "ai": {
+        "title": "人工智能助手",
+        "desc": "使用您自己的 API 密钥 (BYOK) 生成查询、解释和纠错。"
+      },
+      "federation": {
+        "title": "跨数据库联邦",
+        "desc": "通过活动连接之间的联接跨多个数据库运行 SQL 查询。"
+      },
+      "ddl": {
+        "title": "DDL管理",
+        "desc": "创建/删除数据库、表、例程、触发器并运行维护操作。"
+      },
+      "export": {
+        "title": "多格式导出",
+        "desc": "将结果导出为 CSV、JSON、SQL、HTML、XLSX、Parquet 或独立 HTML。"
+      },
+      "opensource": {
+        "title": "开源",
+        "desc": "GitHub 上提供了可审核的代码。"
+      }
+    },
+    "killer": {
+      "sandbox": {
+        "title": "沙箱编辑+差异+迁移",
+        "desc": "在本地安全地编辑数据，通过细胞差异可视化更改，并生成可重现的 SQL 脚本。",
+        "badge": "Git 数据",
+        "list": {
+          "local": "本地修改（不直接提交）",
+          "diff": "清除更改列表（插入/更新/删除）",
+          "script": "生成带有前置条件的 SQL 脚本"
+        }
+      },
+      "er_diagram": {
+        "title": "交互式 ER 图",
+        "desc": "一个活生生的模式探索者。直观地浏览表格和关系、缩放、平移并直接跳转到数据。",
+        "badge": "视觉",
+        "list": {
+          "canvas": "具有表格集群的交互式画布",
+          "nav": "缩放、平移和搜索表格",
+          "peek": "将鼠标悬停关系可查看详细信息"
+        }
+      },
+      "safety_net": {
+        "title": "通用查询安全网",
+        "desc": "积极预防错误。检测危险查询（不带 WHERE 的 DELETE）并提供智能警报。",
+        "badge": "安全",
+        "list": {
+          "detect": "自动检测危险查询",
+          "env": "环境感知警报",
+          "audit": "敏感操作的本地审核日志"
+        }
+      },
+      "data_diff": {
+        "title": "视觉数据差异",
+        "desc": "并排比较两个查询结果或表，就像数据的 Git diff 一样。非常适合比较 Prod 与 Staging。",
+        "badge": "比较",
+        "list": {
+          "compare": "任意两个结果集的并排比较",
+          "highlight": "添加、删除和更改的单元格级突出显示",
+          "snapshot": "保存结果快照以供以后比较"
+        }
+      }
+    },
+    "compatibility": {
+      "eyebrow": "兼容性",
+      "title": "支持的数据库",
+      "coming_soon": "还有更多即将推出..."
+    },
+    "pro_badge": "专业版",
+    "visual_diff_badge": "视觉差异"
+  },
+  "cta": {
+    "title": "停止与数据库工具对抗",
+    "description": "下载 QoreDB 并在 30 秒内查看差异。",
+    "download_button": "免费下载",
+    "github_button": "在 GitHub 上加星标"
+  },
+  "database_strip": {
+    "label": "一个界面，每个数据库"
+  },
+  "social_proof": {
+    "databases": "9个数据库",
+    "binary_size": "~15 MB 二进制文件",
+    "startup": "<1秒启动",
+    "license": "阿帕奇2.0"
+  },
+  "comparison": {
+    "title": "QoreDB 比较如何",
+    "subtitle": "我们并不试图取代一切。我们正在构建我们希望存在的工具。",
+    "rows": {
+      "opensource": "开源核心",
+      "multidb": "多数据库（SQL + NoSQL）",
+      "native": "原生性能（无 Electron）",
+      "local": "本地优先/无云",
+      "vault": "加密凭证库",
+      "safety": "生产安全卫士",
+      "sandbox": "沙盒模式+迁移",
+      "fulltext": "全文检索（所有表格）",
+      "er_diagram": "交互式 ER 图",
+      "federation": "跨数据库联合",
+      "ai": "AI查询助手",
+      "ui": "现代、快速的用户界面",
+      "maturity": "成熟度/生态系统",
+      "price": "价格（个人使用）"
+    },
+    "values": {
+      "qoredb": {
+        "opensource": "阿帕奇2.0",
+        "multidb": "9 台发动机",
+        "native": "铁锈/金牛座",
+        "local": "是的",
+        "vault": "氩气2",
+        "safety": "是的",
+        "sandbox": "专业版",
+        "fulltext": "是的",
+        "er_diagram": "是的",
+        "federation": "专业版",
+        "ai": "自带设备",
+        "ui": "是的",
+        "maturity": "新",
+        "price": "免费/专业版"
+      },
+      "dbeaver": {
+        "opensource": "社区",
+        "multidb": "是的",
+        "native": "Java/Swing",
+        "local": "是的",
+        "vault": "基础",
+        "safety": "否",
+        "sandbox": "否",
+        "fulltext": "否",
+        "er_diagram": "是的",
+        "federation": "否",
+        "ai": "否",
+        "ui": "已注明日期",
+        "maturity": "15年以上",
+        "price": "免费 / 199 美元"
+      },
+      "tableplus": {
+        "opensource": "否",
+        "multidb": "有限公司",
+        "native": "本地人",
+        "local": "是的",
+        "vault": "钥匙扣",
+        "safety": "部分",
+        "sandbox": "否",
+        "fulltext": "否",
+        "er_diagram": "否",
+        "federation": "否",
+        "ai": "否",
+        "ui": "是的",
+        "maturity": "成立",
+        "price": "89 美元"
+      },
+      "pgadmin": {
+        "opensource": "是的",
+        "multidb": "仅PG",
+        "native": "基于网络",
+        "local": "是的",
+        "vault": "否",
+        "safety": "否",
+        "sandbox": "否",
+        "fulltext": "否",
+        "er_diagram": "部分",
+        "federation": "否",
+        "ai": "否",
+        "ui": "否",
+        "maturity": "20+年",
+        "price": "免费"
+      }
+    },
+    "note": "我们还年轻，但行动很快。查看我们的路线图 →"
+  },
+  "feature_showcase": {
+    "eyebrow": "深入",
+    "title": "专为真实工作流程而打造"
+  },
+  "code_demo": {
+    "title_bar": "QoreDB — prod-api @ PostgreSQL",
+    "comment": "-- 查找本月最活跃的用户",
+    "result": "23 毫秒内返回 10 行 — 流式传输完成"
+  },
+  "why": {
+    "items": {
+      "slow": {
+        "title": "慢",
+        "desc": "无尽的加载"
+      },
+      "dated": {
+        "title": "已注明日期",
+        "desc": "另一个时代的界面"
+      },
+      "tiring": {
+        "title": "累",
+        "desc": "考虑不周的工作流程"
+      }
+    },
+    "eyebrow": "问题",
+    "title_pre": "当前工具 ",
+    "title_highlight": "让你慢下来",
+    "description": "DBeaver、phpMyAdmin、pgAdmin...他们完成了工作，但用户体验很平庸，工作流程优化很差，而且还没有随着现代工作方式的发展而发展。",
+    "comparison": {
+      "pre": "QoreDB 对数据库有什么作用 ",
+      "post": " 为自己的领域做的事。"
+    }
+  },
+  "language_switcher": {
+    "toggle": "切换语言"
+  },
+  "roadmap_page": {
+    "title": "QoreDB 路线图",
+    "subtitle": "了解 QoreDB 开发的后续步骤。",
+    "now": {
+      "title": "现在——坚实的基础",
+      "quote": "使 QoreDB 可靠、快速且适合日常使用。",
+      "items": {
+        "1": "性能和稳定性持续提升",
+        "2": "增强本地优先的安全和隐私",
+        "3": "现有工作流程上更流畅的用户体验",
+        "4": "更清晰的错误处理和诊断",
+        "5": "文档和逐步向社区开放"
+      },
+      "goal": "目标：开发者可以放心使用和推荐的工具。"
+    },
+    "soon": {
+      "title": "很快——生产力和清晰度",
+      "quote": "超越传统的数据库客户端。",
+      "items": {
+        "1": "更高效的数据导航和探索",
+        "2": "更好地理解结构和关系",
+        "3": "更安全、更直观的数据编辑",
+        "4": "更轻松的数据比较和操作",
+        "5": "本地合作的第一块砖"
+      },
+      "goal": "目标：每天为开发人员实时节省开支。"
+    },
+    "later": {
+      "title": "后来 — QoreDB 愿景",
+      "quote": "重新思考开发人员如何与其数据交互。",
+      "items": {
+        "1": "统一的 SQL 和 NoSQL 体验",
+        "2": "跨数据库关系和虚拟视图",
+        "3": "智能辅助和自动化",
+        "4": "可扩展性和开源生态系统",
+        "5": "无需依赖云即可进行协作"
+      },
+      "goal": "目标：成为现代开发者的参考工具。"
+    },
+    "transparency": {
+      "text": "该路线图反映了该项目当前的方向。它可能会根据社区反馈和实际使用情况而不断发展。"
+    }
+  },
+  "faq_page": {
+    "title": "常见问题解答 — QoreDB",
+    "search_placeholder": "寻找答案...",
+    "no_results": "没有找到结果",
+    "filters": {
+      "all": "全部",
+      "general": "一般",
+      "tech": "技术",
+      "project": "项目与业务"
+    },
+    "items": {
+      "what_is_qoredb": {
+        "question": "QoreDB 到底是什么？",
+        "answer": "QoreDB 是一个**现代、开源、本地优先的数据库客户端**，专为希望高效使用 SQL 和 NoSQL 数据库而不依赖于强加的云的开发人员而设计。\n\n它的重点是：\n\n* **性能**，\n* **安全**，\n* **完善的开发人员体验**，\n* 以及比传统工具更雄心勃勃的长期愿景。"
+      },
+      "difference_dbeaver": {
+        "question": "QoreDB 与 DBeaver 或现有工具有何不同？",
+        "answer": "QoreDB 并不寻求成为“逐个功能”的替代方案。\n\n主要区别：\n\n* **本地优先**架构（默认不发送数据）\n* 内置安全和护栏（环境、只读、生产规则）\n* 专为速度和清晰度而设计的用户体验\n* 统一SQL+NoSQL愿景\n* 现代、可扩展、面向长期的代码库\n\nQoreDB 被设计为**日常工作工具**，而不是“老化的瑞士军刀”。"
+      },
+      "is_opensource": {
+        "question": "QoreDB 真的是开源的吗？",
+        "answer": "是的。\n\nQoreDB 的核心是**开源**、可读、可审计、可修改。\n透明度是该项目 DNA 的一部分。\n\n最终，一些高级功能可能会作为付费产品存在，**不会从开源版本中删除基本功能**。"
+      },
+      "is_free": {
+        "question": "QoreDB 免费吗？",
+        "answer": "是的。\n\nQoreDB 在 macOS、Windows 和 Linux 上**免费下载和使用**。\n\n未来可能会存在用于高级或专业用途的付费服务，但产品的核心将保持免费且无需任何成本即可使用。"
+      },
+      "data_privacy": {
+        "question": "我的数据发送到任何地方了吗？",
+        "answer": "不。\n\n默认情况下：\n\n* 连接、查询和数据仍然**严格位于本地**。\n* 没有数据库被代理或存储在远程服务器上。\n\n测量工具（分析）有：\n\n* **默认禁用**\n* **匿名**\n* **明确选择加入**\n\nQoreDB 采用**隐私第一**的理念。"
+      },
+      "analytics": {
+        "question": "您使用分析工具吗？",
+        "answer": "可以，但有严格的规定。\n\n分析仅用于：\n\n*了解功能的采用，\n* 改善用户体验，\n* 优先发展。\n\n他们**从不**收集：\n\n* 数据库数据，\n* 完整的SQL查询，\n* 凭证，\n* 敏感内容。\n\n激活始终是**自愿**。"
+      },
+      "production_ready": {
+        "question": "QoreDB 适合生产使用吗？",
+        "answer": "是的，有护栏。\n\nQoreDB 集成：\n\n* 环境（开发/暂存/生产），\n* 只读模式，\n* 防止危险查询，\n* 取消和超时机制。\n\n目标是减少**人为错误**，同时不减慢开发人员的速度。"
+      },
+      "supported_databases": {
+        "question": "支持哪些数据库？",
+        "answer": "QoreDB 目前支持：\n\n* PostgreSQL\n* MySQL/MariaDB\n* SQL服务器\n* SQLite\n* 鸭数据库\n* MongoDB\n* 雷迪斯\n\n随着架构的发展，计划推出更多引擎。"
+      },
+      "remote_ssh": {
+        "question": "它可以与远程连接和 SSH 一起使用吗？",
+        "answer": "是的。\n\nQoreDB 支持：\n\n* 经典的远程连接，\n* SSH 隧道，\n* 根据数据库的不同，身份验证模式也不同。\n\n连接安全是重中之重。"
+      },
+      "platforms": {
+        "question": "QoreDB 在哪些系统上可用？",
+        "answer": "QoreDB 可用于：\n\n* macOS\n* 窗户\n* Linux\n\n版本会定期更新。"
+      },
+      "maintenance": {
+        "question": "该项目是否得到积极维护？",
+        "answer": "是的。\n\nQoreDB 正在积极开发中，具有：\n\n* 频繁发布，\n* 结构重构，\n* 公共路线图，\n* 逐步向社区开放。\n\n该项目已经通过了 POC 阶段。"
+      },
+      "contribute": {
+        "question": "我可以为该项目做出贡献吗？",
+        "answer": "是的，而且是受到鼓励的。\n\n可能的贡献：\n\n* 用户反馈，\n* GitHub 问题和讨论，\n* 改进建议，\n* 代码和文档。\n\nGitHub 社区正在构建中。"
+      },
+      "pro_version": {
+        "question": "会有“专业”版本吗？",
+        "answer": "可能是的。\n\n目标不是阻止使用，而是提供：\n\n* 先进的功能，\n* 协作或专业用途，\n* 供团队和公司使用的选项。\n\n开源版本将保持完全可用。"
+      },
+      "funding": {
+        "question": "该项目将如何资助？",
+        "answer": "目标模型是：\n\n* 可持续的开源，\n* 自筹资金，\n* 不依赖于强制性的集中式云。\n\n细节将随着产品的采用而演变。"
+      },
+      "professional_use": {
+        "question": "我可以在专业环境中使用 QoreDB 吗？",
+        "answer": "是的。\n\nQoreDB 设计用于：\n\n* 由独立开发者开发，\n* 早期创业公司，\n* 技术团队。\n\n安全性、稳定性和维护方面都受到重视。"
+      },
+      "follow_progress": {
+        "question": "我可以在哪里跟踪项目的进展？",
+        "answer": "* 在官方网站上\n* 通过公共路线图\n* 在LinkedIn上（定期分享项目进展）\n* 在 GitHub 上"
+      },
+      "join_beta": {
+        "question": "如何加入测试版或测试QoreDB？",
+        "answer": "QoreDB 已可供下载。\n\n您可以：\n\n* 直接安装，\n* 通过网站加入测试版，\n* 分享您的反馈以影响项目的未来。"
+      },
+      "long_term": {
+        "question": "从长远来看，我可以信任QoreDB吗？",
+        "answer": "QoreDB 被设计为一个**长期项目**，而不是一个实验。\n\n技术、产品和开源选择的方向是：\n\n* 可持续性，\n* 透明度，\n* 开发商信任。"
+      }
+    }
+  },
+  "pricing_page": {
+    "badge": "开放核心",
+    "title": "选择适合您工作流程的计划",
+    "subtitle": "核心仍然完整且免费。 Pro 在您需要时添加高级功能。",
+    "billing_note": "永久授权，Pro 一次性付费",
+    "checkout_error": "现在无法启动 Stripe Checkout。",
+    "faq_title": "常见问题",
+    "core": {
+      "title": "核心",
+      "description": "QoreDB 的完整开源基础。",
+      "price": "免费",
+      "badge": "主要选择",
+      "cta": "免费下载",
+      "features": {
+        "drivers": "所有驱动程序（PostgreSQL、MySQL/MariaDB、SQL Server、SQLite、DuckDB、MongoDB、Redis、CockroachDB）",
+        "crud": "完整的 CRUD + SQL/Mongo 编辑器",
+        "grid": "高性能数据网格（虚拟滚动）",
+        "er_diagram": "交互式 ER 图",
+        "history": "查询历史记录和收藏夹",
+        "vault": "加密凭证库 (Argon2)",
+        "ssh": "本机 SSH 隧道",
+        "safety": "生产安全规则（env标签、只读模式）",
+        "audit_basic": "基本审核日志（50 条）",
+        "export_basic": "CSV/JSON/SQL 导出",
+        "shortcuts": "键盘快捷键"
+      }
+    },
+    "pro": {
+      "title": "专业版",
+      "description": "对于要求苛刻的开发人员来说是自然的升级。",
+      "price": "XX欧元",
+      "badge": "一次性付款",
+      "cta": "购买 QoreDB 专业版",
+      "student_note": "学生？联系我们。",
+      "features": {
+        "everything_core": "一切尽在核心",
+        "sandbox": "具有迁移生成的沙箱模式",
+        "visual_diff": "视觉数据差异（表格比较）",
+        "audit_advanced": "高级审核日志（无限制、可过滤、可导出）",
+        "profiling": "查询分析和性能分析",
+        "ai": "AI 助手（BYOK — OpenAI / Anthropic / Ollama）",
+        "export_advanced": "高级导出（XLSX、Parquet）",
+        "security_rules": "自定义安全规则",
+        "library_advanced": "高级查询库",
+        "virtual_relations": "自动建议虚拟关系"
+      }
+    },
+    "team": {
+      "title": "团队",
+      "description": "团队的高级协作。",
+      "price": "即将推出",
+      "badge": "即将推出",
+      "cta": "联系我们",
+      "features": {
+        "everything_pro": "专业版中的一切",
+        "sync": "多设备同步",
+        "shared_queries": "共享查询库",
+        "permissions": "细化权限",
+        "managed_ai": "托管人工智能"
+      }
+    },
+    "faq": {
+      "open_core_why": {
+        "question": "为什么选择开放核心模型？",
+        "answer": "使个人项目能够长期持续。核心永远免费。 Pro资金持续发展。"
+      },
+      "data_sent": {
+        "question": "我的数据是否已发送到某处？",
+        "answer": "QoreDB 是 100% 本地优先。您的数据永远不会离开您的机器。即使 AI 也使用您自己的 API 密钥运行。"
+      },
+      "stop_paying": {
+        "question": "如果我停止付款会怎样？",
+        "answer": "Pro 是永久许可证（一次性付款）。您保留解锁的功能。只有未来的重大升级可能需要付费升级。"
+      },
+      "try_pro": {
+        "question": "我可以先尝试专业版功能吗？",
+        "answer": "Core 包括选定 Pro 功能的有限预览（例如：3 个免费的沙盒更改），以便您可以在购买前进行评估。"
+      },
+      "pro_source_code": {
+        "question": "Pro 源代码可用吗？",
+        "answer": "Pro 功能基于 BSL 1.1，并在 4 年后自动转换为 Apache 2.0。代码是可读的，但在此期间重新分发受到限制。"
+      }
+    }
+  },
+  "license_management": {
+    "title": "许可证管理",
+    "subtitle": "检查您的 QoreDB Pro 许可证状态并通过电子邮件重新发送您的密钥。",
+    "fields": {
+      "email": "电子邮件",
+      "payment_id": "条纹支付ID"
+    },
+    "actions": {
+      "loading": "正在加载..."
+    },
+    "status": {
+      "title": "检查许可证状态",
+      "description": "输入您的购买电子邮件和付款 ID 以验证许可证是否有效。",
+      "cta": "检查我的许可证",
+      "result": "状态",
+      "not_found": "没有找到购买",
+      "license_found": "此付款附带一个许可证密钥。"
+    },
+    "resend": {
+      "title": "通过电子邮件重新发送密钥",
+      "description": "输入您的购买电子邮件以再次接收您的许可证密钥。",
+      "cta": "重新发送密钥",
+      "success": "电子邮件已发送。请检查您的收件箱。"
+    },
+    "errors": {
+      "status": "无法验证许可证状态。",
+      "resend": "现在无法重新发送密钥。",
+      "not_found": "未找到此电子邮件的购买记录。"
+    }
+  },
+  "purchase_success": {
+    "title": "付款已确认",
+    "subtitle": "您的 QoreDB Pro 许可证已准备就绪。我们还通过电子邮件发送了您的密钥。",
+    "license_label": "许可证密钥",
+    "pending_license": "您的密钥尚不可用。请等待几秒钟并刷新此页面。",
+    "session_error": "无法检索此 Stripe 会话。",
+    "activation_title": "激活",
+    "steps": {
+      "1": "打开QoreDB",
+      "2": "前往“设置”",
+      "3": "开放许可证",
+      "4": "粘贴密钥",
+      "5": "激活"
+    },
+    "download_cta": "下载QoreDB",
+    "home_cta": "返回首页",
+    "copy": "复制键",
+    "copied": "已复制"
+  },
+  "privacy_page": {
+    "title": "隐私政策",
+    "last_updated": "最后更新时间：2026 年 1 月 24 日",
+    "sections": {
+      "intro": {
+        "title": "1. 数据控制者",
+        "content": "<p>数据控制者是 <strong>QoreDB</strong> 项目的编辑者。</p><p>法律结构最终确定后，将立即指定有关法律实体的完整信息。</p>"
+      },
+      "data_collection": {
+        "title": "2. 数据收集",
+        "content": "<p>QoreDB 严格限制个人数据的收集。</p><h3>2.1 导航数据（网站）</h3><p>在查阅网站时，可能会收集匿名技术数据用于统计目的，包括：</p><ul><li>访问的页面、</li><li>设备类型和浏览器、</li><li>操作系统，</li><li>大致国家或地理区域，</li><li>加载时间和性能。</li></ul><p>此数据<strong>不允许识别用户的个人身份</strong>.</p><p>QoreDB使用<strong>Vercel Analytics</strong>，一种尊重隐私的分析解决方案：</p><ul><li>无 cookies，</li><li>无跨站点跟踪，</li><li>无广告分析。</li></ul><h3>2.2 自愿提供的数据</h3><p>某些数据可能由用户自愿提供，例如：</p><ul><li>在联系期间，</li><li>在注册时事通讯期间，</li><li>在使用需要身份验证的未来服务期间。</li></ul><p>收集的数据可能包括：</p><ul><li>电子邮件地址，</li><li>姓名或笔名，</li><li>消息内容.</li></ul>"
+      },
+      "purposes": {
+        "title": "3. 处理目的",
+        "content": "<p>收集的数据仅用于：</p><ul><li>确保网站和服务正常运行，</li><li>提高性能和用户体验，</li><li>回应联系请求，</li><li>传达与QoreDB相关的信息项目。</li></ul><p>不会出于商业目的出售、出租或转让给第三方个人数据。</p>"
+      },
+      "legal_basis": {
+        "title": "4. 处理的法律依据",
+        "content": "<p>个人数据处理基于：</p><ul><li>QoreDB的合法权益（匿名统计、安全）、</li><li>需要时用户的明确同意、</li><li>用户发起的请求的执行。</li></ul>"
+      },
+      "cookies": {
+        "title": "5. Cookie 和跟踪器",
+        "content": "<p>QoreDB <strong>不使用广告或行为跟踪cookie</strong>.</p><p>根据适用法规，所使用的分析工具不需要事先同意。</p><p>如果将来使用cookie，我们将更新本政策并实施同意机制。</p>"
+      },
+      "hosting": {
+        "title": "6. 托管和子处理者",
+        "content": "<p>QoreDB 网站和服务由尊重高安全性和合规性标准的提供商托管。</p><p>数据可能在位于欧盟或根据 GDPR 提供足够保护级别的国家/地区的服务器上进行处理。</p>"
+      },
+      "security": {
+        "title": "7. 数据安全",
+        "content": "<p>QoreDB 实施适当的技术和组织措施来保证数据的安全性、完整性和机密性，包括：</p><ul><li>通信加密、</li><li>访问控制、</li><li>监控和限制未经授权的访问。</li></ul>"
+      },
+      "retention": {
+        "title": "8. 保留期限",
+        "content": "<p>个人数据仅在收集目的所需的时间内保留。</p><p>匿名统计数据的保存可能没有时间限制。</p>"
+      },
+      "rights": {
+        "title": "9. 用户权利",
+        "content": "<p>根据《通用数据保护条例》(GDPR)，用户拥有以下权利：</p><ul><li>访问权、</li><li>纠正权、</li><li>删除权、</li><li>限制处理权、</li><li>对象，</li><li>数据可移植性的权利。</li></ul><p>可以通过网站上指示的联系方式提出任何请求。</p>"
+      },
+      "third_party": {
+        "title": "10. 第三方服务的链接",
+        "content": "<p>QoreDB 网站可能包含第三方服务的链接（例如 GitHub）。 QoreDB 对这些服务所应用的隐私政策不承担任何责任。</p>"
+      },
+      "changes": {
+        "title": "11. 政策变化",
+        "content": "<p>QoreDB保留随时修改本隐私政策的权利。</p><p>请用户定期查阅。上次更新日期显示在页面顶部。</p>"
+      },
+      "contact": {
+        "title": "12. 联系方式",
+        "content": "<p>如对个人数据保护有任何疑问，您可以通过网站上注明的官方渠道联系QoreDB团队。</p>"
+      }
+    }
+  },
+  "legal_page": {
+    "title": "法律声明",
+    "last_updated": "最后更新时间：2026 年 1 月 24 日",
+    "sections": {
+      "editor": {
+        "title": "网站编辑",
+        "content": "**项目名称/产品：** QoreDB\n**出版总监：** Raphaël Plassart\n**状态：** 软件项目（开放核心）\n\n> 法律结构最终确定后，将立即指定有关法人实体的信息（公司名称、法律形式、地址、注册号）。"
+      },
+      "hosting": {
+        "title": "托管",
+        "content": "QoreDB 网站由 **Vercel Inc.** 托管，地址为 340 S Lemon Ave #4133 Walnut, CA 91789, USA。\n\n数据可能托管在欧盟境内或提供符合现行法规的数据保护级别的国家/地区的基础设施上。"
+      },
+      "ip": {
+        "title": "知识产权",
+        "content": "QoreDB 网站上的所有内容，特别包括：\n\n* 文字，\n* 文档，\n* 博客文章，\n*图形元素，\n* 视觉识别，\n* QoreDB 名称、徽标和品牌，\n\n受版权和知识产权相关法律的保护。\n\n除非另有说明，QoreDB 源代码在 **开放核心** 模型下分发：\n\n* 一部分是根据开源许可证发布的，\n* 某些高级功能可能需要专有许可。\n\n严禁对受保护内容或元素进行任何未经授权的复制、呈现、修改或利用。"
+      },
+      "liability": {
+        "title": "网站访问和责任",
+        "content": "QoreDB 尽一切努力确保网站上传播的信息的准确性。但是，本项目不能对以下情况负责：\n\n* 错误或遗漏，\n* 网站暂时无法使用，\n* 与使用网站或软件相关的直接或间接损害。\n\nQoreDB 的使用由用户自行承担责任。"
+      },
+      "external_links": {
+        "title": "外部链接",
+        "content": "QoreDB 网站可能包含第三方网站的链接。 QoreDB 对这些网站没有任何控制权，并拒绝对其内容或做法承担任何责任。"
+      },
+      "privacy": {
+        "title": "个人资料",
+        "content": "个人数据管理在专用页面中有详细说明：\n\n➡️[隐私政策](/privacy)\n\nQoreDB 承诺遵守适用法规，特别是《通用数据保护条例》(GDPR)。"
+      },
+      "terms": {
+        "title": "使用条款",
+        "content": "使用 QoreDB 网站、文档和软件意味着完全接受：\n\n➡️ [使用条款](#)"
+      },
+      "license": {
+        "title": "许可证",
+        "content": "适用于 QoreDB 软件的许可条件在专用页面中有详细说明：\n\n➡️ [许可证](#)"
+      },
+      "contact": {
+        "title": "联系方式",
+        "content": "对于任何法律问题、报告或信息请求，您可以通过网站上指定的官方渠道联系QoreDB团队。"
+      }
+    }
+  },
+  "terms_page": {
+    "title": "服务条款",
+    "last_updated": "最后更新时间：2026 年 1 月 24 日",
+    "intro": "这些服务条款（以下简称“ToS”）管辖对 **QoreDB** 网站、其文档、在线服务和 QoreDB 软件的访问和使用。\n\n通过访问该网站或使用QoreDB软件，用户承认已阅读这些服务条款并毫无保留地接受它们。",
+    "copyright": "© QoreDB – 保留所有权利。",
+    "sections": {
+      "definitions": {
+        "title": "1. 定义",
+        "content": "* **QoreDB**：指软件项目、网站、文档、相关工具和服务。\n* **用户**：访问该网站或使用 QoreDB 软件的任何人。\n* **软件**：QoreDB 软件，在开放核心模型下分发。\n* **网站**：官方 QoreDB 网站。"
+      },
+      "object": {
+        "title": "2. 对象",
+        "content": "这些 ToS 的目的是定义用户可以访问 QoreDB 站点、查阅文档、使用可用资源以及操作 QoreDB 软件的条件。"
+      },
+      "access": {
+        "title": "3. 访问网站和服务",
+        "content": "除非另有说明，否则免费访问 QoreDB 网站。\n\nQoreDB 保留以下权利：\n\n* 暂停、限制或中断对网站或任何服务的访问，\n* 修改提供的内容或功能，\n* 执行维护操作。\n\n不保证网站或服务的持续可用性。"
+      },
+      "software_use": {
+        "title": "4. QoreDB 软件的使用",
+        "content": "QoreDB 软件在 **开放核心** 模型下分发：\n\n* 部分代码是在开源许可证下发布的，\n* 某些功能、扩展或服务可能需要单独的专有许可。\n\n该软件的使用、修改和分发的精确条件在 **QoreDB 许可证** 中定义，可在网站和官方存储库中获取。"
+      },
+      "user_obligations": {
+        "title": "5. 用户义务",
+        "content": "用户同意：\n\n* 根据适用的法律法规使用 QoreDB，\n* 不侵犯网站或软件的安全性、完整性或正常运行，\n* 不尝试未经授权访问系统或数据，\n* 不得将 QoreDB 用于欺诈、非法或滥用目的。\n\n任何滥用行为都可能导致服务访问被暂停。"
+      },
+      "ip": {
+        "title": "6. 知识产权",
+        "content": "QoreDB 网站的所有元素（文本、文档、图形、徽标、视觉标识）均受知识产权保护。\n\n除非另有说明，否则禁止任何未经授权的复制、陈述或利用。\n\nQoreDB 软件的源代码受适用许可证条款的约束，如 **许可证** 页面中所定义。"
+      },
+      "liability": {
+        "title": "七、责任",
+        "content": "QoreDB 按“原样”提供，不提供任何形式的保证。\n\nQoreDB 不承担以下责任：\n\n* 由于使用本网站或软件而造成的直接或间接损害，\n* 数据丢失、业务中断或商业损失，\n* 与软件配置或使用不当相关的后果。\n\n用户对其使用 QoreDB 及其处理的数据承担全部责任。"
+      },
+      "privacy": {
+        "title": "8. 个人资料",
+        "content": "个人数据处理受 QoreDB 网站上的 **隐私政策** 管辖。"
+      },
+      "external_links": {
+        "title": "9. 外部链接",
+        "content": "QoreDB 网站可能包含第三方网站或服务的链接。 QoreDB 对这些服务没有控制权，并且不承担与其内容或功能有关的所有责任。"
+      },
+      "updates": {
+        "title": "10. 服务条款的变更",
+        "content": "QoreDB 保留随时修改这些服务条款的权利。\n\n欢迎用户定期查阅当前版本。上次更新日期显示在页面顶部。"
+      },
+      "law": {
+        "title": "11. 适用法律",
+        "content": "这些服务条款受法国法律管辖。\n\n如果发生争议且未能友好解决，则将根据现行法律，由具有适用管辖权的法院管辖。"
+      },
+      "contact": {
+        "title": "12. 联系方式",
+        "content": "对于与本服务条款相关的任何问题，用户可以通过网站上指定的官方渠道联系QoreDB团队。"
+      }
+    }
+  },
+  "quick_start_page": {
+    "title": "快速入门",
+    "description": "只需点击几下即可浏览、查询和管理您的数据。",
+    "sections": {
+      "install": {
+        "title": "1. 安装并启动",
+        "content": "<p>从项目的 <a href='https://github.com/QoreDB/QoreDB/releases' target='_blank' class='text-(--q-accent) hover:underline'>Releases</a> 页面下载最新版本，安装应用后将其打开。</p>"
+      },
+      "connect": {
+        "title": "2. 创建您的第一个连接",
+        "content": "<p>点击侧边栏的<strong>+</strong>添加数据库：</p><ul><li>PostgreSQL</li><li>MySQL / MariaDB</li><li>SQL Server</li><li>SQLite</li><li>DuckDB</li><li>MongoDB</li><li>Redis</li></ul><p>输入主机、端口、数据库、用户和环境（dev/staging/prod）。</p>"
+      },
+      "explore": {
+        "title": "3. 探索您的数据",
+        "content": "<p>连接后：</p><ul><li>浏览架构和表</li><li>打开表以可视化数据</li><li>在集成编辑器中运行 SQL 查询</li></ul>"
+      },
+      "daily": {
+        "title": "4. 每天节省时间",
+        "content": "<ul><li>历史记录和收藏夹可查找您的查询</li><li>全局搜索可快速移动</li><li>只读模式可确保生产安全</li><li>浅色/深色主题和多选项卡界面</li></ul>"
+      }
+    },
+    "security_tip": {
+      "title": "安全提示",
+      "content": "QoreDB 通过系统的本机钥匙串安全地存储您的凭据并支持 SSH 隧道。"
+    }
+  },
+  "links_page": {
+    "title": "所有 QoreDB 链接",
+    "subtitle": "在一个地方找到每个官方链接。",
+    "contact": "联系方式",
+    "credits": "制作人员",
+    "featured": {
+      "title": "精选链接",
+      "site": {
+        "title": "网站",
+        "description": "产品故事集中在一处。"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "浏览代码、问题和更新。"
+      },
+      "discord": {
+        "title": "不和谐",
+        "description": "加入社区并分享反馈。"
+      },
+      "linkedin": {
+        "title": "领英",
+        "description": "新闻、更新和团队。"
+      }
+    },
+    "all_links": "所有链接",
+    "cta": {
+      "explore": "探索",
+      "write": "写信给我们"
+    }
+  },
+  "license_page": {
+    "title": "阿帕奇许可证 2.0",
+    "last_updated": "2.0 版，2004 年 1 月",
+    "intro": "使用、复制和分发的条款和条件",
+    "sections": {
+      "definitions": {
+        "title": "1. 定义",
+        "content": "\"License\" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.\n\n\"Licensor\" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.\n\n\"Legal Entity\" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, \"control\" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.\n\n\"You\" (or \"Your\") shall mean an individual or Legal Entity exercising permissions granted by this License.\n\n\"Source\" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.\n\n\"Object\" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.\n\n\"Work\" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).\n\n\"Derivative Works\" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.\n\n\"Contribution\" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, \"submitted\" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as \"Not a Contribution.\"\n\n\"Contributor\" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work."
+      },
+      "grant_copyright": {
+        "title": "2. 版权许可的授予",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form."
+      },
+      "grant_patent": {
+        "title": "3.专利许可的授予",
+        "content": "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed."
+      },
+      "redistribution": {
+        "title": "4. 重新分配",
+        "content": "You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:\n\n(a) You must give any other recipients of the Work or Derivative Works a copy of this License; and\n\n(b) You must cause any modified files to carry prominent notices stating that You changed the files; and\n\n(c) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and\n\n(d) If the Work includes a \"NOTICE\" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.\n\nYou may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License."
+      },
+      "submission": {
+        "title": "5. 提交稿件",
+        "content": "Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions."
+      },
+      "trademarks": {
+        "title": "6. 商标",
+        "content": "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file."
+      },
+      "warranties": {
+        "title": "7. 免责声明",
+        "content": "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License."
+      },
+      "liability": {
+        "title": "8. 责任限制",
+        "content": "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages."
+      },
+      "additional_liability": {
+        "title": "9. 接受保证或额外责任",
+        "content": "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability."
+      },
+      "appendix": {
+        "title": "附录：如何将 Apache 许可证应用到您的工作中",
+        "content": "To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets \"[]\" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same \"printed page\" as the copyright notice for easier identification within third-party archives.\n\nCopyright 2026 Raphaël Plassart\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+      }
+    }
+  },
+  "inline_cta": {
+    "text": "准备好尝试了吗？免费下载QoreDB。",
+    "button": "立即下载"
+  },
+  "pricing_preview": {
+    "title": "简单、透明的定价",
+    "subtitle": "核心永远免费。 Pro 解锁高级用户功能。",
+    "core_price": "免费",
+    "core_1": "8 个本机数据库驱动程序",
+    "core_2": "具有自动完成功能的 SQL 编辑器",
+    "core_3": "加密保管库和 SSH 隧道",
+    "core_4": "生产安全卫士",
+    "pro_badge": "一次性购买",
+    "pro_price_note": "一切都在 Core 中，加上高级工作流程。",
+    "pro_1": "人工智能助手（BYOK）",
+    "pro_2": "沙盒模式+迁移脚本",
+    "pro_3": "可视化数据差异",
+    "pro_4": "跨数据库联合",
+    "cta": "查看完整的定价详情"
+  },
+  "metadata": {
+    "site_title": "QoreDB — 现代数据库客户端",
+    "site_description": "为开发人员提供的快速、安全的现代数据库客户端。统一 SQL + NoSQL、安全保管库、本地优先。",
+    "blog_title": "博客 - QoreDB",
+    "blog_description": "来自 QoreDB 团队的文章、更新和技术深入探讨。",
+    "changelog_title": "变更日志 - QoreDB",
+    "changelog_description": "及时了解 QoreDB 的最新更改和改进。",
+    "not_found_title": "未找到"
+  },
+  "blog_page": {
+    "title": "博客",
+    "subtitle": "探索我们关于 QoreDB 和现代开发的最新文章、教程和更新。",
+    "empty": "还没有文章。请尽快回来查看！"
+  },
+  "blog_post": {
+    "back_to_blog": "返回博客",
+    "reading_time": "{{minutes}} 分钟阅读",
+    "related_articles": "相关文章",
+    "share": "分享",
+    "copied": "已复制！",
+    "copy_link": "复制链接"
+  }
+}

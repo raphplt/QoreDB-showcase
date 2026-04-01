@@ -908,5 +908,27 @@
     "pro_3": "Visual data diff",
     "pro_4": "Fédération inter-bases",
     "cta": "Voir tous les détails tarifaires"
+  },
+  "metadata": {
+    "site_title": "QoreDB — Le client de bases de données moderne",
+    "site_description": "Un client de bases de données moderne, rapide et sécurisé pour les développeurs. SQL + NoSQL unifié, vault sécurisé, local-first.",
+    "blog_title": "Blog - QoreDB",
+    "blog_description": "Articles, nouveautés et analyses techniques de l’équipe QoreDB.",
+    "changelog_title": "Changelog - QoreDB",
+    "changelog_description": "Suivez les dernières évolutions et améliorations de QoreDB.",
+    "not_found_title": "Introuvable"
+  },
+  "blog_page": {
+    "title": "Blog",
+    "subtitle": "Explorez nos derniers articles, tutoriels et actualités sur QoreDB et le développement moderne.",
+    "empty": "Aucun article pour le moment. Revenez bientôt !"
+  },
+  "blog_post": {
+    "back_to_blog": "Retour au blog",
+    "reading_time": "{{minutes}} min de lecture",
+    "related_articles": "Articles similaires",
+    "share": "Partager",
+    "copied": "Copié !",
+    "copy_link": "Copier le lien"
   }
 }

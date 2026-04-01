@@ -1,3 +1,4 @@
+import { getIntlLocale } from "@/lib/locale";
 import { getStripeClient } from "@/lib/stripe/server";
 
 export type StripePricingPayload = {
@@ -5,8 +6,6 @@ export type StripePricingPayload = {
   currency: string;
   unitAmount: number;
 };
-
-const getIntlLocale = (locale: string) => (locale === "en" ? "en-US" : "fr-FR");
 
 export async function getStripePricing(
   locale: string,

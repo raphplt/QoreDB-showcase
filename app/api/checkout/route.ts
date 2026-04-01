@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { normalizeLocale } from "@/lib/locale";
 import { getBaseUrl, getStripeClient } from "@/lib/stripe/server";
 
 export const runtime = "nodejs";
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     }
 
     const body = (await request.json().catch(() => ({}))) as CheckoutBody;
-    const locale = body.locale === "en" ? "en" : "fr";
+    const locale = normalizeLocale(body.locale);
     const baseUrl = getBaseUrl(request);
     const stripe = getStripeClient();
 

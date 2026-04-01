@@ -908,5 +908,27 @@
     "pro_3": "Visual data diff",
     "pro_4": "Cross-database federation",
     "cta": "See full pricing details"
+  },
+  "metadata": {
+    "site_title": "QoreDB — The modern database client",
+    "site_description": "A fast, secure modern database client for developers. Unified SQL + NoSQL, secure vault, local-first.",
+    "blog_title": "Blog - QoreDB",
+    "blog_description": "Articles, updates and technical deep dives from the QoreDB team.",
+    "changelog_title": "Changelog - QoreDB",
+    "changelog_description": "Stay up to date with the latest changes and improvements to QoreDB.",
+    "not_found_title": "Not found"
+  },
+  "blog_page": {
+    "title": "Blog",
+    "subtitle": "Explore our latest articles, tutorials, and updates about QoreDB and modern development.",
+    "empty": "No articles yet. Check back soon!"
+  },
+  "blog_post": {
+    "back_to_blog": "Back to blog",
+    "reading_time": "{{minutes}} min read",
+    "related_articles": "Related articles",
+    "share": "Share",
+    "copied": "Copied!",
+    "copy_link": "Copy link"
   }
 }

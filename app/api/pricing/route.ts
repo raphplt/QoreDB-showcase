@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+import { normalizeLocale } from "@/lib/locale";
 import {
   getStripePricing,
   type StripePricingPayload,
@@ -10,7 +10,7 @@ export const runtime = "nodejs";
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const locale = searchParams.get("locale") === "en" ? "en" : "fr";
+    const locale = normalizeLocale(searchParams.get("locale"));
     const payload: StripePricingPayload = await getStripePricing(locale);
 
     return NextResponse.json(payload);
