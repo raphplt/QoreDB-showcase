@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
+import { buildPageMetadata } from "@/lib/seo";
 import type { PostDocument } from "@/types/posts";
 import { ArticleCard } from "../../../components/blog/ArticleCard";
 import { client } from "../../../lib/sanity/client";
@@ -15,10 +16,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const { t } = await getTranslation(locale, "common");
 
-  return {
+  return buildPageMetadata({
+    locale,
+    pathname: "/blog",
     title: t("metadata.blog_title"),
     description: t("metadata.blog_description"),
-  };
+  });
 }
 
 export default async function BlogIndexPage({

@@ -1,6 +1,10 @@
 export const metadata = {
   title: "Sanity Studio",
   description: "Sanity Studio",
+  robots: {
+    index: false,
+    follow: false,
+  },
   viewport: "width=device-width, initial-scale=1",
 };
 

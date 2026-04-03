@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import Script from "next/script";
+import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { HeroBackgroundManager } from "@/components/hero-background-manager";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
+import { normalizeLocale } from "@/lib/locale";
+import { buildPageMetadata, getAbsoluteUrl, getLocalizedUrl } from "@/lib/seo";
 
 const DatabaseStrip = dynamic(() =>
   import("@/components/landing/database-strip").then((m) => ({
@@ -44,20 +49,91 @@ const Footer = dynamic(() =>
   })),
 );
 
-export default function HomePage() {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await getTranslation(locale, "common");
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/",
+    title: t("metadata.site_title"),
+    description: t("metadata.site_description"),
+  });
+}
+
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const normalizedLocale = normalizeLocale(locale);
+  const { t } = await getTranslation(normalizedLocale, "common");
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "QoreDB",
+        url: getLocalizedUrl(normalizedLocale, "/"),
+        logo: getAbsoluteUrl("/logo.png"),
+        sameAs: [
+          "https://github.com/QoreDB/QoreDB",
+          "https://www.linkedin.com/company/qoredb/?viewAsMember=true",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        name: "QoreDB",
+        url: getLocalizedUrl(normalizedLocale, "/"),
+        inLanguage: normalizedLocale,
+        description: t("metadata.site_description"),
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "QoreDB",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "macOS, Windows, Linux",
+        description: t("metadata.site_description"),
+        url: getLocalizedUrl(normalizedLocale, "/"),
+        downloadUrl: getLocalizedUrl(normalizedLocale, "/download"),
+        image: getAbsoluteUrl("/images/screenshots/query-screen.png"),
+        screenshot: getAbsoluteUrl("/images/screenshots/query-screen.png"),
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen overflow-hidden relative">
-      <HeroBackgroundManager />
-      <Header />
-      <Hero />
-      <DatabaseStrip />
-      <FeaturesSection />
-      <FeatureShowcase />
-      <InlineCTA />
-      <ComparisonTable />
-      <PricingPreview />
-      <CTASection />
-      <Footer />
-    </div>
+    <>
+      <Script
+        id={`home-jsonld-${normalizedLocale}`}
+        type="application/ld+json"
+      >
+        {JSON.stringify(structuredData)}
+      </Script>
+      <div className="min-h-screen overflow-hidden relative">
+        <HeroBackgroundManager />
+        <Header />
+        <Hero />
+        <DatabaseStrip />
+        <FeaturesSection />
+        <FeatureShowcase />
+        <InlineCTA />
+        <ComparisonTable />
+        <PricingPreview />
+        <CTASection />
+        <Footer />
+      </div>
+    </>
   );
 }

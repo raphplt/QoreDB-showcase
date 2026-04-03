@@ -2,6 +2,7 @@ export type FooterLink = {
   label: string;
   href: string;
   external?: boolean;
+  kind?: "email";
 };
 
 type Translate = (key: string) => string;
@@ -46,7 +47,7 @@ export const getFooterLinks = (t: Translate) => ({
 });
 
 export const footerContactLinks: FooterLink[] = [
-  { label: "Email", href: "mailto:qoredb@gmail.com" },
+  { label: "Email", href: "#email", kind: "email" },
 ];
 
 export const footerCreditLink: FooterLink = {

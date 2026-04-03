@@ -1,12 +1,15 @@
 import { ArrowLeft, CalendarIcon, Clock } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { getIntlLocale } from "@/lib/locale";
 import { estimateReadingTime } from "@/lib/reading-time";
+import { buildPageMetadata, getAbsoluteUrl, getLocalizedUrl } from "@/lib/seo";
 import type { PostDocument } from "@/types/posts";
 import { ArticleCard } from "../../../../components/blog/ArticleCard";
 import { RichTextRenderer } from "../../../../components/blog/RichTextRenderer";
@@ -15,25 +18,60 @@ import { urlForImage } from "../../../../lib/sanity/image";
 import { POST_QUERY } from "../../../../lib/sanity/queries";
 import { ShareButtons } from "./share-buttons";
 
+function getPostDescription(post: PostDocument) {
+  const plainText = (post.body ?? [])
+    .filter((block) => block._type === "block")
+    .flatMap((block) =>
+      "children" in block && block.children
+        ? block.children.map((span) => span.text)
+        : [],
+    )
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (!plainText) {
+    return post.title ?? "QoreDB blog";
+  }
+
+  return plainText.slice(0, 180);
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string; locale: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug, locale } = await params;
   const { t } = await getTranslation(locale, "common");
   const post = await client.fetch<PostDocument | null>(POST_QUERY, { slug });
-  if (!post) return { title: t("metadata.not_found_title") };
+  if (!post) {
+    return buildPageMetadata({
+      locale,
+      pathname: `/blog/${slug}`,
+      title: t("metadata.not_found_title"),
+      description: t("metadata.blog_description"),
+      noIndex: true,
+    });
+  }
 
-  return {
+  return buildPageMetadata({
+    locale,
+    pathname: `/blog/${slug}`,
     title: `${post.title} - ${t("metadata.blog_title")}`,
-    description: post.title,
-    openGraph: post.mainImage
-      ? {
-          images: [urlForImage(post.mainImage).url()],
-        }
+    description: getPostDescription(post),
+    imagePath: post.mainImage
+      ? urlForImage(post.mainImage).width(1600).height(900).url()
       : undefined,
-  };
+    imageAlt: post.title ?? "QoreDB blog post",
+    type: "article",
+    publishedTime: post.publishedAt ?? undefined,
+    modifiedTime: post.publishedAt ?? undefined,
+    authors:
+      post.author && "name" in post.author && post.author.name
+        ? [post.author.name]
+        : undefined,
+  });
 }
 
 export default async function BlogPostPage({
@@ -54,9 +92,43 @@ export default async function BlogPostPage({
   }
 
   const readingTime = estimateReadingTime(post.body);
+  const articleUrl = getLocalizedUrl(locale, `/blog/${slug}`);
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: getPostDescription(post),
+    mainEntityOfPage: articleUrl,
+    image: post.mainImage
+      ? [urlForImage(post.mainImage).width(1600).height(900).url()]
+      : [getAbsoluteUrl("/images/screenshots/query-screen.png")],
+    datePublished: post.publishedAt ?? undefined,
+    dateModified: post.publishedAt ?? undefined,
+    author:
+      post.author && "name" in post.author && post.author.name
+        ? {
+            "@type": "Person",
+            name: post.author.name,
+          }
+        : undefined,
+    publisher: {
+      "@type": "Organization",
+      name: "QoreDB",
+      logo: {
+        "@type": "ImageObject",
+        url: getAbsoluteUrl("/logo.png"),
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-(--q-bg-0) text-(--q-text-0)">
+      <Script
+        id={`blog-article-jsonld-${locale}-${slug}`}
+        type="application/ld+json"
+      >
+        {JSON.stringify(articleStructuredData)}
+      </Script>
       <Header />
       <main className="flex-1 pt-20">
         <article className="container py-24 max-w-4xl mx-auto space-y-12">
@@ -119,7 +191,9 @@ export default async function BlogPostPage({
                 alt={post.title || "Post Main Image"}
                 fill
                 className="object-cover"
-                priority
+                preload
+                fetchPriority="high"
+                sizes="(max-width: 1024px) 100vw, 1024px"
               />
             </div>
           )}

@@ -1,10 +1,12 @@
 import { CheckCircle2 } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import type Stripe from "stripe";
 import { useTranslation as getTranslation } from "@/app/[locale]/i18n";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { CopyLicenseButton } from "@/components/license/copy-license-button";
+import { buildPageMetadata } from "@/lib/seo";
 import {
   getStripeClient,
   readLicenseFromCheckoutSession,
@@ -15,6 +17,23 @@ type PageProps = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ session_id?: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const { t } = await getTranslation(locale, "common");
+
+  return buildPageMetadata({
+    locale,
+    pathname: "/purchase/success",
+    title: t("purchase_success.title"),
+    description: t("purchase_success.subtitle"),
+    noIndex: true,
+  });
+}
 
 async function readPaymentIntent(
   session: Stripe.Checkout.Session,

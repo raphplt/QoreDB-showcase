@@ -1,13 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Github,
-  Monitor,
-  Shield,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, Github, Monitor, Shield, Zap } from "lucide-react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import { Trans, useTranslation } from "react-i18next";
@@ -158,7 +152,8 @@ export function Hero() {
               fill
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 960px"
-              priority
+              preload
+              fetchPriority="high"
             />
           </div>
         </div>

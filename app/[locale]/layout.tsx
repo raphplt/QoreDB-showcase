@@ -9,6 +9,13 @@ import { ThemeProvider } from "next-themes";
 import { useTranslation as initTranslations } from "@/app/[locale]/i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 import { DownloadProvider } from "@/contexts/DownloadProvider";
+import {
+  DEFAULT_OG_IMAGE_PATH,
+  ensureSiteName,
+  getAbsoluteUrl,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -31,8 +38,10 @@ export async function generateMetadata({
   const description = t("metadata.site_description");
 
   return {
-    title,
+    metadataBase: new URL(SITE_URL),
+    title: ensureSiteName(title),
     description,
+    applicationName: SITE_NAME,
     keywords: [
       "database",
       "client",
@@ -44,10 +53,38 @@ export async function generateMetadata({
       "developer tools",
     ],
     authors: [{ name: "Raphaël Plassart" }],
+    creator: "Raphaël Plassart",
+    publisher: SITE_NAME,
+    category: "technology",
+    classification: "DeveloperApplication",
     openGraph: {
-      title,
+      title: ensureSiteName(title),
       description,
+      siteName: SITE_NAME,
       type: "website",
+      images: [
+        {
+          url: getAbsoluteUrl(DEFAULT_OG_IMAGE_PATH),
+          alt: "QoreDB SQL Editor",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ensureSiteName(title),
+      description,
+      images: [getAbsoluteUrl(DEFAULT_OG_IMAGE_PATH)],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
   };
 }

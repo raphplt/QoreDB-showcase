@@ -1,12 +1,13 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Check, ChevronDown, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
+import { getContactMailtoHref } from "@/lib/contact";
 
 function PlanCard({
   title,
@@ -103,6 +104,7 @@ function PlanCard({
         </Link>
       ) : (
         <button
+          type="button"
           onClick={onClick}
           disabled={disabled || loading}
           className={`inline-flex w-full items-center justify-center rounded-xl px-4 py-3 font-semibold transition ${
@@ -263,12 +265,15 @@ export default function PricingPageClient({
                 onClick={startCheckout}
                 loading={loadingCheckout}
                 footerNote={
-                  <a
-                    href="mailto:qoredb@gmail.com"
-                    className="block text-center text-xs text-(--q-text-2) mt-3 hover:text-(--q-accent) transition"
+                  <button
+                    type="button"
+                    onClick={() => {
+                      window.location.href = getContactMailtoHref();
+                    }}
+                    className="block w-full bg-transparent text-center text-xs text-(--q-text-2) mt-3 hover:text-(--q-accent) transition cursor-pointer"
                   >
                     {t("pricing_page.pro.student_note")}
-                  </a>
+                  </button>
                 }
               />
             </motion.div>
@@ -306,6 +311,7 @@ export default function PricingPageClient({
                 className="rounded-2xl border border-(--q-border) bg-(--q-bg-1) overflow-hidden transition-colors hover:border-(--q-accent)/20"
               >
                 <button
+                  type="button"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left cursor-pointer"
                 >

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Check, GitBranch, LifeBuoy, Network } from "lucide-react";
 import Image from "next/image";
-import { Check, GitBranch, Network, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const features = [
@@ -60,7 +60,7 @@ export function FeatureShowcase() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative z-10 py-24 px-6 bg-(--q-bg-1)">
+    <section id="preview" className="relative z-10 py-24 px-6 bg-(--q-bg-1)">
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-(--q-border) to-transparent" />
 
       <div className="max-w-6xl mx-auto">
@@ -103,6 +103,7 @@ export function FeatureShowcase() {
                     width={1200}
                     height={800}
                     className="w-full h-auto rounded-xl"
+                    sizes="(max-width: 1024px) 100vw, 544px"
                   />
                 </div>
 
@@ -138,9 +139,7 @@ export function FeatureShowcase() {
                         <div
                           className={`mt-0.5 w-5 h-5 rounded-full ${feature.checkBg} flex items-center justify-center shrink-0`}
                         >
-                          <Check
-                            className={`w-3 h-3 ${feature.checkColor}`}
-                          />
+                          <Check className={`w-3 h-3 ${feature.checkColor}`} />
                         </div>
                         <span className="text-(--q-text-1) text-sm">
                           {t(key)}

@@ -3,11 +3,16 @@
 import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { getContactMailtoHref } from "@/lib/contact";
 import { getFooterLinks } from "@/lib/footer-links";
+import { localizeInternalHref } from "@/lib/seo";
 
 export function Footer() {
   const { t } = useTranslation();
+  const params = useParams();
+  const locale = (params.locale as string) || "fr";
 
   const footerLinks = getFooterLinks(t);
 
@@ -18,7 +23,10 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-1 mb-4">
+            <Link
+              href={localizeInternalHref("/", locale)}
+              className="flex items-center gap-1 mb-4"
+            >
               <Image
                 src="/logo.webp"
                 alt="QoreDB Logo"
@@ -59,13 +67,16 @@ export function Footer() {
               >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href="mailto:qoredb@gmail.com"
-                className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors"
+              <button
+                type="button"
+                onClick={() => {
+                  window.location.href = getContactMailtoHref();
+                }}
+                className="bg-transparent text-(--q-text-2) hover:text-(--q-text-0) transition-colors cursor-pointer"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
-              </a>
+              </button>
             </div>
             <a
               href="https://www.producthunt.com/products/qoredb?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-qoredb"
@@ -79,6 +90,9 @@ export function Footer() {
                 alt="QoreDB - The fast, open-source database client built with Rust | Product Hunt"
                 width={250}
                 height={54}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
             </a>
           </div>
@@ -92,7 +106,7 @@ export function Footer() {
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
                   <Link
-                    href={link.href}
+                    href={localizeInternalHref(link.href, locale)}
                     className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors text-sm"
                   >
                     {link.label}
@@ -111,7 +125,7 @@ export function Footer() {
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
                   <Link
-                    href={link.href}
+                    href={localizeInternalHref(link.href, locale)}
                     className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors text-sm inline-flex items-center gap-1"
                   >
                     {link.label}
@@ -152,7 +166,7 @@ export function Footer() {
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link
-                    href={link.href}
+                    href={localizeInternalHref(link.href, locale)}
                     className="text-(--q-text-2) hover:text-(--q-text-0) transition-colors text-sm"
                   >
                     {link.label}
