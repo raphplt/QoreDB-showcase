@@ -30,7 +30,7 @@ export default defineType({
           return await client.fetch(query, {
             draft: `drafts.${id}`,
             published: id,
-            slug: value?.current || "",
+            slug: (value as string) || "",
             language,
           });
         },
