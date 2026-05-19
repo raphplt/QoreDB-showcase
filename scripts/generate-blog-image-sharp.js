@@ -1,9 +1,35 @@
 const sharp = require('sharp');
 const https = require('https');
 const fs = require('fs');
+const path = require('path');
 
-const WIDTH = 2400;
-const HEIGHT = 1260;
+function loadEnvLocal() {
+  const candidates = [
+    path.join(__dirname, '..', '.env.local'),
+    path.join(__dirname, '..', '.env'),
+  ];
+  for (const file of candidates) {
+    if (!fs.existsSync(file)) continue;
+    const content = fs.readFileSync(file, 'utf8');
+    for (const rawLine of content.split('\n')) {
+      const line = rawLine.trim();
+      if (!line || line.startsWith('#')) continue;
+      const eq = line.indexOf('=');
+      if (eq === -1) continue;
+      const key = line.slice(0, eq).trim();
+      let value = line.slice(eq + 1).trim();
+      if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+        value = value.slice(1, -1);
+      }
+      if (!process.env[key]) process.env[key] = value;
+    }
+  }
+}
+
+loadEnvLocal();
+
+const WIDTH = 1920;
+const HEIGHT = 1080;
 
 const CATEGORY_COLORS = {
   'Architecture': '#3B82F6',
@@ -13,6 +39,18 @@ const CATEGORY_COLORS = {
   'Updates': '#F59E0B',
   'Vision': '#06B6D4',
 };
+
+let LOGO_BASE64 = null;
+function getLogoBase64() {
+  if (LOGO_BASE64 !== null) return LOGO_BASE64;
+  const logoPath = path.join(__dirname, '..', 'public', 'logo.png');
+  if (fs.existsSync(logoPath)) {
+    LOGO_BASE64 = fs.readFileSync(logoPath).toString('base64');
+  } else {
+    LOGO_BASE64 = '';
+  }
+  return LOGO_BASE64;
+}
 
 function escapeXml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
@@ -36,20 +74,52 @@ function wrapText(text, maxCharsPerLine) {
 
 function generateSVG(title, subtitle, category) {
   const catColor = CATEGORY_COLORS[category] || '#3B82F6';
-  const titleLines = wrapText(title, 35);
-  const titleFontSize = titleLines.length > 2 ? 64 : 72;
-  const titleLineHeight = titleFontSize * 1.25;
-  const titleStartY = 420 + (3 - Math.min(titleLines.length, 3)) * (titleLineHeight / 2);
+  const PAD_L = 110;
+  const LOGO_SIZE = 76;
+  const LOGO_Y = 110;
+  const WORDMARK_Y = LOGO_Y + LOGO_SIZE / 2 + 14;
+  const HEADER_BOTTOM = LOGO_Y + LOGO_SIZE + 24;
+
+  const titleLines = wrapText(title, 32);
+  const lineCount = Math.min(titleLines.length, 4);
+  const titleFontSize = lineCount > 2 ? 76 : 88;
+  const titleLineHeight = titleFontSize * 1.18;
+
+  const subtitleLines = wrapText(subtitle, 64);
+  const subLineCount = Math.min(subtitleLines.length, 3);
+  const subtitleFontSize = 28;
+  const subtitleLineHeight = subtitleFontSize * 1.4;
+
+  const titleBlockHeight = lineCount * titleLineHeight;
+  const subtitleBlockHeight = subLineCount * subtitleLineHeight;
+  const gap = subLineCount > 0 ? 44 : 0;
+  const totalBlock = titleBlockHeight + gap + subtitleBlockHeight;
+  const verticalCenter = (HEIGHT + HEADER_BOTTOM) / 2;
+  let titleFirstBaseline = verticalCenter - totalBlock / 2 + titleFontSize * 0.85;
+  if (titleFirstBaseline < HEADER_BOTTOM + 60) titleFirstBaseline = HEADER_BOTTOM + 60;
 
   const titleSvg = titleLines.slice(0, 4).map((line, i) =>
-    `<text x="120" y="${titleStartY + i * titleLineHeight}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="${titleFontSize}" font-weight="700" fill="white" letter-spacing="-1">${escapeXml(line)}</text>`
+    `<text x="${PAD_L}" y="${titleFirstBaseline + i * titleLineHeight}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="${titleFontSize}" font-weight="700" fill="white" letter-spacing="-1.5">${escapeXml(line)}</text>`
   ).join('\n    ');
 
-  const subtitleLines = wrapText(subtitle, 70);
-  const subtitleStartY = titleStartY + titleLines.length * titleLineHeight + 40;
+  const subtitleStartY = titleFirstBaseline + (lineCount - 1) * titleLineHeight + gap + subtitleFontSize;
   const subtitleSvg = subtitleLines.slice(0, 3).map((line, i) =>
-    `<text x="120" y="${subtitleStartY + i * 36}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" fill="#94A3B8" letter-spacing="0.2">${escapeXml(line)}</text>`
+    `<text x="${PAD_L}" y="${subtitleStartY + i * subtitleLineHeight}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="${subtitleFontSize}" fill="#94A3B8" letter-spacing="0.2">${escapeXml(line)}</text>`
   ).join('\n    ');
+
+  const logoBase64 = getLogoBase64();
+  const logoSvg = logoBase64
+    ? `<image x="${PAD_L}" y="${LOGO_Y}" width="${LOGO_SIZE}" height="${LOGO_SIZE}" href="data:image/png;base64,${logoBase64}" />`
+    : '';
+
+  const wordmarkX = PAD_L + LOGO_SIZE + 22;
+  const wordmarkFontSize = 40;
+  const wordmarkBaseline = LOGO_Y + LOGO_SIZE / 2 + wordmarkFontSize / 3;
+  const approxWordmarkWidth = 175;
+  const badgeX = wordmarkX + approxWordmarkWidth + 18;
+  const badgeW = category.length * 14 + 36;
+  const badgeH = 32;
+  const badgeY = LOGO_Y + LOGO_SIZE / 2 - badgeH / 2;
 
   return `<svg width="${WIDTH}" height="${HEIGHT}" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -62,7 +132,7 @@ function generateSVG(title, subtitle, category) {
       <stop offset="100%" style="stop-color:${catColor};stop-opacity:0" />
     </linearGradient>
     <linearGradient id="glow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:${catColor};stop-opacity:0.15" />
+      <stop offset="0%" style="stop-color:${catColor};stop-opacity:0.18" />
       <stop offset="100%" style="stop-color:${catColor};stop-opacity:0" />
     </linearGradient>
     <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -71,21 +141,19 @@ function generateSVG(title, subtitle, category) {
   </defs>
   <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#bg)" />
   <rect width="${WIDTH}" height="${HEIGHT}" fill="url(#grid)" opacity="0.4" />
-  <rect x="0" y="0" width="${WIDTH}" height="400" fill="url(#glow)" />
+  <rect x="0" y="0" width="${WIDTH}" height="420" fill="url(#glow)" />
   <rect x="0" y="0" width="6" height="${HEIGHT}" fill="${catColor}" />
   <rect x="6" y="0" width="${WIDTH}" height="3" fill="url(#accent)" />
-  <circle cx="${WIDTH - 200}" cy="200" r="300" fill="${catColor}" opacity="0.03" />
-  <circle cx="${WIDTH - 100}" cy="350" r="200" fill="${catColor}" opacity="0.04" />
-  <text x="120" y="180" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="42" font-weight="800" fill="white" letter-spacing="2">
-    <tspan fill="${catColor}">Q</tspan><tspan fill="white">ore</tspan><tspan fill="${catColor}">DB</tspan>
-  </text>
-  <circle cx="330" cy="170" r="4" fill="#475569" />
-  <rect x="350" y="150" width="${category.length * 16 + 40}" height="38" rx="19" fill="${catColor}" opacity="0.15" />
-  <text x="${350 + (category.length * 16 + 40) / 2}" y="175" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="${catColor}" text-anchor="middle" letter-spacing="1">${escapeXml(category.toUpperCase())}</text>
+  <circle cx="${WIDTH - 180}" cy="220" r="280" fill="${catColor}" opacity="0.04" />
+  <circle cx="${WIDTH - 90}" cy="380" r="190" fill="${catColor}" opacity="0.05" />
+  ${logoSvg}
+  <text x="${wordmarkX}" y="${wordmarkBaseline}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="${wordmarkFontSize}" font-weight="700" fill="white" letter-spacing="-0.5">QoreDB</text>
+  <rect x="${badgeX}" y="${badgeY}" width="${badgeW}" height="${badgeH}" rx="${badgeH / 2}" fill="${catColor}" opacity="0.18" />
+  <text x="${badgeX + badgeW / 2}" y="${badgeY + badgeH / 2 + 6}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="17" font-weight="600" fill="${catColor}" text-anchor="middle" letter-spacing="1.2">${escapeXml(category.toUpperCase())}</text>
   ${titleSvg}
   ${subtitleSvg}
-  <rect x="120" y="${HEIGHT - 120}" width="200" height="2" fill="#334155" />
-  <text x="120" y="${HEIGHT - 80}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" fill="#64748B" letter-spacing="0.5">blog.qoredb.com</text>
+  <rect x="${PAD_L}" y="${HEIGHT - 100}" width="160" height="2" fill="#334155" />
+  <text x="${PAD_L}" y="${HEIGHT - 60}" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#64748B" letter-spacing="0.5">qoredb.com/blog</text>
   <rect x="${WIDTH - 320}" y="${HEIGHT - 100}" width="200" height="2" fill="${catColor}" opacity="0.3" />
 </svg>`;
 }
