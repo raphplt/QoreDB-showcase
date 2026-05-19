@@ -200,7 +200,7 @@
       },
       "instant_api": {
         "title": "API de données instantanée",
-        "desc": "Transformez n’importe quelle requête sauvegardée en endpoint REST sécurisé : auth par token, rate limit et OpenAPI auto-généré, en un clic."
+        "desc": "Transformez n’importe quelle requête sauvegardée en endpoint REST sécurisé."
       },
       "export": {
         "title": "Export multi-formats",
@@ -526,7 +526,6 @@
         "question": "Puis-je contribuer au projet ?",
         "answer": "Oui, et c’est encouragé.\n\nContributions possibles :\n\n* retours utilisateurs,\n* issues et discussions GitHub,\n* propositions d’amélioration,\n* code et documentation.\n\nUn GitHub communautaire est en cours de structuration."
       },
-      
       "funding": {
         "question": "Comment le projet sera-t-il financé ?",
         "answer": "Le modèle visé est :\n\n* open-source durable,\n* auto-financé,\n* sans dépendance à un cloud centralisé obligatoire.\n\nLes détails évolueront avec l’adoption du produit."
@@ -1029,9 +1028,21 @@
     "not_found_title": "Introuvable"
   },
   "blog_page": {
-    "title": "Blog",
-    "subtitle": "Explorez nos derniers articles, tutoriels et actualités sur QoreDB et le développement moderne.",
-    "empty": "Aucun article pour le moment. Revenez bientôt !"
+    "title": "Le Blog QoreDB",
+    "subtitle": "Articles, tutoriels et actualités sur QoreDB et le développement moderne.",
+    "search_placeholder": "Rechercher un article...",
+    "category": "Catégorie",
+    "all_categories": "Toutes les catégories",
+    "sort_by": "Trier par",
+    "newest": "Plus récents",
+    "oldest": "Plus anciens",
+    "title_asc": "Titre (A-Z)",
+    "title_desc": "Titre (Z-A)",
+    "no_results": "Aucun article trouvé.",
+    "try_adjusting": "Essayez de modifier vos filtres ou votre recherche.",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "empty": "Aucun article pour le moment."
   },
   "blog_post": {
     "back_to_blog": "Retour au blog",

@@ -513,7 +513,6 @@
         "question": "Posso contribuire al progetto?",
         "answer": "Sì, ed è incoraggiato.\n\nPossibili contributi:\n\n* feedback degli utenti,\n* Problemi e discussioni su GitHub,\n* proposte di miglioramento,\n*codice e documentazione.\n\nÈ in fase di strutturazione una community GitHub."
       },
-      
       "funding": {
         "question": "Come verrà finanziato il progetto?",
         "answer": "Il modello preso di mira è:\n\n* open source sostenibile,\n*autofinanziato,\n*senza dipendenza da un cloud centralizzato obbligatorio.\n\nI dettagli evolveranno con l'adozione del prodotto."
@@ -1016,9 +1015,21 @@
     "not_found_title": "Non trovato"
   },
   "blog_page": {
-    "title": "Blog",
-    "subtitle": "Esplora i nostri ultimi articoli, tutorial e aggiornamenti su QoreDB e sullo sviluppo moderno.",
-    "empty": "Nessun articolo ancora. Ricontrolla presto!"
+    "title": "Il Blog di QoreDB",
+    "subtitle": "Articoli, tutorial e notizie su QoreDB e lo sviluppo moderno.",
+    "search_placeholder": "Cerca articoli...",
+    "category": "Categoria",
+    "all_categories": "Tutte le categorie",
+    "sort_by": "Ordina per",
+    "newest": "Più recenti",
+    "oldest": "Più vecchi",
+    "title_asc": "Titolo (A-Z)",
+    "title_desc": "Titolo (Z-A)",
+    "no_results": "Nessun articolo trovato.",
+    "try_adjusting": "Prova a modificare i filtri o la ricerca.",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "empty": "Nessun articolo ancora."
   },
   "blog_post": {
     "back_to_blog": "Torna al blog",

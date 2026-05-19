@@ -513,7 +513,6 @@
         "question": "我可以为该项目做出贡献吗？",
         "answer": "是的，而且是受到鼓励的。\n\n可能的贡献：\n\n* 用户反馈，\n* GitHub 问题和讨论，\n* 改进建议，\n* 代码和文档。\n\nGitHub 社区正在构建中。"
       },
-      
       "funding": {
         "question": "该项目将如何资助？",
         "answer": "目标模型是：\n\n* 可持续的开源，\n* 自筹资金，\n* 不依赖于强制性的集中式云。\n\n细节将随着产品的采用而演变。"
@@ -1016,9 +1015,21 @@
     "not_found_title": "未找到"
   },
   "blog_page": {
-    "title": "博客",
-    "subtitle": "探索我们关于 QoreDB 和现代开发的最新文章、教程和更新。",
-    "empty": "还没有文章。请尽快回来查看！"
+    "title": "QoreDB 博客",
+    "subtitle": "关于 QoreDB 和现代开发的见解、教程和新闻。",
+    "search_placeholder": "搜索文章...",
+    "category": "分类",
+    "all_categories": "所有分类",
+    "sort_by": "排序方式",
+    "newest": "最新",
+    "oldest": "最旧",
+    "title_asc": "标题 (A-Z)",
+    "title_desc": "标题 (Z-A)",
+    "no_results": "未找到文章。",
+    "try_adjusting": "尝试调整您的过滤器或搜索词。",
+    "previous": "上一页",
+    "next": "下一页",
+    "empty": "暂无文章。"
   },
   "blog_post": {
     "back_to_blog": "返回博客",
