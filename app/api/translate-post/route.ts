@@ -143,6 +143,7 @@ export async function POST(req: NextRequest) {
         value: {
           _type: "reference",
           _ref: baseId,
+          _weak: true,
         },
       },
       ...createdDocs.map((doc) => ({
@@ -150,6 +151,7 @@ export async function POST(req: NextRequest) {
         value: {
           _type: "reference",
           _ref: doc.id,
+          _weak: true,
         },
       })),
     ];
