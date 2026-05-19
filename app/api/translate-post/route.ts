@@ -77,18 +77,19 @@ export async function POST(req: NextRequest) {
     if (!originalPost) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
     // Loop through each language
-    for (const lang of TARGET_LANGUAGES) {
-      console.log(`Translating post ${originalPost._id} to ${lang}...`);
+    // Run translations in parallel to avoid Vercel timeouts (10-15s)
+    const baseId = originalPost._id.replace("drafts.", "");
+    const originalLang = originalPost.language || "fr";
 
-      // 1. Extraire tous les textes à traduire pour ne faire qu'UN SEUL appel API par langue
+    const translationPromises = TARGET_LANGUAGES.map(async (lang) => {
+      console.log(`Translating post ${baseId} to ${lang}...`);
+
       const textsToTranslate: string[] = [];
       const textPaths: { blockIndex: number, childIndex: number }[] = [];
 
-      // Ajouter le titre en premier (index 0)
       textsToTranslate.push((originalPost.title as string) || "");
 
-      // Parcourir le Portable Text pour extraire les enfants 'text'
-      const translatedBody = JSON.parse(JSON.stringify(originalPost.body || [])); // Clone
+      const translatedBody = JSON.parse(JSON.stringify(originalPost.body || []));
       
       for (let i = 0; i < translatedBody.length; i++) {
         const block = translatedBody[i];
@@ -103,10 +104,7 @@ export async function POST(req: NextRequest) {
         }
       }
 
-      // 2. Envoyer le batch complet à traduire
       const translatedTexts = await translateBatch(textsToTranslate, lang);
-
-      // 3. Réinjecter les traductions dans le document
       const translatedTitle = translatedTexts[0] || originalPost.title;
       
       for (let k = 0; k < textPaths.length; k++) {
@@ -114,10 +112,10 @@ export async function POST(req: NextRequest) {
         translatedBody[path.blockIndex].children[path.childIndex].text = translatedTexts[k + 1] || textsToTranslate[k + 1];
       }
 
-      // 4. Créer le document traduit dans Sanity
+      const translatedDocId = `${baseId}-${lang}`;
       const translatedDoc = {
         ...originalPost,
-        _id: `drafts.${originalPost._id.replace("drafts.", "")}-${lang}`,
+        _id: `drafts.${translatedDocId}`,
         language: lang,
         title: translatedTitle,
         body: translatedBody,
@@ -129,6 +127,46 @@ export async function POST(req: NextRequest) {
 
       await writeClient.createOrReplace(translatedDoc);
       console.log(`Successfully created translation for ${lang}`);
+      return { lang, id: translatedDocId };
+    });
+
+    const createdDocs = await Promise.all(translationPromises);
+
+    // Now update or create the translation.metadata document
+    const metadataQuery = `*[_type == "translation.metadata" && references($id)][0]`;
+    const existingMetadata = await writeClient.fetch(metadataQuery, { id: baseId });
+
+    // Ensure all translations (including original) are referenced
+    const translationsArray = [
+      {
+        _key: originalLang,
+        value: {
+          _type: "reference",
+          _ref: baseId,
+        },
+      },
+      ...createdDocs.map((doc) => ({
+        _key: doc.lang,
+        value: {
+          _type: "reference",
+          _ref: doc.id,
+        },
+      })),
+    ];
+
+    if (existingMetadata) {
+      await writeClient
+        .patch(existingMetadata._id)
+        .set({ translations: translationsArray })
+        .commit();
+      console.log("Updated translation metadata.");
+    } else {
+      await writeClient.create({
+        _type: "translation.metadata",
+        translations: translationsArray,
+        schemaTypes: ["post"]
+      });
+      console.log("Created translation metadata.");
     }
 
     return NextResponse.json({ success: true });
