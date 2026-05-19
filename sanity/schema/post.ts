@@ -17,6 +17,23 @@ export default defineType({
       options: {
         source: "title",
         maxLength: 96,
+        isUnique: async (value, context) => {
+          const { document, getClient } = context;
+          const id = document?._id?.replace(/^drafts\./, "") || "";
+          const language = document?.language || "fr";
+          const query = `!defined(*[
+            !(_id in [$draft, $published]) &&
+            slug.current == $slug &&
+            language == $language
+          ][0]._id)`;
+          const client = getClient({ apiVersion: "2023-01-01" });
+          return await client.fetch(query, {
+            draft: `drafts.${id}`,
+            published: id,
+            slug: value?.current || "",
+            language,
+          });
+        },
       },
       validation: (Rule) => Rule.required(),
     }),

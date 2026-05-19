@@ -31,7 +31,7 @@ export default async function BlogIndexPage({
 }) {
   const { locale } = await params;
   const { t } = await getTranslation(locale, "common");
-  const posts = await client.fetch(POSTS_QUERY);
+  const posts = await client.fetch(POSTS_QUERY, { language: locale });
 
   return (
     <div className="min-h-screen flex flex-col bg-(--q-bg-0) text-(--q-text-0)">

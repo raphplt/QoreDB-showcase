@@ -111,7 +111,6 @@ export async function POST(req: NextRequest) {
       
       for (let k = 0; k < textPaths.length; k++) {
         const path = textPaths[k];
-        // L'index dans translatedTexts est k + 1 (car l'index 0 est le titre)
         translatedBody[path.blockIndex].children[path.childIndex].text = translatedTexts[k + 1] || textsToTranslate[k + 1];
       }
 
@@ -122,9 +121,7 @@ export async function POST(req: NextRequest) {
         language: lang,
         title: translatedTitle,
         body: translatedBody,
-        slug: originalPost.slug 
-          ? { ...originalPost.slug, current: `${originalPost.slug.current}-${lang}` }
-          : undefined,
+        slug: originalPost.slug,
         _createdAt: undefined,
         _updatedAt: undefined,
         _rev: undefined,

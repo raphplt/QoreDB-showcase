@@ -44,7 +44,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug, locale } = await params;
   const { t } = await getTranslation(locale, "common");
-  const post = await client.fetch<PostDocument | null>(POST_QUERY, { slug });
+  const post = await client.fetch<PostDocument | null>(POST_QUERY, { slug, language: locale });
   if (!post) {
     return buildPageMetadata({
       locale,
@@ -83,7 +83,7 @@ export default async function BlogPostPage({
   const { t } = await getTranslation(locale, "common");
   const post = await client.fetch<PostDocument | null>(
     POST_QUERY,
-    { slug },
+    { slug, language: locale },
     { next: { revalidate: 60 } },
   );
 
