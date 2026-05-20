@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity";
+import { defineArrayMember, defineField, defineType } from "sanity";
 
 export default defineType({
   name: "post",
@@ -67,7 +67,7 @@ export default defineType({
       title: "Body",
       type: "array",
       of: [
-        {
+        defineArrayMember({
           type: "block",
           styles: [
             { title: "Normal", value: "normal" },
@@ -102,11 +102,111 @@ export default defineType({
               },
             ],
           },
-        },
-        {
+        }),
+        defineArrayMember({
           type: "image",
           options: { hotspot: true },
-        },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+            },
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+            },
+          ],
+        }),
+        defineArrayMember({
+          name: "codeBlock",
+          title: "Code Block",
+          type: "object",
+          fields: [
+            {
+              name: "code",
+              title: "Code",
+              type: "text",
+            },
+            {
+              name: "language",
+              title: "Language",
+              type: "string",
+              options: {
+                list: [
+                  { title: "JavaScript", value: "javascript" },
+                  { title: "TypeScript", value: "typescript" },
+                  { title: "HTML", value: "html" },
+                  { title: "CSS", value: "css" },
+                  { title: "SQL", value: "sql" },
+                  { title: "JSON", value: "json" },
+                  { title: "Bash", value: "bash" },
+                ],
+              },
+            },
+            {
+              name: "filename",
+              title: "Filename",
+              type: "string",
+              description: "e.g., index.ts",
+            },
+          ],
+        }),
+        defineArrayMember({
+          name: "callout",
+          title: "Callout",
+          type: "object",
+          fields: [
+            {
+              name: "type",
+              title: "Type",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Info", value: "info" },
+                  { title: "Warning", value: "warning" },
+                  { title: "Success", value: "success" },
+                  { title: "Tip", value: "tip" },
+                ],
+                layout: "radio",
+              },
+            },
+            {
+              name: "text",
+              title: "Text",
+              type: "text",
+            },
+          ],
+        }),
+        defineArrayMember({
+          name: "youtube",
+          title: "YouTube Video",
+          type: "object",
+          fields: [
+            {
+              name: "url",
+              title: "YouTube Video URL",
+              type: "url",
+            },
+          ],
+        }),
+        defineArrayMember({
+          name: "divider",
+          title: "Divider",
+          type: "object",
+          fields: [
+            {
+              name: "style",
+              title: "Style",
+              type: "string",
+              options: {
+                list: [{ title: "Horizontal Rule", value: "hr" }],
+              },
+              initialValue: "hr",
+            },
+          ],
+        }),
       ],
     }),
     defineField({

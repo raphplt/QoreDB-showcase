@@ -54,9 +54,43 @@ export interface PortableTextImage {
   _key?: string;
   asset?: SanityReference;
   alt?: string;
+  caption?: string;
 }
 
-export type PortableText = Array<PortableTextBlock | PortableTextImage>;
+export interface PortableTextCodeBlock {
+  _type: "codeBlock";
+  _key?: string;
+  code?: string;
+  language?: string;
+  filename?: string;
+}
+
+export interface PortableTextCallout {
+  _type: "callout";
+  _key?: string;
+  type?: "info" | "warning" | "success" | "tip";
+  text?: string;
+}
+
+export interface PortableTextYoutube {
+  _type: "youtube";
+  _key?: string;
+  url?: string;
+}
+
+export interface PortableTextDivider {
+  _type: "divider";
+  _key?: string;
+}
+
+export type PortableText = Array<
+  | PortableTextBlock
+  | PortableTextImage
+  | PortableTextCodeBlock
+  | PortableTextCallout
+  | PortableTextYoutube
+  | PortableTextDivider
+>;
 
 export interface AuthorDocument {
   _type: "author";
