@@ -6,7 +6,7 @@
   line-height: 1.7;
 }
 
-.docs-prose h1 {
+.docs-prose h1:not(.not-prose, .not-prose *) {
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 700;
@@ -15,7 +15,7 @@
   margin-bottom: 0.75rem;
 }
 
-.docs-prose h2 {
+.docs-prose h2:not(.not-prose, .not-prose *) {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 600;
@@ -26,7 +26,7 @@
   scroll-margin-top: 5rem;
 }
 
-.docs-prose h3 {
+.docs-prose h3:not(.not-prose, .not-prose *) {
   font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 600;
@@ -36,7 +36,7 @@
   scroll-margin-top: 5rem;
 }
 
-.docs-prose h4 {
+.docs-prose h4:not(.not-prose, .not-prose *) {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
@@ -46,11 +46,11 @@
   scroll-margin-top: 5rem;
 }
 
-.docs-prose p {
+.docs-prose p:not(.not-prose, .not-prose *) {
   margin: 1rem 0;
 }
 
-.docs-prose a {
+.docs-prose a:not(.not-prose, .not-prose *) {
   color: var(--q-accent);
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--q-accent) 40%, transparent);
@@ -58,30 +58,30 @@
   transition: color 0.15s ease;
 }
 
-.docs-prose a:hover {
+.docs-prose a:not(.not-prose, .not-prose *):hover {
   color: var(--q-accent-strong);
   text-decoration-color: var(--q-accent-strong);
 }
 
-.docs-prose ul,
-.docs-prose ol {
+.docs-prose ul:not(.not-prose, .not-prose *),
+.docs-prose ol:not(.not-prose, .not-prose *) {
   margin: 1rem 0;
   padding-left: 1.5rem;
 }
 
-.docs-prose ul {
+.docs-prose ul:not(.not-prose, .not-prose *) {
   list-style: disc;
 }
 
-.docs-prose ol {
+.docs-prose ol:not(.not-prose, .not-prose *) {
   list-style: decimal;
 }
 
-.docs-prose li {
+.docs-prose li:not(.not-prose, .not-prose *) {
   margin: 0.4rem 0;
 }
 
-.docs-prose li::marker {
+.docs-prose li:not(.not-prose, .not-prose *)::marker {
   color: var(--q-text-2);
 }
 
