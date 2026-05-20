@@ -9,6 +9,7 @@
     "mongodb",
     "redis",
     "duckdb",
+    "clickhouse",
     "ssh-tunneling",
     "vault-and-profiles",
     "environments"

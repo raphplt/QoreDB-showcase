@@ -1,0 +1,90 @@
+---
+title: ClickHouse
+description: Connect QoreDB to ClickHouse over HTTP or HTTPS. AST-level query safety, KILL-based cancellation, and full coverage of ClickHouse's type system.
+premium: false
+---
+
+# ClickHouse
+
+QoreDB ships a native ClickHouse driver that talks to the server over HTTP (port `8123`) or HTTPS (port `8443`). The driver is wired into the standard `DriverRegistry`, so everything you expect from another engine — schema browser, query editor, results grid, exports, notebooks, DDL editor — works the same way against ClickHouse.
+
+## Quick connect
+
+Pick the **ClickHouse** engine and enter the server address. The default port is `8123` (HTTP) or `8443` (HTTPS).
+
+```
+http://USER:PASSWORD@HOST:8123/DATABASE
+https://USER:PASSWORD@HOST:8443/DATABASE
+```
+
+Managed ClickHouse Cloud clusters are exposed over HTTPS on `8443` with basic authentication.
+
+## Connection fields
+
+| Field        | Required | Notes                                                                            |
+| ------------ | -------- | -------------------------------------------------------------------------------- |
+| **Host**     | Yes      | Hostname or IP. Cluster URL for ClickHouse Cloud.                                |
+| **Port**     | Yes      | `8123` for HTTP, `8443` for HTTPS.                                               |
+| **User**     | Yes      | Defaults to `default` on a fresh install.                                        |
+| **Password** | Optional | Stored encrypted in the vault.                                                   |
+| **Database** | Optional | Defaults to `default` if omitted.                                                |
+| **TLS**      | Optional | Enable for HTTPS. Uses Rustls under the hood; no system OpenSSL required.        |
+
+## Supported types
+
+The driver maps 28 ClickHouse types to QoreDB's universal cell representation:
+
+- **Integers** — `Int8`, `Int16`, `Int32`, `Int64`, `Int128`, and the matching `UInt*` family
+- **Floats and decimals** — `Float32`, `Float64`, `Decimal(P, S)`
+- **Strings** — `String`, `FixedString(N)`
+- **Dates and times** — `Date`, `Date32`, `DateTime`, `DateTime64(precision, timezone)`
+- **Booleans, UUIDs, IP addresses** — `Bool`, `UUID`, `IPv4`, `IPv6`
+- **Enums** — `Enum8`, `Enum16`
+- **Composite types** — `Array(T)`, `Tuple(T1, T2, …)`, `Map(K, V)`
+
+`Nullable(T)` wrappers are transparent. Unknown types are surfaced as text rather than failing the query, so a result set with an exotic type still renders.
+
+## Query safety
+
+ClickHouse statements are classified by an AST-aware analyzer with a four-level model — **Read**, **Mutation**, **Dangerous**, **Unknown** — that matches QoreDB's universal safety net:
+
+- `SELECT`, `WITH … SELECT`, `EXPLAIN`, `DESCRIBE`, `SHOW` are Read.
+- `INSERT`, `ALTER … UPDATE`/`DELETE`, `CREATE`, `DROP`, `RENAME`, `TRUNCATE` are Mutation.
+- `OPTIMIZE … FINAL`, `KILL QUERY`, every `SYSTEM …` operation is refused outright as Dangerous. ClickHouse's `SYSTEM` commands (cache flushes, replica restarts, etc.) are powerful enough to disrupt a live cluster, so they require a manual override even in dev.
+
+Read-only mode and environment guards apply the same way as on PostgreSQL or MySQL.
+
+## Cancelling a query
+
+Long-running queries are cancelled via `KILL QUERY WHERE query_id = <id>`. ClickHouse treats this as best-effort: the server marks the query for cancellation and returns once the running fragment notices, which can take a moment for heavy aggregations.
+
+## DDL editor
+
+The visual DDL editor supports ClickHouse with the dialect's specifics:
+
+- **Identifier quoting** with backticks (`` `name` ``).
+- **CHECK constraints** in `CREATE TABLE`.
+- **Indexes** with `INDEX name expr TYPE bloom_filter|minmax|set(...) GRANULARITY n`.
+- Engine families are not auto-selected; the generated DDL preserves the engine you typed.
+
+`ALTER TABLE` coverage is currently limited to the MergeTree-family subset (add/drop column, modify column, add/drop index, attach/detach partition). Distributed table alterations and `ON CLUSTER` are not surfaced in the v1 editor — write them in the SQL editor for now.
+
+## Common issues
+
+<Callout type="warning">
+**HTTPS handshake fails on `8443`**: ClickHouse Cloud requires TLS. Make sure the URL starts with `https://` and the port is `8443`, not `8123`.
+</Callout>
+
+<Callout type="warning">
+**`SYSTEM` / `OPTIMIZE FINAL` rejected**: these are flagged as Dangerous by the safety classifier. Run them through `clickhouse-client` if you really need them on a production cluster.
+</Callout>
+
+<Callout type="info">
+**Backups**: ClickHouse is not covered by the built-in backup helpers in v0.1.28. Use ClickHouse's native `BACKUP TO …` syntax from the SQL editor, or your cluster's snapshot tooling.
+</Callout>
+
+## Where to go next
+
+- [Driver limitations](/docs/reference/driver-limitations) for the per-engine quirks
+- [SQL safety validation](/docs/security/sql-safety-validation) for the universal safety net
+- [Querying: editor and autocomplete](/docs/querying/editor) for the SQL editor

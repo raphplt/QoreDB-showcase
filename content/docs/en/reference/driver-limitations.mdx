@@ -69,6 +69,15 @@ This list reflects current behavior. Things that "should work" from a feature-li
 - **Transaction retries**: CockroachDB asks the client to retry transactions on serialization conflicts more aggressively than Postgres. From the editor, simply re-run the failed statement.
 - **Default port**: `26257`, not `5432`. Easy to forget.
 
+## ClickHouse
+
+- **Transport is HTTP / HTTPS**: the driver connects over `8123` / `8443`. Native TCP (`9000`) is not supported in v1.
+- **Dangerous commands are refused outright**: `OPTIMIZE … FINAL`, `KILL QUERY`, and every `SYSTEM …` operation hit the safety classifier and are rejected. Use `clickhouse-client` for these.
+- **Cancellation is best-effort**: `KILL QUERY WHERE query_id = …` marks the query for cancellation; ClickHouse stops the running fragment when it next checks.
+- **DDL Alter UI is MergeTree-family only**: distributed-table alterations and `ON CLUSTER` are not exposed in the visual editor in v1. Write them through the SQL editor.
+- **Backups not covered by the helpers**: the built-in backup helpers don't shell out to ClickHouse in v0.1.28. Use the native `BACKUP TO …` statement or your cluster's snapshot tooling.
+- **Unknown types fall back to text**: rare or exotic types not in the 28-type map render as text rather than failing the result set.
+
 ## Postgres-compatible providers
 
 ### Supabase

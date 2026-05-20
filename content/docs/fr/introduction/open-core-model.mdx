@@ -23,7 +23,7 @@ Chaque fichier source dans le dépôt porte un en-tête SPDX déclarant sa licen
 
 Le noyau couvre tout ce dont vous avez besoin pour un client de base de données complet et de qualité production :
 
-- **Tous les pilotes de base de données** : PostgreSQL, MySQL, SQL Server, SQLite, MongoDB, Redis, DuckDB, CockroachDB (et d'autres à venir bientôt)
+- **Tous les pilotes de base de données** : PostgreSQL (avec Supabase, Neon, TimescaleDB), MySQL/MariaDB, SQL Server, SQLite, DuckDB, MongoDB, Redis, CockroachDB, ClickHouse
 - **Gestion des connexions** : coffre-fort (vault), profils, tunnel SSH, protections d'environnement
 - **Éditeur et exécution de requêtes** : éditeurs SQL et MongoDB, coloration syntaxique, autocomplétion, historique, bibliothèque de requêtes
 - **Grille de données et édition** : édition en ligne, virtualisation, filtres côté serveur, édition en masse (jusqu'à 5 lignes)
@@ -32,8 +32,10 @@ Le noyau couvre tout ce dont vous avez besoin pour un client de base de données
 - **Diagramme ER** : graphe de schéma interactif avec des flux de travail d'isolement/focalisation
 - **Notebooks** : moteur de notebook complet avec variables paramétrées, Run All, import/export
 - **Importation CSV**, **pipeline d'exportation** (CSV/JSON/SQL/HTML), **gestion des transactions**
-- **Mode bac à sable (sandbox)**, **journalisation d'audit**, **mode lecture seule**, **détection de requêtes dangereuses**
+- **Mode bac à sable (sandbox)**, **journalisation d'audit** avec **empreintes de requêtes (fingerprints)**, **mode lecture seule**, **détection de requêtes dangereuses**
 - **Fédération inter-bases de données** via DuckDB
+- **Helpers de sauvegarde et restauration** : surcouches visuelles autour de `pg_dump`, `mysqldump`, `mongodump`, `sqlite3 .dump` et leurs équivalents de restauration
+- **Raccourcis clavier personnalisables** : chaque chord rebindable depuis les Réglages, avec syntaxe cross-OS
 - **Espaces de travail**, **système multi-onglets**, **recherche globale**, **internationalisation (i18n) en 9 langues**
 
 En d'autres termes, le noyau est suffisant pour faire du travail réel tous les jours. La version Pro n'est pas un mur de paiement (paywall) bloquant les fonctionnalités essentielles.
@@ -49,6 +51,8 @@ Les fonctionnalités Premium sont des flux de travail avancés qui ne deviennent
 
 - **Data Diff visuel** : comparaison côte à côte des tables et des résultats de requêtes
 - **Voyage dans le temps (Time Travel)** : historique complet des lignes avec chronologie visuelle, filtres de plage, diff point à point et aperçu SQL d'annulation (Rollback)
+- **Contrats de données (Data Contracts)** : assertions de qualité de données déclaratives et exécutables (12 types de règles, dont `custom_sql` arbitraire) persistées en YAML dans le workspace, avec ré-évaluation post-mutation et une cellule de notebook dédiée
+- **API instantanée (Instant Data API)** : expose n'importe quelle requête sauvegardée en lecture seule sous forme de point de terminaison REST authentifié par jeton sur `127.0.0.1`, avec limitation de débit par endpoint et document OpenAPI 3.1 auto-généré
 - **Cellules de graphiques dans les notebooks** : barres, lignes, camembert (pie), nuage de points (scatter)
 - **Édition en masse au-delà de 5 lignes**
 - **Exportation XLSX et Parquet**
